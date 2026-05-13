@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/blog",
+      "destination": "https://blog.magneo.ca/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "https://blog.magneo.ca/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://blog.magneo.ca/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
