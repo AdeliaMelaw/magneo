@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://magneo.ca/sitemap.xml
+Sitemap: https://blog.magneo.ca/sitemap.xml
