@@ -4,14 +4,14 @@
       "src": "/blog/?",
       "status": 308,
       "headers": {
-        "Location": "https://blog.magneo.ca/"
+        "Location": "https://blog.magneo.ca/blog/"
       }
     },
     {
       "src": "/blog/(.*)",
       "status": 308,
       "headers": {
-        "Location": "https://blog.magneo.ca/$1"
+        "Location": "https://blog.magneo.ca/blog/$1"
       }
     },
     { "handle": "filesystem" },
