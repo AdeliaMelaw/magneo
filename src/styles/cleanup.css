@@ -1,0 +1,6 @@
+.hero-grid-line,
+.hero::before,
+.hero::after {
+  display: none !important;
+  content: none !important;
+}
