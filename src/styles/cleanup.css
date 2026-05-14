@@ -30,3 +30,183 @@
 .marquee.ai-marquee a:hover {
   background: rgba(0, 0, 0, 0.08);
 }
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  html.nav-lock,
+  html.nav-lock body {
+    overflow: hidden;
+  }
+
+  .nav {
+    min-height: 68px !important;
+  }
+
+  .nav-inner {
+    position: relative !important;
+    min-height: 68px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .brand {
+    width: 168px !important;
+    min-height: 42px !important;
+    z-index: 1001 !important;
+  }
+
+  .nav-toggle {
+    display: inline-flex !important;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .nav--open .nav-toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav--open .nav-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav--open .nav-toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav--open .nav-links {
+    position: absolute !important;
+    top: 68px !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: flex !important;
+    width: 100% !important;
+    max-height: calc(100vh - 68px) !important;
+    overflow-y: auto !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: 18px 34px 28px !important;
+    background: #1b1b1b !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42) !important;
+    z-index: 1000 !important;
+  }
+
+  .nav-links > a,
+  .nav-trigger {
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 15px 0 !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+  }
+
+  .nav-trigger::after {
+    content: " +";
+    color: #8cff00;
+    font-size: 16px;
+  }
+
+  .nav-item--open .nav-trigger::after {
+    content: " -";
+  }
+
+  .nav-item {
+    width: 100% !important;
+  }
+
+  .mega {
+    position: static !important;
+    display: none !important;
+    width: 100% !important;
+    max-height: none !important;
+    padding: 0 0 14px !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+  }
+
+  .nav-item:hover .mega,
+  .nav-item:focus-within .mega,
+  .nav-item--open .mega {
+    display: block !important;
+  }
+
+  .mega-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    padding: 4px 0 0 !important;
+  }
+
+  .mega-col {
+    min-height: 0 !important;
+    padding: 18px !important;
+    border-radius: 18px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+
+  .mega-head {
+    font-size: 18px !important;
+  }
+
+  .mega-link {
+    font-size: 17px !important;
+    padding: 11px 0 !important;
+  }
+
+  .nav-inner > .btn {
+    display: none !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .nav--open .nav-links {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  .brand {
+    width: 150px !important;
+  }
+
+  .nav-links > a,
+  .nav-trigger {
+    font-size: 19px !important;
+  }
+}
