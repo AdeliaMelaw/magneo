@@ -5,6 +5,14 @@ const BASE_URL = 'https://magneo.ca';
 const DIST_DIR = 'dist';
 const INDEX_PATH = join(DIST_DIR, 'index.html');
 const SITEMAP_PATH = join(DIST_DIR, 'sitemap.xml');
+const EXTRA_PATHS = [
+  '/services/ai-seo/',
+  '/services/ai-social-media-marketing/',
+  '/services/ai-ugc-ai-video-production/',
+  '/services/ai-web-design-conversion/',
+  '/services/ai-content-marketing/',
+  '/services/compliance-aware-ai-workflows/'
+];
 
 const descriptions = {
   '/': 'Authority-first marketing systems for law firms, financial advisors, healthcare providers, and tech companies. Compliance-safe. Measurable. Built to last.',
@@ -15,7 +23,13 @@ const descriptions = {
   '/law-firm-marketing/': 'Magneo is a law firm marketing agency built for compliance-first growth, authority, rankings, and qualified consultation requests.',
   '/financial-firm-marketing/': 'Marketing systems for financial firms, advisors, portfolio managers, investment firms, insurance advisors, and tax professionals.',
   '/healthcare-marketing/': 'Healthcare marketing systems for clinics and providers that improve visibility, simplify patient decisions, and respect privacy expectations.',
-  '/tech-company-marketing/': 'Growth systems for FinTech, LegalTech, Crypto, AI, and SaaS companies that need authority, clarity, and demand without hype.'
+  '/tech-company-marketing/': 'Growth systems for FinTech, LegalTech, Crypto, AI, and SaaS companies that need authority, clarity, and demand without hype.',
+  '/services/ai-seo/': 'AI SEO for regulated industries, including search architecture, entity strategy, content briefs, internal links, and optimization workflows.',
+  '/services/ai-social-media-marketing/': 'AI social media marketing for regulated industries, with reviewable LinkedIn and social content systems built around authority.',
+  '/services/ai-ugc-ai-video-production/': 'AI UGC and AI video production for regulated brands, including scripts, short-form concepts, and brand-safe video workflows.',
+  '/services/ai-web-design-conversion/': 'AI web design and conversion support for regulated businesses, including landing pages, CRO messaging, and buyer-intent testing ideas.',
+  '/services/ai-content-marketing/': 'AI content marketing for regulated industries, including editorial calendars, topical maps, repurposing, and expert review workflows.',
+  '/services/compliance-aware-ai-workflows/': 'Compliance-aware AI workflows for regulated marketing, with human review, claim checks, disclaimers, approvals, and brand controls.'
 };
 
 const titleOverrides = {
@@ -27,40 +41,27 @@ const titleOverrides = {
   '/law-firm-marketing/': 'Law Firm Marketing Agency | Magneo',
   '/financial-firm-marketing/': 'Financial Firm Marketing Agency | Magneo',
   '/healthcare-marketing/': 'Healthcare Marketing Agency | Magneo',
-  '/tech-company-marketing/': 'Tech Company Marketing Agency | Magneo'
+  '/tech-company-marketing/': 'Tech Company Marketing Agency | Magneo',
+  '/services/ai-seo/': 'AI SEO | Magneo',
+  '/services/ai-social-media-marketing/': 'AI Social Media Marketing | Magneo',
+  '/services/ai-ugc-ai-video-production/': 'AI UGC & AI Video Production | Magneo',
+  '/services/ai-web-design-conversion/': 'AI Web Design & Conversion | Magneo',
+  '/services/ai-content-marketing/': 'AI Content Marketing | Magneo',
+  '/services/compliance-aware-ai-workflows/': 'Compliance-Aware AI Workflows | Magneo'
 };
 
 function escapeHtml(value) {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
+  return value.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-function normalizePath(url) {
-  const pathname = new URL(url).pathname;
+function normalizePath(urlOrPath) {
+  const pathname = urlOrPath.startsWith('http') ? new URL(urlOrPath).pathname : urlOrPath;
   return pathname.endsWith('/') ? pathname : `${pathname}/`;
 }
 
-function titleCase(slug) {
-  const acronyms = new Map([
-    ['seo', 'SEO'],
-    ['ppc', 'PPC'],
-    ['ai', 'AI'],
-    ['saas', 'SaaS'],
-    ['crm', 'CRM'],
-    ['ux', 'UX']
-  ]);
-
-  return slug
-    .split('/')
-    .filter(Boolean)
-    .pop()
-    ?.split('-')
-    .filter((word) => word && word !== 'magneo')
-    .map((word) => acronyms.get(word) || word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ') || 'Magneo';
+function titleCase(pathname) {
+  const acronyms = new Map([['seo', 'SEO'], ['ppc', 'PPC'], ['ai', 'AI'], ['saas', 'SaaS'], ['ugc', 'UGC'], ['cro', 'CRO'], ['ux', 'UX']]);
+  return pathname.split('/').filter(Boolean).pop()?.split('-').filter((word) => word && word !== 'magneo').map((word) => acronyms.get(word) || word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || 'Magneo';
 }
 
 function titleFor(pathname) {
@@ -69,73 +70,47 @@ function titleFor(pathname) {
 
 function descriptionFor(pathname) {
   if (descriptions[pathname]) return descriptions[pathname];
-
   const label = titleCase(pathname);
-  if (pathname.startsWith('/services/')) {
-    return `${label} from Magneo for regulated industries, built around authority, compliance-aware messaging, qualified demand, and measurable conversion.`;
-  }
-  if (pathname.includes('law-firm-marketing')) {
-    return `${label} with Magneo: compliance-aware SEO, website, PPC, LinkedIn, AI automation, and authority systems for legal practices.`;
-  }
-  if (pathname.includes('financial-firm-marketing')) {
-    return `${label} with Magneo: trust-led marketing systems for financial professionals and regulated advisory businesses.`;
-  }
-  if (pathname.includes('healthcare-marketing')) {
-    return `${label} with Magneo: privacy-aware marketing systems for healthcare clinics, providers, and patient-facing practices.`;
-  }
-  if (pathname.includes('tech-company-marketing')) {
-    return `${label} with Magneo: authority, content, website, and demand systems for tech, SaaS, AI, FinTech, and LegalTech companies.`;
-  }
+  if (pathname.startsWith('/services/')) return `${label} from Magneo for regulated industries, built around authority, compliance-aware messaging, qualified demand, and measurable conversion.`;
+  if (pathname.includes('law-firm-marketing')) return `${label} with Magneo: compliance-aware SEO, website, PPC, LinkedIn, AI automation, and authority systems for legal practices.`;
+  if (pathname.includes('financial-firm-marketing')) return `${label} with Magneo: trust-led marketing systems for financial professionals and regulated advisory businesses.`;
+  if (pathname.includes('healthcare-marketing')) return `${label} with Magneo: privacy-aware marketing systems for healthcare clinics, providers, and patient-facing practices.`;
+  if (pathname.includes('tech-company-marketing')) return `${label} with Magneo: authority, content, website, and demand systems for tech, SaaS, AI, FinTech, and LegalTech companies.`;
   return `${label} from Magneo, a digital marketing agency for regulated industries in Canada and the USA.`;
 }
 
 function injectSeo(html, { title, description, canonical }) {
-  let next = html
+  const clean = html
     .replace(/\s*<title>[\s\S]*?<\/title>/i, '')
     .replace(/\s*<meta\s+name=["']description["'][^>]*>/i, '')
     .replace(/\s*<link\s+rel=["']canonical["'][^>]*>/i, '')
-    .replace(/\s*<meta\s+property=["']og:title["'][^>]*>/i, '')
-    .replace(/\s*<meta\s+property=["']og:description["'][^>]*>/i, '')
-    .replace(/\s*<meta\s+property=["']og:url["'][^>]*>/i, '')
-    .replace(/\s*<meta\s+name=["']twitter:title["'][^>]*>/i, '')
-    .replace(/\s*<meta\s+name=["']twitter:description["'][^>]*>/i, '');
-
+    .replace(/\s*<meta\s+property=["']og:[^"']+["'][^>]*>/gi, '')
+    .replace(/\s*<meta\s+name=["']twitter:[^"']+["'][^>]*>/gi, '');
   const tags = [
-    `    <title>${escapeHtml(title)}</title>`,
-    `    <meta name="description" content="${escapeHtml(description)}" />`,
-    `    <link rel="canonical" href="${escapeHtml(canonical)}" />`,
-    `    <meta property="og:title" content="${escapeHtml(title)}" />`,
-    `    <meta property="og:description" content="${escapeHtml(description)}" />`,
-    `    <meta property="og:url" content="${escapeHtml(canonical)}" />`,
-    '    <meta property="og:type" content="website" />',
-    `    <meta name="twitter:title" content="${escapeHtml(title)}" />`,
-    `    <meta name="twitter:description" content="${escapeHtml(description)}" />`
-  ].join('\n');
-
-  return next.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
+    `<title>${escapeHtml(title)}</title>`,
+    `<meta name="description" content="${escapeHtml(description)}" />`,
+    `<link rel="canonical" href="${escapeHtml(canonical)}" />`,
+    `<meta property="og:title" content="${escapeHtml(title)}" />`,
+    `<meta property="og:description" content="${escapeHtml(description)}" />`,
+    `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
+    '<meta property="og:type" content="website" />',
+    `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
+    `<meta name="twitter:description" content="${escapeHtml(description)}" />`
+  ].map((tag) => `    ${tag}`).join('\n');
+  return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
 }
 
 const indexHtml = await readFile(INDEX_PATH, 'utf8');
 const sitemapXml = await readFile(SITEMAP_PATH, 'utf8');
-const urls = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)]
-  .map((match) => match[1].trim())
-  .filter((url) => url.startsWith(BASE_URL));
+const sitemapPaths = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1].trim()).filter((url) => url.startsWith(BASE_URL)).map(normalizePath);
+const paths = [...new Set([...sitemapPaths, ...EXTRA_PATHS.map(normalizePath)])];
 
-for (const url of urls) {
-  const pathname = normalizePath(url);
+for (const pathname of paths) {
   const canonical = `${BASE_URL}${pathname === '/' ? '/' : pathname}`;
-  const html = injectSeo(indexHtml, {
-    title: titleFor(pathname),
-    description: descriptionFor(pathname),
-    canonical
-  });
-
-  const outputPath = pathname === '/'
-    ? INDEX_PATH
-    : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
-
+  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical });
+  const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);
 }
 
-console.log(`Generated static SEO HTML for ${urls.length} routes.`);
+console.log(`Generated static SEO HTML for ${paths.length} routes.`);
