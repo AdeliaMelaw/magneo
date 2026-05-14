@@ -4,3 +4,29 @@
   display: none !important;
   content: none !important;
 }
+
+.marquee.ai-marquee {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  white-space: normal;
+  text-align: center;
+}
+
+.marquee.ai-marquee a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 28px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+  color: #2d4a00;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: background 0.15s;
+}
+
+.marquee.ai-marquee a:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
