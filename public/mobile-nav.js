@@ -1,11 +1,11 @@
 (function () {
   function initMobileNav() {
     var nav = document.querySelector('.nav');
-    if (!nav || nav.dataset.mobileNavReady === 'true') return;
+    if (!nav || nav.dataset.mobileNavReady === 'true') return false;
 
     var brand = nav.querySelector('.brand');
     var links = nav.querySelector('.nav-links');
-    if (!brand || !links) return;
+    if (!brand || !links) return false;
 
     nav.dataset.mobileNavReady = 'true';
 
@@ -60,11 +60,31 @@
     window.addEventListener('resize', function () {
       if (!isMobile()) setOpen(false);
     });
+
+    return true;
+  }
+
+  function bootMobileNav() {
+    if (initMobileNav()) return;
+
+    var attempts = 0;
+    var timer = window.setInterval(function () {
+      attempts += 1;
+      if (initMobileNav() || attempts > 40) window.clearInterval(timer);
+    }, 100);
+
+    if ('MutationObserver' in window) {
+      var observer = new MutationObserver(function () {
+        if (initMobileNav()) observer.disconnect();
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      window.setTimeout(function () { observer.disconnect(); }, 6000);
+    }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileNav);
+    document.addEventListener('DOMContentLoaded', bootMobileNav);
   } else {
-    initMobileNav();
+    bootMobileNav();
   }
 })();
