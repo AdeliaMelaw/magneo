@@ -35,18 +35,20 @@
 }
 
 .mega-close {
-  position: sticky;
-  top: 0;
-  left: calc(100% - 44px);
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  top: auto;
+  left: auto;
   display: grid;
   place-items: center;
-  width: 36px;
-  height: 36px;
-  margin: -10px -8px 8px auto;
+  width: 38px;
+  height: 38px;
+  margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #fff;
+  background: #8cff00;
+  color: #111;
   font-size: 26px;
   line-height: 1;
   cursor: pointer;
@@ -54,9 +56,9 @@
 }
 
 .mega-close:hover {
-  background: #8cff00;
+  background: #fff;
   color: #111;
-  border-color: #8cff00;
+  border-color: #fff;
 }
 
 .nav-item.mega-dismissed .mega {
@@ -98,6 +100,15 @@
 .marquee.ai-marquee a:hover,
 .contextual-marquee a:hover {
   background: rgba(0, 0, 0, 0.08);
+}
+
+.hubspot-form {
+  min-height: 420px;
+}
+
+.hubspot-form iframe,
+.hubspot-form form {
+  width: 100% !important;
 }
 
 .service-depth {
