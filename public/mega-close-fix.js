@@ -82,29 +82,38 @@
     loadScriptOnce('__magneoHomepageSectionsLoaded', '/homepage-sections.js');
   }
 
+  function stripEmailText(node) {
+    if (!node || !node.parentNode) return;
+    var text = (node.textContent || '').toLowerCase();
+    if (text.indexOf('contact@magneo.com') < 0 && text.indexOf('contact@magneo.ca') < 0) return;
+    if (node.tagName === 'A' || text.replace(/\s+/g, ' ').trim().length < 80) {
+      node.remove();
+      return;
+    }
+    node.innerHTML = node.innerHTML
+      .replace(/contact@magneo\.com/gi, '')
+      .replace(/contact@magneo\.ca/gi, '')
+      .replace(/Email:\s*<br\s*\/?>/gi, '')
+      .replace(/Email:\s*/gi, '');
+  }
+
   function removeFooterEmail() {
     var footer = document.querySelector('footer');
     if (!footer) return false;
-
     footer.querySelectorAll('a[href]').forEach(function (link) {
       var text = (link.textContent || '').toLowerCase();
       var href = (link.getAttribute('href') || '').toLowerCase();
-      if (text.indexOf('contact@magneo') >= 0 || href.indexOf('mailto:contact@magneo') >= 0) {
-        link.remove();
-      }
+      if (text.indexOf('contact@magneo') >= 0 || href.indexOf('mailto:contact@magneo') >= 0) link.remove();
     });
-
-    footer.querySelectorAll('p, span, div, li').forEach(function (node) {
-      if (!node.parentNode) return;
-      var text = (node.textContent || '').toLowerCase();
-      if (text.indexOf('contact@magneo.com') >= 0 || text.indexOf('contact@magneo.ca') >= 0) {
-        if (text.replace(/\s+/g, ' ').trim().length < 80) node.remove();
-        else node.innerHTML = node.innerHTML
-          .replace(/contact@magneo\.com/gi, '')
-          .replace(/contact@magneo\.ca/gi, '');
-      }
-    });
+    footer.querySelectorAll('p, span, div, li').forEach(stripEmailText);
     return true;
+  }
+
+  function watchFooterEmail() {
+    removeFooterEmail();
+    if (!('MutationObserver' in window)) return;
+    var observer = new MutationObserver(function () { removeFooterEmail(); });
+    observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   }
 
   function homepageWatchdog() {
@@ -132,16 +141,11 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadEnhancementScripts);
     document.addEventListener('DOMContentLoaded', homepageWatchdog);
-    document.addEventListener('DOMContentLoaded', removeFooterEmail);
+    document.addEventListener('DOMContentLoaded', watchFooterEmail);
   } else {
     loadEnhancementScripts();
     homepageWatchdog();
-    removeFooterEmail();
+    watchFooterEmail();
   }
-  var attempts = 0;
-  var timer = window.setInterval(function () {
-    attempts += 1;
-    removeFooterEmail();
-    if (attempts > 50) window.clearInterval(timer);
-  }, 120);
+  window.setInterval(removeFooterEmail, 1000);
 })();
