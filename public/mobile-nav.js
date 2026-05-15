@@ -148,7 +148,8 @@
 
     var title = titleFromPath(path);
     var context = serviceContext(title, path);
-    var after = hero.nextElementSibling && hero.nextElementSibling.classList.contains('marquee') ? hero.nextElementSibling : hero;
+    var process = main.querySelector('.process');
+    var after = process && process.closest('section') ? process.closest('section') : (hero.nextElementSibling && hero.nextElementSibling.classList.contains('marquee') ? hero.nextElementSibling : hero);
     var section = createEl('section', 'service-depth');
     section.dataset.path = path;
     section.innerHTML = [
