@@ -79,11 +79,23 @@
   function removeFooterEmail() {
     var footer = document.querySelector('footer');
     if (!footer) return false;
-    footer.querySelectorAll('a, p, span, div').forEach(function (node) {
-      var text = (node.textContent || '').trim().toLowerCase();
-      var href = (node.getAttribute && node.getAttribute('href') || '').toLowerCase();
-      if (text === 'contact@magneo.com' || text === 'contact@magneo.ca' || href.indexOf('mailto:contact@magneo') === 0) {
-        node.remove();
+
+    footer.querySelectorAll('a[href]').forEach(function (link) {
+      var text = (link.textContent || '').toLowerCase();
+      var href = (link.getAttribute('href') || '').toLowerCase();
+      if (text.indexOf('contact@magneo') >= 0 || href.indexOf('mailto:contact@magneo') >= 0) {
+        link.remove();
+      }
+    });
+
+    footer.querySelectorAll('p, span, div, li').forEach(function (node) {
+      if (!node.parentNode) return;
+      var text = (node.textContent || '').toLowerCase();
+      if (text.indexOf('contact@magneo.com') >= 0 || text.indexOf('contact@magneo.ca') >= 0) {
+        if (text.replace(/\s+/g, ' ').trim().length < 80) node.remove();
+        else node.innerHTML = node.innerHTML
+          .replace(/contact@magneo\.com/gi, '')
+          .replace(/contact@magneo\.ca/gi, '');
       }
     });
     return true;
@@ -124,6 +136,6 @@
   var timer = window.setInterval(function () {
     attempts += 1;
     removeFooterEmail();
-    if (attempts > 30) window.clearInterval(timer);
-  }, 200);
+    if (attempts > 50) window.clearInterval(timer);
+  }, 120);
 })();
