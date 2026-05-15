@@ -5,6 +5,35 @@
   content: none !important;
 }
 
+.brand,
+.nav .brand,
+.footer .brand {
+  display: inline-block !important;
+  width: 168px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  background: url('/logo-magneo.svg') left center / contain no-repeat !important;
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+}
+
+.brand::before,
+.nav .brand::before,
+.footer .brand::before {
+  display: none !important;
+  content: none !important;
+}
+
+.footer .brand {
+  display: block !important;
+  width: 190px !important;
+  height: 46px !important;
+  margin-bottom: 12px !important;
+}
+
 .marquee.ai-marquee {
   display: flex;
   justify-content: center;
@@ -65,9 +94,11 @@
     padding-bottom: 0 !important;
   }
 
-  .brand {
-    width: 168px !important;
-    min-height: 42px !important;
+  .brand,
+  .nav .brand {
+    width: 150px !important;
+    height: 38px !important;
+    min-height: 38px !important;
     z-index: 1001 !important;
   }
 
@@ -211,8 +242,11 @@
     padding-right: 24px !important;
   }
 
-  .brand {
-    width: 150px !important;
+  .brand,
+  .nav .brand {
+    width: 142px !important;
+    height: 36px !important;
+    min-height: 36px !important;
   }
 
   .nav-links > a,
