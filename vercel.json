@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/Personal-Branding-The-Ultimate-Guide-for-Legal-Professionals\\.pdf",
+      "status": 308,
+      "headers": {
+        "Location": "https://blog.magneo.ca/wp-content/uploads/2026/05/Personal-Branding-The-Ultimate-Guide-for-Legal-Professionals.pdf"
+      }
+    },
+    {
       "src": "/blog/?",
       "status": 308,
       "headers": {
