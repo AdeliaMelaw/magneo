@@ -39,6 +39,25 @@
     });
   }
 
+  function loadMegaLinkNormally(event) {
+    var link = event.target && event.target.closest && event.target.closest('.mega a[href], .mega-link[href]');
+    if (!link) return;
+
+    var url;
+    try {
+      url = new URL(link.getAttribute('href'), window.location.origin);
+    } catch (error) {
+      return;
+    }
+
+    if (url.origin !== window.location.origin || url.pathname === window.location.pathname) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (event.stopImmediatePropagation) event.stopImmediatePropagation();
+    window.location.href = url.pathname + url.search + url.hash;
+  }
+
+  document.addEventListener('click', loadMegaLinkNormally, true);
   document.addEventListener('click', closeAllMegaMenus, true);
   document.addEventListener('pointerdown', closeAllMegaMenus, true);
   document.addEventListener('mouseover', reopenFromTrigger, true);
