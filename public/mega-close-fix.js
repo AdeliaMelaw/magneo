@@ -57,9 +57,20 @@
     window.location.href = url.pathname + url.search + url.hash;
   }
 
+  function loadIndustryDepth() {
+    if (window.__magneoIndustryDepthLoaded) return;
+    window.__magneoIndustryDepthLoaded = true;
+    var script = document.createElement('script');
+    script.src = '/industry-depth.js';
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   document.addEventListener('click', loadMegaLinkNormally, true);
   document.addEventListener('click', closeAllMegaMenus, true);
   document.addEventListener('pointerdown', closeAllMegaMenus, true);
   document.addEventListener('mouseover', reopenFromTrigger, true);
   document.addEventListener('focusin', reopenFromTrigger, true);
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadIndustryDepth);
+  else loadIndustryDepth();
 })();
