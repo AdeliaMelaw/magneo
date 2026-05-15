@@ -82,37 +82,37 @@
     loadScriptOnce('__magneoHomepageSectionsLoaded', '/homepage-sections.js');
   }
 
-  function stripEmailText(node) {
+  function stripComEmailText(node) {
     if (!node || !node.parentNode) return;
     var text = (node.textContent || '').toLowerCase();
-    if (text.indexOf('contact@magneo.com') < 0 && text.indexOf('contact@magneo.ca') < 0) return;
-    if (node.tagName === 'A' || text.replace(/\s+/g, ' ').trim().length < 80) {
+    if (text.indexOf('contact@magneo.com') < 0) return;
+    if (node.tagName === 'A' || text.replace(/\s+/g, ' ').trim() === 'contact@magneo.com') {
       node.remove();
       return;
     }
     node.innerHTML = node.innerHTML
+      .replace(/<a[^>]*mailto:contact@magneo\.com[^>]*>\s*contact@magneo\.com\s*<\/a>/gi, '')
       .replace(/contact@magneo\.com/gi, '')
-      .replace(/contact@magneo\.ca/gi, '')
       .replace(/Email:\s*<br\s*\/?>/gi, '')
-      .replace(/Email:\s*/gi, '');
+      .replace(/Email:\s*$/gi, '');
   }
 
-  function removeFooterEmail() {
+  function removeFooterComEmail() {
     var footer = document.querySelector('footer');
     if (!footer) return false;
     footer.querySelectorAll('a[href]').forEach(function (link) {
       var text = (link.textContent || '').toLowerCase();
       var href = (link.getAttribute('href') || '').toLowerCase();
-      if (text.indexOf('contact@magneo') >= 0 || href.indexOf('mailto:contact@magneo') >= 0) link.remove();
+      if (text.indexOf('contact@magneo.com') >= 0 || href.indexOf('mailto:contact@magneo.com') >= 0) link.remove();
     });
-    footer.querySelectorAll('p, span, div, li').forEach(stripEmailText);
+    footer.querySelectorAll('p, span, div, li').forEach(stripComEmailText);
     return true;
   }
 
   function watchFooterEmail() {
-    removeFooterEmail();
+    removeFooterComEmail();
     if (!('MutationObserver' in window)) return;
-    var observer = new MutationObserver(function () { removeFooterEmail(); });
+    var observer = new MutationObserver(function () { removeFooterComEmail(); });
     observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   }
 
@@ -147,5 +147,5 @@
     homepageWatchdog();
     watchFooterEmail();
   }
-  window.setInterval(removeFooterEmail, 1000);
+  window.setInterval(removeFooterComEmail, 1000);
 })();
