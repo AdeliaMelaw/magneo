@@ -38,7 +38,11 @@
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
         setOpen(false);
-        nav.querySelectorAll('.nav-item').forEach(function (item) { item.classList.add('mega-dismissed'); });
+        nav.querySelectorAll('.nav-item').forEach(function (item) {
+          item.classList.add('mega-dismissed');
+          var mega = item.querySelector('.mega');
+          if (mega) mega.style.display = 'none';
+        });
       }
     });
     window.addEventListener('resize', function () { if (!isMobile()) setOpen(false); });
@@ -64,11 +68,25 @@
         event.preventDefault();
         event.stopPropagation();
         item.classList.add('mega-dismissed');
+        mega.style.display = 'none';
         var trigger = item.querySelector('.nav-trigger');
         if (trigger) trigger.blur();
       });
-      item.addEventListener('mouseleave', function () { item.classList.remove('mega-dismissed'); });
-      item.addEventListener('mouseenter', function () { window.setTimeout(function () { if (!item.matches(':hover')) item.classList.remove('mega-dismissed'); }, 50); });
+      item.addEventListener('mouseleave', function () {
+        item.classList.remove('mega-dismissed');
+        mega.style.display = '';
+      });
+      var trigger = item.querySelector('.nav-trigger');
+      if (trigger) {
+        trigger.addEventListener('mouseenter', function () {
+          item.classList.remove('mega-dismissed');
+          mega.style.display = '';
+        });
+        trigger.addEventListener('focus', function () {
+          item.classList.remove('mega-dismissed');
+          mega.style.display = '';
+        });
+      }
     });
     return true;
   }
@@ -163,7 +181,7 @@
       '<div class="sd-block sd-included"><div><div class="label">What is included</div><h2>Everything needed to turn ' + title.toLowerCase() + ' into a working growth system.</h2></div><ul class="sd-checks">',
       '<li>Strategy and messaging aligned to your audience, offer, and compliance requirements.</li><li>Page, campaign, or content structure built around search intent and qualified conversion.</li><li>Authority proof, calls-to-action, trust signals, and review-ready language.</li><li>Analytics, conversion tracking, and reporting so performance is visible.</li><li>Internal linking and related-page pathways that support SEO migration.</li><li>Launch QA, optimization notes, and next-step recommendations.</li>',
       '</ul></div>',
-      '<div class="sd-block"><div class="label">Process</div><h2>Transparent from day one.</h2><div class="sd-process">',
+      '<div class="sd-block sd-process-block"><div class="label">How it works</div><h2>Our process — transparent from day one.</h2><div class="sd-process">',
       '<div><b>01</b><h3>Discovery & Audit</h3><p>We review your current digital presence, buyer journey, competitors, and ' + context.guard + '.</p></div>',
       '<div><b>02</b><h3>Strategy Blueprint</h3><p>We map the structure, messaging, proof points, and conversion logic before execution starts.</p></div>',
       '<div><b>03</b><h3>Build & Launch</h3><p>We create the pages, content, workflows, or campaigns with responsive design and SEO-ready structure.</p></div>',
