@@ -35,17 +35,6 @@
       }
       setOpen(false);
     });
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        setOpen(false);
-        nav.querySelectorAll('.nav-item').forEach(function (item) {
-          item.classList.add('mega-dismissed');
-          var mega = item.querySelector('.mega');
-          if (mega) mega.style.display = 'none';
-        });
-      }
-    });
-    window.addEventListener('resize', function () { if (!isMobile()) setOpen(false); });
     return true;
   }
 
@@ -69,8 +58,6 @@
         event.stopPropagation();
         item.classList.add('mega-dismissed');
         mega.style.display = 'none';
-        var trigger = item.querySelector('.nav-trigger');
-        if (trigger) trigger.blur();
       });
       item.addEventListener('mouseleave', function () {
         item.classList.remove('mega-dismissed');
@@ -79,10 +66,6 @@
       var trigger = item.querySelector('.nav-trigger');
       if (trigger) {
         trigger.addEventListener('mouseenter', function () {
-          item.classList.remove('mega-dismissed');
-          mega.style.display = '';
-        });
-        trigger.addEventListener('focus', function () {
           item.classList.remove('mega-dismissed');
           mega.style.display = '';
         });
@@ -140,35 +123,29 @@
 
   function serviceContext(title, path) {
     var lower = (title + ' ' + path).toLowerCase();
-    if (lower.indexOf('financial') >= 0 || lower.indexOf('advisor') >= 0 || lower.indexOf('wealth') >= 0 || lower.indexOf('fintech') >= 0) return { name: 'financial services', guard: 'CIRO, CSA, fiduciary, disclaimer, and claim review', examples: ['Financial advisor credibility site', 'Wealth firm service architecture', 'FinTech conversion landing pages', 'Portfolio manager trust content'] };
-    if (lower.indexOf('health') >= 0 || lower.indexOf('clinic') >= 0 || lower.indexOf('medical') >= 0 || lower.indexOf('medtech') >= 0) return { name: 'healthcare', guard: 'privacy, patient trust, healthcare advertising, and evidence-aware messaging', examples: ['Clinic appointment growth system', 'Patient education page set', 'Provider reputation workflow', 'MedTech demand campaign'] };
-    if (lower.indexOf('tech') >= 0 || lower.indexOf('saas') >= 0 || lower.indexOf('crypto') >= 0 || lower.indexOf('legaltech') >= 0) return { name: 'tech and SaaS', guard: 'technical proof, accuracy, security, investor scrutiny, and conversion clarity', examples: ['SaaS product marketing site', 'LegalTech authority system', 'AI company content engine', 'Crypto trust-building campaign'] };
-    if (lower.indexOf('ai') >= 0) return { name: 'AI-driven regulated marketing', guard: 'human review, source checks, claim controls, and approval workflows', examples: ['AI SEO workflow', 'AI content review system', 'AI social media calendar', 'AI video and UGC campaign'] };
-    return { name: 'law firms and professional services', guard: 'bar advertising rules, professional responsibility, disclaimers, and trust signals', examples: ['Law firm rebrand and new site', 'Practice-area SEO architecture', 'LinkedIn authority program', 'Consultation funnel rebuild'] };
-  }
-
-  function createEl(tag, className, html) {
-    var el = document.createElement(tag);
-    if (className) el.className = className;
-    if (html) el.innerHTML = html;
-    return el;
+    if (lower.indexOf('financial') >= 0 || lower.indexOf('advisor') >= 0 || lower.indexOf('wealth') >= 0 || lower.indexOf('fintech') >= 0) return { name: 'financial services', examples: ['Financial advisor credibility site', 'Wealth firm service architecture', 'FinTech conversion landing pages', 'Portfolio manager trust content'] };
+    if (lower.indexOf('health') >= 0 || lower.indexOf('clinic') >= 0 || lower.indexOf('medical') >= 0 || lower.indexOf('medtech') >= 0) return { name: 'healthcare', examples: ['Clinic appointment growth system', 'Patient education page set', 'Provider reputation workflow', 'MedTech demand campaign'] };
+    if (lower.indexOf('tech') >= 0 || lower.indexOf('saas') >= 0 || lower.indexOf('crypto') >= 0 || lower.indexOf('legaltech') >= 0) return { name: 'tech and SaaS', examples: ['SaaS product marketing site', 'LegalTech authority system', 'AI company content engine', 'Crypto trust-building campaign'] };
+    if (lower.indexOf('ai') >= 0) return { name: 'AI-driven regulated marketing', examples: ['AI SEO workflow', 'AI content review system', 'AI social media calendar', 'AI video and UGC campaign'] };
+    return { name: 'law firms and professional services', examples: ['Law firm rebrand and new site', 'Practice-area SEO architecture', 'LinkedIn authority program', 'Consultation funnel rebuild'] };
   }
 
   function initServiceDepth() {
     var path = window.location.pathname;
     if (path.indexOf('/services/') !== 0 || path === '/services/' || path.indexOf('/services/ai-powered-digital-marketing/') === 0) return true;
     var main = document.querySelector('main');
-    var hero = main && main.querySelector('.hero');
-    if (!main || !hero) return false;
+    if (!main) return false;
     var existing = main.querySelector('.service-depth');
     if (existing && existing.dataset.path === path) return true;
     if (existing) existing.remove();
+    var process = main.querySelector('.process');
+    var after = process && process.closest('section');
+    if (!after) return false;
 
     var title = titleFromPath(path);
     var context = serviceContext(title, path);
-    var process = main.querySelector('.process');
-    var after = process && process.closest('section') ? process.closest('section') : (hero.nextElementSibling && hero.nextElementSibling.classList.contains('marquee') ? hero.nextElementSibling : hero);
-    var section = createEl('section', 'service-depth');
+    var section = document.createElement('section');
+    section.className = 'service-depth';
     section.dataset.path = path;
     section.innerHTML = [
       '<div class="container">',
@@ -181,12 +158,6 @@
       '<div class="sd-block sd-included"><div><div class="label">What is included</div><h2>Everything needed to turn ' + title.toLowerCase() + ' into a working growth system.</h2></div><ul class="sd-checks">',
       '<li>Strategy and messaging aligned to your audience, offer, and compliance requirements.</li><li>Page, campaign, or content structure built around search intent and qualified conversion.</li><li>Authority proof, calls-to-action, trust signals, and review-ready language.</li><li>Analytics, conversion tracking, and reporting so performance is visible.</li><li>Internal linking and related-page pathways that support SEO migration.</li><li>Launch QA, optimization notes, and next-step recommendations.</li>',
       '</ul></div>',
-      '<div class="sd-block sd-process-block"><div class="label">How it works</div><h2>Our process — transparent from day one.</h2><div class="sd-process">',
-      '<div><b>01</b><h3>Discovery & Audit</h3><p>We review your current digital presence, buyer journey, competitors, and ' + context.guard + '.</p></div>',
-      '<div><b>02</b><h3>Strategy Blueprint</h3><p>We map the structure, messaging, proof points, and conversion logic before execution starts.</p></div>',
-      '<div><b>03</b><h3>Build & Launch</h3><p>We create the pages, content, workflows, or campaigns with responsive design and SEO-ready structure.</p></div>',
-      '<div><b>04</b><h3>Optimize to ROI</h3><p>We refine based on rankings, qualified inquiries, booked calls, and lead quality after launch.</p></div>',
-      '</div></div>',
       '<div class="sd-block"><div class="label">Results</div><h2>What clients typically see.</h2><div class="sd-grid three">',
       '<div class="sd-card"><h3>More qualified inquiries</h3><p>Better-fit prospects because the message, proof, and path are clearer.</p></div>',
       '<div class="sd-card"><h3>Improved user experience</h3><p>Cleaner navigation, stronger pages, and fewer points of friction.</p></div>',
