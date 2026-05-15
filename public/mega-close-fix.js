@@ -47,14 +47,20 @@
     }
   }
 
+  function shouldLoadNormally(link, url) {
+    if (!url || url.origin !== window.location.origin) return false;
+    if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash === window.location.hash) return false;
+    if (url.pathname === '/contact' || url.pathname === '/contact/') return true;
+    return !!link.closest('.mega, .nav-links') || link.classList.contains('brand');
+  }
+
   function loadInternalLinkNormally(event) {
-    var link = event.target && event.target.closest && event.target.closest('.mega a[href], .mega-link[href], .brand[href], .nav-links > a[href]');
+    var link = event.target && event.target.closest && event.target.closest('a[href]');
     if (!link) return;
     if (link.classList && link.classList.contains('nav-trigger')) return;
 
     var url = internalUrl(link);
-    if (!url || url.origin !== window.location.origin) return;
-    if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash === window.location.hash) return;
+    if (!shouldLoadNormally(link, url)) return;
 
     event.preventDefault();
     event.stopPropagation();
