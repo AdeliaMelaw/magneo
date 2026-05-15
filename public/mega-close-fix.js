@@ -62,13 +62,18 @@
     window.location.href = url.pathname + url.search + url.hash;
   }
 
-  function loadIndustryDepth() {
-    if (window.__magneoIndustryDepthLoaded) return;
-    window.__magneoIndustryDepthLoaded = true;
+  function loadScriptOnce(flag, src) {
+    if (window[flag]) return;
+    window[flag] = true;
     var script = document.createElement('script');
-    script.src = '/industry-depth.js';
+    script.src = src;
     script.defer = true;
     document.head.appendChild(script);
+  }
+
+  function loadEnhancementScripts() {
+    loadScriptOnce('__magneoIndustryDepthLoaded', '/industry-depth.js');
+    loadScriptOnce('__magneoHomepageSectionsLoaded', '/homepage-sections.js');
   }
 
   function homepageWatchdog() {
@@ -94,10 +99,10 @@
   document.addEventListener('mouseover', reopenFromTrigger, true);
   document.addEventListener('focusin', reopenFromTrigger, true);
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadIndustryDepth);
+    document.addEventListener('DOMContentLoaded', loadEnhancementScripts);
     document.addEventListener('DOMContentLoaded', homepageWatchdog);
   } else {
-    loadIndustryDepth();
+    loadEnhancementScripts();
     homepageWatchdog();
   }
 })();
