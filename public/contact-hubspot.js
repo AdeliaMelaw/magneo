@@ -26,12 +26,24 @@
     document.head.appendChild(script);
   }
 
+  function removeContactRelatedLinks() {
+    if (!isContactPage()) return;
+    document.querySelectorAll('.related-section').forEach(function (section) {
+      section.remove();
+    });
+  }
+
   function mountForm() {
     if (!isContactPage()) return false;
-    var form = document.querySelector('.form');
-    if (!form || form.dataset.hubspotReady === 'true') return false;
+    removeContactRelatedLinks();
+
+    var form = document.querySelector('form.form, .form');
+    if (!form) return false;
+    if (form.dataset.hubspotReady === 'true' && document.querySelector('#hubspot-contact-form')) return true;
+
     form.dataset.hubspotReady = 'true';
     form.innerHTML = '<div class="hubspot-form" id="hubspot-contact-form"></div>';
+
     loadHubSpot(function () {
       if (!window.hbspt || !window.hbspt.forms) return;
       var target = document.querySelector('#hubspot-contact-form');
@@ -53,12 +65,16 @@
     var timer = window.setInterval(function () {
       attempts += 1;
       mountForm();
-      if (attempts > 50) window.clearInterval(timer);
+      removeContactRelatedLinks();
+      if (attempts > 80) window.clearInterval(timer);
     }, 100);
     if ('MutationObserver' in window) {
-      var observer = new MutationObserver(mountForm);
+      var observer = new MutationObserver(function () {
+        mountForm();
+        removeContactRelatedLinks();
+      });
       observer.observe(document.documentElement, { childList: true, subtree: true });
-      window.setTimeout(function () { observer.disconnect(); }, 7000);
+      window.setTimeout(function () { observer.disconnect(); }, 10000);
     }
   }
 
