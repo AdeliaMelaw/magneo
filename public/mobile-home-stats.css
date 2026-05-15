@@ -1,0 +1,28 @@
+@media (max-width: 620px) {
+  .home-hero .home-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 26px 18px !important;
+    align-items: start !important;
+  }
+
+  .home-hero .home-stats > div {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+  }
+
+  .home-hero .home-stats strong {
+    display: block !important;
+    font-size: clamp(44px, 13vw, 58px) !important;
+    line-height: 0.95 !important;
+    white-space: nowrap !important;
+  }
+
+  .home-hero .home-stats span {
+    display: block !important;
+    margin-top: 8px !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+}
