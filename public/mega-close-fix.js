@@ -76,6 +76,19 @@
     loadScriptOnce('__magneoHomepageSectionsLoaded', '/homepage-sections.js');
   }
 
+  function removeFooterEmail() {
+    var footer = document.querySelector('footer');
+    if (!footer) return false;
+    footer.querySelectorAll('a, p, span, div').forEach(function (node) {
+      var text = (node.textContent || '').trim().toLowerCase();
+      var href = (node.getAttribute && node.getAttribute('href') || '').toLowerCase();
+      if (text === 'contact@magneo.com' || text === 'contact@magneo.ca' || href.indexOf('mailto:contact@magneo') === 0) {
+        node.remove();
+      }
+    });
+    return true;
+  }
+
   function homepageWatchdog() {
     if (window.location.pathname !== '/') return;
     window.setTimeout(function () {
@@ -101,8 +114,16 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadEnhancementScripts);
     document.addEventListener('DOMContentLoaded', homepageWatchdog);
+    document.addEventListener('DOMContentLoaded', removeFooterEmail);
   } else {
     loadEnhancementScripts();
     homepageWatchdog();
+    removeFooterEmail();
   }
+  var attempts = 0;
+  var timer = window.setInterval(function () {
+    attempts += 1;
+    removeFooterEmail();
+    if (attempts > 30) window.clearInterval(timer);
+  }, 200);
 })();
