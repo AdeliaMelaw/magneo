@@ -4,7 +4,7 @@
     '/branding-guide-for-lawyers'
   ];
   var CANONICAL_PATH = '/personal-branding-ultimate-guide-legal-professionals';
-  var PDF_URL = '/Personal-Branding-The-Ultimate-Guide-for-Legal-Professionals.pdf';
+  var PDF_URL = '#guide-form';
 
   function currentPath() {
     return window.location.pathname.replace(/\/$/, '');
@@ -84,11 +84,11 @@
           <aside class="guide-form-card" id="guide-form">\
             <div class="label">Fill out the form</div>\
             <h2>Get your free guide</h2>\
-            <p>Submit the form and the download link will appear on this page.</p>\
+            <p>Submit the form and we will send you the guide.</p>\
             <div class="hs-form-frame" data-region="na3" data-form-id="ff7b6ed0-a222-476a-ac58-191ec4e0ab67" data-portal-id="342136473"></div>\
             <div class="guide-download-ready" hidden>\
-              <strong>Your guide is ready.</strong>\
-              <a class="btn" href="' + PDF_URL + '" target="_blank" rel="noopener">Download PDF</a>\
+              <strong>Thank you. We will send you the guide shortly.</strong>\
+              <a class="btn" href="' + PDF_URL + '">Back to form</a>\
             </div>\
           </aside>\
         </div>\
