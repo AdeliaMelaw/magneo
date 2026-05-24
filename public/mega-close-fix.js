@@ -49,9 +49,10 @@
 
   function shouldLoadNormally(link, url) {
     if (!url || url.origin !== window.location.origin) return false;
+    if (link.hasAttribute('download')) return false;
+    if ((link.getAttribute('target') || '').toLowerCase() === '_blank') return false;
     if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash === window.location.hash) return false;
-    if (url.pathname === '/contact' || url.pathname === '/contact/') return true;
-    return !!link.closest('.mega, .nav-links') || link.classList.contains('brand');
+    return true;
   }
 
   function loadInternalLinkNormally(event) {
