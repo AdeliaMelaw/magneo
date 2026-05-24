@@ -2,7 +2,7 @@
   var FROM = 'Request a free audit';
   var TO = 'Let\u2019s Talk';
   var GUIDE_HREF = '/personal-branding-ultimate-guide-legal-professionals';
-  var GUIDE_LABEL = 'Free Branding Guide';
+  var GUIDE_LABEL = 'Law Firm Growth Guide';
 
   function replaceInTextNode(node) {
     if (!node || node.nodeType !== Node.TEXT_NODE) return;
@@ -39,22 +39,24 @@
     style.id = 'free-branding-guide-nav-style';
     style.textContent = [
       '.nav-links .free-branding-guide-link{',
-      '  min-height:auto;',
-      '  padding:10px 18px;',
-      '  border-radius:10px;',
-      '  background:#fff;',
-      '  color:#111324 !important;',
-      '  font-family:var(--display), Georgia, serif;',
+      '  display:flex;',
+      '  align-items:center;',
+      '  min-height:68px;',
+      '  padding:0;',
+      '  border-radius:0;',
+      '  background:transparent;',
+      '  color:rgba(255,255,255,.72) !important;',
+      '  font-family:var(--body), system-ui, sans-serif;',
       '  font-size:14px;',
-      '  font-weight:700;',
-      '  letter-spacing:.15px;',
-      '  text-transform:uppercase;',
+      '  font-weight:400;',
+      '  letter-spacing:0;',
+      '  text-transform:none;',
       '  line-height:1;',
-      '  box-shadow:0 10px 24px rgba(0,0,0,.18);',
+      '  box-shadow:none;',
       '}',
-      '.nav-links .free-branding-guide-link:hover{background:var(--mg);color:#1d3000 !important}',
+      '.nav-links .free-branding-guide-link:hover{background:transparent;color:white !important}',
       '@media(max-width:1050px){',
-      '  .nav-links .free-branding-guide-link{display:inline-flex;align-self:flex-start;margin:4px 0;padding:12px 16px}',
+      '  .nav-links .free-branding-guide-link{min-height:auto;padding:8px 0;align-self:auto;margin:0}',
       '}'
     ].join('\n');
     document.head.appendChild(style);
@@ -74,8 +76,8 @@
       existing = document.createElement('a');
       existing.className = 'free-branding-guide-link';
       existing.href = GUIDE_HREF;
-      existing.textContent = GUIDE_LABEL;
     }
+    existing.textContent = GUIDE_LABEL;
 
     if (contact) {
       if (existing.nextElementSibling !== contact) navLinks.insertBefore(existing, contact);
