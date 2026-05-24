@@ -8,15 +8,25 @@
     '/industries',
     '/about',
     '/contact',
-    '/personal-branding-ultimate-guide-legal-professionals'
+    '/personal-branding-ultimate-guide-legal-professionals',
+    '/branding-guide-for-lawyers'
   ];
 
   function isInternal(url) {
     return url.origin === window.location.origin && url.pathname !== window.location.pathname;
   }
 
+  function isSamePageAnchor(url) {
+    return url &&
+      url.origin === window.location.origin &&
+      url.pathname === window.location.pathname &&
+      url.search === window.location.search &&
+      !!url.hash;
+  }
+
   function shouldForceNormalLoad(url) {
     if (!url || url.origin !== window.location.origin) return false;
+    if (isSamePageAnchor(url)) return false;
     if (url.pathname === window.location.pathname && url.search === window.location.search && url.hash === window.location.hash) return false;
     if (/\.pdf$/i.test(url.pathname)) return false;
     return routeGroups.some(function (prefix) { return url.pathname.indexOf(prefix) === 0; }) || url.pathname === '/';
@@ -39,6 +49,7 @@
       return;
     }
 
+    if (isSamePageAnchor(url)) return;
     if (!shouldForceNormalLoad(url) && !isInternal(url)) return;
     if (!shouldForceNormalLoad(url)) return;
     event.preventDefault();
@@ -57,7 +68,7 @@
       if (after !== before) {
         try {
           var url = new URL(window.location.href);
-          if (routeGroups.some(function (prefix) { return url.pathname.indexOf(prefix) === 0; })) {
+          if (!isSamePageAnchor(url) && routeGroups.some(function (prefix) { return url.pathname.indexOf(prefix) === 0; })) {
             window.setTimeout(function () { go(url); }, 0);
           }
         } catch (error) {}
