@@ -40,7 +40,7 @@
       '  padding:0;',
       '  border-radius:0;',
       '  background:transparent;',
-      '  color:rgba(255,255,255,.72) !important;',
+      '  color:var(--mg) !important;',
       '  font-family:var(--body), system-ui, sans-serif;',
       '  font-size:14px;',
       '  font-weight:400;',
@@ -49,7 +49,7 @@
       '  line-height:1;',
       '  box-shadow:none;',
       '}',
-      '.nav-links .free-branding-guide-link:hover{background:transparent;color:white !important}',
+      '.nav-links .free-branding-guide-link:hover{background:transparent;color:var(--mg) !important}',
       '@media(max-width:1050px){',
       '  .nav-links .free-branding-guide-link{min-height:auto;padding:8px 0;align-self:auto;margin:0}',
       '}'
