@@ -3,6 +3,7 @@
   var TO = 'Let\u2019s Talk';
   var GUIDE_HREF = '/personal-branding-ultimate-guide-legal-professionals';
   var GUIDE_LABEL = 'Law Firm Growth Guide';
+  var guideScheduled = false;
 
   function replaceInTextNode(node) {
     if (!node || node.nodeType !== Node.TEXT_NODE) return;
@@ -13,12 +14,6 @@
   function replaceCtaText(root) {
     var scope = root && root.nodeType === Node.ELEMENT_NODE ? root : document.body;
     if (!scope) return;
-
-    if (scope.childNodes) {
-      scope.childNodes.forEach(function (child) {
-        if (child.nodeType === Node.TEXT_NODE) replaceInTextNode(child);
-      });
-    }
 
     var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, {
       acceptNode: function (node) {
@@ -62,7 +57,8 @@
     document.head.appendChild(style);
   }
 
-  function ensureGuideLink() {
+  function ensureGuideLinkNow() {
+    guideScheduled = false;
     ensureGuideStyle();
     var navLinks = document.querySelector('.nav-links');
     if (!navLinks) return;
@@ -76,14 +72,23 @@
       existing = document.createElement('a');
       existing.className = 'free-branding-guide-link';
       existing.href = GUIDE_HREF;
+      existing.textContent = GUIDE_LABEL;
+    } else {
+      if (existing.getAttribute('href') !== GUIDE_HREF) existing.setAttribute('href', GUIDE_HREF);
+      if (existing.textContent !== GUIDE_LABEL) existing.textContent = GUIDE_LABEL;
     }
-    existing.textContent = GUIDE_LABEL;
 
-    if (contact) {
-      if (existing.nextElementSibling !== contact) navLinks.insertBefore(existing, contact);
-    } else if (!existing.parentNode) {
+    if (contact && existing.nextElementSibling !== contact) {
+      navLinks.insertBefore(existing, contact);
+    } else if (!contact && !existing.parentNode) {
       navLinks.appendChild(existing);
     }
+  }
+
+  function ensureGuideLink() {
+    if (guideScheduled) return;
+    guideScheduled = true;
+    window.requestAnimationFrame(ensureGuideLinkNow);
   }
 
   function boot() {
@@ -91,20 +96,24 @@
     ensureGuideLink();
     if ('MutationObserver' in window) {
       var observer = new MutationObserver(function (mutations) {
+        var shouldCheckGuide = false;
         mutations.forEach(function (mutation) {
           mutation.addedNodes && mutation.addedNodes.forEach(function (node) {
             replaceCtaText(node);
+            if (node.nodeType === Node.ELEMENT_NODE && (node.matches('.nav-links') || node.querySelector('.nav-links'))) {
+              shouldCheckGuide = true;
+            }
           });
           if (mutation.type === 'characterData') replaceInTextNode(mutation.target);
         });
-        ensureGuideLink();
+        if (shouldCheckGuide || !document.querySelector('.nav-links .free-branding-guide-link')) ensureGuideLink();
       });
       observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
     }
     window.setInterval(function () {
       replaceCtaText(document.body);
-      ensureGuideLink();
-    }, 1000);
+      if (!document.querySelector('.nav-links .free-branding-guide-link')) ensureGuideLink();
+    }, 1500);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
