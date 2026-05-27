@@ -1,6 +1,7 @@
 (function () {
   var FROM = 'Request a free audit';
   var TO = 'Let\u2019s Talk';
+  var CONTACT_FORM_HREF = '/contact/#contact-form';
   var GUIDE_HREF = '/personal-branding-ultimate-guide-legal-professionals';
   var GUIDE_LABEL = 'Law Firm Growth Guide';
   var guideScheduled = false;
@@ -26,6 +27,37 @@
     var nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
     nodes.forEach(replaceInTextNode);
+  }
+
+  function pointLetsTalkToForm(root) {
+    var scope = root && root.nodeType === Node.ELEMENT_NODE ? root : document.body;
+    if (!scope) return;
+    scope.querySelectorAll('a, button').forEach(function (el) {
+      var text = (el.textContent || '').replace(/\s+/g, ' ').trim().toLowerCase();
+      if (text !== 'let\u2019s talk' && text !== "let's talk") return;
+      if (el.tagName === 'A') {
+        el.setAttribute('href', CONTACT_FORM_HREF);
+      } else {
+        el.addEventListener('click', function () { window.location.href = CONTACT_FORM_HREF; }, { once: true });
+      }
+    });
+  }
+
+  function ensureContactFormAnchor() {
+    if (window.location.pathname !== '/contact/' && window.location.pathname !== '/contact') return;
+    var form = document.querySelector('.hbspt-form, .hs-form-frame, form.form, form');
+    if (!form) return;
+    var section = form.closest('section') || form.parentElement;
+    if (!section) return;
+    section.id = 'contact-form';
+  }
+
+  function scrollToContactFormHash() {
+    if (window.location.hash !== '#contact-form') return;
+    ensureContactFormAnchor();
+    var target = document.getElementById('contact-form');
+    if (!target) return;
+    window.setTimeout(function () { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 250);
   }
 
   function ensureGuideStyle() {
@@ -91,27 +123,37 @@
     window.requestAnimationFrame(ensureGuideLinkNow);
   }
 
+  function refresh(root) {
+    replaceCtaText(root || document.body);
+    pointLetsTalkToForm(root || document.body);
+    ensureContactFormAnchor();
+    scrollToContactFormHash();
+  }
+
   function boot() {
-    replaceCtaText(document.body);
+    refresh(document.body);
     ensureGuideLink();
     if ('MutationObserver' in window) {
       var observer = new MutationObserver(function (mutations) {
         var shouldCheckGuide = false;
         mutations.forEach(function (mutation) {
           mutation.addedNodes && mutation.addedNodes.forEach(function (node) {
-            replaceCtaText(node);
+            refresh(node);
             if (node.nodeType === Node.ELEMENT_NODE && (node.matches('.nav-links') || node.querySelector('.nav-links'))) {
               shouldCheckGuide = true;
             }
           });
           if (mutation.type === 'characterData') replaceInTextNode(mutation.target);
         });
+        pointLetsTalkToForm(document.body);
+        ensureContactFormAnchor();
         if (shouldCheckGuide || !document.querySelector('.nav-links .free-branding-guide-link')) ensureGuideLink();
       });
       observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
     }
+    window.addEventListener('hashchange', scrollToContactFormHash);
     window.setInterval(function () {
-      replaceCtaText(document.body);
+      refresh(document.body);
       if (!document.querySelector('.nav-links .free-branding-guide-link')) ensureGuideLink();
     }, 1500);
   }
