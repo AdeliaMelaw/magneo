@@ -1,10 +1,6 @@
 {
   "routes": [
     {
-      "src": "/downloads/law-firms-market-smarter-grow-faster\\.png",
-      "dest": "https://blog.magneo.ca/wp-content/uploads/2026/05/magneo-law-firms-market-smarter-grow-faster.png"
-    },
-    {
       "src": "/downloads/personal-branding-guide-legal-professionals\\.pdf",
       "dest": "https://blog.magneo.ca/wp-content/uploads/2026/05/magneo-personal-branding-guide-legal-professionals.pdf"
     },
