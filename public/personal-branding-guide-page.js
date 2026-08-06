@@ -73,7 +73,7 @@
             <div class="label">The must-read guide</div>\
             <h1>Turn your name into your most trusted <em>legal brand.</em></h1>\
             <p class="guide-intro">Personal Branding: The Ultimate Guide for Legal Professionals helps lawyers, consultants, and legal experts build authority, trust, and qualified demand without sounding like every other firm online.</p>\
-            <div class="guide-actions"><a class="btn" href="#guide-form">Download now</a><a class="btn outline" href="#inside-guide">What is inside</a></div>\
+            <div class="guide-actions"><a class="btn" href="' + PDF_URL + '" target="_blank" rel="noopener">Download now</a><a class="btn outline" href="#inside-guide">What is inside</a></div>\
             <div class="guide-points">\
               <span>Authority positioning</span>\
               <span>LinkedIn growth</span>\
