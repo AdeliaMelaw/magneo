@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /test
 
 Sitemap: https://magneo.ca/sitemap.xml
 Sitemap: https://magneo.ca/ai-sitemap.xml

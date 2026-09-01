@@ -26,6 +26,12 @@ export default function TestLawyer(){
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
     canonical.href = 'https://magneo.ca/test';
+    const robots = document.createElement('meta');
+    robots.name = 'robots';
+    robots.content = 'noindex, nofollow, noarchive';
+    robots.dataset.testLawyer = 'true';
+    document.head.appendChild(robots);
+    return () => robots.remove();
   }, []);
 
   return <div className="avalon-law">
