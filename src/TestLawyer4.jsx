@@ -17,6 +17,7 @@ function Arrow(){ return <span aria-hidden="true">↗</span>; }
 
 export default function TestLawyer4(){
   const [sent, setSent] = useState(false);
+  const [modelPaused, setModelPaused] = useState(false);
   useEffect(() => {
     document.title = 'Northline Brain Injury Law — Fictional PI Concept';
     let description = document.querySelector('meta[name="description"]');
@@ -47,10 +48,26 @@ export default function TestLawyer4(){
           <p>When the injury is complex and the future is uncertain, your legal team must see the whole person—not only the diagnosis.</p>
           <div className="nl4-actions"><a href="#nl4-contact">Tell us what changed <Arrow/></a><a href="tel:+14165550186">Call (416) 555-0186</a></div>
         </div>
-        <div className="nl4-visual" aria-label="Stylized 3D portrait representing serious head pain">
+        <div className={`nl4-visual${modelPaused ? ' is-paused' : ''}`} aria-label="Animated head-only 3D portrait representing serious head pain">
           <div className="nl4-halo"><span/><span/><span/></div>
-          <img src="/brain-injury-wireframe-hero.png" alt="Fictional 3D figure holding both sides of his head"/>
-          <div className="nl4-scan"><span>NEURAL IMPACT</span><b>VISIBLE / INVISIBLE</b></div>
+          <div className="nl4-model-stage" onPointerMove={(event)=>{
+            const box = event.currentTarget.getBoundingClientRect();
+            event.currentTarget.style.setProperty('--model-x', `${((event.clientX - box.left) / box.width - .5) * 10}deg`);
+            event.currentTarget.style.setProperty('--model-y', `${((event.clientY - box.top) / box.height - .5) * -8}deg`);
+          }} onPointerLeave={(event)=>{
+            event.currentTarget.style.setProperty('--model-x', '0deg');
+            event.currentTarget.style.setProperty('--model-y', '0deg');
+          }}>
+            <div className="nl4-model-orbit">
+              <div className="nl4-model-tilt">
+                <span className="nl4-model-shadow"/>
+                <img src="/brain-injury-head-3d-v2.png" alt="Fictional 3D head with both hands touching the temples"/>
+                <span className="nl4-model-sweep"/>
+              </div>
+            </div>
+          </div>
+          <div className="nl4-scan"><span>3D HEAD STUDY · LIVE</span><b>NEURAL IMPACT / VISIBLE + INVISIBLE</b></div>
+          <button className="nl4-motion-toggle" type="button" onClick={()=>setModelPaused((paused)=>!paused)} aria-pressed={modelPaused}>{modelPaused ? 'Play motion' : 'Pause motion'}</button>
           <div className="nl4-coord">43.6532° N<br/>79.3832° W</div>
         </div>
         <div className="nl4-hero-side">
