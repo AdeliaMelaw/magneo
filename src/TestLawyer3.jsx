@@ -12,6 +12,7 @@ function Arrow(){ return <span aria-hidden="true">↗</span>; }
 export default function TestLawyer3(){
   const [sequence, setSequence] = useState(0);
   const [sent, setSent] = useState(false);
+  const [heroSent, setHeroSent] = useState(false);
 
   useEffect(() => {
     document.title = 'Ashcroft Rowe Litigation — 3D Legal Concept';
@@ -46,6 +47,17 @@ export default function TestLawyer3(){
           <div className="lt3-stamp" aria-label="Solved">SOLVED</div>
           <div className="lt3-impact"/>
           <button className="lt3-replay" type="button" onClick={()=>setSequence((n)=>n+1)}>Replay opening ↻</button>
+          <form className="lt3-hero-form" onSubmit={(e)=>{e.preventDefault();setHeroSent(true)}}>
+            {heroSent ? <div className="lt3-hero-success" role="status"><span>INTAKE / RECEIVED</span><b>Thank you.</b><p>This design demonstration does not transmit or retain information.</p><button type="button" onClick={()=>setHeroSent(false)}>Return to form</button></div> : <>
+              <div className="lt3-form-index"><span>Private intake</span><b>01 / 04</b></div>
+              <h2>Start with the<br/><em>decisive fact.</em></h2>
+              <div className="lt3-hero-fields"><label><span>Your name</span><input required autoComplete="name"/></label><label><span>Email or phone</span><input required autoComplete="email"/></label></div>
+              <label><span>What kind of matter?</span><select defaultValue="" required><option value="" disabled>Select one</option><option>Commercial dispute</option><option>Emergency relief</option><option>Regulatory matter</option><option>Appeal or judicial review</option><option>Other complex matter</option></select></label>
+              <label><span>One-sentence summary</span><textarea required rows="2"/></label>
+              <button type="submit">Request a confidential call <Arrow/></button>
+              <small>Demo only · No information is sent or stored.</small>
+            </>}
+          </form>
         </div>
         <div className="lt3-hero-foot">
           <p>Disputes are rarely simple. Strategy should be. We find the decisive fact, frame the strongest argument, and move with purpose.</p>
