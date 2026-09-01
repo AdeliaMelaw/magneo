@@ -3,6 +3,7 @@ Allow: /
 Disallow: /test
 Disallow: /test2
 Disallow: /test3
+Disallow: /test4
 
 Sitemap: https://magneo.ca/sitemap.xml
 Sitemap: https://magneo.ca/ai-sitemap.xml
