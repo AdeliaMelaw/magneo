@@ -31,7 +31,7 @@ export default function TestLawyer3(){
     <header className="lt3-nav">
       <a className="lt3-logo" href="#lt3-top"><b>A/R</b><span>ASHCROFT ROWE<small>TRIAL & APPELLATE COUNSEL</small></span></a>
       <nav aria-label="Primary navigation"><a href="#lt3-capabilities">Capabilities</a><a href="#lt3-method">Method</a><a href="#lt3-counsel">Counsel</a><a href="#lt3-contact">Contact</a></nav>
-      <a className="lt3-phone" href="tel:+14165550191">Toronto · (416) 555-0191</a>
+      <a className="lt3-phone" href="tel:+14378731155">Toronto · 437 873 1155</a>
       <a className="lt3-btn lt3-btn-dark" href="#lt3-contact">Discuss a matter <Arrow/></a>
     </header>
 
@@ -73,7 +73,7 @@ export default function TestLawyer3(){
       </section>
 
       <section className="lt3-contact" id="lt3-contact">
-        <div><span>Confidential case conference</span><h2>What is the<br/>matter really<br/>about?</h2><p>Send a short outline. We will identify conflicts, urgency, and the right next conversation.</p><a href="tel:+14165550191">(416) 555-0191</a></div>
+        <div><span>Confidential case conference</span><h2>What is the<br/>matter really<br/>about?</h2><p>Send a short outline. We will identify conflicts, urgency, and the right next conversation.</p><a href="tel:+14378731155">437 873 1155</a></div>
         <form onSubmit={(e)=>{e.preventDefault();setSent(true)}}>
           {sent ? <div className="lt3-success" role="status"><b>FILE RECEIVED</b><h3>Demo only.</h3><p>This fictional concept does not transmit or retain information. A live firm would route the inquiry securely after a conflicts check.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <>
             <label><span>Your name</span><input required autoComplete="name"/></label><label><span>Email or phone</span><input required/></label><label><span>Organization</span><input/></label><label><span>Brief description of the dispute</span><textarea required rows="5"/></label><label className="lt3-check"><input type="checkbox" required/><span>I understand that this message does not create a lawyer-client relationship.</span></label><button type="submit">Request a confidential call <Arrow/></button><small>Demo only · Information is not sent or stored.</small>
@@ -82,6 +82,6 @@ export default function TestLawyer3(){
       </section>
     </main>
     <footer className="lt3-footer"><div className="lt3-logo"><b>A/R</b><span>ASHCROFT ROWE<small>TRIAL & APPELLATE COUNSEL</small></span></div><p>Fictional litigation-firm concept created for Magneo. Names, credentials, contact details, and services are illustrative only.</p><a href="#lt3-top">Back to top ↑</a></footer>
-    <div className="lt3-mobile"><a href="tel:+14165550191">Call counsel</a><a href="#lt3-contact">Discuss a matter</a></div>
+    <div className="lt3-mobile"><a href="tel:+14378731155">Call counsel</a><a href="#lt3-contact">Discuss a matter</a></div>
   </div>;
 }

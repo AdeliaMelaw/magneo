@@ -40,7 +40,7 @@ export default function TestLawyer(){
       <nav aria-label="Primary navigation">
         <a href="#cases">Cases we handle</a><a href="#approach">Our approach</a><a href="#lawyer">Your lawyer</a><a href="#faq">FAQ</a>
       </nav>
-      <div className="al-nav-actions"><a className="al-phone" href="tel:+14165550148">(416) 555-0148</a><a className="al-btn al-btn-small" href="#consultation">Free consultation <Arrow/></a></div>
+      <div className="al-nav-actions"><a className="al-phone" href="tel:+14378731155">437 873 1155</a><a className="al-btn al-btn-small" href="#consultation">Free consultation <Arrow/></a></div>
     </header>
 
     <main id="top" className="al-main">
@@ -49,7 +49,7 @@ export default function TestLawyer(){
           <div className="al-eyebrow"><span/> Toronto personal injury counsel · Available 24/7</div>
           <h1>Your recovery<br/>deserves <em>leverage.</em></h1>
           <p className="al-lead">Serious injuries change everything. We bring calm, clarity, and determined advocacy to your claim—starting with one confidential conversation.</p>
-          <div className="al-actions"><a className="al-btn" href="#consultation">Tell us what happened <Arrow/></a><a className="al-text-link" href="tel:+14165550148">Call now: (416) 555-0148</a></div>
+          <div className="al-actions"><a className="al-btn" href="#consultation">Tell us what happened <Arrow/></a><a className="al-text-link" href="tel:+14378731155">Call now: 437 873 1155</a></div>
           <div className="al-assurance"><span><b>No fee</b> unless we recover*</span><span><b>Free</b> case assessment</span><span><b>Direct</b> lawyer access</span></div>
         </div>
         <div className="al-hero-media">
@@ -94,7 +94,7 @@ export default function TestLawyer(){
       </section>
 
       <section className="al-consult" id="consultation">
-        <div className="al-consult-copy"><span className="al-kicker">Free confidential consultation</span><h2>Tell us what<br/>happened.</h2><p>No pressure. No legal jargon. Just a focused conversation about what comes next.</p><a href="tel:+14165550148">Prefer to speak now?<br/><strong>(416) 555-0148</strong></a></div>
+        <div className="al-consult-copy"><span className="al-kicker">Free confidential consultation</span><h2>Tell us what<br/>happened.</h2><p>No pressure. No legal jargon. Just a focused conversation about what comes next.</p><a href="tel:+14378731155">Prefer to speak now?<br/><strong>437 873 1155</strong></a></div>
         <form className="al-form" onSubmit={(e)=>{e.preventDefault(); setSent(true)}}>
           {sent ? <div className="al-success" role="status"><span>✓</span><h3>Your demo request is ready.</h3><p>This fictional template does not transmit information. On a live firm site, the intake would be routed securely and a response expectation shown here.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <>
             <div className="al-form-grid"><label>Full name<input required placeholder="Your name" autoComplete="name"/></label><label>Phone or email<input required placeholder="How should we reach you?"/></label></div>
@@ -107,6 +107,6 @@ export default function TestLawyer(){
     </main>
 
     <footer className="al-footer"><div className="al-brand"><i>AV</i><span>Arden Vale<small>Injury Law</small></span></div><p>Fictional law firm concept created as a conversion-focused design demonstration for Magneo. Names, credentials, phone number, and services are illustrative only.</p><div><a href="#top">Back to top ↑</a><span>Toronto, Ontario</span></div></footer>
-    <div className="al-mobile-bar"><a href="tel:+14165550148">Call now</a><a href="#consultation">Free consultation</a></div>
+    <div className="al-mobile-bar"><a href="tel:+14378731155">Call now</a><a href="#consultation">Free consultation</a></div>
   </div>;
 }

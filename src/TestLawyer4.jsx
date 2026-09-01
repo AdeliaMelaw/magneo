@@ -36,7 +36,7 @@ export default function TestLawyer4(){
     <header className="nl4-nav">
       <a href="#nl4-top" className="nl4-logo"><i>N</i><span>NORTHLINE<small>BRAIN INJURY LAW</small></span></a>
       <nav aria-label="Primary navigation"><a href="#nl4-injury">The injury</a><a href="#nl4-proof">Building proof</a><a href="#nl4-process">Your case</a><a href="#nl4-faq">FAQ</a></nav>
-      <a href="tel:+14165550186" className="nl4-number"><small>24/7 confidential line</small>(416) 555-0186</a>
+      <a href="tel:+14378731155" className="nl4-number"><small>24/7 confidential line</small>437 873 1155</a>
       <a href="#nl4-contact" className="nl4-nav-cta">Free consultation <Arrow/></a>
     </header>
 
@@ -46,7 +46,7 @@ export default function TestLawyer4(){
           <span className="nl4-eyebrow">Serious brain injury counsel · Toronto</span>
           <h1>A brain injury<br/>changes<br/><em>the map.</em></h1>
           <p>When the injury is complex and the future is uncertain, your legal team must see the whole person—not only the diagnosis.</p>
-          <div className="nl4-actions"><a href="#nl4-contact">Tell us what changed <Arrow/></a><a href="tel:+14165550186">Call (416) 555-0186</a></div>
+          <div className="nl4-actions"><a href="#nl4-contact">Tell us what changed <Arrow/></a><a href="tel:+14378731155">Call 437 873 1155</a></div>
         </div>
         <div className={`nl4-visual${modelPaused ? ' is-paused' : ''}`} aria-label="Animated head-only 3D portrait representing serious head pain">
           <div className="nl4-halo"><span/><span/><span/></div>
@@ -100,11 +100,11 @@ export default function TestLawyer4(){
       </section>
 
       <section className="nl4-contact" id="nl4-contact">
-        <div className="nl4-contact-copy"><span>Free confidential consultation</span><h2>Tell us what<br/>changed.</h2><p>You do not need every document or answer. A few facts are enough to begin the conversation.</p><a href="tel:+14165550186">24/7 · (416) 555-0186</a></div>
+        <div className="nl4-contact-copy"><span>Free confidential consultation</span><h2>Tell us what<br/>changed.</h2><p>You do not need every document or answer. A few facts are enough to begin the conversation.</p><a href="tel:+14378731155">24/7 · 437 873 1155</a></div>
         <form onSubmit={(e)=>{e.preventDefault();setSent(true)}}>{sent ? <div className="nl4-success" role="status"><b>✓</b><h3>Demo request ready.</h3><p>This fictional concept does not send or store information. A live firm would use a secure intake and conflicts-review process.</p><button type="button" onClick={()=>setSent(false)}>Back to form</button></div> : <><label><span>Full name</span><input required autoComplete="name"/></label><label><span>Phone or email</span><input required/></label><label><span>What changed after the injury?</span><textarea required rows="5"/></label><label className="nl4-check"><input type="checkbox" required/><span>I understand this form does not create a lawyer-client relationship.</span></label><button type="submit">Request a consultation <Arrow/></button><small>Demo only · Information is not sent or stored.</small></>}</form>
       </section>
     </main>
     <footer className="nl4-footer"><div className="nl4-logo"><i>N</i><span>NORTHLINE<small>BRAIN INJURY LAW</small></span></div><p>Fictional law-firm concept and illustrative 3D imagery created for Magneo. Names, services, credentials, and contact information are not real.</p><a href="#nl4-top">Back to top ↑</a></footer>
-    <div className="nl4-mobile"><a href="tel:+14165550186">Call 24/7</a><a href="#nl4-contact">Free consultation</a></div>
+    <div className="nl4-mobile"><a href="tel:+14378731155">Call 24/7</a><a href="#nl4-contact">Free consultation</a></div>
   </div>;
 }

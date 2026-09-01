@@ -36,7 +36,7 @@ export default function TestLawyer2(){
     <header className="av2-nav">
       <a href="#av2-top" className="av2-logo" aria-label="Arden Vale Injury Law home"><b>AV</b><span>ARDEN VALE<small>INJURY LAW</small></span></a>
       <nav aria-label="Primary navigation"><a href="#av2-cases">Cases</a><a href="#av2-process">Process</a><a href="#av2-lawyer">Lawyer</a><a href="#av2-faq">FAQ</a></nav>
-      <a className="av2-call" href="tel:+14165550148"><span>24/7 line</span><b>(416) 555-0148</b></a>
+      <a className="av2-call" href="tel:+14378731155"><span>24/7 line</span><b>437 873 1155</b></a>
       <a className="av2-nav-cta" href="#av2-consult">Free consultation <Mark/></a>
     </header>
 
@@ -87,7 +87,7 @@ export default function TestLawyer2(){
       </section>
 
       <section className="av2-consult" id="av2-consult">
-        <div className="av2-consult-title"><span className="av2-label">05 / Free confidential consultation</span><h2>Let’s start<br/>with the facts.</h2><p>No pressure. No legal jargon. Just a focused conversation about what comes next.</p><a href="tel:+14165550148">Call now · (416) 555-0148</a></div>
+        <div className="av2-consult-title"><span className="av2-label">05 / Free confidential consultation</span><h2>Let’s start<br/>with the facts.</h2><p>No pressure. No legal jargon. Just a focused conversation about what comes next.</p><a href="tel:+14378731155">Call now · 437 873 1155</a></div>
         <form onSubmit={(e)=>{e.preventDefault();setSent(true)}}>
           {sent ? <div className="av2-success" role="status"><b>✓</b><h3>Demo request ready.</h3><p>This fictional concept does not transmit information. A real intake would be securely routed to the legal team.</p><button type="button" onClick={()=>setSent(false)}>Back to form</button></div> : <>
             <label><span>01 · Full name</span><input required placeholder="Your name" autoComplete="name"/></label>
@@ -101,6 +101,6 @@ export default function TestLawyer2(){
     </main>
 
     <footer className="av2-footer"><div className="av2-logo"><b>AV</b><span>ARDEN VALE<small>INJURY LAW</small></span></div><p>Fictional law-firm concept created as a conversion-focused design demonstration for Magneo. Names, credentials, number, and services are illustrative only.</p><a href="#av2-top">Back to top ↑</a></footer>
-    <div className="av2-mobile"><a href="tel:+14165550148">Call 24/7</a><a href="#av2-consult">Free case check</a></div>
+    <div className="av2-mobile"><a href="tel:+14378731155">Call 24/7</a><a href="#av2-consult">Free case check</a></div>
   </div>;
 }
