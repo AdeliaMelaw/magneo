@@ -29,7 +29,14 @@ const descriptions = {
   '/services/ai-ugc-ai-video-production/': 'AI UGC and AI video production for regulated brands, including scripts, short-form concepts, and brand-safe video workflows.',
   '/services/ai-web-design-conversion/': 'AI web design and conversion support for regulated businesses, including landing pages, CRO messaging, and buyer-intent testing ideas.',
   '/services/ai-content-marketing/': 'AI content marketing for regulated industries, including editorial calendars, topical maps, repurposing, and expert review workflows.',
-  '/services/compliance-aware-ai-workflows/': 'Compliance-aware AI workflows for regulated marketing, with human review, claim checks, disclaimers, approvals, and brand controls.'
+  '/services/compliance-aware-ai-workflows/': 'Compliance-aware AI workflows for regulated marketing, with human review, claim checks, disclaimers, approvals, and brand controls.',
+  '/portfolio/legal-websites/': 'Explore six original Magneo website concepts for personal injury, brain injury, and litigation law firms.',
+  '/portfolio/legal-websites/personal-injury-classic/': 'A timeless, conversion-focused personal injury law firm website concept by Magneo.',
+  '/portfolio/legal-websites/personal-injury-bold/': 'A bold, expressive personal injury law firm website concept designed to make the advocate memorable.',
+  '/portfolio/legal-websites/litigation-editorial/': 'An editorial litigation law firm website concept combining monochrome typography, motion, and decisive positioning.',
+  '/portfolio/legal-websites/brain-injury-3d/': 'An immersive 3D brain injury law firm website concept built around specialist expertise and human dignity.',
+  '/portfolio/legal-websites/personal-injury-cinematic/': 'A cinematic personal injury law firm website concept that turns recovery and evidence into a human story.',
+  '/portfolio/legal-websites/personal-injury-family-focused/': 'A warm, family-focused personal injury law firm website concept designed to build reassurance and trust.'
 };
 
 const titleOverrides = {
@@ -47,7 +54,24 @@ const titleOverrides = {
   '/services/ai-ugc-ai-video-production/': 'AI UGC & AI Video Production | Magneo',
   '/services/ai-web-design-conversion/': 'AI Web Design & Conversion | Magneo',
   '/services/ai-content-marketing/': 'AI Content Marketing | Magneo',
-  '/services/compliance-aware-ai-workflows/': 'Compliance-Aware AI Workflows | Magneo'
+  '/services/compliance-aware-ai-workflows/': 'Compliance-Aware AI Workflows | Magneo',
+  '/portfolio/legal-websites/': 'Legal Website Design Portfolio | Magneo',
+  '/portfolio/legal-websites/personal-injury-classic/': 'Classic Personal Injury Website Concept | Magneo',
+  '/portfolio/legal-websites/personal-injury-bold/': 'Bold Personal Injury Website Concept | Magneo',
+  '/portfolio/legal-websites/litigation-editorial/': 'Editorial Litigation Website Concept | Magneo',
+  '/portfolio/legal-websites/brain-injury-3d/': '3D Brain Injury Website Concept | Magneo',
+  '/portfolio/legal-websites/personal-injury-cinematic/': 'Cinematic Personal Injury Website Concept | Magneo',
+  '/portfolio/legal-websites/personal-injury-family-focused/': 'Family-Focused Injury Website Concept | Magneo'
+};
+
+const imageOverrides = {
+  '/portfolio/legal-websites/': '/legal-websites-og.png',
+  '/portfolio/legal-websites/personal-injury-classic/': '/pi-lawyer-hero-generated.png',
+  '/portfolio/legal-websites/personal-injury-bold/': '/pi-lawyer-hero-generated.png',
+  '/portfolio/legal-websites/litigation-editorial/': '/pi-lawyer-hero-generated.png',
+  '/portfolio/legal-websites/brain-injury-3d/': '/brain-injury-head-3d-v2.png',
+  '/portfolio/legal-websites/personal-injury-cinematic/': '/test5-cinematic-hero.png',
+  '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png'
 };
 
 function escapeHtml(value) {
@@ -79,7 +103,7 @@ function descriptionFor(pathname) {
   return `${label} from Magneo, a digital marketing agency for regulated industries in Canada and the USA.`;
 }
 
-function injectSeo(html, { title, description, canonical }) {
+function injectSeo(html, { title, description, canonical, image }) {
   const clean = html
     .replace(/\s*<title>[\s\S]*?<\/title>/i, '')
     .replace(/\s*<meta\s+name=["']description["'][^>]*>/i, '')
@@ -95,7 +119,8 @@ function injectSeo(html, { title, description, canonical }) {
     `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
     '<meta property="og:type" content="website" />',
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
-    `<meta name="twitter:description" content="${escapeHtml(description)}" />`
+    `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
+    ...(image ? [`<meta property="og:image" content="${escapeHtml(image)}" />`, `<meta name="twitter:image" content="${escapeHtml(image)}" />`] : [])
   ].map((tag) => `    ${tag}`).join('\n');
   return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
 }
@@ -107,7 +132,8 @@ const paths = [...new Set([...sitemapPaths, ...EXTRA_PATHS.map(normalizePath)])]
 
 for (const pathname of paths) {
   const canonical = `${BASE_URL}${pathname === '/' ? '/' : pathname}`;
-  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical });
+  const image = imageOverrides[pathname] ? `${BASE_URL}${imageOverrides[pathname]}` : undefined;
+  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image });
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);

@@ -20,11 +20,11 @@ export default function TestLawyer6(){
     description.content = 'A fictional, family-focused personal-injury law-firm landing-page concept created by Magneo.';
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/test6';
-    const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.testLawyer6 = 'true';
-    document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-family-focused/';
+    const isPrivatePreview = window.location.pathname.startsWith('/test');
+    const robots = isPrivatePreview ? document.createElement('meta') : null;
+    if (robots) { robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.testLawyer6 = 'true'; document.head.appendChild(robots); }
+    return () => robots?.remove();
   }, []);
 
   return <div className="hl6">

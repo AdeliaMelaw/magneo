@@ -25,11 +25,11 @@ export default function TestLawyer2(){
     description.content = 'A fictional, modern personal injury lawyer landing page concept created by Magneo.';
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/test2';
-    const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.testLawyer2 = 'true';
-    document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-bold/';
+    const isPrivatePreview = window.location.pathname.startsWith('/test');
+    const robots = isPrivatePreview ? document.createElement('meta') : null;
+    if (robots) { robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.testLawyer2 = 'true'; document.head.appendChild(robots); }
+    return () => robots?.remove();
   }, []);
 
   return <div className="av2">

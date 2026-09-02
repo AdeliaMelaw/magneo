@@ -25,13 +25,11 @@ export default function TestLawyer(){
     meta.content = description;
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/test';
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    robots.dataset.testLawyer = 'true';
-    document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-classic/';
+    const isPrivatePreview = window.location.pathname.startsWith('/test');
+    const robots = isPrivatePreview ? document.createElement('meta') : null;
+    if (robots) { robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.testLawyer = 'true'; document.head.appendChild(robots); }
+    return () => robots?.remove();
   }, []);
 
   return <div className="avalon-law">
