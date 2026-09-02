@@ -30,6 +30,7 @@ const descriptions = {
   '/services/ai-web-design-conversion/': 'AI web design and conversion support for regulated businesses, including landing pages, CRO messaging, and buyer-intent testing ideas.',
   '/services/ai-content-marketing/': 'AI content marketing for regulated industries, including editorial calendars, topical maps, repurposing, and expert review workflows.',
   '/services/compliance-aware-ai-workflows/': 'Compliance-aware AI workflows for regulated marketing, with human review, claim checks, disclaimers, approvals, and brand controls.',
+  '/portfolio/': 'Explore Magneo portfolio work and original website concepts for legal and other regulated industries.',
   '/portfolio/legal-websites/': 'Explore six original Magneo website concepts for personal injury, brain injury, and litigation law firms.',
   '/portfolio/legal-websites/personal-injury-classic/': 'A timeless, conversion-focused personal injury law firm website concept by Magneo.',
   '/portfolio/legal-websites/personal-injury-bold/': 'A bold, expressive personal injury law firm website concept designed to make the advocate memorable.',
@@ -55,6 +56,7 @@ const titleOverrides = {
   '/services/ai-web-design-conversion/': 'AI Web Design & Conversion | Magneo',
   '/services/ai-content-marketing/': 'AI Content Marketing | Magneo',
   '/services/compliance-aware-ai-workflows/': 'Compliance-Aware AI Workflows | Magneo',
+  '/portfolio/': 'Portfolio | Magneo — Work for Regulated Industries',
   '/portfolio/legal-websites/': 'Legal Website Design Portfolio | Magneo',
   '/portfolio/legal-websites/personal-injury-classic/': 'Classic Personal Injury Website Concept | Magneo',
   '/portfolio/legal-websites/personal-injury-bold/': 'Bold Personal Injury Website Concept | Magneo',
@@ -65,6 +67,7 @@ const titleOverrides = {
 };
 
 const imageOverrides = {
+  '/portfolio/': '/portfolio-og.png',
   '/portfolio/legal-websites/': '/legal-websites-og.png',
   '/portfolio/legal-websites/personal-injury-classic/': '/pi-lawyer-hero-generated.png',
   '/portfolio/legal-websites/personal-injury-bold/': '/pi-lawyer-hero-generated.png',
