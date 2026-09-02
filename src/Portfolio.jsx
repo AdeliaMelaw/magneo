@@ -12,10 +12,10 @@ const legalPreviews = [
 
 export default function Portfolio(){
   useEffect(()=>{
-    document.title='Portfolio | Magneo — Work for Regulated Industries';
+    document.title='Portfolio | Magneo — Web, Social & AI Marketing';
     let description=document.querySelector('meta[name="description"]');
     if(!description){description=document.createElement('meta');description.name='description';document.head.appendChild(description);}
-    description.content='Explore Magneo portfolio work and original website concepts for legal and other regulated industries.';
+    description.content='Explore Magneo work across website design, social media marketing, and AI-powered digital marketing for regulated industries.';
     let canonical=document.querySelector('link[rel="canonical"]');
     if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical);}
     canonical.href='https://magneo.ca/portfolio/';
@@ -24,32 +24,52 @@ export default function Portfolio(){
   return <div className="pf-main">
     <section className="pf-hero">
       <div className="container pf-hero-inner">
-        <div className="pf-kicker"><span>Selected work · Magneo</span><span>Toronto / Canada + USA</span></div>
-        <h1>Work built to<br/>earn <em>trust.</em></h1>
-        <div className="pf-hero-foot"><p>Strategy, identity, websites, and growth systems for businesses where credibility is part of the product.</p><a href="#featured-work">View selected work <span>↓</span></a></div>
+        <div className="pf-kicker"><span>Magneo portfolio · Selected work</span><span>Three connected disciplines</span></div>
+        <h1>Three disciplines.<br/><em>One growth system.</em></h1>
+        <div className="pf-hero-foot"><p>Website design, social media, and AI-powered marketing—built together for businesses whose reputation has to perform before the first conversation begins.</p><a href="#disciplines">Explore the portfolio <span>↓</span></a></div>
       </div>
-      <div className="pf-orbit" aria-hidden="true"><i/><i/><i/></div>
+      <div className="pf-hero-code" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
     </section>
 
-    <section className="pf-index"><div className="container"><div><b>01</b><span>Live collection</span></div><div><b>06</b><span>Original legal concepts</span></div><div><b>04</b><span>Regulated sectors</span></div><div><b>01</b><span>Standard: earn trust</span></div></div></section>
+    <section className="pf-index"><div className="container"><a href="#web-design"><b>01</b><span>Website design</span></a><a href="#social-media"><b>02</b><span>Social media marketing</span></a><a href="#ai-marketing"><b>03</b><span>AI-powered marketing</span></a></div></section>
 
-    <section className="pf-intro"><div className="container pf-intro-grid"><span>Our portfolio</span><h2>Different industries.<br/>One difficult brief.</h2><p>Make a complex, high-stakes service feel clear enough to understand, credible enough to believe, and human enough to choose.</p></div></section>
+    <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
 
-    <section className="pf-featured" id="featured-work">
+    <section className="pf-discipline pf-web" id="web-design">
       <div className="container">
-        <div className="pf-section-head"><div><span>Featured collection · 01</span><h2>Legal websites</h2></div><p>Six fictional law-firm directions exploring authority, empathy, specialist expertise, motion, and conversion.</p></div>
-        <Link className="pf-showcase" to="/portfolio/legal-websites/" aria-label="Explore the legal website design collection">
+        <div className="pf-discipline-head"><div><span>01 / Website design</span><h2>Turn expertise into<br/><em>an experience.</em></h2></div><div><p>Distinctive, conversion-focused websites for regulated businesses—where clarity, credibility, and visual memory all matter.</p><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website design ↗</Link></div></div>
+        <Link className="pf-web-showcase" to="/portfolio/legal-websites/" aria-label="Explore six legal website concepts">
           <div className="pf-preview-grid">{legalPreviews.map(([src,style],index)=><div className={`pf-preview ${style}`} key={`${style}-${index}`}><img src={src} alt=""/><span>{String(index+1).padStart(2,'0')}</span></div>)}</div>
-          <div className="pf-showcase-bar"><div><span>Law firm website design</span><b>Six ways to make legal expertise unforgettable.</b></div><i>↗</i></div>
+          <div className="pf-showcase-bar"><div><span>Featured collection · Legal websites</span><b>Six ways to make legal expertise unforgettable.</b></div><i>↗</i></div>
         </Link>
-        <div className="pf-featured-meta"><span>Personal injury</span><span>Litigation</span><span>Serious injury</span><span>Strategy + UX + Art direction</span><Link to="/portfolio/legal-websites/">Explore all six concepts ↗</Link></div>
+        <div className="pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span><Link to="/portfolio/legal-websites/">View the complete collection ↗</Link></div>
       </div>
     </section>
 
-    <section className="pf-principles"><div className="container"><div className="pf-principles-title"><span>The work behind the work</span><h2>Designed to perform<br/>under scrutiny.</h2></div><div className="pf-principles-grid"><article><b>01 / Position</b><h3>Look unmistakably like yourself.</h3><p>We start with the audience, competitive landscape, and point of view—not a fashionable template.</p></article><article><b>02 / Explain</b><h3>Make complexity feel navigable.</h3><p>Structure, language, and interaction turn expertise into a decision people can confidently make.</p></article><article><b>03 / Convert</b><h3>Give trust somewhere to go.</h3><p>Every journey ends in a clear, low-friction next step built around how real buyers behave.</p></article></div></div></section>
+    <section className="pf-discipline pf-social" id="social-media">
+      <div className="container pf-social-grid">
+        <div className="pf-social-copy"><span>02 / Social media marketing</span><h2>Build authority<br/>before the <em>click.</em></h2><p>Content systems that turn specialist knowledge into recognizable points of view—designed for consistency, credibility, and sustained attention.</p><div className="pf-capabilities"><span>Strategy</span><span>LinkedIn</span><span>Short-form video</span><span>Founder brands</span></div><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Explore social media marketing ↗</Link></div>
+        <div className="pf-social-board" aria-label="Social content system concept">
+          <article className="pf-post pf-post-one"><small>Authority series / 01</small><b>What your audience<br/>needs explained.</b><i>↗</i></article>
+          <article className="pf-post pf-post-two"><small>Founder point of view</small><b>Expertise becomes<br/>recognition through<br/>repetition.</b><div><i/><i/><i/><i/></div></article>
+          <article className="pf-post pf-post-three"><span>03</span><b>One idea.<br/>Multiple formats.</b><small>Article → carousel → video → conversation</small></article>
+          <div className="pf-board-label">Portfolio collection in development</div>
+        </div>
+      </div>
+    </section>
 
-    <section className="pf-sectors"><div className="container"><div className="pf-sectors-head"><span>Portfolio architecture</span><h2>A growing record of work<br/>for regulated industries.</h2><p>New collections will appear only when they are ready to demonstrate a complete strategic and creative direction.</p></div><div className="pf-sector-list"><Link to="/portfolio/legal-websites/"><b>01</b><span>Legal</span><small>Live · 6 concepts</small><i>↗</i></Link><div><b>02</b><span>Healthcare</span><small>Collection in development</small></div><div><b>03</b><span>Financial</span><small>Collection in development</small></div><div><b>04</b><span>Technology</span><small>Collection in development</small></div></div></div></section>
+    <section className="pf-discipline pf-ai" id="ai-marketing">
+      <div className="container">
+        <div className="pf-discipline-head"><div><span>03 / AI-powered digital marketing</span><h2>Move faster.<br/><em>Keep judgment human.</em></h2></div><div><p>AI-assisted research, content, search, creative production, and optimization—with the review systems regulated brands require.</p><Link to="/services/ai-powered-digital-marketing/">Explore AI-powered marketing ↗</Link></div></div>
+        <div className="pf-ai-system">
+          <div className="pf-ai-map" aria-label="AI-powered marketing workflow concept"><span className="pf-node node-one">Signal<small>Audience + search</small></span><i/><span className="pf-node node-two">Strategy<small>Human direction</small></span><i/><span className="pf-node node-three">Create<small>Content + campaigns</small></span><i/><span className="pf-node node-four">Learn<small>Measure + improve</small></span></div>
+          <div className="pf-ai-detail"><span>Controlled acceleration</span><h3>Automation where it helps.<br/>Review where it matters.</h3><p>The system increases production capacity without outsourcing brand judgment, factual accuracy, or compliance responsibility.</p><div><b>Research</b><b>SEO</b><b>Content</b><b>Video</b><b>Workflows</b></div><small>Portfolio collection in development</small></div>
+        </div>
+      </div>
+    </section>
 
-    <section className="pf-cta"><div className="container"><span>Have a high-trust brief?</span><h2>Let’s make the next<br/>piece of work <em>yours.</em></h2><div><p>Tell us what your audience needs to understand, believe, and do.</p><Link className="btn" to="/contact/">Start a conversation ↗</Link></div></div></section>
+    <section className="pf-system"><div className="container"><span>One connected system</span><div className="pf-system-flow"><b>Website</b><i>→</i><b>Content</b><i>→</i><b>Attention</b><i>→</i><b>Demand</b><i>→</i><b>Learning</b></div><p>Each service can stand alone. The strongest results come when the website, publishing system, distribution, and optimization loop reinforce one another.</p></div></section>
+
+    <section className="pf-cta"><div className="container"><span>Which discipline needs to move first?</span><h2>Let’s make the next<br/>piece of work <em>yours.</em></h2><div><p>Tell us what your audience needs to understand, believe, and do.</p><Link className="btn" to="/contact/">Start a conversation ↗</Link></div></div></section>
   </div>;
 }
