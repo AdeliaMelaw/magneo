@@ -13,6 +13,14 @@ const concepts = [
 export default function LegalWebsites(){
   const [filter, setFilter] = useState('All');
   const visible = filter === 'All' ? concepts : concepts.filter((item)=>item.type === filter);
+  const scrollToCollection = (event) => {
+    event.preventDefault();
+    const target = document.getElementById('legal-collection');
+    if (!target) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.history.replaceState(null, '', '#legal-collection');
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 68, behavior: reducedMotion ? 'auto' : 'smooth' });
+  };
 
   useEffect(()=>{
     document.title = 'Legal Website Design Portfolio | Magneo';
@@ -28,7 +36,7 @@ export default function LegalWebsites(){
     <section className="lwp-hero">
       <div className="container lwp-hero-grid">
         <div><div className="lwp-overline"><i/> Magneo legal design collection · 2026</div><h1>Law firm websites<br/>people <em>remember.</em></h1></div>
-        <div className="lwp-hero-side"><p>Six original directions. Each one combines a distinct visual identity with the clarity, trust, and decisive next step a legal website needs.</p><a href="#legal-collection">Explore the collection <span>↓</span></a></div>
+        <div className="lwp-hero-side"><p>Six original directions. Each one combines a distinct visual identity with the clarity, trust, and decisive next step a legal website needs.</p><a href="#legal-collection" onClick={scrollToCollection}>Explore the collection <span>↓</span></a></div>
       </div>
       <div className="lwp-ticker"><div>STRATEGY <i/> IDENTITY <i/> MOTION <i/> TRUST <i/> CONVERSION <i/> STRATEGY <i/> IDENTITY <i/> MOTION <i/> TRUST <i/> CONVERSION</div></div>
     </section>
