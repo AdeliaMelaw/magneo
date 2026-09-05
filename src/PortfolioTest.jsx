@@ -73,9 +73,9 @@ export default function PortfolioTest(){
   return <div className="pf-main pf-copy-test">
     <section className="pf-hero">
       <div className="container pf-hero-inner">
-        <div className="pf-kicker"><span>Magneo portfolio · Concepts &amp; demonstrations</span><span>Three connected disciplines</span></div>
-        <h1>Distinctive websites.<br/><em>Content with purpose.</em></h1>
-        <div className="pf-hero-foot"><div><p>Explore our approach to website design, social media, and AI-powered marketing for businesses in regulated industries. See how we bring clear messaging and creative execution together.</p><small className="pf-hero-disclosure">The examples shown are original Magneo concepts and demonstrations, not commissioned client projects.</small></div><a href="#portfolio-previews">Explore the portfolio <span>↓</span></a></div>
+        <div className="pf-kicker"><span>Magneo portfolio · Concepts &amp; demonstrations</span><span>Websites · Social media · AI marketing</span></div>
+        <h1>Distinctive websites.<br/>Engaging content.<br/><em>AI-powered marketing.</em></h1>
+        <div className="pf-hero-foot"><div><p>Explore website concepts, social media creative, and AI marketing demonstrations for businesses in regulated industries. Discover ideas for your next website, content campaign, or custom AI tool.</p><small className="pf-hero-disclosure">The examples shown are original Magneo concepts and demonstrations, not commissioned client projects.</small></div><a href="#portfolio-previews">Explore the portfolio <span>↓</span></a></div>
       </div>
       <div className="pf-hero-code" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
     </section>
@@ -85,12 +85,12 @@ export default function PortfolioTest(){
       <div className="container pf-index-grid">
         <div className="pf-index-card"><small>01 / Explore</small><strong>Websites</strong><span>Design, content &amp; development</span><i aria-hidden="true">↓</i></div>
         <div className="pf-index-card"><small>02 / Explore</small><strong>Social media</strong><span>Posts, video &amp; content strategy</span><i aria-hidden="true">↓</i></div>
-        <div className="pf-index-card"><small>03 / Explore</small><strong>AI-powered marketing</strong><span>Research, content &amp; workflows</span><i aria-hidden="true">↓</i></div>
+        <div className="pf-index-card"><small>03 / Explore</small><strong>AI-powered marketing</strong><span>Custom tools, video &amp; automation</span><i aria-hidden="true">↓</i></div>
       </div>
       <div className="container pf-category-galleries" id="portfolio-previews" aria-label="Portfolio concepts and demonstrations">
         <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website concepts" summary="06 original concepts" cta={{eyebrow:'Featured collection · Legal websites',label:'Explore law firm website concepts',href:'/portfolio/legal-websites/'}}/>
         <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social media concepts" summary="04 reel concepts" offset={700} cta={{eyebrow:'Reel previews',label:'Full collection coming soon'}}/>
-        <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing demonstrations" summary="03 workflow concepts" offset={1400} cta={{eyebrow:'Workflow previews',label:'Full collection coming soon'}}/>
+        <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing concepts" summary="03 original concepts" offset={1400} cta={{eyebrow:'AI concept previews',label:'Full collection coming soon'}}/>
       </div>
       <div className="container pf-web-meta"><span>Explore now</span><span>6 law firm website concepts</span><span>Personal injury + litigation</span></div>
     </section>
@@ -116,10 +116,10 @@ export default function PortfolioTest(){
 
     <section className="pf-discipline pf-ai" id="ai-marketing">
       <div className="container">
-        <div className="pf-discipline-head"><div><span>03 / AI-powered digital marketing</span><h2>Move faster.<br/><em>Keep judgment human.</em></h2></div><div><p>Explore how AI can support marketing research, content drafts, and creative production, with people directing the work and reviewing the output.</p><Link to="/services/ai-powered-digital-marketing/">Explore AI-powered marketing ↗</Link></div></div>
+        <div className="pf-discipline-head"><div><span>03 / AI-powered digital marketing</span><h2>Your brand.<br/><em>More possibilities with AI.</em></h2></div><div><p>From brand voice tools and custom GPTs to UGC-style videos, advertising creative, and automation, explore how AI can support your marketing.</p><Link to="/services/ai-powered-digital-marketing/">Explore AI-powered marketing ↗</Link></div></div>
         <div className="pf-ai-system">
-          <div className="pf-ai-map" aria-label="Illustrative AI marketing workflow"><span className="pf-node node-one">Research<small>Audience &amp; topics</small></span><i/><span className="pf-node node-two">Plan<small>Human direction</small></span><i/><span className="pf-node node-three">Create<small>Drafts &amp; creative</small></span><i/><span className="pf-node node-four">Review<small>Check &amp; refine</small></span></div>
-          <div className="pf-ai-detail"><span>Human review</span><h3>Useful drafts.<br/>Careful review.</h3><p>AI output is a starting point. Facts, sources, tone, and suitability for the intended audience need checking before publication.</p><div><b>Research</b><b>SEO</b><b>Content</b><b>Video</b><b>Workflows</b></div><small>Illustrative AI workflow</small></div>
+          <div className="pf-ai-map" aria-label="AI marketing capabilities"><span className="pf-node node-one">Brand voice<small>Consistent messaging</small></span><i/><span className="pf-node node-two">Custom GPTs<small>Tailored assistants</small></span><i/><span className="pf-node node-three">Video &amp; ads<small>UGC-style video &amp; ad creative</small></span><i/><span className="pf-node node-four">Automation<small>Repeatable marketing tasks</small></span></div>
+          <div className="pf-ai-detail"><span>AI marketing capabilities</span><h3>Create for your brand.<br/>Simplify the everyday.</h3><p>Give your team tools to write in your brand’s voice, explore new video and ad concepts, and automate repetitive marketing tasks.</p><div><b>AI brand voice</b><b>Custom GPTs</b><b>AI UGC-style video</b><b>AI ad creative</b><b>AI automation</b></div><small>AI tools &amp; creative possibilities</small></div>
         </div>
       </div>
     </section>
