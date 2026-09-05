@@ -25,6 +25,27 @@
         "Location": "https://magneo.ca/about/adele-salikhova/"
       }
     },
+    {
+      "src": "/sitemap_index\\.xml",
+      "status": 308,
+      "headers": {
+        "Location": "https://magneo.ca/sitemap.xml"
+      }
+    },
+    {
+      "src": "/sitemap\\.xml",
+      "dest": "/sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml; charset=utf-8"
+      }
+    },
+    {
+      "src": "/ai-sitemap\\.xml",
+      "dest": "/ai-sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml; charset=utf-8"
+      }
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
