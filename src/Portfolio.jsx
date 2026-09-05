@@ -91,6 +91,13 @@ export default function Portfolio(){
 
     <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
 
+    <section className="pf-web-info" aria-labelledby="website-development-title">
+      <div className="container pf-web-info-grid">
+        <div><span>01 / Website development</span><h2 id="website-development-title">Designed to be remembered.<br/><em>Built to perform.</em></h2></div>
+        <div><p>Strategy, UX, copy, design, and development brought together in one focused build—creating a fast, accessible website that earns trust and turns attention into qualified enquiries.</p><div className="pf-capabilities"><span>Strategy + UX</span><span>Custom development</span><span>SEO foundations</span><span>Conversion</span></div><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website development ↗</Link></div>
+      </div>
+    </section>
+
     <section className="pf-discipline pf-social" id="social-media">
       <div className="container pf-social-grid">
         <div className="pf-social-copy"><span>02 / Social media marketing</span><h2>Build authority<br/>before the <em>click.</em></h2><p>Content systems that turn specialist knowledge into recognizable points of view—designed for consistency, credibility, and sustained attention.</p><div className="pf-capabilities"><span>Strategy</span><span>LinkedIn</span><span>Short-form video</span><span>Founder brands</span></div><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Explore social media marketing ↗</Link></div>

@@ -25,3 +25,8 @@
 /* Discipline arrows now land on the rotating galleries; retain the legal collection metadata beneath them. */
 .pf-category-galleries .pf-mini-gallery{scroll-margin-top:96px}.pf-index>.pf-web-meta{padding-top:0;padding-bottom:50px}
 @media(max-width:680px){.pf-index>.pf-web-meta{align-items:flex-start;flex-wrap:wrap;padding-bottom:34px}.pf-index>.pf-web-meta>a{width:100%;margin:8px 0 0}}
+
+/* Compact website-development discipline: editorial information only, without another image showcase. */
+.pf-web-info{padding:86px 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.pf-web-info-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:9vw;align-items:end}.pf-web-info span{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#6d736b}.pf-web-info h2{max-width:760px;margin:18px 0 0;font:400 clamp(42px,5vw,70px)/.97 var(--display);letter-spacing:-.04em}.pf-web-info h2 em{font-style:italic;color:#579600}.pf-web-info p{margin:0;font-size:14px;line-height:1.75;color:#666c64}.pf-web-info .pf-capabilities{margin:25px 0 29px}.pf-web-info .pf-capabilities span{border-color:var(--line);color:#555b54}.pf-web-info a{font-size:11px;border-bottom:1px solid currentColor;padding-bottom:5px}
+@media(max-width:820px){.pf-web-info{padding:70px 0}.pf-web-info-grid{grid-template-columns:1fr;gap:36px}.pf-web-info h2{font-size:48px}}
+@media(max-width:620px){.pf-web-info{padding:58px 0}.pf-web-info h2{font-size:42px}}
