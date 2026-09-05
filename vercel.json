@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/portfolio/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/downloads/personal-branding-guide-legal-professionals\\.pdf",
       "dest": "https://blog.magneo.ca/wp-content/uploads/2026/05/magneo-personal-branding-guide-legal-professionals.pdf"
     },
