@@ -75,7 +75,7 @@ export default function PortfolioTest(){
       <div className="container pf-hero-inner">
         <div className="pf-kicker"><span>Magneo portfolio · Concepts &amp; demonstrations</span><span>Three connected disciplines</span></div>
         <h1>Distinctive websites.<br/><em>Content with purpose.</em></h1>
-        <div className="pf-hero-foot"><div><p>Explore our approach to website design, social media, and AI-powered marketing for businesses in regulated industries. See how we bring clear messaging and creative execution together.</p><small className="pf-hero-disclosure">The examples shown are original Magneo concepts and demonstrations, not commissioned client projects.</small></div><a href="#portfolio-categories">Explore the portfolio <span>↓</span></a></div>
+        <div className="pf-hero-foot"><div><p>Explore our approach to website design, social media, and AI-powered marketing for businesses in regulated industries. See how we bring clear messaging and creative execution together.</p><small className="pf-hero-disclosure">The examples shown are original Magneo concepts and demonstrations, not commissioned client projects.</small></div><a href="#portfolio-previews">Explore the portfolio <span>↓</span></a></div>
       </div>
       <div className="pf-hero-code" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
     </section>
@@ -83,19 +83,17 @@ export default function PortfolioTest(){
     <section className="pf-index" id="portfolio-categories">
       <div className="pf-index-line" aria-hidden="true"/>
       <div className="container pf-index-grid">
-        <a href="#website-gallery"><small>01 / Explore</small><strong>Websites</strong><span>Design, content &amp; development</span><i aria-hidden="true">↓</i></a>
-        <a href="#social-gallery"><small>02 / Explore</small><strong>Social media</strong><span>Posts, video &amp; content strategy</span><i aria-hidden="true">↓</i></a>
-        <a href="#ai-gallery"><small>03 / Explore</small><strong>AI-powered marketing</strong><span>Research, content &amp; workflows</span><i aria-hidden="true">↓</i></a>
+        <div className="pf-index-card"><small>01 / Explore</small><strong>Websites</strong><span>Design, content &amp; development</span><i aria-hidden="true">↓</i></div>
+        <div className="pf-index-card"><small>02 / Explore</small><strong>Social media</strong><span>Posts, video &amp; content strategy</span><i aria-hidden="true">↓</i></div>
+        <div className="pf-index-card"><small>03 / Explore</small><strong>AI-powered marketing</strong><span>Research, content &amp; workflows</span><i aria-hidden="true">↓</i></div>
       </div>
-      <div className="container pf-category-galleries" aria-label="Portfolio concepts and demonstrations">
+      <div className="container pf-category-galleries" id="portfolio-previews" aria-label="Portfolio concepts and demonstrations">
         <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website concepts" summary="06 original concepts" cta={{eyebrow:'Featured collection · Legal websites',label:'Explore law firm website concepts',href:'/portfolio/legal-websites/'}}/>
         <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social media concepts" summary="04 reel concepts" offset={700} cta={{eyebrow:'Reel previews',label:'Full collection coming soon'}}/>
         <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing demonstrations" summary="03 workflow concepts" offset={1400} cta={{eyebrow:'Workflow previews',label:'Full collection coming soon'}}/>
       </div>
       <div className="container pf-web-meta"><span>Explore now</span><span>6 law firm website concepts</span><span>Personal injury + litigation</span></div>
     </section>
-
-    <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>Behind the concepts</span><h2>What could this look like<br/>for your business?</h2><p>Explore the examples, then discover the services behind them—from a new website to ongoing content and AI-assisted marketing.</p></div></section>
 
     <section className="pf-web-info" aria-labelledby="website-development-title">
       <div className="container pf-web-info-grid">
