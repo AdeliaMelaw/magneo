@@ -10,6 +10,28 @@ const legalPreviews = [
   ['/test6-family-hero.png','family'],
 ];
 
+const websiteGallery = [
+  ['/pi-lawyer-hero-generated.png','Personal injury · Classic','classic'],
+  ['/pi-lawyer-hero-generated.png','Personal injury · Bold','bold'],
+  ['/pi-lawyer-hero-generated.png','Litigation · Editorial','editorial'],
+  ['/brain-injury-head-3d-v2.png','Brain injury · 3D','brain'],
+  ['/test5-cinematic-hero.png','Personal injury · Cinematic','cinematic'],
+  ['/test6-family-hero.png','Personal injury · Family','family'],
+];
+
+const socialGallery = [
+  ['/portfolio/social/immersive-scenario.webp','Immersive scenario reel'],
+  ['/portfolio/social/commentary-reel.webp','Commentary reel'],
+  ['/portfolio/social/podcast-interview.webp','Podcast interview reel'],
+  ['/portfolio/social/conversational-reel.webp','Conversational reel'],
+];
+
+const aiGallery = [
+  ['/portfolio/ai/custom-gpt.webp','Custom GPT'],
+  ['/portfolio/ai/ai-content-system.webp','AI content systems'],
+  ['/portfolio/ai/hubspot-automation.webp','HubSpot automation'],
+];
+
 export default function Portfolio(){
   useEffect(()=>{
     document.title='Portfolio | Magneo — Web, Social & AI Marketing';
@@ -38,6 +60,26 @@ export default function Portfolio(){
         <a href="#social-media"><small>02 / Portfolio discipline</small><strong>Social media</strong><span>Authority, content and distribution</span><i aria-hidden="true">↓</i></a>
         <a href="#ai-marketing"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
       </div>
+      <div className="container pf-category-galleries" aria-label="Selected portfolio previews">
+        <section className="pf-mini-gallery pf-mini-web" aria-labelledby="website-preview-title">
+          <div className="pf-mini-head"><span id="website-preview-title">Website previews</span><small>06 selected directions</small></div>
+          <div className="pf-mini-web-grid">
+            {websiteGallery.map(([src,label,style],index)=><figure className={`pf-mini-card ${style}`} key={label}><img src={src} alt={label} loading="lazy"/><figcaption><span>{String(index+1).padStart(2,'0')}</span>{label}</figcaption></figure>)}
+          </div>
+        </section>
+        <section className="pf-mini-gallery pf-mini-social" aria-labelledby="social-preview-title">
+          <div className="pf-mini-head"><span id="social-preview-title">Social previews</span><small>04 reel concepts</small></div>
+          <div className="pf-mini-social-grid">
+            {socialGallery.map(([src,label],index)=><figure className="pf-mini-card" key={label}><img src={src} alt={label} loading="lazy"/><figcaption><span>{String(index+1).padStart(2,'0')}</span>{label}</figcaption></figure>)}
+          </div>
+        </section>
+        <section className="pf-mini-gallery pf-mini-ai" aria-labelledby="ai-preview-title">
+          <div className="pf-mini-head"><span id="ai-preview-title">AI marketing previews</span><small>03 applied systems</small></div>
+          <div className="pf-mini-ai-grid">
+            {aiGallery.map(([src,label],index)=><figure className="pf-mini-card" key={label}><img src={src} alt={label} loading="lazy"/><figcaption><span>{String(index+1).padStart(2,'0')}</span>{label}</figcaption></figure>)}
+          </div>
+        </section>
+      </div>
     </section>
 
     <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
@@ -60,7 +102,7 @@ export default function Portfolio(){
           <article className="pf-post pf-post-one"><small>Authority series / 01</small><b>What your audience<br/>needs explained.</b><i>↗</i></article>
           <article className="pf-post pf-post-two"><small>Founder point of view</small><b>Expertise becomes<br/>recognition through<br/>repetition.</b><div><i/><i/><i/><i/></div></article>
           <article className="pf-post pf-post-three"><span>03</span><b>One idea.<br/>Multiple formats.</b><small>Article → carousel → video → conversation</small></article>
-          <div className="pf-board-label">Portfolio collection in development</div>
+          <div className="pf-board-label">Content system concept</div>
         </div>
       </div>
     </section>
@@ -70,7 +112,7 @@ export default function Portfolio(){
         <div className="pf-discipline-head"><div><span>03 / AI-powered digital marketing</span><h2>Move faster.<br/><em>Keep judgment human.</em></h2></div><div><p>AI-assisted research, content, search, creative production, and optimization—with the review systems regulated brands require.</p><Link to="/services/ai-powered-digital-marketing/">Explore AI-powered marketing ↗</Link></div></div>
         <div className="pf-ai-system">
           <div className="pf-ai-map" aria-label="AI-powered marketing workflow concept"><span className="pf-node node-one">Signal<small>Audience + search</small></span><i/><span className="pf-node node-two">Strategy<small>Human direction</small></span><i/><span className="pf-node node-three">Create<small>Content + campaigns</small></span><i/><span className="pf-node node-four">Learn<small>Measure + improve</small></span></div>
-          <div className="pf-ai-detail"><span>Controlled acceleration</span><h3>Automation where it helps.<br/>Review where it matters.</h3><p>The system increases production capacity without outsourcing brand judgment, factual accuracy, or compliance responsibility.</p><div><b>Research</b><b>SEO</b><b>Content</b><b>Video</b><b>Workflows</b></div><small>Portfolio collection in development</small></div>
+          <div className="pf-ai-detail"><span>Controlled acceleration</span><h3>Automation where it helps.<br/>Review where it matters.</h3><p>The system increases production capacity without outsourcing brand judgment, factual accuracy, or compliance responsibility.</p><div><b>Research</b><b>SEO</b><b>Content</b><b>Video</b><b>Workflows</b></div><small>Applied systems portfolio</small></div>
         </div>
       </div>
     </section>
