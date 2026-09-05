@@ -26,12 +26,19 @@ export default function Portfolio(){
       <div className="container pf-hero-inner">
         <div className="pf-kicker"><span>Magneo portfolio · Selected work</span><span>Three connected disciplines</span></div>
         <h1>Three disciplines.<br/><em>One growth system.</em></h1>
-        <div className="pf-hero-foot"><p>Website design, social media, and AI-powered marketing—built together for businesses whose reputation has to perform before the first conversation begins.</p><a href="#disciplines">Explore the portfolio <span>↓</span></a></div>
+        <div className="pf-hero-foot"><p>Website design, social media, and AI-powered marketing—built together for businesses whose reputation has to perform before the first conversation begins.</p><a href="#portfolio-categories">Explore the portfolio <span>↓</span></a></div>
       </div>
       <div className="pf-hero-code" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
     </section>
 
-    <section className="pf-index"><div className="container"><a href="#web-design"><b>01</b><span>Website design</span></a><a href="#social-media"><b>02</b><span>Social media marketing</span></a><a href="#ai-marketing"><b>03</b><span>AI-powered marketing</span></a></div></section>
+    <section className="pf-index" id="portfolio-categories">
+      <div className="pf-index-line" aria-hidden="true"/>
+      <div className="container pf-index-grid">
+        <a href="#web-design"><small>01 / Portfolio discipline</small><strong>Websites</strong><span>Design, positioning and conversion</span><i aria-hidden="true">↓</i></a>
+        <a href="#social-media"><small>02 / Portfolio discipline</small><strong>Social media</strong><span>Authority, content and distribution</span><i aria-hidden="true">↓</i></a>
+        <a href="#ai-marketing"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
+      </div>
+    </section>
 
     <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
 
@@ -39,8 +46,8 @@ export default function Portfolio(){
       <div className="container">
         <div className="pf-discipline-head"><div><span>01 / Website design</span><h2>Turn expertise into<br/><em>an experience.</em></h2></div><div><p>Distinctive, conversion-focused websites for regulated businesses—where clarity, credibility, and visual memory all matter.</p><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website design ↗</Link></div></div>
         <Link className="pf-web-showcase" to="/portfolio/legal-websites/" aria-label="Explore six legal website concepts">
-          <div className="pf-preview-grid">{legalPreviews.map(([src,style],index)=><div className={`pf-preview ${style}`} key={`${style}-${index}`}><img src={src} alt=""/><span>{String(index+1).padStart(2,'0')}</span></div>)}</div>
-          <div className="pf-showcase-bar"><div><span>Featured collection · Legal websites</span><b>Six ways to make legal expertise unforgettable.</b></div><i>↗</i></div>
+          <div className="pf-preview-grid">{legalPreviews.map(([src,style],index)=><div className={`pf-preview ${style}`} key={`${style}-${index}`}><img src={src} alt={`Legal website concept ${index+1}`}/><span>{String(index+1).padStart(2,'0')}</span></div>)}</div>
+          <div className="pf-showcase-bar"><div><span>Featured collection · Legal websites</span><b>Six ways to make legal expertise unforgettable.</b></div><i>→</i></div>
         </Link>
         <div className="pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span><Link to="/portfolio/legal-websites/">View the complete collection ↗</Link></div>
       </div>
