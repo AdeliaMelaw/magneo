@@ -113,7 +113,7 @@ function ServicePage({ name }){ const title = serviceTitleOverrides[name] || tit
 function Vertical({ item }){ const kind=kindFromText(item.label); useSeo(`${item.label} | Magneo`,item.intro,`${BASE}${item.path}`); return <><Hero label={item.label} title={`${item.label}<br/>built for <em>qualified demand.</em>`} intro={item.intro} stat={kind.toUpperCase()}/><ServicesGrid/><Process/><RelatedLinks/><CTA/></>; }
 function About(){ useSeo('About Magneo | Marketing for Regulated Industries','Magneo is a Toronto-based digital marketing agency for regulated industries.',`${BASE}/about/`); return <><Hero label="About Magneo" title="Where regulated industries<br/>come to grow <em>safely.</em>" intro="Magneo is a precision-built growth partner for teams that need more than marketing fluff. They need results they can trust." stat="CA+US"/><Process/><RelatedLinks/><CTA/></>; }
 function AboutUs(){
-  useNoIndexSeo('About Adele Salikhova | Magneo','Meet Adele Salikhova and learn about the thinking behind Magneo, a Toronto digital marketing agency for regulated industries.',`${BASE}/about/adele-salikhova/`);
+  useSeo('About Adele Salikhova | Magneo','Meet Adele Salikhova and learn about the thinking behind Magneo, a Toronto digital marketing agency for regulated industries.',`${BASE}/about/adele-salikhova/`);
   const principles = [
     ['01','Clarity over noise','Make complex expertise understandable without flattening what makes it valuable.'],
     ['02','Proof before hype','Build credibility through useful information, thoughtful design, and claims the business can support.'],

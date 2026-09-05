@@ -7,7 +7,6 @@ Disallow: /test4
 Disallow: /test5
 Disallow: /test6
 Disallow: /about-us
-Disallow: /about/adele-salikhova
 
 Sitemap: https://magneo.ca/sitemap.xml
 Sitemap: https://magneo.ca/ai-sitemap.xml

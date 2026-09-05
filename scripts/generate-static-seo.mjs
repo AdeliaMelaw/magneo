@@ -17,6 +17,7 @@ const EXTRA_PATHS = [
 const descriptions = {
   '/': 'Authority-first marketing systems for law firms, financial advisors, healthcare providers, and tech companies. Compliance-safe. Measurable. Built to last.',
   '/about/': 'Magneo is a Toronto-based digital marketing agency for regulated industries, serving law firms, financial advisors, healthcare providers, and tech companies.',
+  '/about/adele-salikhova/': 'Meet Adele Salikhova, the marketing strategist behind Magneo and its growth systems for regulated industries.',
   '/services/': 'Explore Magneo services for regulated industries, including SEO, PPC, LinkedIn marketing, website design, AI automation, and personal branding.',
   '/industries/': 'Magneo builds marketing systems for law firms, financial advisors, healthcare clinics, and tech companies across Canada and the USA.',
   '/contact/': 'Contact Magneo to request a brand, SEO, website, PPC, LinkedIn, or AI automation audit for a regulated-industry business.',
@@ -43,6 +44,7 @@ const descriptions = {
 const titleOverrides = {
   '/': 'Magneo | Digital Marketing for Regulated Industries',
   '/about/': 'About Magneo | Marketing for Regulated Industries',
+  '/about/adele-salikhova/': 'About Adele Salikhova | Magneo',
   '/services/': 'Services | Magneo',
   '/industries/': 'Industries We Serve | Magneo',
   '/contact/': 'Contact Magneo | Request a Free Audit',
