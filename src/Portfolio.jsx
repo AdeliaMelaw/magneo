@@ -32,7 +32,7 @@ const aiGallery = [
   ['/portfolio/ai/hubspot-automation.webp','HubSpot automation'],
 ];
 
-function PreviewGallery({items, className, title, summary, offset=0}){
+function PreviewGallery({items, className, title, summary, offset=0, cta}){
   const [active,setActive]=useState(0);
 
   useEffect(()=>{
@@ -46,6 +46,7 @@ function PreviewGallery({items, className, title, summary, offset=0}){
   },[items,offset]);
 
   const [src,label,style='']=items[active];
+  const ctaContent=<><span><small>{cta.eyebrow}</small><b>{cta.label}</b></span><i aria-hidden="true">→</i></>;
   return <section className={`pf-mini-gallery ${className}`} aria-label={`${title}: rotating portfolio previews`}>
     <div className="pf-mini-head"><span>{title}</span><small>{summary}</small></div>
     <div className="pf-mini-stage">
@@ -55,6 +56,9 @@ function PreviewGallery({items, className, title, summary, offset=0}){
       </figure>
       <div className="pf-mini-progress" aria-hidden="true">{items.map((item,index)=><i className={index===active?'active':''} key={item[1]}/>)}</div>
     </div>
+    {cta.href
+      ? <Link className="pf-gallery-cta" to={cta.href} aria-label={cta.label}>{ctaContent}</Link>
+      : <div className="pf-gallery-cta is-disabled" aria-disabled="true">{ctaContent}</div>}
   </section>;
 }
 
@@ -87,9 +91,9 @@ export default function Portfolio(){
         <a href="#ai-marketing"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
       </div>
       <div className="container pf-category-galleries" aria-label="Selected portfolio previews">
-        <PreviewGallery items={websiteGallery} className="pf-mini-web" title="Website previews" summary="06 selected directions"/>
-        <PreviewGallery items={socialGallery} className="pf-mini-social" title="Social previews" summary="04 reel concepts" offset={700}/>
-        <PreviewGallery items={aiGallery} className="pf-mini-ai" title="AI marketing previews" summary="03 applied systems" offset={1400}/>
+        <PreviewGallery items={websiteGallery} className="pf-mini-web" title="Website previews" summary="06 selected directions" cta={{eyebrow:'Featured collection · Legal websites',label:'View legal websites',href:'/portfolio/legal-websites/'}}/>
+        <PreviewGallery items={socialGallery} className="pf-mini-social" title="Social previews" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media collection · Coming soon',label:'View social media posts'}}/>
+        <PreviewGallery items={aiGallery} className="pf-mini-ai" title="AI marketing previews" summary="03 applied systems" offset={1400} cta={{eyebrow:'AI systems collection · Coming soon',label:'View AI-marketing systems'}}/>
       </div>
     </section>
 
