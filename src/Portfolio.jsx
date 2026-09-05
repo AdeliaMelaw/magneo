@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const legalPreviews = [
@@ -32,6 +32,32 @@ const aiGallery = [
   ['/portfolio/ai/hubspot-automation.webp','HubSpot automation'],
 ];
 
+function PreviewGallery({items, className, title, summary, offset=0}){
+  const [active,setActive]=useState(0);
+
+  useEffect(()=>{
+    if(items.length<2 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
+    let cycle;
+    const start=window.setTimeout(()=>{
+      setActive(current=>(current+1)%items.length);
+      cycle=window.setInterval(()=>setActive(current=>(current+1)%items.length),4200);
+    },4200+offset);
+    return ()=>{window.clearTimeout(start);window.clearInterval(cycle);};
+  },[items,offset]);
+
+  const [src,label,style='']=items[active];
+  return <section className={`pf-mini-gallery ${className}`} aria-label={`${title}: rotating portfolio previews`}>
+    <div className="pf-mini-head"><span>{title}</span><small>{summary}</small></div>
+    <div className="pf-mini-stage">
+      <figure className={`pf-mini-card ${style}`} key={`${label}-${active}`}>
+        <img src={src} alt={label} loading="lazy"/>
+        <figcaption><span>{String(active+1).padStart(2,'0')}</span>{label}</figcaption>
+      </figure>
+      <div className="pf-mini-progress" aria-hidden="true">{items.map((item,index)=><i className={index===active?'active':''} key={item[1]}/>)}</div>
+    </div>
+  </section>;
+}
+
 export default function Portfolio(){
   useEffect(()=>{
     document.title='Portfolio | Magneo — Web, Social & AI Marketing';
@@ -61,24 +87,9 @@ export default function Portfolio(){
         <a href="#ai-marketing"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
       </div>
       <div className="container pf-category-galleries" aria-label="Selected portfolio previews">
-        <section className="pf-mini-gallery pf-mini-web" aria-labelledby="website-preview-title">
-          <div className="pf-mini-head"><span id="website-preview-title">Website previews</span><small>06 selected directions</small></div>
-          <div className="pf-mini-web-grid">
-            {websiteGallery.map(([src,label,style],index)=><figure className={`pf-mini-card ${style}`} key={label}><img src={src} alt={label} loading="lazy"/><figcaption><span>{String(index+1).padStart(2,'0')}</span>{label}</figcaption></figure>)}
-          </div>
-        </section>
-        <section className="pf-mini-gallery pf-mini-social" aria-labelledby="social-preview-title">
-          <div className="pf-mini-head"><span id="social-preview-title">Social previews</span><small>04 reel concepts</small></div>
-          <div className="pf-mini-social-grid">
-            {socialGallery.map(([src,label],index)=><figure className="pf-mini-card" key={label}><img src={src} alt={label} loading="lazy"/><figcaption><span>{String(index+1).padStart(2,'0')}</span>{label}</figcaption></figure>)}
-          </div>
-        </section>
-        <section className="pf-mini-gallery pf-mini-ai" aria-labelledby="ai-preview-title">
-          <div className="pf-mini-head"><span id="ai-preview-title">AI marketing previews</span><small>03 applied systems</small></div>
-          <div className="pf-mini-ai-grid">
-            {aiGallery.map(([src,label],index)=><figure className="pf-mini-card" key={label}><img src={src} alt={label} loading="lazy"/><figcaption><span>{String(index+1).padStart(2,'0')}</span>{label}</figcaption></figure>)}
-          </div>
-        </section>
+        <PreviewGallery items={websiteGallery} className="pf-mini-web" title="Website previews" summary="06 selected directions"/>
+        <PreviewGallery items={socialGallery} className="pf-mini-social" title="Social previews" summary="04 reel concepts" offset={700}/>
+        <PreviewGallery items={aiGallery} className="pf-mini-ai" title="AI marketing previews" summary="03 applied systems" offset={1400}/>
       </div>
     </section>
 
