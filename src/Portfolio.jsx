@@ -1,15 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const legalPreviews = [
-  ['/pi-lawyer-hero-generated.png','classic'],
-  ['/pi-lawyer-hero-generated.png','bold'],
-  ['/pi-lawyer-hero-generated.png','editorial'],
-  ['/brain-injury-head-3d-v2.png','brain'],
-  ['/test5-cinematic-hero.png','cinematic'],
-  ['/test6-family-hero.png','family'],
-];
-
 const websiteGallery = [
   ['/pi-lawyer-hero-generated.png','Personal injury · Classic','classic'],
   ['/pi-lawyer-hero-generated.png','Personal injury · Bold','bold'],
@@ -32,7 +23,7 @@ const aiGallery = [
   ['/portfolio/ai/hubspot-automation.webp','HubSpot automation'],
 ];
 
-function PreviewGallery({items, className, title, summary, offset=0, cta}){
+function PreviewGallery({items, className, title, summary, offset=0, cta, id}){
   const [active,setActive]=useState(0);
 
   useEffect(()=>{
@@ -47,7 +38,7 @@ function PreviewGallery({items, className, title, summary, offset=0, cta}){
 
   const [src,label,style='']=items[active];
   const ctaContent=<><span><small>{cta.eyebrow}</small><b>{cta.label}</b></span><i aria-hidden="true">→</i></>;
-  return <section className={`pf-mini-gallery ${className}`} aria-label={`${title}: rotating portfolio previews`}>
+  return <section className={`pf-mini-gallery ${className}`} id={id} aria-label={`${title}: rotating portfolio previews`}>
     <div className="pf-mini-head"><span>{title}</span><small>{summary}</small></div>
     <div className="pf-mini-stage">
       <figure className={`pf-mini-card ${style}`} key={`${label}-${active}`}>
@@ -86,29 +77,19 @@ export default function Portfolio(){
     <section className="pf-index" id="portfolio-categories">
       <div className="pf-index-line" aria-hidden="true"/>
       <div className="container pf-index-grid">
-        <a href="#web-design"><small>01 / Portfolio discipline</small><strong>Websites</strong><span>Design, positioning and conversion</span><i aria-hidden="true">↓</i></a>
-        <a href="#social-media"><small>02 / Portfolio discipline</small><strong>Social media</strong><span>Authority, content and distribution</span><i aria-hidden="true">↓</i></a>
-        <a href="#ai-marketing"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
+        <a href="#website-gallery"><small>01 / Portfolio discipline</small><strong>Websites</strong><span>Design, positioning and conversion</span><i aria-hidden="true">↓</i></a>
+        <a href="#social-gallery"><small>02 / Portfolio discipline</small><strong>Social media</strong><span>Authority, content and distribution</span><i aria-hidden="true">↓</i></a>
+        <a href="#ai-gallery"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
       </div>
       <div className="container pf-category-galleries" aria-label="Selected portfolio previews">
-        <PreviewGallery items={websiteGallery} className="pf-mini-web" title="Website previews" summary="06 selected directions" cta={{eyebrow:'Featured collection · Legal websites',label:'View legal websites',href:'/portfolio/legal-websites/'}}/>
-        <PreviewGallery items={socialGallery} className="pf-mini-social" title="Social previews" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media collection · Coming soon',label:'View social media posts'}}/>
-        <PreviewGallery items={aiGallery} className="pf-mini-ai" title="AI marketing previews" summary="03 applied systems" offset={1400} cta={{eyebrow:'AI systems collection · Coming soon',label:'View AI-marketing systems'}}/>
+        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website previews" summary="06 selected directions" cta={{eyebrow:'Featured collection · Legal websites',label:'View legal websites',href:'/portfolio/legal-websites/'}}/>
+        <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social previews" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media collection · Coming soon',label:'View social media posts'}}/>
+        <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing previews" summary="03 applied systems" offset={1400} cta={{eyebrow:'AI systems collection · Coming soon',label:'View AI-marketing systems'}}/>
       </div>
+      <div className="container pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span><Link to="/portfolio/legal-websites/">View the complete collection ↗</Link></div>
     </section>
 
     <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
-
-    <section className="pf-discipline pf-web" id="web-design">
-      <div className="container">
-        <div className="pf-discipline-head"><div><span>01 / Website design</span><h2>Turn expertise into<br/><em>an experience.</em></h2></div><div><p>Distinctive, conversion-focused websites for regulated businesses—where clarity, credibility, and visual memory all matter.</p><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website design ↗</Link></div></div>
-        <Link className="pf-web-showcase" to="/portfolio/legal-websites/" aria-label="Explore six legal website concepts">
-          <div className="pf-preview-grid">{legalPreviews.map(([src,style],index)=><div className={`pf-preview ${style}`} key={`${style}-${index}`}><img src={src} alt={`Legal website concept ${index+1}`}/><span>{String(index+1).padStart(2,'0')}</span></div>)}</div>
-          <div className="pf-showcase-bar"><div><span>Featured collection · Legal websites</span><b>Six ways to make legal expertise unforgettable.</b></div><i>→</i></div>
-        </Link>
-        <div className="pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span><Link to="/portfolio/legal-websites/">View the complete collection ↗</Link></div>
-      </div>
-    </section>
 
     <section className="pf-discipline pf-social" id="social-media">
       <div className="container pf-social-grid">
