@@ -18,6 +18,13 @@
         "Location": "https://blog.magneo.ca/blog/$1"
       }
     },
+    {
+      "src": "/about-us/?",
+      "status": 308,
+      "headers": {
+        "Location": "https://magneo.ca/about/adele-salikhova/"
+      }
+    },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
