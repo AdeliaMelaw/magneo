@@ -86,7 +86,7 @@ export default function Portfolio(){
         <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social previews" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media collection · Coming soon',label:'View social media posts'}}/>
         <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing previews" summary="03 applied systems" offset={1400} cta={{eyebrow:'AI systems collection · Coming soon',label:'View AI-marketing systems'}}/>
       </div>
-      <div className="container pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span><Link to="/portfolio/legal-websites/">View the complete collection ↗</Link></div>
+      <div className="container pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span></div>
     </section>
 
     <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
