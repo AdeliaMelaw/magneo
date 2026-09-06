@@ -75,9 +75,9 @@ export default function PersonalInjuryClassic(){
       </section>
 
       <section className="al-proof al-help-manage" aria-labelledby="help-manage-heading">
+        {/* Internal implementation note: these illustrative service descriptions must be confirmed by a purchasing firm before live use. */}
         <div className="al-help-intro"><span className="al-kicker">Practical support</span><h2 id="help-manage-heading">What we help you manage.</h2><p>If we agree to represent you, we explain what we will handle and what we will need from you.</p></div>
         <div className="al-help-grid">{supportItems.map(([title,text],index)=><article key={title}><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
-        <p className="al-demo-scope">These are illustrative service descriptions. A purchasing firm must confirm the scope before live use.</p>
       </section>
 
       <section className="al-section al-cases" id="cases">
