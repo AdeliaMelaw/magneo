@@ -76,9 +76,9 @@ export default function PersonalInjuryBoldTest(){
       </section>
 
       <section className="av2-support" aria-labelledby="av2-support-heading">
+        {/* Internal implementation note: these illustrative service descriptions must be confirmed by a purchasing firm before live use. */}
         <div className="av2-support-head"><span className="av2-label">Practical support</span><h2 id="av2-support-heading">Your claim.<br/>Practical support.</h2><p>If we agree to represent you, we explain what we will handle and what we will need from you.</p></div>
         <div className="av2-support-grid">{supportItems.map(([title,text],index)=><article key={title}><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
-        <p className="av2-support-note">These are illustrative service descriptions. A purchasing firm must confirm the scope before live use.</p>
       </section>
 
       <section className="av2-cases" id="av2-cases">
