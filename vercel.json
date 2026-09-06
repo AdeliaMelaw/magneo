@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/portfolio/legal-websites/litigation-editorial/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/portfolio/legal-websites/personal-injury-bold/test/?",
       "status": 404
     },

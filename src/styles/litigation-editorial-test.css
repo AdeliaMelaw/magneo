@@ -1,0 +1,82 @@
+.lt3-updated main{padding-top:0!important}
+.lt3-updated .lt3-nav{grid-template-columns:auto 1fr auto auto}
+.lt3-updated .lt3-location{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#535353}
+.lt3-updated #lt3-top,
+.lt3-updated #lt3-capabilities,
+.lt3-updated #lt3-method,
+.lt3-updated #lt3-counsel,
+.lt3-updated #lt3-faq,
+.lt3-updated #lt3-contact{scroll-margin-top:78px}
+.lt3-updated .lt3-hero-stage{min-height:650px}
+.lt3-updated .lt3-hero-stage>h1{font-size:clamp(68px,8.2vw,132px);line-height:.75}
+.lt3-updated .lt3-cases-word{clip-path:none;animation:none}
+.lt3-updated .lt3-stamp{left:45%;top:60%;white-space:nowrap;font-size:clamp(30px,4.8vw,66px);letter-spacing:-.035em;padding:.12em .22em}
+.lt3-updated .lt3-hero-form{min-height:520px}
+.lt3-updated .lt3-form-index{font-size:11px}
+.lt3-updated .lt3-hero-form label>span,
+.lt3-updated .lt3-contact label>span{font-size:12px;line-height:1.35}
+.lt3-updated .lt3-hero-form input,
+.lt3-updated .lt3-hero-form select,
+.lt3-updated .lt3-hero-form textarea,
+.lt3-updated .lt3-contact input,
+.lt3-updated .lt3-contact textarea{font-size:16px;line-height:1.4}
+.lt3-updated .lt3-hero-form>small,
+.lt3-updated .lt3-contact form>small,
+.lt3-updated .lt3-field-help{font-size:14px;line-height:1.45;color:#4e4e4e;letter-spacing:0}
+.lt3-updated .lt3-field-help{display:block;margin-bottom:6px;text-transform:none}
+.lt3-updated .lt3-cap-grid p,
+.lt3-updated .lt3-columns>p,
+.lt3-updated .lt3-rules p,
+.lt3-updated .lt3-counsel dd{font-size:16px;line-height:1.6}
+.lt3-updated .lt3-hero-form input:focus-visible,
+.lt3-updated .lt3-hero-form select:focus-visible,
+.lt3-updated .lt3-hero-form textarea:focus-visible,
+.lt3-updated .lt3-contact input:focus-visible,
+.lt3-updated .lt3-contact textarea:focus-visible{outline:2px solid var(--l3-red);outline-offset:3px;border-color:var(--l3-red)}
+.lt3-updated .lt3-demo-success{min-height:350px}
+.lt3-updated .lt3-demo-success p{font-size:16px;line-height:1.6}
+.lt3-updated .lt3-demo-success button{font-size:14px}
+.lt3-updated .lt3-hero-success.lt3-demo-success{min-height:455px}
+.lt3-updated .lt3-faq{padding:110px 4vw;display:grid;grid-template-columns:.75fr 1.25fr;gap:80px;background:var(--l3-paper)}
+.lt3-updated .lt3-faq>div:first-child>span{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--l3-red)}
+.lt3-updated .lt3-faq h2{font:400 clamp(52px,6vw,84px)/.92 'Libre Caslon Display',serif;margin:28px 0 0}
+.lt3-updated .lt3-faq-list{border-top:1px solid var(--l3-black)}
+.lt3-updated .lt3-faq details{padding:24px 0;border-bottom:1px solid var(--l3-line)}
+.lt3-updated .lt3-faq summary{list-style:none;display:flex;justify-content:space-between;gap:24px;cursor:pointer;font-size:16px;font-weight:600}
+.lt3-updated .lt3-faq summary::-webkit-details-marker{display:none}
+.lt3-updated .lt3-faq summary span{color:var(--l3-red);font-size:21px}
+.lt3-updated .lt3-faq details p{max-width:680px;padding-right:36px;font-size:16px;line-height:1.65;color:#4f4f4f}
+.lt3-updated .lt3-contact>div p{font-size:20px}
+.lt3-updated .lt3-check span{font-size:14px!important;line-height:1.45}
+.lt3-updated .lt3-footer p{font-size:14px;line-height:1.6;color:#c4c4c4}
+.lt3-updated .lt3-mobile{grid-template-columns:1fr}
+
+@media(max-width:1180px){
+  .lt3-updated .lt3-hero-stage{min-height:820px}
+  .lt3-updated .lt3-hero-form{min-height:0}
+  .lt3-updated .lt3-stamp{top:39%;left:43%}
+}
+@media(max-width:1000px){
+  .lt3-updated .lt3-nav{grid-template-columns:1fr auto auto}
+  .lt3-updated .lt3-hero-stage{min-height:1080px}
+  .lt3-updated .lt3-stamp{top:32%;left:50%}
+  .lt3-updated .lt3-faq{grid-template-columns:1fr;gap:50px}
+}
+@media(max-width:650px){
+  .lt3-updated #lt3-top,
+  .lt3-updated #lt3-capabilities,
+  .lt3-updated #lt3-method,
+  .lt3-updated #lt3-counsel,
+  .lt3-updated #lt3-faq,
+  .lt3-updated #lt3-contact{scroll-margin-top:68px}
+  .lt3-updated .lt3-location{display:none}
+  .lt3-updated .lt3-nav{grid-template-columns:1fr auto}
+  .lt3-updated .lt3-hero-stage{min-height:1160px;padding-top:115px;gap:365px}
+  .lt3-updated .lt3-hero-stage>h1{font-size:56px;line-height:.78}
+  .lt3-updated .lt3-stamp{top:29%;left:50%;font-size:31px}
+  .lt3-updated .lt3-hero-form{padding:24px 18px}
+  .lt3-updated .lt3-faq{padding:76px 20px;gap:38px}
+  .lt3-updated .lt3-faq h2{font-size:52px}
+  .lt3-updated .lt3-faq details p{padding-right:0}
+  .lt3-updated .lt3-footer p{font-size:13px}
+}
