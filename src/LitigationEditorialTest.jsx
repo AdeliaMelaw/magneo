@@ -49,9 +49,7 @@ export default function LitigationEditorialTest(){
         <div className="lt3-hero-stage" key={sequence}>
           <p className="lt3-overline">Toronto litigation counsel for businesses and professionals</p>
           <h1><span>COMPLEX</span><span>LEGAL</span><span className="lt3-cases-word">DISPUTES</span></h1>
-          <div className="lt3-stamp" aria-label="Strategy first">STRATEGY FIRST</div>
-          <div className="lt3-impact"/>
-          <button className="lt3-replay" type="button" onClick={()=>setSequence((n)=>n+1)}>Replay opening ↻</button>
+          <div className="lt3-banner-portrait"><img src="/pi-lawyer-hero-generated.png" alt="Elena Rowe, fictional litigation counsel"/><div className="lt3-stamp" aria-label="Strategy first">STRATEGY FIRST</div></div>
           <form className="lt3-hero-form" onSubmit={(e)=>{e.preventDefault();setHeroSent(true)}}>
             {heroSent ? <DemoSuccess onReset={()=>setHeroSent(false)}/> : <>
               <div className="lt3-form-index"><span>Initial enquiry</span></div>
@@ -63,6 +61,7 @@ export default function LitigationEditorialTest(){
               <small>Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small>
             </>}
           </form>
+          <button className="lt3-replay" type="button" onClick={()=>setSequence((n)=>n+1)}>Replay opening ↻</button>
         </div>
         <div className="lt3-hero-foot">
           <p>When a dispute puts your business, reputation, or professional future at risk, you need to understand your options. We assess the facts, explain the risks, and plan the next step with you.</p>
