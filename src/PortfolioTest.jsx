@@ -89,7 +89,7 @@ export default function PortfolioTest(){
         <div className="pf-index-card"><small>03 / Explore</small><strong>AI-powered marketing</strong><span>Custom tools, video &amp; automation</span><i aria-hidden="true">↓</i></div>
       </div>
       <div className="container pf-category-galleries" id="portfolio-previews" aria-label="Portfolio concepts and demonstrations">
-        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website concepts" summary="06 original concepts" cta={{eyebrow:'Featured collection · Legal websites',label:'Explore law firm website concepts',href:'/portfolio/legal-websites/'}}/>
+        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website concepts" summary="06 original concepts" cta={{eyebrow:'Featured collection · Legal websites',label:'View websites',href:'/portfolio/legal-websites/'}}/>
         <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social media concepts" summary="04 reel concepts" offset={700} cta={{eyebrow:'Reel previews',label:'Full collection coming soon'}}/>
         <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing concepts" summary="03 original concepts" offset={1400} cta={{eyebrow:'AI concept previews',label:'Full collection coming soon'}}/>
       </div>
