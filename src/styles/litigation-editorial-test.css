@@ -7,7 +7,7 @@
 .lt3-updated #lt3-counsel,
 .lt3-updated #lt3-faq,
 .lt3-updated #lt3-contact{scroll-margin-top:78px}
-.lt3-updated .lt3-hero-stage{min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:center;justify-content:stretch}
+.lt3-updated .lt3-hero-stage{min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:center;justify-content:stretch;overflow:visible}
 .lt3-updated .lt3-banner-art{position:relative;min-width:0;min-height:510px;align-self:center;overflow:hidden}
 .lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:104px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
 .lt3-updated .lt3-banner-art>h1 span{color:var(--l3-red);text-shadow:1px 1px 0 #a30f14,2px 2px 0 #7c0c10,3px 3px 0 #56090c,6px 8px 11px rgba(0,0,0,.2)}
@@ -20,7 +20,7 @@
 @keyframes lt3-pose-protective{0%,58%{opacity:0;transform:scale(.99)}100%{opacity:1;transform:scale(1)}}
 .lt3-updated .lt3-banner-portrait .lt3-stamp{z-index:7;left:57%;top:auto;bottom:92px;color:#fff;border-color:#fff;white-space:nowrap;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.025em;padding:.12em .22em;animation:lt3-stamp-finish .4s ease-out 2.55s both}
 @keyframes lt3-stamp-finish{from{opacity:0;transform:translate(-50%,12px) rotate(-5deg) scale(.9)}to{opacity:1;transform:translate(-50%,0) rotate(-5deg) scale(1)}}
-.lt3-updated .lt3-hero-form{position:relative;inset:auto;transform:none;width:100%;min-height:0;align-self:center}
+.lt3-updated .lt3-hero-form{position:relative;inset:auto;transform:none;width:100%;min-height:0;align-self:center;box-shadow:12px 12px 0 var(--l3-grey)}
 .lt3-updated .lt3-replay{bottom:6px}
 .lt3-updated .lt3-form-index{font-size:11px}
 .lt3-updated .lt3-hero-form label>span,
