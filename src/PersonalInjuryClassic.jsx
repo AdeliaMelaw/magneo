@@ -30,7 +30,7 @@ export default function PersonalInjuryClassic(){
 
   return <div className="avalon-law avalon-law-classic">
     <header className="al-nav">
-      <a className="al-brand" href="#top" aria-label="Arden Vale Injury Law home"><i>AV</i><span>Arden Vale<small>Injury Law</small></span></a>
+      <a className="al-brand" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio"><i>AV</i><span>Back to portfolio</span></a>
       <nav aria-label="Primary navigation">
         <a href="#cases">Cases we handle</a><a href="#approach">Our approach</a><a href="#lawyer">Your lawyer</a><a href="#faq">FAQ</a>
       </nav>
