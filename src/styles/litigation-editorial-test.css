@@ -16,8 +16,8 @@
 .lt3-updated .lt3-hero h1>span:nth-child(2){--lt3-start:.12em;animation-delay:.1s}
 .lt3-updated .lt3-hero h1>span:nth-child(3){--lt3-start:-.08em;animation-delay:.2s}
 @keyframes lt3-text-align{from{transform:translateX(var(--lt3-start));letter-spacing:-.1em}to{transform:translateX(0);letter-spacing:-.07em}}
-.lt3-updated .lt3-banner-portrait{position:absolute;z-index:2;right:-1.5%;bottom:0;width:min(76%,700px);height:560px;background:transparent;overflow:visible}
-.lt3-updated .lt3-banner-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;filter:grayscale(1) contrast(1.06) drop-shadow(7px 9px 8px rgba(0,0,0,.14));mix-blend-mode:multiply}
+.lt3-updated .lt3-banner-portrait{position:absolute;z-index:2;right:-1.5%;bottom:0;width:min(76%,700px);height:510px;background:transparent;overflow:visible}
+.lt3-updated .lt3-banner-portrait img{position:absolute;left:0;top:0;width:100%;height:auto;display:block;filter:grayscale(1) contrast(1.06) drop-shadow(7px 9px 8px rgba(0,0,0,.14));mix-blend-mode:multiply}
 .lt3-updated .lt3-banner-portrait .lt3-stamp{z-index:7;left:57%;top:auto;bottom:8px;white-space:nowrap;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.025em;padding:.12em .22em;animation:lt3-stamp-finish .4s ease-out .78s both}
 @keyframes lt3-stamp-finish{from{opacity:0;transform:translate(-50%,12px) rotate(-5deg) scale(.9)}to{opacity:1;transform:translate(-50%,0) rotate(-5deg) scale(1)}}
 .lt3-updated .lt3-hero-form{position:relative;inset:auto;transform:none;width:100%;min-height:520px}
@@ -64,7 +64,7 @@
   .lt3-updated .lt3-hero-stage{min-height:690px;grid-template-columns:minmax(0,1fr) 320px}
   .lt3-updated .lt3-banner-art{min-height:540px}
   .lt3-updated .lt3-banner-art>h1{font-size:clamp(58px,7vw,84px)}
-  .lt3-updated .lt3-banner-portrait{width:78%;height:520px}
+  .lt3-updated .lt3-banner-portrait{width:78%;height:470px}
   .lt3-updated .lt3-hero-form{min-height:0}
 }
 @media(max-width:1000px){
@@ -72,7 +72,7 @@
   .lt3-updated .lt3-hero-stage{min-height:0;grid-template-columns:1fr;gap:30px;padding:100px 0 34px}
   .lt3-updated .lt3-banner-art{min-height:530px;width:100%}
   .lt3-updated .lt3-banner-art>h1{font-size:clamp(60px,12vw,92px);bottom:50px}
-  .lt3-updated .lt3-banner-portrait{right:0;width:min(70%,560px);height:500px}
+  .lt3-updated .lt3-banner-portrait{right:0;width:min(70%,560px);height:440px}
   .lt3-updated .lt3-replay{position:static;justify-self:end;order:4}
   .lt3-updated .lt3-faq{grid-template-columns:1fr;gap:50px}
 }
@@ -88,7 +88,7 @@
   .lt3-updated .lt3-hero-stage{min-height:0;padding-top:110px;gap:26px}
   .lt3-updated .lt3-banner-art{min-height:510px;width:100%;max-width:100vw;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
   .lt3-updated .lt3-banner-art>h1{position:relative;left:auto;bottom:auto;width:100%;font-size:56px;line-height:.78;margin-bottom:-16px}
-  .lt3-updated .lt3-banner-portrait{position:relative;right:auto;bottom:auto;align-self:center;width:min(88vw,340px);height:330px}
+  .lt3-updated .lt3-banner-portrait{position:relative;right:auto;bottom:auto;align-self:center;width:min(88vw,340px);height:275px}
   .lt3-updated .lt3-banner-portrait img{filter:grayscale(1) contrast(1.06) drop-shadow(4px 6px 6px rgba(0,0,0,.12))}
   .lt3-updated .lt3-banner-portrait .lt3-stamp{font-size:23px;bottom:4px;left:56%}
   .lt3-updated .lt3-hero-form{padding:24px 18px}
