@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/portfolio/legal-websites/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/portfolio/test/?",
       "status": 308,
       "headers": {
