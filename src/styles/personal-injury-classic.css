@@ -1,0 +1,27 @@
+.avalon-law-classic .al-hero-copy{padding-top:74px;padding-bottom:58px}
+.avalon-law-classic .al-main{padding-top:0!important}
+.avalon-law-classic .al-hero h1{font-size:clamp(58px,5.9vw,88px);line-height:.91;margin:30px 0 24px}
+.avalon-law-classic .al-lead{font-size:17px;line-height:1.68}
+.avalon-law-classic .al-assurance{margin-top:42px}
+.avalon-law-classic .al-eyebrow,
+.avalon-law-classic .al-kicker{font-size:12px;line-height:1.45}
+.avalon-law-classic .al-profile-card small,
+.avalon-law-classic .al-story-panel>small{font-size:10px}
+.avalon-law-classic .al-availability{font-size:11px}
+.avalon-law-classic .al-case p{font-size:13px;line-height:1.55}
+.avalon-law-classic .al-case small{display:inline-block;margin-top:9px;color:var(--al-copper);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase}
+.avalon-law-classic .al-form label{font-size:11px;line-height:1.45}
+.avalon-law-classic .al-form>small{font-size:11px;line-height:1.5}
+.avalon-law-classic .al-field-note{display:block;margin-top:10px;color:#5f6a72;font-size:11px;line-height:1.55;letter-spacing:0;text-transform:none}
+
+@media(max-width:680px){
+  .avalon-law-classic .al-hero-copy{padding-top:54px;min-height:620px}
+  .avalon-law-classic .al-hero h1{font-size:clamp(50px,15vw,62px);line-height:.93}
+  .avalon-law-classic .al-assurance{flex-wrap:wrap;margin-top:36px}
+  .avalon-law-classic .al-assurance span{min-width:28%}
+  .avalon-law-classic .al-case{align-items:start}
+  .avalon-law-classic .al-case p{display:block;margin-top:8px}
+  .avalon-law-classic .al-case small{line-height:1.4}
+  .avalon-law-classic .al-mobile-bar{grid-template-columns:1fr}
+  .avalon-law-classic .al-mobile-bar a:last-child{display:none}
+}

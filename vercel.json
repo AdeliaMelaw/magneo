@@ -2,10 +2,10 @@
   "routes": [
     {
       "src": "/portfolio/legal-websites/personal-injury-classic/test/?",
+      "status": 308,
       "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
+        "Location": "https://magneo.ca/portfolio/legal-websites/personal-injury-classic/"
+      }
     },
     {
       "src": "/portfolio/legal-websites/test/?",

@@ -15,7 +15,7 @@ const steps = [
 
 function Arrow(){ return <span aria-hidden="true">↗</span>; }
 
-export default function PersonalInjuryClassicTest(){
+export default function PersonalInjuryClassic(){
   const [sent, setSent] = useState(false);
   useEffect(() => {
     document.title = 'Arden Vale Injury Law | Fictional PI Lawyer Website Concept';
@@ -25,13 +25,10 @@ export default function PersonalInjuryClassicTest(){
     meta.content = description;
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-classic/test/';
-    const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.personalInjuryClassicTest = 'true'; document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-classic/';
   }, []);
 
-  return <div className="avalon-law avalon-law-test">
+  return <div className="avalon-law avalon-law-classic">
     <header className="al-nav">
       <a className="al-brand" href="#top" aria-label="Arden Vale Injury Law home"><i>AV</i><span>Arden Vale<small>Injury Law</small></span></a>
       <nav aria-label="Primary navigation">
