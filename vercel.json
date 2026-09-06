@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/portfolio/legal-websites/personal-injury-classic/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/portfolio/legal-websites/test/?",
       "status": 308,
       "headers": {
