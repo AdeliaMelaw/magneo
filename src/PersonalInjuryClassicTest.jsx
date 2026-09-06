@@ -37,7 +37,7 @@ export default function PersonalInjuryClassicTest(){
       <nav aria-label="Primary navigation">
         <a href="#cases">Cases we handle</a><a href="#approach">Our approach</a><a href="#lawyer">Your lawyer</a><a href="#faq">FAQ</a>
       </nav>
-      <div className="al-nav-actions"><a className="al-phone" href="#consultation">Request a consultation</a><a className="al-btn al-btn-small" href="#consultation">Free consultation <Arrow/></a></div>
+      <div className="al-nav-actions"><a className="al-btn al-btn-small" href="#consultation">Free consultation <Arrow/></a></div>
     </header>
 
     <main id="top" className="al-main">
@@ -45,8 +45,8 @@ export default function PersonalInjuryClassicTest(){
         <div className="al-hero-copy">
           <div className="al-eyebrow"><span/> Toronto personal injury law</div>
           <h1>Injured and unsure<br/>what comes <em>next?</em></h1>
-          <p className="al-lead">After a serious injury, dealing with an insurance claim can feel overwhelming. We help you understand your options, what your claim may involve, and how we can help.</p>
-          <div className="al-actions"><a className="al-btn" href="#consultation">Tell us what happened <Arrow/></a><a className="al-text-link" href="#consultation">Request a consultation</a></div>
+          <p className="al-lead">After a serious injury, an insurance claim can feel overwhelming. We explain your options, what pursuing a claim may involve, and the next steps to consider.</p>
+          <div className="al-actions"><a className="al-btn" href="#consultation">Tell us what happened <Arrow/></a><a className="al-text-link" href="#cases">See how we can help</a></div>
           <div className="al-assurance"><span><b>Free</b> initial assessment</span><span><b>Clear</b> next steps</span><span><b>Personal</b> attention</span></div>
         </div>
         <div className="al-hero-media">
@@ -57,7 +57,7 @@ export default function PersonalInjuryClassicTest(){
       </section>
 
       <section className="al-proof" aria-label="Firm commitments">
-        <div><strong>Clear</strong><span>Communication</span></div><div><strong>Focused</strong><span>Case preparation</span></div><div><strong>Practical</strong><span>Next steps</span></div><div><strong>Personal</strong><span>Attention</span></div>
+        <div><strong>Your situation</strong><span>What happened</span></div><div><strong>Your questions</strong><span>What you need to know</span></div><div><strong>Your options</strong><span>What may come next</span></div><div><strong>Your decision</strong><span>Whether to proceed</span></div>
       </section>
 
       <section className="al-section al-cases" id="cases">
@@ -66,7 +66,7 @@ export default function PersonalInjuryClassicTest(){
       </section>
 
       <section className="al-story" id="lawyer">
-        <div className="al-story-quote"><span className="al-kicker">Why Arden Vale</span><blockquote>“You deserve to understand your options and know what happens next.”</blockquote><p>Maya Arden is the fictional lawyer featured in this demonstration. This section illustrates how a firm can introduce the person behind the practice and explain their approach to client communication.</p><a className="al-light-link" href="#consultation">Request a consultation <Arrow/></a></div>
+        <div className="al-story-quote"><span className="al-kicker">Meet your lawyer · Fictional profile</span><blockquote>“You deserve to understand your options and know what happens next.”</blockquote><p>A serious injury brings difficult questions. Our approach starts with listening to your concerns, explaining your options, and helping you understand each decision along the way.</p><a className="al-light-link" href="#consultation">Request a consultation <Arrow/></a></div>
         <div className="al-story-panel"><small>Our promise</small><h3>Clarity at every turn.</h3><ul><li><span>01</span>Plain-language explanations of your options</li><li><span>02</span>Clear next steps for documents and preparation</li><li><span>03</span>An agreed approach to communication and updates</li><li><span>04</span>Advice to help you make informed decisions</li></ul></div>
       </section>
 
@@ -83,7 +83,7 @@ export default function PersonalInjuryClassicTest(){
       <section className="al-section al-faq" id="faq">
         <div className="al-section-intro"><span className="al-kicker">Common questions</span><h2>Answers before<br/>you call.</h2></div>
         <div className="al-faq-list">
-          <details open><summary>How much does a consultation cost?<span>+</span></summary><p>The initial case assessment is free. Before you decide whether to hire the firm, ask for a clear explanation of legal fees, expenses, taxes, and when payments may be required. Any fee arrangement should be explained in writing.</p></details>
+          <details open><summary>How much does a consultation cost?<span>+</span></summary><p>Your initial case assessment is free. Before you decide whether to hire us, we explain the proposed legal fees, expenses, applicable taxes, and when payments may be required. You can review the written terms and ask questions before deciding.</p></details>
           <details><summary>How long do I have to start a claim?<span>+</span></summary><p>Limitation periods and notice deadlines vary. Some can be short, especially where a municipality or public body is involved. Get advice promptly.</p></details>
           <details><summary>Will my case go to court?<span>+</span></summary><p>Whether a matter goes to court depends on its circumstances. We explain the available options and advise you about any settlement offer so you can make an informed decision.</p></details>
           <details><summary>What should I bring to the first call?<span>+</span></summary><p>If you have them, keep the incident date, photographs, insurance details, and any insurer correspondence nearby. You do not need to gather every document before making an initial enquiry.</p></details>
@@ -91,7 +91,7 @@ export default function PersonalInjuryClassicTest(){
       </section>
 
       <section className="al-consult" id="consultation">
-        <div className="al-consult-copy"><span className="al-kicker">Free confidential consultation</span><h2>Tell us what<br/>happened.</h2><p>Share a few details and how you would like to be contacted. You do not need to write a complete account to make an initial enquiry.</p><a href="#consultation"><strong>Request a consultation</strong></a></div>
+        <div className="al-consult-copy"><span className="al-kicker">Free confidential consultation</span><h2>Tell us what<br/>happened.</h2><p>Share a few details and how you would like to be contacted. You do not need to write a complete account to make an initial enquiry.</p></div>
         <form className="al-form" onSubmit={(e)=>{e.preventDefault(); setSent(true)}}>
           {sent ? <div className="al-success" role="status"><span>✓</span><h3>This is a demonstration form.</h3><p>No enquiry has been sent.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <>
             <div className="al-form-grid"><label>Full name<input required placeholder="Your name" autoComplete="name"/></label><label>Phone or email<input required placeholder="How should we reach you?"/></label></div>
