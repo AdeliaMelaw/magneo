@@ -7,16 +7,17 @@
 .lt3-updated #lt3-counsel,
 .lt3-updated #lt3-faq,
 .lt3-updated #lt3-contact{scroll-margin-top:78px}
-.lt3-updated .lt3-hero-stage{min-height:650px;display:grid;grid-template-columns:minmax(0,1fr) 280px 370px;gap:20px;align-items:center;justify-content:stretch}
-.lt3-updated .lt3-hero-stage>h1{width:auto;margin:0;font-size:clamp(62px,7vw,112px);line-height:.75}
+.lt3-updated .lt3-hero-stage{min-height:650px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:stretch;justify-content:stretch}
+.lt3-updated .lt3-banner-art{position:relative;min-width:0;min-height:560px;align-self:end;overflow:visible}
+.lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:76px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
 .lt3-updated .lt3-hero h1>span{clip-path:none;animation:lt3-text-align .62s cubic-bezier(.2,.8,.2,1) both}
 .lt3-updated .lt3-hero h1>span:nth-child(1){--lt3-start:-.16em}
 .lt3-updated .lt3-hero h1>span:nth-child(2){--lt3-start:.12em;animation-delay:.1s}
 .lt3-updated .lt3-hero h1>span:nth-child(3){--lt3-start:-.08em;animation-delay:.2s}
 @keyframes lt3-text-align{from{transform:translateX(var(--lt3-start));letter-spacing:-.1em}to{transform:translateX(0);letter-spacing:-.07em}}
-.lt3-updated .lt3-banner-portrait{position:relative;align-self:center;width:100%;height:450px;background:#e7e7e4;overflow:visible}
-.lt3-updated .lt3-banner-portrait img{width:100%;height:100%;object-fit:cover;object-position:78% center;display:block;filter:grayscale(1) contrast(1.06);mix-blend-mode:multiply;mask-image:linear-gradient(to bottom,#000 84%,transparent 100%)}
-.lt3-updated .lt3-banner-portrait .lt3-stamp{left:50%;top:auto;bottom:-16px;white-space:nowrap;font-size:clamp(20px,2.5vw,34px);letter-spacing:-.025em;padding:.12em .22em;animation:lt3-stamp-finish .4s ease-out .78s both}
+.lt3-updated .lt3-banner-portrait{position:absolute;z-index:2;right:-1.5%;bottom:0;width:min(76%,700px);height:560px;background:transparent;overflow:visible}
+.lt3-updated .lt3-banner-portrait img{width:100%;height:100%;object-fit:contain;object-position:center bottom;display:block;filter:grayscale(1) contrast(1.06);mix-blend-mode:multiply}
+.lt3-updated .lt3-banner-portrait .lt3-stamp{z-index:7;left:57%;top:auto;bottom:8px;white-space:nowrap;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.025em;padding:.12em .22em;animation:lt3-stamp-finish .4s ease-out .78s both}
 @keyframes lt3-stamp-finish{from{opacity:0;transform:translate(-50%,12px) rotate(-5deg) scale(.9)}to{opacity:1;transform:translate(-50%,0) rotate(-5deg) scale(1)}}
 .lt3-updated .lt3-hero-form{position:relative;inset:auto;transform:none;width:100%;min-height:520px}
 .lt3-updated .lt3-form-index{font-size:11px}
@@ -59,13 +60,18 @@
 .lt3-updated .lt3-mobile{grid-template-columns:1fr}
 
 @media(max-width:1180px){
-  .lt3-updated .lt3-hero-stage{min-height:690px;grid-template-columns:minmax(0,1fr) 230px 320px}
+  .lt3-updated .lt3-hero-stage{min-height:690px;grid-template-columns:minmax(0,1fr) 320px}
+  .lt3-updated .lt3-banner-art{min-height:540px}
+  .lt3-updated .lt3-banner-art>h1{font-size:clamp(58px,7vw,84px)}
+  .lt3-updated .lt3-banner-portrait{width:78%;height:520px}
   .lt3-updated .lt3-hero-form{min-height:0}
 }
 @media(max-width:1000px){
   .lt3-updated .lt3-nav{grid-template-columns:1fr auto auto}
   .lt3-updated .lt3-hero-stage{min-height:0;grid-template-columns:1fr;gap:30px;padding:100px 0 34px}
-  .lt3-updated .lt3-banner-portrait{width:min(380px,100%);height:360px;justify-self:center;margin-bottom:14px}
+  .lt3-updated .lt3-banner-art{min-height:530px;width:100%}
+  .lt3-updated .lt3-banner-art>h1{font-size:clamp(60px,12vw,92px);bottom:50px}
+  .lt3-updated .lt3-banner-portrait{right:0;width:min(70%,560px);height:500px}
   .lt3-updated .lt3-replay{position:static;justify-self:end;order:4}
   .lt3-updated .lt3-faq{grid-template-columns:1fr;gap:50px}
 }
@@ -79,9 +85,10 @@
   .lt3-updated .lt3-location{display:none}
   .lt3-updated .lt3-nav{grid-template-columns:1fr auto}
   .lt3-updated .lt3-hero-stage{min-height:0;padding-top:110px;gap:26px}
-  .lt3-updated .lt3-hero-stage>h1{font-size:56px;line-height:.78}
-  .lt3-updated .lt3-banner-portrait{width:min(320px,100%);height:300px;margin-bottom:12px}
-  .lt3-updated .lt3-banner-portrait .lt3-stamp{font-size:25px;bottom:-13px}
+  .lt3-updated .lt3-banner-art{min-height:510px;width:100%;max-width:100vw;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+  .lt3-updated .lt3-banner-art>h1{position:relative;left:auto;bottom:auto;width:100%;font-size:56px;line-height:.78;margin-bottom:-16px}
+  .lt3-updated .lt3-banner-portrait{position:relative;right:auto;bottom:auto;align-self:center;width:min(88vw,340px);height:330px}
+  .lt3-updated .lt3-banner-portrait .lt3-stamp{font-size:23px;bottom:4px;left:56%}
   .lt3-updated .lt3-hero-form{padding:24px 18px}
   .lt3-updated .lt3-faq{padding:76px 20px;gap:38px}
   .lt3-updated .lt3-faq h2{font-size:52px}
