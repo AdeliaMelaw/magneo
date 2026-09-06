@@ -82,7 +82,7 @@ export default function Portfolio(){
         <a href="#ai-gallery"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
       </div>
       <div className="container pf-category-galleries" aria-label="Selected portfolio previews">
-        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website previews" summary="06 selected directions" cta={{eyebrow:'Featured collection · Legal websites',label:'View websites',href:'/portfolio/legal-websites/'}}/>
+        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website previews" summary="06 selected directions" cta={{eyebrow:'Featured collection · Legal websites',label:'View legal websites',href:'/portfolio/legal-websites/'}}/>
         <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social previews" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media collection · Coming soon',label:'View social media posts'}}/>
         <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing previews" summary="03 applied systems" offset={1400} cta={{eyebrow:'AI systems collection · Coming soon',label:'View AI-marketing systems'}}/>
       </div>
