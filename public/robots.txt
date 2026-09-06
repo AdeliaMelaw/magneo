@@ -6,7 +6,6 @@ Disallow: /test3
 Disallow: /test4
 Disallow: /test5
 Disallow: /test6
-Disallow: /portfolio/legal-websites/personal-injury-bold/test
 Disallow: /about-us
 
 Sitemap: https://magneo.ca/sitemap.xml
