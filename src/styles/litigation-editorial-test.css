@@ -7,9 +7,9 @@
 .lt3-updated #lt3-counsel,
 .lt3-updated #lt3-faq,
 .lt3-updated #lt3-contact{scroll-margin-top:78px}
-.lt3-updated .lt3-hero-stage{min-height:650px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:stretch;justify-content:stretch}
-.lt3-updated .lt3-banner-art{position:relative;min-width:0;min-height:560px;align-self:end;overflow:hidden}
-.lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:76px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
+.lt3-updated .lt3-hero-stage{min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:center;justify-content:stretch}
+.lt3-updated .lt3-banner-art{position:relative;min-width:0;min-height:510px;align-self:center;overflow:hidden}
+.lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:46px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
 .lt3-updated .lt3-banner-art>h1 span{text-shadow:1px 1px 0 #777,2px 2px 0 #555,3px 3px 0 #3a3a3a,6px 8px 11px rgba(0,0,0,.18)}
 .lt3-updated .lt3-hero h1>span{clip-path:none;animation:lt3-text-align .62s cubic-bezier(.2,.8,.2,1) both}
 .lt3-updated .lt3-hero h1>span:nth-child(1){--lt3-start:-.16em}
@@ -20,7 +20,8 @@
 .lt3-updated .lt3-banner-portrait img{position:absolute;left:0;top:0;width:100%;height:auto;display:block;filter:grayscale(1) contrast(1.06) drop-shadow(7px 9px 8px rgba(0,0,0,.14));mix-blend-mode:multiply}
 .lt3-updated .lt3-banner-portrait .lt3-stamp{z-index:7;left:57%;top:auto;bottom:8px;white-space:nowrap;font-size:clamp(20px,2.2vw,32px);letter-spacing:-.025em;padding:.12em .22em;animation:lt3-stamp-finish .4s ease-out .78s both}
 @keyframes lt3-stamp-finish{from{opacity:0;transform:translate(-50%,12px) rotate(-5deg) scale(.9)}to{opacity:1;transform:translate(-50%,0) rotate(-5deg) scale(1)}}
-.lt3-updated .lt3-hero-form{position:relative;inset:auto;transform:none;width:100%;min-height:520px}
+.lt3-updated .lt3-hero-form{position:relative;inset:auto;transform:none;width:100%;min-height:0;align-self:center}
+.lt3-updated .lt3-replay{bottom:6px}
 .lt3-updated .lt3-form-index{font-size:11px}
 .lt3-updated .lt3-hero-form label>span,
 .lt3-updated .lt3-contact label>span{font-size:12px;line-height:1.35}
@@ -61,8 +62,8 @@
 .lt3-updated .lt3-mobile{grid-template-columns:1fr}
 
 @media(max-width:1180px){
-  .lt3-updated .lt3-hero-stage{min-height:690px;grid-template-columns:minmax(0,1fr) 320px}
-  .lt3-updated .lt3-banner-art{min-height:540px}
+  .lt3-updated .lt3-hero-stage{min-height:580px;grid-template-columns:minmax(0,1fr) 320px}
+  .lt3-updated .lt3-banner-art{min-height:520px}
   .lt3-updated .lt3-banner-art>h1{font-size:clamp(58px,7vw,84px)}
   .lt3-updated .lt3-banner-portrait{width:78%;height:470px}
   .lt3-updated .lt3-hero-form{min-height:0}
