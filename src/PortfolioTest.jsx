@@ -82,6 +82,7 @@ export default function PortfolioTest(){
 
     <section className="pf-index" id="portfolio-categories">
       <div className="pf-index-line" aria-hidden="true"/>
+      <div className="container pf-index-heading"><h2>Portfolio</h2></div>
       <div className="container pf-index-grid">
         <div className="pf-index-card"><small>01 / Explore</small><strong>Websites</strong><span>Design, content &amp; development</span><i aria-hidden="true">↓</i></div>
         <div className="pf-index-card"><small>02 / Explore</small><strong>Social media</strong><span>Posts, video &amp; content strategy</span><i aria-hidden="true">↓</i></div>
