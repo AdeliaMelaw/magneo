@@ -29,15 +29,12 @@ export default function LitigationEditorialTest(){
     description.content = 'A fictional editorial litigation law-firm website concept created by Magneo.';
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/portfolio/legal-websites/litigation-editorial/test/';
-    const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.litigationEditorialTest = 'true'; document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/litigation-editorial/';
   }, []);
 
   return <div className="lt3 lt3-updated">
     <header className="lt3-nav">
-      <a className="lt3-logo" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio"><b aria-hidden="true">A/R</b><span>ASHCROFT ROWE<small>TRIAL &amp; APPELLATE COUNSEL</small></span></a>
+      <a className="lt3-logo lt3-back-link" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
       <nav aria-label="Primary navigation"><a href="#lt3-capabilities">Disputes we handle</a><a href="#lt3-method">Our approach</a><a href="#lt3-counsel">Counsel</a><a href="#lt3-contact">Contact</a></nav>
       <span className="lt3-location">Toronto</span>
       <a className="lt3-btn lt3-btn-dark" href="#lt3-contact">Discuss a matter <Arrow/></a>

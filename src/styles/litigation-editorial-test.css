@@ -1,5 +1,6 @@
 .lt3-updated main{padding-top:0!important}
 .lt3-updated .lt3-nav{grid-template-columns:auto 1fr auto auto}
+.lt3-updated .lt3-back-link>span{font-size:12px;letter-spacing:.12em}
 .lt3-updated .lt3-location{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#535353}
 .lt3-updated #lt3-top,
 .lt3-updated #lt3-capabilities,
