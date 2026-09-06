@@ -2,10 +2,10 @@
   "routes": [
     {
       "src": "/portfolio/test/?",
+      "status": 308,
       "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
+        "Location": "https://magneo.ca/portfolio/"
+      }
     },
     {
       "src": "/downloads/personal-branding-guide-legal-professionals\\.pdf",

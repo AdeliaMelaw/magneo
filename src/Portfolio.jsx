@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const websiteGallery = [
-  ['/pi-lawyer-hero-generated.png','Personal injury · Classic','classic'],
-  ['/pi-lawyer-hero-generated.png','Personal injury · Bold','bold'],
-  ['/pi-lawyer-hero-generated.png','Litigation · Editorial','editorial'],
+  ['/portfolio/websites/personal-injury-classic-preview.webp','Personal injury · Classic','mockup'],
+  ['/portfolio/websites/personal-injury-bold-preview.webp','Personal injury · Bold','mockup'],
+  ['/portfolio/websites/litigation-editorial-preview.webp','Litigation · Editorial','mockup'],
   ['/brain-injury-head-3d-v2.png','Brain injury · 3D','brain'],
   ['/test5-cinematic-hero.png','Personal injury · Cinematic','cinematic'],
   ['/test6-family-hero.png','Personal injury · Family','family'],
@@ -58,70 +58,69 @@ export default function Portfolio(){
     document.title='Portfolio | Magneo — Web, Social & AI Marketing';
     let description=document.querySelector('meta[name="description"]');
     if(!description){description=document.createElement('meta');description.name='description';document.head.appendChild(description);}
-    description.content='Explore Magneo work across website design, social media marketing, and AI-powered digital marketing for regulated industries.';
+    description.content='Explore Magneo website concepts, social media creative, and AI-powered marketing ideas for businesses in regulated industries.';
     let canonical=document.querySelector('link[rel="canonical"]');
     if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical);}
     canonical.href='https://magneo.ca/portfolio/';
   },[]);
 
-  return <div className="pf-main">
+  return <div className="pf-main pf-portfolio-hub">
     <section className="pf-hero">
       <div className="container pf-hero-inner">
-        <div className="pf-kicker"><span>Magneo portfolio · Selected work</span><span>Three connected disciplines</span></div>
-        <h1>Three disciplines.<br/><em>One growth system.</em></h1>
-        <div className="pf-hero-foot"><p>Website design, social media, and AI-powered marketing—built together for businesses whose reputation has to perform before the first conversation begins.</p><a href="#portfolio-categories">Explore the portfolio <span>↓</span></a></div>
+        <div className="pf-kicker"><span>Magneo portfolio · Concepts &amp; demonstrations</span><span>Websites · Social media · AI marketing</span></div>
+        <h1>Distinctive websites.<br/>Engaging content.<br/><em>AI-powered marketing.</em></h1>
+        <div className="pf-hero-foot"><div><p>Explore website concepts, social media creative, and AI marketing demonstrations for businesses in regulated industries. Discover ideas for your next website, content campaign, or custom AI tool.</p><small className="pf-hero-disclosure">The examples shown are original Magneo concepts and demonstrations, not commissioned client projects.</small></div><a href="#portfolio-previews">Explore the portfolio <span>↓</span></a></div>
       </div>
       <div className="pf-hero-code" aria-hidden="true"><span>01</span><span>02</span><span>03</span></div>
     </section>
 
     <section className="pf-index" id="portfolio-categories">
       <div className="pf-index-line" aria-hidden="true"/>
+      <div className="container pf-index-heading"><h2>Portfolio</h2></div>
       <div className="container pf-index-grid">
-        <a href="#website-gallery"><small>01 / Portfolio discipline</small><strong>Websites</strong><span>Design, positioning and conversion</span><i aria-hidden="true">↓</i></a>
-        <a href="#social-gallery"><small>02 / Portfolio discipline</small><strong>Social media</strong><span>Authority, content and distribution</span><i aria-hidden="true">↓</i></a>
-        <a href="#ai-gallery"><small>03 / Portfolio discipline</small><strong>AI-powered marketing</strong><span>Research, production and optimization</span><i aria-hidden="true">↓</i></a>
+        <div className="pf-index-card"><small>01 / Explore</small><strong>Websites</strong><span>Design, content &amp; development</span><i aria-hidden="true">↓</i></div>
+        <div className="pf-index-card"><small>02 / Explore</small><strong>Social media</strong><span>Posts, video &amp; content strategy</span><i aria-hidden="true">↓</i></div>
+        <div className="pf-index-card"><small>03 / Explore</small><strong>AI-powered marketing</strong><span>Custom tools, video &amp; automation</span><i aria-hidden="true">↓</i></div>
       </div>
-      <div className="container pf-category-galleries" aria-label="Selected portfolio previews">
-        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website previews" summary="06 selected directions" cta={{eyebrow:'Featured collection · Legal websites',label:'View legal websites',href:'/portfolio/legal-websites/'}}/>
-        <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social previews" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media collection · Coming soon',label:'View social media posts'}}/>
-        <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing previews" summary="03 applied systems" offset={1400} cta={{eyebrow:'AI systems collection · Coming soon',label:'View AI-marketing systems'}}/>
+      <div className="container pf-category-galleries" id="portfolio-previews" aria-label="Portfolio concepts and demonstrations">
+        <PreviewGallery items={websiteGallery} className="pf-mini-web" id="website-gallery" title="Website concepts" summary="06 original concepts" cta={{eyebrow:'Featured collection · Legal websites',label:'View websites',href:'/portfolio/legal-websites/'}}/>
+        <PreviewGallery items={socialGallery} className="pf-mini-social" id="social-gallery" title="Social media concepts" summary="04 reel concepts" offset={700} cta={{eyebrow:'Social media videos',label:'Watch video examples ↗'}}/>
+        <PreviewGallery items={aiGallery} className="pf-mini-ai" id="ai-gallery" title="AI marketing concepts" summary="03 original concepts" offset={1400} cta={{eyebrow:'AI video & ad concepts',label:'Explore AI examples ↗'}}/>
       </div>
-      <div className="container pf-web-meta"><span>Live collection</span><span>6 original concepts</span><span>Personal injury + litigation</span></div>
+      <div className="container pf-web-meta"><span>Explore now</span><span>6 law firm website concepts</span><span>Personal injury + litigation</span></div>
     </section>
-
-    <section className="pf-intro" id="disciplines"><div className="container pf-intro-grid"><span>How the portfolio is organized</span><h2>Not by industry.<br/>By the work we do.</h2><p>Each discipline solves a different part of the same problem: becoming easier to find, easier to trust, and easier to choose.</p></div></section>
 
     <section className="pf-web-info" aria-labelledby="website-development-title">
       <div className="container pf-web-info-grid">
-        <div><span>01 / Website development</span><h2 id="website-development-title">Designed to be remembered.<br/><em>Built to perform.</em></h2></div>
-        <div><p>Strategy, UX, copy, design, and development brought together in one focused build—creating a fast, accessible website that earns trust and turns attention into qualified enquiries.</p><div className="pf-capabilities"><span>Strategy + UX</span><span>Custom development</span><span>SEO foundations</span><span>Conversion</span></div><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website development ↗</Link></div>
+        <div><span>01 / Website development</span><h2 id="website-development-title">Show what sets you apart.<br/><em>Make the next step clear.</em></h2></div>
+        <div><p>We bring strategy, copy, design, and development together to explain what you offer, help visitors assess whether you are the right fit, and make it easy to contact you.</p><div className="pf-capabilities"><span>Website strategy</span><span>Copy &amp; design</span><span>Development</span><span>SEO foundations</span></div><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Explore website development ↗</Link></div>
       </div>
     </section>
 
     <section className="pf-discipline pf-social" id="social-media">
       <div className="container pf-social-grid">
-        <div className="pf-social-copy"><span>02 / Social media marketing</span><h2>Build authority<br/>before the <em>click.</em></h2><p>Content systems that turn specialist knowledge into recognizable points of view—designed for consistency, credibility, and sustained attention.</p><div className="pf-capabilities"><span>Strategy</span><span>LinkedIn</span><span>Short-form video</span><span>Founder brands</span></div><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Explore social media marketing ↗</Link></div>
-        <div className="pf-social-board" aria-label="Social content system concept">
-          <article className="pf-post pf-post-one"><small>Authority series / 01</small><b>What your audience<br/>needs explained.</b><i>↗</i></article>
-          <article className="pf-post pf-post-two"><small>Founder point of view</small><b>Expertise becomes<br/>recognition through<br/>repetition.</b><div><i/><i/><i/><i/></div></article>
-          <article className="pf-post pf-post-three"><span>03</span><b>One idea.<br/>Multiple formats.</b><small>Article → carousel → video → conversation</small></article>
-          <div className="pf-board-label">Content system concept</div>
+        <div className="pf-social-copy"><span>02 / Social media marketing</span><h2>Share your expertise.<br/>Give people a reason to <em>follow.</em></h2><p>We turn your expertise and your audience’s questions into LinkedIn posts, short videos, and recurring content series—with a clear message and a consistent voice.</p><div className="pf-capabilities"><span>Content strategy</span><span>LinkedIn</span><span>Short-form video</span><span>Personal branding</span></div><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Explore social media marketing ↗</Link></div>
+        <div className="pf-social-board" aria-label="Illustrative social content series">
+          <article className="pf-post pf-post-one"><small>Client questions / 01</small><b>Answer what people<br/>want to know.</b><i>↗</i></article>
+          <article className="pf-post pf-post-two"><small>Your perspective</small><b>Explain what you think.<br/>Show why it matters.</b><div><i/><i/><i/><i/></div></article>
+          <article className="pf-post pf-post-three"><span>03</span><b>One idea.<br/>Multiple formats.</b><small>Article → carousel → video</small></article>
+          <div className="pf-board-label">Illustrative content series</div>
         </div>
       </div>
     </section>
 
     <section className="pf-discipline pf-ai" id="ai-marketing">
       <div className="container">
-        <div className="pf-discipline-head"><div><span>03 / AI-powered digital marketing</span><h2>Move faster.<br/><em>Keep judgment human.</em></h2></div><div><p>AI-assisted research, content, search, creative production, and optimization—with the review systems regulated brands require.</p><Link to="/services/ai-powered-digital-marketing/">Explore AI-powered marketing ↗</Link></div></div>
+        <div className="pf-discipline-head"><div><span>03 / AI-powered digital marketing</span><h2>Your brand.<br/><em>More possibilities with AI.</em></h2></div><div><p>From brand voice tools and custom GPTs to UGC-style videos, advertising creative, and automation, explore how AI can support your marketing.</p><Link to="/services/ai-powered-digital-marketing/">Explore AI-powered marketing ↗</Link></div></div>
         <div className="pf-ai-system">
-          <div className="pf-ai-map" aria-label="AI-powered marketing workflow concept"><span className="pf-node node-one">Signal<small>Audience + search</small></span><i/><span className="pf-node node-two">Strategy<small>Human direction</small></span><i/><span className="pf-node node-three">Create<small>Content + campaigns</small></span><i/><span className="pf-node node-four">Learn<small>Measure + improve</small></span></div>
-          <div className="pf-ai-detail"><span>Controlled acceleration</span><h3>Automation where it helps.<br/>Review where it matters.</h3><p>The system increases production capacity without outsourcing brand judgment, factual accuracy, or compliance responsibility.</p><div><b>Research</b><b>SEO</b><b>Content</b><b>Video</b><b>Workflows</b></div><small>Applied systems portfolio</small></div>
+          <div className="pf-ai-map" aria-label="AI marketing capabilities"><span className="pf-node node-one">Brand voice<small>Consistent messaging</small></span><i/><span className="pf-node node-two">Custom GPTs<small>Tailored assistants</small></span><i/><span className="pf-node node-three">Video &amp; ads<small>UGC-style video &amp; ad creative</small></span><i/><span className="pf-node node-four">Automation<small>Repeatable marketing tasks</small></span></div>
+          <div className="pf-ai-detail"><span>AI marketing capabilities</span><h3>Create for your brand.<br/>Simplify the everyday.</h3><p>Give your team tools to write in your brand’s voice, explore new video and ad concepts, and automate repetitive marketing tasks.</p><div><b>AI brand voice</b><b>Custom GPTs</b><b>AI UGC-style video</b><b>AI ad creative</b><b>AI automation</b></div><small>AI tools &amp; creative possibilities</small></div>
         </div>
       </div>
     </section>
 
-    <section className="pf-system"><div className="container"><span>One connected system</span><div className="pf-system-flow"><b>Website</b><i>→</i><b>Content</b><i>→</i><b>Attention</b><i>→</i><b>Demand</b><i>→</i><b>Learning</b></div><p>Each service can stand alone. The strongest results come when the website, publishing system, distribution, and optimization loop reinforce one another.</p></div></section>
+    <section className="pf-system"><div className="container"><span>How the work connects</span><div className="pf-system-flow"><b>Plan</b><i>→</i><b>Build</b><i>→</i><b>Publish</b><i>→</i><b>Review</b><i>→</i><b>Refine</b></div><p>Start with the service you need now. When your project spans several services, we keep the message, visual identity, and priorities consistent across them.</p></div></section>
 
-    <section className="pf-cta"><div className="container"><span>Which discipline needs to move first?</span><h2>Let’s make the next<br/>piece of work <em>yours.</em></h2><div><p>Tell us what your audience needs to understand, believe, and do.</p><Link className="btn" to="/contact/">Start a conversation ↗</Link></div></div></section>
+    <section className="pf-cta"><div className="container"><span>Your next project</span><h2>Let’s talk about<br/><em>what you want to create.</em></h2><div><p>Need a new website, a clearer content direction, or help using AI in your marketing? Tell us what you have in mind and where you need support.</p><Link className="btn" to="/contact/">Discuss your project ↗</Link></div></div></section>
   </div>;
 }
