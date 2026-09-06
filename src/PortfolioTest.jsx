@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const websiteGallery = [
-  ['/pi-lawyer-hero-generated.png','Personal injury · Classic','classic'],
-  ['/pi-lawyer-hero-generated.png','Personal injury · Bold','bold'],
-  ['/pi-lawyer-hero-generated.png','Litigation · Editorial','editorial'],
+  ['/portfolio/websites/personal-injury-classic-preview.webp','Personal injury · Classic','mockup'],
+  ['/portfolio/websites/personal-injury-bold-preview.webp','Personal injury · Bold','mockup'],
+  ['/portfolio/websites/litigation-editorial-preview.webp','Litigation · Editorial','mockup'],
   ['/brain-injury-head-3d-v2.png','Brain injury · 3D','brain'],
   ['/test5-cinematic-hero.png','Personal injury · Cinematic','cinematic'],
   ['/test6-family-hero.png','Personal injury · Family','family'],
