@@ -50,7 +50,11 @@ export default function LitigationEditorialTest(){
           <p className="lt3-overline">Toronto litigation counsel for businesses and professionals</p>
           <div className="lt3-banner-art">
             <h1><span>COMPLEX</span><span>LEGAL</span><span className="lt3-cases-word">DISPUTES</span></h1>
-            <div className="lt3-banner-portrait"><img src="/litigation-counsel-group-transparent.png" alt="Elena Rowe with two fictional legal professionals"/><div className="lt3-stamp" aria-label="Strategy first">STRATEGY FIRST</div></div>
+            <div className="lt3-banner-portrait">
+              <img className="lt3-pose-initial" src="/litigation-counsel-group-transparent.png" alt="Elena Rowe with two fictional legal professionals"/>
+              <img className="lt3-pose-protective" src="/litigation-counsel-group-crossed-transparent.png" alt="" aria-hidden="true"/>
+              <div className="lt3-stamp" aria-label="Strategy first">STRATEGY FIRST</div>
+            </div>
           </div>
           <form className="lt3-hero-form" onSubmit={(e)=>{e.preventDefault();setHeroSent(true)}}>
             {heroSent ? <DemoSuccess onReset={()=>setHeroSent(false)}/> : <>
