@@ -13,6 +13,34 @@
 .avalon-law-classic .al-form label{font-size:11px;line-height:1.45}
 .avalon-law-classic .al-form>small{font-size:11px;line-height:1.5}
 .avalon-law-classic .al-field-note{display:block;margin-top:10px;color:#5f6a72;font-size:11px;line-height:1.55;letter-spacing:0;text-transform:none}
+.avalon-law-classic .al-help-manage{display:block;padding:62px 6vw 40px}
+.avalon-law-classic .al-help-intro{display:grid;grid-template-columns:160px minmax(300px,.9fr) minmax(260px,.7fr);gap:34px;align-items:start;padding:0 0 38px!important;border:0!important}
+.avalon-law-classic .al-help-intro h2{font:400 clamp(42px,4.4vw,64px)/.96 'Instrument Serif',serif;margin:0}
+.avalon-law-classic .al-help-intro p{font-size:14px;line-height:1.7;color:#657079;margin:0}
+.avalon-law-classic .al-help-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--al-line);padding:0!important}
+.avalon-law-classic .al-help-grid article{padding:30px 3vw;min-height:210px;border-right:1px solid var(--al-line);display:flex;flex-direction:column}
+.avalon-law-classic .al-help-grid article:last-child{border-right:0}
+.avalon-law-classic .al-help-grid article>span{font-size:10px;color:var(--al-copper)}
+.avalon-law-classic .al-help-grid h3{font:400 29px/1.05 'Instrument Serif',serif;margin:38px 0 12px}
+.avalon-law-classic .al-help-grid p{font-size:12px;line-height:1.65;color:#68737a;margin:0}
+.avalon-law-classic .al-demo-scope{margin:18px 0 0;font-size:10px;line-height:1.6;color:#737a7f}
+.avalon-law-classic .al-assessment{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.18)}
+.avalon-law-classic .al-assessment strong{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:white}
+.avalon-law-classic .al-assessment ul{margin:18px 0;padding-left:19px;color:#c3d0d8}
+.avalon-law-classic .al-assessment li{margin:0 0 10px;font-size:13px;line-height:1.55}
+.avalon-law-classic .al-assessment p{font-size:13px;line-height:1.6;color:white;margin:20px 0 0}
+.avalon-law-classic .al-form select{width:100%;background:transparent;border:0;border-bottom:1px solid #bcb5aa;border-radius:0;padding:13px 0;font:inherit;font-size:14px;color:var(--al-ink);outline:none}
+.avalon-law-classic .al-form select:focus{border-color:var(--al-copper)}
+.avalon-law-classic .al-firm-photo{display:block;width:min(240px,100%);height:auto;margin:0 0 28px}
+.avalon-law-classic .al-firm-details{margin:30px 0 0;border-top:1px solid rgba(255,255,255,.22)}
+.avalon-law-classic .al-firm-details>div{display:grid;grid-template-columns:155px 1fr;gap:16px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.avalon-law-classic .al-firm-details dt{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#d7e0e6}
+.avalon-law-classic .al-firm-details dd{margin:0;font-size:13px;line-height:1.5}
+.avalon-law-classic .al-contact-details{margin-top:30px}
+
+@media(max-width:900px){
+  .avalon-law-classic .al-help-intro{grid-template-columns:1fr}
+}
 
 @media(max-width:680px){
   .avalon-law-classic .al-hero-copy{padding-top:54px;min-height:620px}
@@ -24,4 +52,12 @@
   .avalon-law-classic .al-case small{line-height:1.4}
   .avalon-law-classic .al-mobile-bar{grid-template-columns:1fr}
   .avalon-law-classic .al-mobile-bar a:last-child{display:none}
+  .avalon-law-classic .al-help-manage{padding:52px 22px 34px}
+  .avalon-law-classic .al-help-intro{display:block;padding-bottom:30px!important}
+  .avalon-law-classic .al-help-intro h2{font-size:43px;margin:18px 0}
+  .avalon-law-classic .al-help-grid{grid-template-columns:1fr}
+  .avalon-law-classic .al-help-grid article{min-height:0;padding:26px 24px;border-right:0;border-bottom:1px solid var(--al-line)}
+  .avalon-law-classic .al-help-grid article:last-child{border-bottom:0}
+  .avalon-law-classic .al-help-grid h3{margin:18px 0 8px;font-size:27px}
+  .avalon-law-classic .al-firm-details>div{grid-template-columns:1fr;gap:5px}
 }
