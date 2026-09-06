@@ -9,7 +9,11 @@
 .lt3-updated #lt3-contact{scroll-margin-top:78px}
 .lt3-updated .lt3-hero-stage{min-height:650px}
 .lt3-updated .lt3-hero-stage>h1{font-size:clamp(68px,8.2vw,132px);line-height:.75}
-.lt3-updated .lt3-cases-word{clip-path:none;animation:none}
+.lt3-updated .lt3-hero h1>span{clip-path:none;animation:lt3-text-align .62s cubic-bezier(.2,.8,.2,1) both}
+.lt3-updated .lt3-hero h1>span:nth-child(1){--lt3-start:-.16em}
+.lt3-updated .lt3-hero h1>span:nth-child(2){--lt3-start:.12em;animation-delay:.1s}
+.lt3-updated .lt3-hero h1>span:nth-child(3){--lt3-start:-.08em;animation-delay:.2s}
+@keyframes lt3-text-align{from{transform:translateX(var(--lt3-start));letter-spacing:-.1em}to{transform:translateX(0);letter-spacing:-.07em}}
 .lt3-updated .lt3-stamp{left:45%;top:60%;white-space:nowrap;font-size:clamp(30px,4.8vw,66px);letter-spacing:-.035em;padding:.12em .22em}
 .lt3-updated .lt3-hero-form{min-height:520px}
 .lt3-updated .lt3-form-index{font-size:11px}
@@ -79,4 +83,7 @@
   .lt3-updated .lt3-faq h2{font-size:52px}
   .lt3-updated .lt3-faq details p{padding-right:0}
   .lt3-updated .lt3-footer p{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .lt3-updated .lt3-hero h1>span{animation:none;transform:none;letter-spacing:-.07em}
 }

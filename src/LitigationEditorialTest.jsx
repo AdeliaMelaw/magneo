@@ -49,8 +49,6 @@ export default function LitigationEditorialTest(){
         <div className="lt3-hero-stage" key={sequence}>
           <p className="lt3-overline">Toronto litigation counsel for businesses and professionals</p>
           <h1><span>COMPLEX</span><span>LEGAL</span><span className="lt3-cases-word">DISPUTES</span></h1>
-          <img className="lt3-web" src="/litigation-web-transparent.png" alt=""/>
-          <img className="lt3-spider" src="/litigation-spider-transparent.png" alt=""/>
           <div className="lt3-stamp" aria-label="Strategy first">STRATEGY FIRST</div>
           <div className="lt3-impact"/>
           <button className="lt3-replay" type="button" onClick={()=>setSequence((n)=>n+1)}>Replay opening ↻</button>
