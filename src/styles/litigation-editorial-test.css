@@ -10,7 +10,8 @@
 .lt3-updated .lt3-hero-stage{min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:center;justify-content:stretch;overflow:visible}
 .lt3-updated .lt3-banner-art{position:relative;min-width:0;min-height:510px;align-self:center;overflow:hidden}
 .lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:104px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
-.lt3-updated .lt3-banner-art>h1 span{color:#303030;-webkit-text-stroke:1.5px var(--l3-red);paint-order:stroke fill;text-shadow:1px 1px 0 #777,2px 2px 0 #555,3px 3px 0 #3a3a3a,7px 10px 15px rgba(0,0,0,.22)}
+.lt3-updated .lt3-banner-art>h1 span{color:#303030;-webkit-text-stroke:0;text-shadow:1px 1px 0 #777,2px 2px 0 #555,3px 3px 0 #3a3a3a,7px 10px 15px rgba(0,0,0,.22)}
+.lt3-updated .lt3-banner-art:after{content:'';position:absolute;z-index:4;left:16%;bottom:72px;width:38%;height:310px;pointer-events:none;background:radial-gradient(ellipse 58% 56% at 58% 52%,rgba(245,245,243,.54) 0%,rgba(245,245,243,.34) 38%,rgba(245,245,243,.12) 68%,rgba(245,245,243,0) 100%)}
 .lt3-updated .lt3-hero h1>span{clip-path:none;animation:none;transform:none;letter-spacing:-.07em}
 .lt3-updated .lt3-banner-portrait{position:absolute;z-index:2;right:-1.5%;bottom:0;width:min(76%,700px);height:510px;background:transparent;overflow:visible}
 .lt3-updated .lt3-banner-portrait img{position:absolute;left:0;top:0;width:100%;height:auto;display:block;filter:grayscale(1) contrast(1.06) drop-shadow(7px 9px 8px rgba(0,0,0,.14));mix-blend-mode:multiply}
@@ -89,7 +90,7 @@
   .lt3-updated .lt3-hero-stage{min-height:0;padding-top:110px;gap:26px}
   .lt3-updated .lt3-banner-art{min-height:510px;width:100%;max-width:100vw;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
   .lt3-updated .lt3-banner-art>h1{position:relative;left:auto;bottom:auto;width:100%;font-size:56px;line-height:.78;margin-bottom:-16px}
-  .lt3-updated .lt3-banner-art>h1 span{-webkit-text-stroke-width:1px}
+  .lt3-updated .lt3-banner-art:after{display:none}
   .lt3-updated .lt3-banner-portrait{position:relative;right:auto;bottom:auto;align-self:center;width:min(88vw,340px);height:275px}
   .lt3-updated .lt3-banner-portrait img{filter:grayscale(1) contrast(1.06) drop-shadow(4px 6px 6px rgba(0,0,0,.12))}
   .lt3-updated .lt3-banner-portrait .lt3-stamp{font-size:23px;bottom:68px;left:56%}
