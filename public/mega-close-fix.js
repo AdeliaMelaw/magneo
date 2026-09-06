@@ -41,7 +41,7 @@
 
   function internalUrl(link) {
     try {
-      return new URL(link.getAttribute('href'), window.location.origin);
+      return new URL(link.getAttribute('href'), window.location.href);
     } catch (error) {
       return null;
     }

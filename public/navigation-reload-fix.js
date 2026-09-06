@@ -44,7 +44,7 @@
 
     var url;
     try {
-      url = new URL(link.getAttribute('href'), window.location.origin);
+      url = new URL(link.getAttribute('href'), window.location.href);
     } catch (error) {
       return;
     }
