@@ -2,6 +2,7 @@ import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import TestLawyer from './TestLawyer.jsx';
 import TestLawyer2 from './TestLawyer2.jsx';
+import PersonalInjuryBoldTest from './PersonalInjuryBoldTest.jsx';
 import TestLawyer3 from './TestLawyer3.jsx';
 import TestLawyer4 from './TestLawyer4.jsx';
 import TestLawyer5 from './TestLawyer5.jsx';
@@ -12,6 +13,7 @@ import Portfolio from './Portfolio.jsx';
 import './styles/test-lawyer.css';
 import './styles/personal-injury-classic.css';
 import './styles/test-lawyer2.css';
+import './styles/personal-injury-bold-test.css';
 import './styles/test-lawyer3.css';
 import './styles/test-lawyer4.css';
 import './styles/test-lawyer5.css';
@@ -99,7 +101,7 @@ function kindFromText(text=''){ const s=text.toLowerCase(); if(s.includes('finan
 
 function Mega({ label, to, groups }) { return <div className="nav-item"><Link className="nav-trigger" to={to}>{label}</Link><div className="mega"><div className="mega-grid">{groups.map(([heading, href, items]) => <div className="mega-col" key={heading}><Link className="mega-head" to={href}>{heading}</Link>{items.map(([name, path]) => <Link className="mega-link" to={path} key={path}>{name}</Link>)}</div>)}</div></div></div>; }
 function HomeMenu(){ return <div className="nav-item nav-home"><Link className="nav-trigger" to="/">Home</Link><div className="nav-home-menu"><Link to="/about/">About Magneo</Link><Link to="/about/adele-salikhova/">Meet Adele</Link></div></div>; }
-const legalConceptRoutes = {'/portfolio/legal-websites/personal-injury-classic':PersonalInjuryClassic,'/portfolio/legal-websites/personal-injury-bold':TestLawyer2,'/portfolio/legal-websites/litigation-editorial':TestLawyer3,'/portfolio/legal-websites/brain-injury-3d':TestLawyer4,'/portfolio/legal-websites/personal-injury-cinematic':TestLawyer5,'/portfolio/legal-websites/personal-injury-family-focused':TestLawyer6};
+const legalConceptRoutes = {'/portfolio/legal-websites/personal-injury-classic':PersonalInjuryClassic,'/portfolio/legal-websites/personal-injury-bold':TestLawyer2,'/portfolio/legal-websites/personal-injury-bold/test':PersonalInjuryBoldTest,'/portfolio/legal-websites/litigation-editorial':TestLawyer3,'/portfolio/legal-websites/brain-injury-3d':TestLawyer4,'/portfolio/legal-websites/personal-injury-cinematic':TestLawyer5,'/portfolio/legal-websites/personal-injury-family-focused':TestLawyer6};
 function Layout({ children }) { const { pathname } = useLocation(); const cleanPath=pathname.replace(/\/$/,'')||'/'; const Concept=legalConceptRoutes[cleanPath]; if(Concept) return <Concept/>; if(cleanPath==='/test6') return <TestLawyer6/>; if(['/test','/test2','/test3','/test4','/test5'].includes(cleanPath)) return children; if(cleanPath==='/portfolio') children=<Portfolio/>; if(cleanPath==='/portfolio/legal-websites') children=<LegalWebsites/>; const usesPortfolioFooter=cleanPath==='/portfolio'||cleanPath==='/portfolio/legal-websites'; return <><nav className="nav"><div className="container nav-inner"><Link className="brand" to="/">Magneo</Link><div className="nav-links"><HomeMenu/><Mega label="Services" to="/services/" groups={serviceMenus}/><Mega label="Industries" to="/industries/" groups={Object.values(industries).map((i)=>[i.label,i.route,i.subs])}/><Link to="/portfolio/">Portfolio</Link><a href={BLOG}>Insights & Blog</a><Link to="/contact/">Contact</Link></div><Link className="btn" to="/contact/">Book a call</Link></div></nav><main>{children}</main><Footer description={usesPortfolioFooter?'Digital marketing for regulated industries. Based in Toronto, serving Canada and the USA.':undefined} showLocation={!usesPortfolioFooter}/></>; }
 function Hero({ label, title, intro, stat='SEO', statText='Compliance-aware digital marketing systems for regulated industries.' }) { return <section className="hero"><div className="container hero-grid"><div><div className="crumb">Home / {label}</div><div className="label">{label}</div><h1 dangerouslySetInnerHTML={{__html:title}}/><p className="intro">{intro}</p><div className="actions"><Link className="btn" to="/contact/">Request a free audit</Link><Link className="btn outline" to="/services/">Explore services</Link></div></div><div className="glass"><span className="label">Magneo system</span><strong>{stat}</strong><p>{statText}</p></div></div></section>; }
 function Marquee({ items }) { const list = items || ['AI SEO','AI Social Media','AI UGC','AI Video Production','AI Web Design','AI Content Marketing','Compliance-Aware AI','Regulated Growth']; return <div className="marquee ai-marquee">{list.map(([label,path]) => <Link key={label} to={path}>{label}</Link>)}</div>; }

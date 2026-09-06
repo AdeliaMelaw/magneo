@@ -1,0 +1,53 @@
+.av2-bold-test main{padding-top:0!important}
+.av2-bold-test .av2-nav{grid-template-columns:auto 1fr auto}
+.av2-bold-test .av2-nav nav a{font-size:13px;color:#3f3f47}
+.av2-bold-test #av2-top,
+.av2-bold-test #av2-cases,
+.av2-bold-test #av2-lawyer,
+.av2-bold-test #av2-process,
+.av2-bold-test #av2-faq,
+.av2-bold-test #av2-consult{scroll-margin-top:82px}
+.av2-bold-test .av2-hero-copy{padding-top:5vh;padding-bottom:5vh}
+.av2-bold-test .av2-hero h1{font-size:clamp(56px,5.8vw,88px);line-height:.86;margin:3.5vh 0 2.5vh}
+.av2-bold-test .av2-hero-copy>p{font-size:15px;color:#4f4f57}
+.av2-bold-test .av2-quick-form{justify-content:center;padding-top:5vh;padding-bottom:5vh}
+.av2-bold-test .av2-quick-form p{font-size:13px}
+.av2-bold-test .av2-portrait img{filter:grayscale(.35) contrast(1.03);mix-blend-mode:normal}
+.av2-bold-test .av2-portrait:after{background:linear-gradient(180deg,rgba(91,75,255,.08),rgba(91,75,255,.32));mix-blend-mode:normal}
+.av2-bold-test .av2-marquee{position:relative;padding-right:118px}
+.av2-bold-test .av2-marquee.is-paused>div{animation-play-state:paused}
+.av2-bold-test .av2-marquee>button{position:absolute;right:10px;top:50%;transform:translateY(-50%);z-index:2;border:1px solid rgba(255,255,255,.35);background:#111116;color:white;padding:7px 10px;font:600 9px 'DM Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.av2-bold-test .av2-marquee>button:focus-visible{outline:2px solid var(--v2-acid);outline-offset:2px}
+.av2-bold-test .av2-case-grid small{margin-top:12px;color:#4f46d8;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.av2-bold-test .av2-case-grid>a:hover small{color:var(--v2-acid)}
+.av2-bold-test .av2-mini-proof b{font-size:27px;line-height:1.05}
+.av2-bold-test .av2-steps p{font-size:14px;color:#efedff}
+.av2-bold-test .av2-consult label>span{font-size:10px}
+.av2-bold-test .av2-consult input,
+.av2-bold-test .av2-consult textarea{font-size:15px}
+.av2-bold-test .av2-check span,
+.av2-bold-test .av2-consult form>small{font-size:11px;line-height:1.5;color:#4f531f}
+.av2-bold-test .av2-field-note{margin-top:4px;color:#4f531f;font-size:11px;line-height:1.5}
+.av2-bold-test .av2-mobile{grid-template-columns:1fr}
+
+@media(max-width:1100px){
+  .av2-bold-test .av2-nav{grid-template-columns:1fr auto}
+  .av2-bold-test .av2-quick-form{justify-content:initial}
+}
+@media(max-width:680px){
+  .av2-bold-test #av2-top,
+  .av2-bold-test #av2-cases,
+  .av2-bold-test #av2-lawyer,
+  .av2-bold-test #av2-process,
+  .av2-bold-test #av2-faq,
+  .av2-bold-test #av2-consult{scroll-margin-top:68px}
+  .av2-bold-test .av2-hero-copy{min-height:590px;padding-top:48px;padding-bottom:48px}
+  .av2-bold-test .av2-hero h1{font-size:clamp(48px,14.5vw,58px);line-height:.89;margin:30px 0 22px}
+  .av2-bold-test .av2-quick-form{padding-top:44px;padding-bottom:44px}
+  .av2-bold-test .av2-marquee{padding-right:104px}
+  .av2-bold-test .av2-marquee span{padding-left:18px;padding-right:18px}
+  .av2-bold-test .av2-lawyer-copy blockquote{font-size:38px}
+  .av2-bold-test .av2-mini-proof{gap:18px}
+  .av2-bold-test .av2-mini-proof b{font-size:21px}
+  .av2-bold-test .av2-consult h2{font-size:46px}
+}
