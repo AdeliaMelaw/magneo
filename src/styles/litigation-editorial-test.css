@@ -9,8 +9,8 @@
 .lt3-updated #lt3-contact{scroll-margin-top:78px}
 .lt3-updated .lt3-hero-stage{min-height:560px;display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:26px;align-items:center;justify-content:stretch}
 .lt3-updated .lt3-banner-art{position:relative;min-width:0;min-height:510px;align-self:center;overflow:hidden}
-.lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:46px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
-.lt3-updated .lt3-banner-art>h1 span{text-shadow:1px 1px 0 #777,2px 2px 0 #555,3px 3px 0 #3a3a3a,6px 8px 11px rgba(0,0,0,.18)}
+.lt3-updated .lt3-banner-art>h1{position:absolute;z-index:5;left:0;bottom:104px;width:min-content;margin:0;font-size:clamp(64px,7vw,110px);line-height:.75;pointer-events:none}
+.lt3-updated .lt3-banner-art>h1 span{color:var(--l3-red);text-shadow:1px 1px 0 #a30f14,2px 2px 0 #7c0c10,3px 3px 0 #56090c,6px 8px 11px rgba(0,0,0,.2)}
 .lt3-updated .lt3-hero h1>span{clip-path:none;animation:lt3-text-align .62s cubic-bezier(.2,.8,.2,1) both}
 .lt3-updated .lt3-hero h1>span:nth-child(1){--lt3-start:-.16em}
 .lt3-updated .lt3-hero h1>span:nth-child(2){--lt3-start:.12em;animation-delay:.1s}
