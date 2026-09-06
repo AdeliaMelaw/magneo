@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/portfolio/legal-websites/brain-injury-3d/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/portfolio/legal-websites/litigation-editorial/test/?",
       "status": 404
     },

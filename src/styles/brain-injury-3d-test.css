@@ -1,0 +1,60 @@
+.nl4-revised main{padding-top:0!important}
+.nl4-revised .nl4-nav{grid-template-columns:auto 1fr auto}
+.nl4-revised .nl4-logo>span{font-size:12px;letter-spacing:.12em}
+.nl4-revised #nl4-top,.nl4-revised #nl4-injury,.nl4-revised #nl4-proof,.nl4-revised #nl4-process,.nl4-revised #nl4-faq,.nl4-revised #nl4-contact{scroll-margin-top:80px}
+.nl4-revised .nl4-hero{grid-template-columns:minmax(0,1.15fr) minmax(300px,.72fr) minmax(310px,.68fr)}
+.nl4-revised .nl4-hero-copy{padding:7vh 4.5vw}
+.nl4-revised .nl4-hero h1{font-size:clamp(54px,5.3vw,86px);line-height:.9;margin:5vh 0 3vh}
+.nl4-revised .nl4-hero-copy>p{font-size:16px;line-height:1.65}
+.nl4-revised .nl4-eyebrow,.nl4-revised .nl4-title>span,.nl4-revised .nl4-proof-copy>span,.nl4-revised .nl4-section-head>span,.nl4-revised .nl4-statement span,.nl4-revised .nl4-faq>div>span,.nl4-revised .nl4-contact-copy>span{font-size:11px;line-height:1.4}
+.nl4-revised .nl4-actions a:first-child,.nl4-revised .nl4-nav-cta,.nl4-revised .nl4-hero-side>a,.nl4-revised .nl4-motion-toggle,.nl4-revised .nl4-contact form>button{font-size:12px;line-height:1.35}
+.nl4-revised .nl4-visual{min-height:620px;background:radial-gradient(circle at 50% 42%,rgba(92,133,255,.2),transparent 48%)}
+.nl4-revised .nl4-visual:before{inset:9% 6% 8%}
+.nl4-revised .nl4-model-stage{inset:14% 0 11%;cursor:default}
+.nl4-revised .nl4-model-tilt img{width:92%;height:92%;transform:none;filter:drop-shadow(0 24px 32px rgba(0,0,0,.62))}
+.nl4-revised .nl4-model-orbit,.nl4-revised .nl4-model-shadow,.nl4-revised .nl4-halo span{animation-play-state:paused}
+.nl4-revised .nl4-visual.is-playing .nl4-model-orbit,.nl4-revised .nl4-visual.is-playing .nl4-model-shadow,.nl4-revised .nl4-visual.is-playing .nl4-halo span{animation-play-state:running}
+.nl4-revised .nl4-motion-toggle{left:50%;bottom:24px;transform:translateX(-50%);color:#d5dae2;border-color:#8a94a2;padding:6px 0}
+.nl4-revised .nl4-hero-side{padding:7vh 3vw;justify-content:center}
+.nl4-revised .nl4-hero-side h2{font-size:clamp(34px,3vw,50px);line-height:1.02}
+.nl4-revised .nl4-hero-side p{font-size:14px;line-height:1.65;color:white}
+.nl4-revised .nl4-title>p,.nl4-revised .nl4-impact-grid p,.nl4-revised .nl4-steps p,.nl4-revised .nl4-proof li span,.nl4-revised .nl4-faq details p,.nl4-revised .nl4-faq>div:first-child>p,.nl4-revised .nl4-contact-copy>p{font-size:14px;line-height:1.65}
+.nl4-revised .nl4-impact-grid h3{font-size:31px;line-height:1.05}
+.nl4-revised .nl4-proof li{grid-template-columns:150px 1fr}
+.nl4-revised .nl4-proof li b{font-size:11px;line-height:1.45}
+.nl4-revised .nl4-statement.nl4-lawyer-intro{display:grid;grid-template-columns:.9fr minmax(260px,.48fr) 1fr;gap:5vw;align-items:center;padding:72px 8vw}
+.nl4-revised .nl4-lawyer-intro h2{font:400 clamp(48px,5vw,76px)/.95 'Instrument Serif';margin:20px 0}
+.nl4-revised .nl4-lawyer-intro p{font-size:14px;line-height:1.65;color:white}
+.nl4-revised .nl4-lawyer-intro a{display:flex;justify-content:space-between;color:white;border-bottom:1px solid rgba(255,255,255,.6);padding:14px 0;margin-top:22px;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+.nl4-revised .nl4-lawyer-intro img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:72% center;filter:grayscale(1);border:1px solid rgba(255,255,255,.35)}
+.nl4-revised .nl4-lawyer-intro blockquote{font-size:clamp(36px,4.3vw,66px);margin:0}
+.nl4-revised .nl4-faq summary{font-size:16px;line-height:1.4}
+.nl4-revised .nl4-contact label>span,.nl4-revised .nl4-contact form>small,.nl4-revised .nl4-field-help{font-size:12px;line-height:1.5}
+.nl4-revised .nl4-field-help{display:block;color:#555d66;text-transform:none;letter-spacing:0;margin-top:4px}
+.nl4-revised .nl4-mobile{grid-template-columns:1fr}
+
+@media(max-width:1180px){
+  .nl4-revised .nl4-hero{grid-template-columns:1fr 1fr}
+  .nl4-revised .nl4-hero-side{grid-column:1/-1;padding:52px 5vw}
+}
+@media(max-width:1050px){
+  .nl4-revised .nl4-nav{grid-template-columns:1fr auto}
+  .nl4-revised .nl4-statement.nl4-lawyer-intro{grid-template-columns:1fr 280px}
+  .nl4-revised .nl4-lawyer-intro blockquote{grid-column:1/-1}
+}
+@media(max-width:680px){
+  .nl4-revised #nl4-top,.nl4-revised #nl4-injury,.nl4-revised #nl4-proof,.nl4-revised #nl4-process,.nl4-revised #nl4-faq,.nl4-revised #nl4-contact{scroll-margin-top:68px}
+  .nl4-revised .nl4-hero{grid-template-columns:1fr}
+  .nl4-revised .nl4-hero-copy{min-height:0;padding:54px 21px}
+  .nl4-revised .nl4-hero h1{font-size:clamp(48px,13.5vw,60px);margin:34px 0 24px}
+  .nl4-revised .nl4-visual{min-height:390px}
+  .nl4-revised .nl4-model-stage{inset:8% 2% 12%}
+  .nl4-revised .nl4-model-tilt img{width:88%;height:88%}
+  .nl4-revised .nl4-hero-side{grid-column:auto;padding:46px 21px}
+  .nl4-revised .nl4-statement.nl4-lawyer-intro{grid-template-columns:1fr;padding:64px 21px}
+  .nl4-revised .nl4-lawyer-intro img{width:min(270px,100%)}
+  .nl4-revised .nl4-proof li{grid-template-columns:1fr;gap:5px}
+}
+@media(prefers-reduced-motion:reduce){
+  .nl4-revised .nl4-motion-toggle{display:none}
+}
