@@ -18,7 +18,7 @@ export default function LegalWebsites(){
     const target = document.getElementById('legal-collection');
     if (!target) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.history.replaceState(null, '', '#legal-collection');
+    window.history.replaceState(null, '', '/portfolio/legal-websites/#legal-collection');
     window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 68, behavior: reducedMotion ? 'auto' : 'smooth' });
   };
 
@@ -36,7 +36,7 @@ export default function LegalWebsites(){
     <section className="lwp-hero">
       <div className="container lwp-hero-grid">
         <div><div className="lwp-overline"><i/> Magneo · Law firm website concepts</div><h1>Your expertise.<br/>A clear reason to <em>choose your firm.</em></h1></div>
-        <div className="lwp-hero-side"><p>Magneo brings positioning, copy, design, and development together for law firm websites. Explore six original concepts for personal injury and litigation practices, each showing a different approach to presenting expertise and guiding prospective clients toward an enquiry.</p><small className="lwp-hero-disclosure">These are fictional demonstration websites created by Magneo, not commissioned client projects.</small><a href="#legal-collection" onClick={scrollToCollection}>Explore the website concepts <span>↓</span></a></div>
+        <div className="lwp-hero-side"><p>Magneo brings positioning, copy, design, and development together for law firm websites. Explore six original concepts for personal injury and litigation practices, each showing a different approach to presenting expertise and guiding prospective clients toward an enquiry.</p><small className="lwp-hero-disclosure">These are fictional demonstration websites created by Magneo, not commissioned client projects.</small><a href="/portfolio/legal-websites/#legal-collection" onClick={scrollToCollection}>Explore the website concepts <span>↓</span></a></div>
       </div>
       <div className="lwp-ticker"><div>STRATEGY <i/> IDENTITY <i/> CONTENT <i/> DESIGN <i/> DEVELOPMENT <i/> STRATEGY <i/> IDENTITY <i/> CONTENT <i/> DESIGN <i/> DEVELOPMENT</div></div>
     </section>
