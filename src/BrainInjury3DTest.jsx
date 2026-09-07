@@ -33,10 +33,7 @@ export default function BrainInjury3DTest(){
     description.content = 'A fictional brain injury law-firm website concept created by Magneo.';
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/portfolio/legal-websites/brain-injury-3d/test/';
-    const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.brainInjury3dTest = 'true'; document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/brain-injury-3d/';
   }, []);
 
   return <div className="nl4 nl4-revised">
