@@ -82,7 +82,7 @@ export default function PersonalInjuryFamilyTest(){
       </section>
 
       <section className="hl6-support" id="hl6-support">
-        <div className="hl6-support-image"><img src="/test6-family-detail.png" alt="A family planning together around a kitchen table"/><span>THE WHOLE PICTURE / 01</span></div>
+        <div className="hl6-support-image"><img src="/test6-legal-options-detail.png" alt="A legal advisor explaining personal-injury claim options to an injured person and a family member"/><span>THE WHOLE PICTURE / 01</span></div>
         <div className="hl6-support-copy">
           <span className="hl6-kicker">How we help</span>
           <div className="hl6-tabs" role="tablist" aria-label="How we help injured people and families">{needs.map((item,index)=><button ref={(element)=>{tabRefs.current[index]=element}} id={`hl6-tab-${item.key}`} aria-controls="hl6-need-panel" tabIndex={activeNeed===item.key ? 0 : -1} key={item.key} type="button" role="tab" aria-selected={activeNeed===item.key} onKeyDown={(event)=>handleTabKey(event,index)} onClick={()=>setActiveNeed(item.key)}>{item.label}</button>)}</div>
