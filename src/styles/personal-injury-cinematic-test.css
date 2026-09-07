@@ -7,6 +7,8 @@
 .fn5-revised .fn5-actions button,.fn5-revised .fn5-contact button,.fn5-revised .fn5-lawyer button{font-size:11px;line-height:1.35}
 .fn5-revised .fn5-motion{font-size:10px;line-height:1.4}
 .fn5-revised .fn5-opening p,.fn5-revised .fn5-chapter p,.fn5-revised .fn5-proof-copy>p,.fn5-revised .fn5-lawyer p,.fn5-revised .fn5-faq p,.fn5-revised .fn5-contact p{font-size:16px;line-height:1.65}
+.fn5-revised .fn5-opening-copy{display:grid;gap:20px}
+.fn5-revised .fn5-opening-copy p{margin:0}
 .fn5-revised .fn5-proof li span{font-size:12px;line-height:1.45}
 .fn5-revised .fn5-lawyer{display:grid;grid-template-columns:1fr minmax(320px,.65fr);gap:7vw;align-items:center;padding:100px 8vw}
 .fn5-revised .fn5-lawyer>div{display:flex;flex-direction:column;align-items:flex-start}

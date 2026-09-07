@@ -95,7 +95,7 @@ export default function PersonalInjuryCinematicTest(){
         <a className="fn5-scroll" href="#fn5-story"><span>Scroll through the story</span><i/></a>
       </section>
 
-      <section className="fn5-opening"><div><span>Before / After</span><h2>Every serious injury<br/>creates two timelines.</h2></div><p>There is life before the injury, and the practical questions that follow it. Our role is to understand the difference and explain the legal steps available to you.</p></section>
+      <section className="fn5-opening"><div><span>Before / After</span><h2>Every serious injury<br/>creates two timelines.</h2></div><div className="fn5-opening-copy"><p>There is life before the injury, and the practical questions that follow it. Our role is to understand the difference and explain the legal steps available to you.</p><p>We help people injured in motor-vehicle accidents and falls on unsafe property understand their options for pursuing a personal-injury claim.</p></div></section>
 
       <section className="fn5-story" id="fn5-story">
         <div className="fn5-story-visual">
