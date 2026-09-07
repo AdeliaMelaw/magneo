@@ -101,7 +101,7 @@ export default function PersonalInjuryFamilyTest(){
 
       <section className="hl6-promise hl6-lawyer-intro">
         <div><span>Fictional lawyer profile</span><h2>Maya Lane</h2><p>Maya helps injured people and their families understand the claim process and make informed decisions about the next steps.</p><a href="#hl6-contact">Talk with us <Arrow/></a></div>
-        <img src="/pi-lawyer-hero-generated.png" alt="Maya Lane, a fictional lawyer featured in this website concept"/>
+        <div className="hl6-lawyer-photo"><img src="/pi-lawyer-hero-generated.png" alt="Maya Lane, a fictional lawyer featured in this website concept"/></div>
       </section>
 
       <section className="hl6-faq" aria-labelledby="hl6-faq-title">
