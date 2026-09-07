@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const websites = [
-  { image:'/portfolio/websites/personal-injury-classic-preview.webp', name:'Personal injury · Classic', route:'/portfolio/legal-websites/personal-injury-classic/', style:'classic' },
+  { image:'/portfolio/websites/personal-injury-classic-preview-v2.png', name:'Personal injury · Classic', route:'/portfolio/legal-websites/personal-injury-classic/', style:'showcase' },
+  { image:'/portfolio/websites/immigration-welcome-preview.png', name:'Immigration law · Welcome', route:'/portfolio/legal-websites/immigration-welcome/', style:'showcase' },
+  { image:'/portfolio/websites/personal-injury-family-preview.png', name:'Personal injury · Family-focused', route:'/portfolio/legal-websites/personal-injury-family-focused/', style:'showcase' },
+  { image:'/portfolio/websites/litigation-editorial-preview-v2.png', name:'Litigation · Editorial', route:'/portfolio/legal-websites/litigation-editorial/', style:'showcase' },
   { image:'/portfolio/websites/personal-injury-bold-preview.webp', name:'Personal injury · Bold', route:'/portfolio/legal-websites/personal-injury-bold/', style:'bold' },
-  { image:'/portfolio/websites/litigation-editorial-preview.webp', name:'Litigation · Editorial', route:'/portfolio/legal-websites/litigation-editorial/', style:'editorial' },
   { image:'/brain-injury-head-3d-v2.png', name:'Brain injury · 3D', route:'/portfolio/legal-websites/brain-injury-3d/', style:'brain' },
   { image:'/test5-cinematic-hero.png', name:'Personal injury · Cinematic', route:'/portfolio/legal-websites/personal-injury-cinematic/', style:'cinematic' },
-  { image:'/test6-family-hero.png', name:'Personal injury · Family-focused', route:'/portfolio/legal-websites/personal-injury-family-focused/', style:'family' },
-  { image:'/immigration-welcome-hero.png', name:'Immigration · Welcome', route:'/portfolio/legal-websites/immigration-welcome/', style:'immigration' },
 ];
 
 const socialExamples = [
