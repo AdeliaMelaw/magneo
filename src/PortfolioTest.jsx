@@ -62,8 +62,8 @@ export default function PortfolioTest(){
     <section className="pft-website-examples" aria-label="Website concepts">
       <div className="container">
         <div className="pft-website-grid" id="pft-website-grid">
-          {websites.map((item,index)=><Link className={`pft-website-card ${item.style}${index>1&&!showAllWebsites?' is-concealed':''}`} to={item.route} key={item.route} aria-hidden={index>1&&!showAllWebsites ? 'true' : undefined} tabIndex={index>1&&!showAllWebsites ? -1 : undefined}>
-            <div><img src={item.image} alt={`${item.name} website demonstration preview`} loading={index>1?'lazy':'eager'}/></div>
+          {websites.map((item,index)=><Link className={`pft-website-card ${item.style}${index>3&&!showAllWebsites?' is-concealed':''}`} to={item.route} key={item.route} aria-hidden={index>3&&!showAllWebsites ? 'true' : undefined} tabIndex={index>3&&!showAllWebsites ? -1 : undefined}>
+            <div><img src={item.image} alt={`${item.name} website demonstration preview`} loading={index>3?'lazy':'eager'}/></div>
             <span><small>Website concept</small><strong>{item.name}</strong><i aria-hidden="true">↗</i></span>
           </Link>)}
         </div>
