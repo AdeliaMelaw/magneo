@@ -100,7 +100,7 @@ export default function ImmigrationWelcome(){
       </section>
 
       <section className="mh7-lawyer" id="mh7-lawyer">
-        <div className="mh7-lawyer-image"><img src="/immigration-alex-morgan.png" alt="Alex Morgan, a fictional lawyer featured in this website concept"/></div>
+        <div className="mh7-lawyer-image"><img src="/immigration-alex-morgan.png" alt="A welcoming group of fictional immigration lawyers featured in this website concept"/></div>
         <div className="mh7-lawyer-copy">
           <span>Fictional lawyer profile</span>
           <strong>Alex Morgan</strong>
