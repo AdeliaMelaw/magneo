@@ -38,7 +38,8 @@ const descriptions = {
   '/portfolio/legal-websites/litigation-editorial/': 'An editorial litigation law firm website concept combining monochrome typography, motion, and decisive positioning.',
   '/portfolio/legal-websites/brain-injury-3d/': 'An immersive 3D brain injury law firm website concept built around specialist expertise and human dignity.',
   '/portfolio/legal-websites/personal-injury-cinematic/': 'A cinematic personal injury law firm website concept that turns recovery and evidence into a human story.',
-  '/portfolio/legal-websites/personal-injury-family-focused/': 'A warm, family-focused personal injury law firm website concept designed to build reassurance and trust.'
+  '/portfolio/legal-websites/personal-injury-family-focused/': 'A warm, family-focused personal injury law firm website concept designed to build reassurance and trust.',
+  '/portfolio/legal-websites/immigration-welcome/': 'A warm, welcoming fictional Canadian immigration law firm website concept created by Magneo.'
 };
 
 const titleOverrides = {
@@ -70,7 +71,8 @@ const titleOverrides = {
   '/portfolio/legal-websites/litigation-editorial/': 'Editorial Litigation Website Concept | Magneo',
   '/portfolio/legal-websites/brain-injury-3d/': '3D Brain Injury Website Concept | Magneo',
   '/portfolio/legal-websites/personal-injury-cinematic/': 'Cinematic Personal Injury Website Concept | Magneo',
-  '/portfolio/legal-websites/personal-injury-family-focused/': 'Family-Focused Injury Website Concept | Magneo'
+  '/portfolio/legal-websites/personal-injury-family-focused/': 'Family-Focused Injury Website Concept | Magneo',
+  '/portfolio/legal-websites/immigration-welcome/': 'Immigration Law Website Concept | Magneo'
 };
 
 const imageOverrides = {
@@ -81,7 +83,8 @@ const imageOverrides = {
   '/portfolio/legal-websites/litigation-editorial/': '/pi-lawyer-hero-generated.png',
   '/portfolio/legal-websites/brain-injury-3d/': '/brain-injury-head-3d-v2.png',
   '/portfolio/legal-websites/personal-injury-cinematic/': '/test5-cinematic-hero.png',
-  '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png'
+  '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png',
+  '/portfolio/legal-websites/immigration-welcome/': '/immigration-welcome-hero.png'
 };
 
 function escapeHtml(value) {
