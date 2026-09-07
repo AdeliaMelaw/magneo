@@ -6,9 +6,9 @@ const websites = [
   { image:'/portfolio/websites/immigration-welcome-preview.png', name:'Immigration law · Welcome', route:'/portfolio/legal-websites/immigration-welcome/', style:'showcase' },
   { image:'/portfolio/websites/personal-injury-family-preview.png', name:'Personal injury · Family-focused', route:'/portfolio/legal-websites/personal-injury-family-focused/', style:'showcase' },
   { image:'/portfolio/websites/litigation-editorial-preview-v2.png', name:'Litigation · Editorial', route:'/portfolio/legal-websites/litigation-editorial/', style:'showcase' },
-  { image:'/portfolio/websites/personal-injury-bold-preview.webp', name:'Personal injury · Bold', route:'/portfolio/legal-websites/personal-injury-bold/', style:'bold' },
-  { image:'/brain-injury-head-3d-v2.png', name:'Brain injury · 3D', route:'/portfolio/legal-websites/brain-injury-3d/', style:'brain' },
-  { image:'/test5-cinematic-hero.png', name:'Personal injury · Cinematic', route:'/portfolio/legal-websites/personal-injury-cinematic/', style:'cinematic' },
+  { image:'/portfolio/websites/personal-injury-bold-preview-v2.png', name:'Personal injury · Bold', route:'/portfolio/legal-websites/personal-injury-bold/', style:'showcase' },
+  { image:'/portfolio/websites/brain-injury-3d-preview.png', name:'Brain injury · 3D', route:'/portfolio/legal-websites/brain-injury-3d/', style:'showcase' },
+  { image:'/portfolio/websites/personal-injury-cinematic-preview.png', name:'Personal injury · Cinematic', route:'/portfolio/legal-websites/personal-injury-cinematic/', style:'showcase' },
 ];
 
 const socialExamples = [
