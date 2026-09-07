@@ -7,7 +7,6 @@ Disallow: /test4
 Disallow: /test5
 Disallow: /test6
 Disallow: /portfolio/legal-websites/brain-injury-3d/test
-Disallow: /portfolio/legal-websites/personal-injury-cinematic/test
 Disallow: /about-us
 
 Sitemap: https://magneo.ca/sitemap.xml

@@ -38,10 +38,7 @@ export default function PersonalInjuryCinematicTest(){
     description.content = 'A fictional cinematic personal-injury law-firm website concept created by Magneo.';
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-cinematic/test/';
-    const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.cinematicTest = 'true'; document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/portfolio/legal-websites/personal-injury-cinematic/';
   }, []);
 
   useEffect(() => {
