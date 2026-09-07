@@ -1,0 +1,54 @@
+.fn5-revised main{padding-top:0!important}
+.fn5-revised .fn5-nav{grid-template-columns:auto 1fr auto}
+.fn5-revised .fn5-logo>span{font-size:11px;letter-spacing:.14em}
+.fn5-revised .fn5-film-meta{grid-template-columns:1fr 1fr}
+.fn5-revised .fn5-film-meta span:last-child{text-align:right}
+.fn5-revised .fn5-hero-copy>p{max-width:640px;font-size:clamp(19px,1.7vw,27px)}
+.fn5-revised .fn5-actions button,.fn5-revised .fn5-contact button,.fn5-revised .fn5-lawyer button{font-size:11px;line-height:1.35}
+.fn5-revised .fn5-motion{font-size:10px;line-height:1.4}
+.fn5-revised .fn5-opening p,.fn5-revised .fn5-chapter p,.fn5-revised .fn5-proof-copy>p,.fn5-revised .fn5-lawyer p,.fn5-revised .fn5-faq p,.fn5-revised .fn5-contact p{font-size:16px;line-height:1.65}
+.fn5-revised .fn5-proof li span{font-size:12px;line-height:1.45}
+.fn5-revised .fn5-lawyer{display:grid;grid-template-columns:1fr minmax(320px,.65fr);gap:7vw;align-items:center;padding:100px 8vw}
+.fn5-revised .fn5-lawyer>div{display:flex;flex-direction:column;align-items:flex-start}
+.fn5-revised .fn5-lawyer>div>span,.fn5-revised .fn5-faq>div>span{font-size:10px;text-transform:uppercase;letter-spacing:.18em;color:#e2b18e}
+.fn5-revised .fn5-lawyer h2,.fn5-revised .fn5-faq h2{font:300 clamp(56px,7vw,96px)/.9 'Newsreader',serif;letter-spacing:-.04em;margin:28px 0}
+.fn5-revised .fn5-lawyer p{max-width:620px;color:rgba(255,255,255,.68)}
+.fn5-revised .fn5-lawyer img{width:100%;height:min(68vh,650px);object-fit:cover;object-position:72% center;filter:saturate(.55) contrast(1.06)}
+.fn5-revised .fn5-lawyer button{margin-top:28px}
+.fn5-revised .fn5-faq{display:grid;grid-template-columns:.75fr 1.25fr;gap:8vw;padding:100px 8vw;background:var(--f5-paper);color:var(--f5-ink)}
+.fn5-revised .fn5-faq-list{border-top:1px solid #aaa297}
+.fn5-revised .fn5-faq details{padding:24px 0;border-bottom:1px solid #c9c3b8}
+.fn5-revised .fn5-faq summary{display:flex;justify-content:space-between;gap:24px;list-style:none;cursor:pointer;font-size:16px;font-weight:600;line-height:1.4}
+.fn5-revised .fn5-faq summary::-webkit-details-marker{display:none}
+.fn5-revised .fn5-faq summary span{color:var(--f5-amber);font-size:22px}
+.fn5-revised .fn5-faq summary span::before{content:'+'}
+.fn5-revised .fn5-faq details[open] summary span::before{content:'−'}
+.fn5-revised .fn5-faq p{max-width:690px;color:#57544f;padding-right:38px}
+.fn5-revised .fn5-contact>div:last-child{gap:24px}
+.fn5-revised .fn5-contact p{margin:0}
+.fn5-revised .fn5-drawer{padding:54px 60px}
+.fn5-revised .fn5-drawer form{gap:17px}
+.fn5-revised .fn5-drawer h2,.fn5-revised .fn5-success h2{margin:10px 0 22px}
+.fn5-revised .fn5-drawer h2:focus{outline:2px solid var(--f5-amber);outline-offset:6px}
+.fn5-revised .fn5-drawer label,.fn5-revised .fn5-drawer form>span,.fn5-revised .fn5-drawer form>button,.fn5-revised .fn5-drawer form>small,.fn5-revised .fn5-field-help,.fn5-revised .fn5-check{font-size:12px;line-height:1.45}
+.fn5-revised .fn5-field-help{display:block;margin-top:4px;color:#68635b;text-transform:none;letter-spacing:0}
+.fn5-revised .fn5-check span{font-size:12px}
+
+@media(max-width:1050px){
+  .fn5-revised .fn5-nav{grid-template-columns:1fr auto}
+  .fn5-revised .fn5-lawyer{grid-template-columns:1fr 320px}
+  .fn5-revised .fn5-faq{grid-template-columns:1fr;gap:45px}
+}
+@media(max-width:700px){
+  .fn5-revised .fn5-film-meta{grid-template-columns:1fr 1fr}
+  .fn5-revised .fn5-hero-copy{top:49%}
+  .fn5-revised .fn5-hero h1{font-size:62px}
+  .fn5-revised .fn5-hero-copy>p{font-size:18px}
+  .fn5-revised .fn5-lawyer{grid-template-columns:1fr;padding:78px 21px}
+  .fn5-revised .fn5-lawyer img{width:min(340px,100%);height:430px;order:-1}
+  .fn5-revised .fn5-faq{padding:76px 21px}
+  .fn5-revised .fn5-faq h2{font-size:55px}
+  .fn5-revised .fn5-intake-tab{z-index:95}
+  .fn5-revised .fn5-drawer{padding:58px 22px 36px}
+  .fn5-revised .fn5-drawer h2,.fn5-revised .fn5-success h2{font-size:48px}
+}
