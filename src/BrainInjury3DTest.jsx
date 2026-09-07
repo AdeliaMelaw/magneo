@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 const impacts = [
-  ['01', 'Thinking and concentration', 'Memory, focus, processing speed, judgment, and executive function can reshape daily life and work.'],
-  ['02', 'Daily life and relationships', 'Personality, mood, relationships, and independence may change in ways others cannot immediately see.'],
-  ['03', 'Work and finances', 'Income loss, interrupted education, care needs, and future capacity require careful long-term evidence.'],
-  ['04', 'Family and support', 'Brain injuries affect households. The legal strategy should account for caregivers and the support system.'],
+  ['01', 'Thinking and concentration', 'Changes in memory, concentration, and decision-making can affect everyday tasks and work.'],
+  ['02', 'Daily life and relationships', 'Changes in mood, routines, and independence may affect both the injured person and those close to them.'],
+  ['03', 'Work and finances', 'We look at how the injury has affected work, income, expenses, and support needs.'],
+  ['04', 'Family and support', 'We consider the help family members provide and how daily responsibilities have changed.'],
 ];
 
 const steps = [
@@ -50,6 +50,7 @@ export default function BrainInjury3DTest(){
       <section className="nl4-hero">
         <div className="nl4-hero-copy">
           <span className="nl4-eyebrow">Fictional website concept</span>
+          <span className="nl4-location-line">Brain injury law · Toronto</span>
           <h1>Life after a brain injury.<br/><em>Understand your legal options.</em></h1>
           <p>If you or someone close to you has suffered a brain injury, we can help you understand the legal questions, the information needed, and the next steps.</p>
           <div className="nl4-actions"><a href="#nl4-contact">Discuss your situation <Arrow/></a></div>
@@ -70,7 +71,6 @@ export default function BrainInjury3DTest(){
 
       <section className="nl4-injury" id="nl4-injury">
         <div className="nl4-title"><span>01 / Life after injury</span><h2>The damage may be<br/><em>invisible.</em><br/>The impact is not.</h2><p>A legal claim needs to explain how the injury has affected daily life, work, and support needs. Medical records are one part of that picture.</p></div>
-        {/* Add a visible practice-scope sentence here only after the intended incident and claim types are confirmed. */}
         <div className="nl4-impact-grid">{impacts.map(([n,title,text])=><article key={n}><span>{n}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
       </section>
 
@@ -85,7 +85,7 @@ export default function BrainInjury3DTest(){
       </section>
 
       <section className="nl4-statement nl4-lawyer-intro">
-        <div><span>Fictional lawyer profile</span><h2>Elena North</h2><p>Elena is the fictional lawyer featured in this concept. Her role is to listen to the initial concerns, explain the legal questions, and help families understand what may come next.</p><a href="#nl4-contact">Start an enquiry <Arrow/></a></div>
+        <div><span>Fictional lawyer profile</span><h2>Elena North</h2><p>Elena helps individuals and families understand the legal questions after a brain injury, the information needed, and the next steps.</p><a href="#nl4-contact">Start an enquiry <Arrow/></a></div>
         <img src="/pi-lawyer-hero-generated.png" alt="Elena North, a fictional lawyer featured in this website concept"/>
         <blockquote>“A person is more than a scan, a score, or a line in a medical chart.”</blockquote>
       </section>
@@ -93,11 +93,11 @@ export default function BrainInjury3DTest(){
       <section className="nl4-faq" id="nl4-faq">
         <div><span>04 / Before you enquire</span><h2>Questions<br/>families ask.</h2><p>If symptoms are new, severe, or worsening, seek medical attention immediately. This demonstration is legal marketing, not medical advice.</p></div>
         <div className="nl4-faq-list">
-          <details open><summary>Can I enquire on behalf of a family member?<span>+</span></summary><p>Yes. You can make an initial enquiry for someone close to you. We will explain what permission or authority may be needed before discussing their information or taking instructions.</p></details>
-          <details><summary>What if scans appear normal?<span>+</span></summary><p>Some symptoms may not be fully explained by routine imaging. A legal case considers the complete medical and functional evidence. Speak with qualified medical professionals about diagnosis and treatment.</p></details>
-          <details><summary>How soon should we get legal advice?<span>+</span></summary><p>Deadlines and benefit applications can arise quickly. Early advice may help preserve evidence and prevent avoidable procedural problems.</p></details>
-          <details><summary>How would fees be explained?<span>+</span></summary><p>Before you decide whether to proceed, the proposed fee arrangement, expenses, and payment responsibilities should be explained in writing.</p></details>
-          <details><summary>Will the injured person have to go to court?<span>+</span></summary><p>Many matters resolve without a trial. A legal team can prepare the available evidence so any settlement decision is informed and voluntary.</p></details>
+          <details open><summary>Can I enquire on behalf of a family member?<span aria-hidden="true"/></summary><p>Yes. You can make an initial enquiry for someone close to you. We will explain what permission or authority may be needed before discussing their information or taking instructions.</p></details>
+          <details><summary>What if scans appear normal?<span aria-hidden="true"/></summary><p>Some symptoms may not be fully explained by routine imaging. A legal case considers the complete medical and functional evidence. Speak with qualified medical professionals about diagnosis and treatment.</p></details>
+          <details><summary>How soon should we get legal advice?<span aria-hidden="true"/></summary><p>Deadlines and benefit applications can arise quickly. Early advice may help preserve evidence and prevent avoidable procedural problems.</p></details>
+          <details><summary>How are fees explained?<span aria-hidden="true"/></summary><p>Before you decide whether to proceed, we explain the proposed fees, expenses, and payment responsibilities in writing.</p></details>
+          <details><summary>Will the injured person have to go to court?<span aria-hidden="true"/></summary><p>Many matters resolve without a trial. A legal team can prepare the available evidence so any settlement decision is informed and voluntary.</p></details>
         </div>
       </section>
 
