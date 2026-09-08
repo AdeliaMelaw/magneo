@@ -8,6 +8,7 @@ Disallow: /test5
 Disallow: /test6
 Disallow: /portfolio/legal-websites/personal-injury-family-focused/test
 Disallow: /about-us
+Disallow: /about/test/
 
 Sitemap: https://magneo.ca/sitemap.xml
 Sitemap: https://magneo.ca/ai-sitemap.xml

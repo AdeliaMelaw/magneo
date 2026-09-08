@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/about/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/portfolio/legal-websites/notary-document-desk/?",
       "status": 301,
       "headers": {
