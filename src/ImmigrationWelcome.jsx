@@ -45,7 +45,7 @@ export default function ImmigrationWelcome(){
   return <div className="mh7" id="mh7-top">
     <header className="mh7-header">
       <a className="mh7-brand" href="/portfolio/" aria-label="Back to portfolio">
-        <span>Maple &amp; Harbour</span><small>Immigration law</small>
+        <span>← Back to portfolio</span>
       </a>
       <nav aria-label="Primary navigation">
         <a href="#mh7-help">How we help</a>

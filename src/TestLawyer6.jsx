@@ -29,7 +29,7 @@ export default function TestLawyer6(){
 
   return <div className="hl6">
     <header className="hl6-nav" id="hl6-top">
-      <a className="hl6-brand" href="#hl6-top" aria-label="Harbour and Lane home"><i>H</i><span>Harbour <em>&amp;</em> Lane<small>Injury law · Toronto</small></span></a>
+      <a className="hl6-brand" href="/portfolio/" aria-label="Back to portfolio"><i aria-hidden="true">←</i><span>Back to portfolio</span></a>
       <nav aria-label="Primary navigation"><a href="#hl6-support">How we help</a><a href="#hl6-process">What happens next</a><a href="#hl6-contact">Contact</a></nav>
       <a className="hl6-phone" href="tel:+14378731155">437 873 1155</a>
       <a className="hl6-top-cta" href="#hl6-contact">Talk with us <Arrow/></a>
