@@ -31,16 +31,13 @@ export default function PortfolioTest(){
   const [showAllWebsites,setShowAllWebsites]=useState(false);
 
   useEffect(()=>{
-    document.title='Portfolio Test | Magneo — Web, Social & AI Marketing';
+    document.title='Portfolio | Magneo — Web, Social & AI Marketing';
     let description=document.querySelector('meta[name="description"]');
     if(!description){description=document.createElement('meta');description.name='description';document.head.appendChild(description);}
-    description.content='Private review of the reorganized Magneo website, social media, and AI marketing portfolio.';
+    description.content='Explore Magneo website concepts, social media creative, and AI marketing demonstrations for regulated industries.';
     let canonical=document.querySelector('link[rel="canonical"]');
     if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical);}
-    canonical.href='https://magneo.ca/portfolio/test/';
-    const robots=document.createElement('meta');
-    robots.name='robots';robots.content='noindex, nofollow, noarchive';robots.dataset.portfolioTest='true';document.head.appendChild(robots);
-    return ()=>robots.remove();
+    canonical.href='https://magneo.ca/portfolio/';
   },[]);
 
   return <div className="pf-main pf-portfolio-hub pf-portfolio-test">
