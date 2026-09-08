@@ -1,6 +1,20 @@
 {
   "routes": [
     {
+      "src": "/portfolio/legal-websites/notary-document-desk/?",
+      "status": 301,
+      "headers": {
+        "Location": "https://magneo.ca/portfolio/notary-services/"
+      }
+    },
+    {
+      "src": "/portfolio/legal-websites/notary-services/?",
+      "status": 301,
+      "headers": {
+        "Location": "https://magneo.ca/portfolio/notary-services/"
+      }
+    },
+    {
       "src": "/portfolio/legal-websites/personal-injury-family-focused/test/?",
       "headers": {
         "X-Robots-Tag": "noindex, nofollow, noarchive"

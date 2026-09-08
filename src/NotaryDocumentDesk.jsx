@@ -38,7 +38,7 @@ export default function NotaryDocumentDesk(){
     description.content = 'A fictional notary-services website concept created for the Magneo legal website portfolio.';
     let canonical = document.querySelector('link[rel="canonical"]');
     if(!canonical){ canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = 'https://magneo.ca/portfolio/legal-websites/notary-document-desk/';
+    canonical.href = 'https://magneo.ca/portfolio/notary-services/';
   },[]);
 
   const handleSubmit = (event) => {
@@ -69,7 +69,7 @@ export default function NotaryDocumentDesk(){
           <div className="nd-actions"><a className="nd-button" href="#nd-request">Request an appointment</a><a className="nd-text-link" href="#nd-bring">What should I bring? <span>↓</span></a></div>
         </div>
         <div className="nd-hero-art" aria-label="Blank papers, a document folder, and a pen arranged on a desk">
-          <img src="/notary-document-desk-hero-v3.png" alt="Fictional notary service request arranged over an ink-blue document folder beside a pen"/>
+          <img src="/notary-document-desk-hero-v4.png" alt="The Notary Desk letterhead arranged over an ink-blue document folder beside a pen"/>
           <small aria-hidden="true">Document desk · 01</small>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function NotaryDocumentDesk(){
 
       <section className="nd-provider" aria-labelledby="nd-provider-title">
         <div className="nd-provider-image"><img src="/notary-provider-portrait.png" alt="Fictional notary provider seated at an orderly desk" loading="lazy"/></div>
-        <div><span>Fictional provider profile</span><h2 id="nd-provider-title">A calm, organized appointment.</h2><p>The fictional provider in this concept begins by confirming the document, its intended use, and what you need to bring. Requirements and availability are reviewed before an appointment is confirmed.</p><a className="nd-text-link" href="#nd-request">Organize your appointment <span>↓</span></a></div>
+        <div><span>Fictional provider profile</span><h2 id="nd-provider-title">A calm, organized appointment.</h2><p>Your appointment starts with understanding the document and where it will be used. We explain what to bring, confirm the fee, and walk you through the required steps.</p><a className="nd-text-link" href="#nd-request">Organize your appointment <span>↓</span></a></div>
       </section>
 
       <section className="nd-section nd-faq" id="nd-faq" aria-labelledby="nd-faq-title">

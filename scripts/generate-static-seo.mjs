@@ -41,7 +41,7 @@ const descriptions = {
   '/portfolio/legal-websites/personal-injury-cinematic/': 'A cinematic personal injury law firm website concept that turns recovery and evidence into a human story.',
   '/portfolio/legal-websites/personal-injury-family-focused/': 'A warm, family-focused personal injury law firm website concept designed to build reassurance and trust.',
   '/portfolio/legal-websites/immigration-welcome/': 'A warm, welcoming fictional Canadian immigration law firm website concept created by Magneo.',
-  '/portfolio/legal-websites/notary-document-desk/': 'A refined fictional notary-services website concept organized around documents, preparation, and appointment clarity.'
+  '/portfolio/notary-services/': 'A refined fictional notary-services website concept organized around documents, preparation, and appointment clarity.'
 };
 
 const titleOverrides = {
@@ -75,7 +75,7 @@ const titleOverrides = {
   '/portfolio/legal-websites/personal-injury-cinematic/': 'Cinematic Personal Injury Website Concept | Magneo',
   '/portfolio/legal-websites/personal-injury-family-focused/': 'Family-Focused Injury Website Concept | Magneo',
   '/portfolio/legal-websites/immigration-welcome/': 'Immigration Law Website Concept | Magneo',
-  '/portfolio/legal-websites/notary-document-desk/': 'Notary Services Website Concept | Magneo'
+  '/portfolio/notary-services/': 'Notary Services Website Concept | Magneo'
 };
 
 const imageOverrides = {
@@ -88,7 +88,7 @@ const imageOverrides = {
   '/portfolio/legal-websites/personal-injury-cinematic/': '/test5-cinematic-hero.png',
   '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png',
   '/portfolio/legal-websites/immigration-welcome/': '/immigration-welcome-hero.png',
-  '/portfolio/legal-websites/notary-document-desk/': '/notary-document-desk-hero-v3.png'
+  '/portfolio/notary-services/': '/notary-document-desk-hero-v4.png'
 };
 
 function escapeHtml(value) {
