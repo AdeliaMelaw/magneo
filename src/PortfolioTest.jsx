@@ -9,6 +9,7 @@ const websites = [
   { image:'/portfolio/websites/personal-injury-bold-preview-v2.png', name:'Personal injury · Bold', route:'/portfolio/legal-websites/personal-injury-bold/', style:'showcase' },
   { image:'/portfolio/websites/brain-injury-3d-preview.png', name:'Brain injury · 3D', route:'/portfolio/legal-websites/brain-injury-3d/', style:'showcase' },
   { image:'/portfolio/websites/personal-injury-cinematic-preview.png', name:'Personal injury · Cinematic', route:'/portfolio/legal-websites/personal-injury-cinematic/', style:'showcase' },
+  { image:'/portfolio/websites/notary-document-desk-preview.png', name:'Notary services · Document desk', route:'/portfolio/legal-websites/notary-document-desk/', style:'showcase' },
 ];
 
 const socialExamples = [

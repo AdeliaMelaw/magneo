@@ -32,14 +32,15 @@ const descriptions = {
   '/services/ai-content-marketing/': 'AI content marketing for regulated industries, including editorial calendars, topical maps, repurposing, and expert review workflows.',
   '/services/compliance-aware-ai-workflows/': 'Compliance-aware AI workflows for regulated marketing, with human review, claim checks, disclaimers, approvals, and brand controls.',
   '/portfolio/': 'Explore Magneo work across website design, social media marketing, and AI-powered digital marketing for regulated industries.',
-  '/portfolio/legal-websites/': 'Explore six original Magneo website concepts for personal injury, brain injury, and litigation law firms.',
+  '/portfolio/legal-websites/': 'Explore seven original Magneo website concepts for personal injury, brain injury, litigation, immigration, and notary services.',
   '/portfolio/legal-websites/personal-injury-classic/': 'A timeless, conversion-focused personal injury law firm website concept by Magneo.',
   '/portfolio/legal-websites/personal-injury-bold/': 'A bold, expressive personal injury law firm website concept designed to make the advocate memorable.',
   '/portfolio/legal-websites/litigation-editorial/': 'An editorial litigation law firm website concept combining monochrome typography, motion, and decisive positioning.',
   '/portfolio/legal-websites/brain-injury-3d/': 'An immersive 3D brain injury law firm website concept built around specialist expertise and human dignity.',
   '/portfolio/legal-websites/personal-injury-cinematic/': 'A cinematic personal injury law firm website concept that turns recovery and evidence into a human story.',
   '/portfolio/legal-websites/personal-injury-family-focused/': 'A warm, family-focused personal injury law firm website concept designed to build reassurance and trust.',
-  '/portfolio/legal-websites/immigration-welcome/': 'A warm, welcoming fictional Canadian immigration law firm website concept created by Magneo.'
+  '/portfolio/legal-websites/immigration-welcome/': 'A warm, welcoming fictional Canadian immigration law firm website concept created by Magneo.',
+  '/portfolio/legal-websites/notary-document-desk/': 'A refined fictional notary-services website concept organized around documents, preparation, and appointment clarity.'
 };
 
 const titleOverrides = {
@@ -72,7 +73,8 @@ const titleOverrides = {
   '/portfolio/legal-websites/brain-injury-3d/': '3D Brain Injury Website Concept | Magneo',
   '/portfolio/legal-websites/personal-injury-cinematic/': 'Cinematic Personal Injury Website Concept | Magneo',
   '/portfolio/legal-websites/personal-injury-family-focused/': 'Family-Focused Injury Website Concept | Magneo',
-  '/portfolio/legal-websites/immigration-welcome/': 'Immigration Law Website Concept | Magneo'
+  '/portfolio/legal-websites/immigration-welcome/': 'Immigration Law Website Concept | Magneo',
+  '/portfolio/legal-websites/notary-document-desk/': 'Notary Services Website Concept | Magneo'
 };
 
 const imageOverrides = {
@@ -84,7 +86,8 @@ const imageOverrides = {
   '/portfolio/legal-websites/brain-injury-3d/': '/brain-injury-head-3d-v2.png',
   '/portfolio/legal-websites/personal-injury-cinematic/': '/test5-cinematic-hero.png',
   '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png',
-  '/portfolio/legal-websites/immigration-welcome/': '/immigration-welcome-hero.png'
+  '/portfolio/legal-websites/immigration-welcome/': '/immigration-welcome-hero.png',
+  '/portfolio/legal-websites/notary-document-desk/': '/notary-document-desk-hero.png'
 };
 
 function escapeHtml(value) {

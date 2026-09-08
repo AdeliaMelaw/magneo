@@ -8,6 +8,7 @@ const concepts = [
   { number:'04', type:'Serious injury', title:'Brain injury 3D', route:'/portfolio/legal-websites/brain-injury-3d/', image:'/brain-injury-head-3d-v2.png', className:'brain', description:'A specialist injury concept that uses 3D imagery to establish its focus and explore a distinctive way to introduce brain injury information.', tags:['3D experience','Specialist','Immersive'] },
   { number:'05', type:'Personal injury', title:'Cinematic recovery', route:'/portfolio/legal-websites/personal-injury-cinematic/', image:'/test5-cinematic-hero.png', className:'cinematic', description:'A personal injury concept that uses a documentary-style narrative to introduce the human context behind an injury claim.', tags:['Cinematic','Story-led','Atmospheric'] },
   { number:'06', type:'Personal injury', title:'Family-focused care', route:'/portfolio/legal-websites/personal-injury-family-focused/', image:'/test6-family-hero.png', className:'family', description:'A reassuring personal injury concept written for families seeking clear information after a life-changing injury.', tags:['Empathetic','Warm','Family-first'] },
+  { number:'07', type:'Notary services', title:'The document desk', route:'/portfolio/legal-websites/notary-document-desk/', image:'/notary-document-desk-hero.png', className:'notary', description:'A precise editorial notary-services concept that makes document preparation and appointment expectations easy to understand.', tags:['Editorial','Organized','Service-led'] },
 ];
 
 export default function LegalWebsites(){
@@ -26,7 +27,7 @@ export default function LegalWebsites(){
     document.title = 'Legal Website Design Portfolio | Magneo';
     let description = document.querySelector('meta[name="description"]');
     if(!description){ description=document.createElement('meta'); description.name='description'; document.head.appendChild(description); }
-    description.content='Explore six original Magneo website concepts for personal injury, brain injury, and litigation law firms.';
+    description.content='Explore seven original Magneo website concepts for personal injury, brain injury, litigation, and notary services.';
     let canonical=document.querySelector('link[rel="canonical"]');
     if(!canonical){ canonical=document.createElement('link'); canonical.rel='canonical'; document.head.appendChild(canonical); }
     canonical.href='https://magneo.ca/portfolio/legal-websites/';
@@ -36,7 +37,7 @@ export default function LegalWebsites(){
     <section className="lwp-hero">
       <div className="container lwp-hero-grid">
         <div><div className="lwp-overline"><i/> Magneo · Law firm website concepts</div><h1>Your expertise.<br/>A clear reason to <em>choose your firm.</em></h1></div>
-        <div className="lwp-hero-side"><p>Magneo brings positioning, copy, design, and development together for law firm websites. Explore six original concepts for personal injury and litigation practices, each showing a different approach to presenting expertise and guiding prospective clients toward an enquiry.</p><small className="lwp-hero-disclosure">These are fictional demonstration websites created by Magneo, not commissioned client projects.</small><a href="/portfolio/legal-websites/#legal-collection" onClick={scrollToCollection}>Explore the website concepts <span>↓</span></a></div>
+        <div className="lwp-hero-side"><p>Magneo brings positioning, copy, design, and development together for professional-service websites. Explore seven original concepts for personal injury, litigation, immigration, and notary services, each showing a different approach to presenting expertise and guiding visitors toward an enquiry.</p><small className="lwp-hero-disclosure">These are fictional demonstration websites created by Magneo, not commissioned client projects.</small><a href="/portfolio/legal-websites/#legal-collection" onClick={scrollToCollection}>Explore the website concepts <span>↓</span></a></div>
       </div>
       <div className="lwp-ticker"><div>STRATEGY <i/> IDENTITY <i/> CONTENT <i/> DESIGN <i/> DEVELOPMENT <i/> STRATEGY <i/> IDENTITY <i/> CONTENT <i/> DESIGN <i/> DEVELOPMENT</div></div>
     </section>
@@ -47,9 +48,9 @@ export default function LegalWebsites(){
 
     <section className="lwp-collection" id="legal-collection">
       <div className="container">
-        <div className="lwp-collection-head"><div><span>Selected concepts</span><h2>Explore the possibilities for your firm.</h2></div><div className="lwp-filters" aria-label="Filter legal website concepts">{['All','Personal injury','Litigation','Serious injury'].map((name)=><button type="button" className={filter===name?'active':''} aria-pressed={filter===name} onClick={()=>setFilter(name)} key={name}>{name}</button>)}</div></div>
+        <div className="lwp-collection-head"><div><span>Selected concepts</span><h2>Explore the possibilities for your firm.</h2></div><div className="lwp-filters" aria-label="Filter legal website concepts">{['All','Personal injury','Litigation','Serious injury','Notary services'].map((name)=><button type="button" className={filter===name?'active':''} aria-pressed={filter===name} onClick={()=>setFilter(name)} key={name}>{name}</button>)}</div></div>
         <div className="lwp-grid">{visible.map((concept)=><article className={`lwp-card ${concept.className}`} key={concept.route}>
-          <Link className="lwp-visual" to={concept.route} aria-label={`Explore ${concept.title}`}><img src={concept.image} alt=""/><div className="lwp-art"><span>{concept.type}</span><b>{concept.className==='editorial'?'COMPLICATED\nCASES':concept.className==='brain'?'THE MIND\nMATTERS':concept.className==='cinematic'?'ONE SECOND\nCHANGED\nEVERYTHING':concept.className==='family'?'YOUR FAMILY\nIS NOT ALONE':concept.className==='bold'?'HURT.\nHEARD.\nREADY.':'ADVOCACY\nWITH\nCLARITY.'}</b></div><i className="lwp-open">↗</i></Link>
+          <Link className="lwp-visual" to={concept.route} aria-label={`Explore ${concept.title}`}><img src={concept.image} alt=""/><div className="lwp-art"><span>{concept.type}</span><b>{concept.className==='notary'?'EVERYTHING\nIN ORDER':concept.className==='editorial'?'COMPLICATED\nCASES':concept.className==='brain'?'THE MIND\nMATTERS':concept.className==='cinematic'?'ONE SECOND\nCHANGED\nEVERYTHING':concept.className==='family'?'YOUR FAMILY\nIS NOT ALONE':concept.className==='bold'?'HURT.\nHEARD.\nREADY.':'ADVOCACY\nWITH\nCLARITY.'}</b></div><i className="lwp-open">↗</i></Link>
           <div className="lwp-card-meta"><div className="lwp-number">{concept.number}</div><div><span>{concept.type} · Fictional concept</span><h3><Link to={concept.route}>{concept.title}</Link></h3><p>{concept.description}</p><div className="lwp-tags">{concept.tags.map((tag)=><span key={tag}>{tag}</span>)}</div></div></div>
         </article>)}</div>
       </div>
@@ -59,6 +60,6 @@ export default function LegalWebsites(){
 
     <section className="lwp-cta"><div className="container lwp-cta-inner"><span>Your firm’s website</span><h2>Let’s build around<br/>what sets your firm apart.</h2><p>Tell us about your practice areas, the clients you want to reach, and what your current website needs to do better. We’ll discuss an approach to content and design that reflects your firm.</p><Link className="btn" to="/contact/">Discuss your law firm website ↗</Link></div></section>
 
-    <section className="lwp-disclosure"><div className="container"><b>About this collection</b><p>All six experiences are original fictional design concepts created by Magneo. Firm names, lawyers, claims, credentials, testimonials, and results shown inside the concepts are illustrative and do not represent real clients or legal services.</p></div></section>
+    <section className="lwp-disclosure"><div className="container"><b>About this collection</b><p>All seven experiences are original fictional design concepts created by Magneo. Firm names, lawyers, providers, claims, credentials, testimonials, and results shown inside the concepts are illustrative and do not represent real clients or legal services.</p></div></section>
   </div>;
 }
