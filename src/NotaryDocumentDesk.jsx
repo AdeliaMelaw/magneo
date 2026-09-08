@@ -49,7 +49,7 @@ export default function NotaryDocumentDesk(){
 
   return <div className="nd-page" id="top">
     <header className="nd-header">
-      <Link className="nd-logo" to="/portfolio/" aria-label="The Notary Desk — back to portfolio"><span>ND</span><b>The Notary Desk</b></Link>
+      <Link className="nd-logo" to="/portfolio/" aria-label="Back to portfolio"><span>ND</span><b>Back to portfolio</b></Link>
       <nav aria-label="Notary concept navigation">
         <a href="#nd-services">Services</a>
         <a href="#nd-bring">What to bring</a>
