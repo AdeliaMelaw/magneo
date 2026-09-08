@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import './styles/about-test.css';
+import './styles/about-test-update.css';
 
 const workingSteps = [
   ['01', 'Understand the need', 'We discuss your business, audience, existing marketing, and the problem you want to solve.'],
@@ -95,18 +96,18 @@ export default function AboutTest() {
         </div>
         <figure className="abt-portrait">
           <img src="/adele-salikhova.jpg" alt="Adele Salikhova, founder of Magneo"/>
-          <figcaption><strong>Adele Salikhova · Founder</strong><span>Based in Toronto · Serving Canada and the USA</span></figcaption>
+          <figcaption><strong>Adele Salikhova · Founder</strong><span>Based in Toronto · Serving Canada and the USA</span><a className="abt-portrait-link" href="https://www.linkedin.com/in/adele-salikhova/" target="_blank" rel="noopener noreferrer">Connect with Adele on LinkedIn <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
       </div>
     </section>
 
     <section className="abt-experience">
       <div className="container abt-two-col">
-        <div><span className="abt-label">The experience behind Magneo</span><h2>10+ years of marketing experience.<br/><em>A personal approach to your project.</em></h2></div>
+        <div><span className="abt-label">The experience behind Magneo</span><h2><strong>10+</strong> years of marketing experience.<small>Brought to businesses in regulated industries.</small></h2></div>
         <div className="abt-copy">
           <p>Adele Salikhova brings more than a decade of marketing experience to Magneo. Her focus is on making complex expertise easier to understand through clear positioning, thoughtful design, useful content, and practical execution.</p>
           <p>Magneo brings that experience into a direct working relationship: your priorities shape the scope, and you know who is responsible for the work.</p>
-          <div className="abt-text-links"><Link to="/about/adele-salikhova/">More about Adele ↗</Link><a href="https://www.linkedin.com/in/adele-salikhova/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></div>
+          <div className="abt-text-links"><a href="https://www.linkedin.com/in/adele-salikhova/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></div>
         </div>
       </div>
     </section>

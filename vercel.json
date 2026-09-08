@@ -8,6 +8,20 @@
       "continue": true
     },
     {
+      "src": "/about/adele-salikhova/?",
+      "status": 404,
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
+      "src": "/about-us/?",
+      "status": 404,
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
       "src": "/portfolio/legal-websites/notary-document-desk/?",
       "status": 301,
       "headers": {
@@ -81,13 +95,6 @@
       "status": 308,
       "headers": {
         "Location": "https://blog.magneo.ca/blog/$1"
-      }
-    },
-    {
-      "src": "/about-us/?",
-      "status": 308,
-      "headers": {
-        "Location": "https://magneo.ca/about/adele-salikhova/"
       }
     },
     {

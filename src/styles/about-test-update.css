@@ -1,0 +1,46 @@
+.abt-portrait figcaption > span {
+  color: rgba(255, 255, 255, .46);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.abt-portrait-link {
+  align-items: center;
+  border: 1px solid rgba(143, 239, 0, .45);
+  border-radius: 999px;
+  color: var(--mg);
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 12px;
+  justify-content: space-between;
+  letter-spacing: .06em;
+  margin-top: 10px;
+  padding: 11px 14px;
+  text-transform: uppercase;
+}
+
+.abt-portrait-link span {
+  color: inherit;
+}
+
+.abt-portrait-link:hover,
+.abt-portrait-link:focus-visible {
+  background: var(--mg);
+  color: #243c00;
+}
+
+.abt-two-col h2 strong {
+  color: inherit;
+  font: inherit;
+}
+
+.abt-two-col h2 small {
+  color: #737b81;
+  display: block;
+  font: 500 13px/1.5 var(--body);
+  letter-spacing: .08em;
+  margin-top: 18px;
+  text-transform: uppercase;
+}
