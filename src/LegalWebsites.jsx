@@ -14,14 +14,6 @@ const concepts = [
 export default function LegalWebsites(){
   const [filter, setFilter] = useState('All');
   const visible = filter === 'All' ? concepts : concepts.filter((item)=>item.type === filter);
-  const scrollToCollection = (event) => {
-    event.preventDefault();
-    const target = document.getElementById('legal-collection');
-    if (!target) return;
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.history.replaceState(null, '', '/portfolio/legal-websites/#legal-collection');
-    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 68, behavior: reducedMotion ? 'auto' : 'smooth' });
-  };
 
   useEffect(()=>{
     document.title = 'Legal Website Design Portfolio | Magneo';
@@ -31,13 +23,19 @@ export default function LegalWebsites(){
     let canonical=document.querySelector('link[rel="canonical"]');
     if(!canonical){ canonical=document.createElement('link'); canonical.rel='canonical'; document.head.appendChild(canonical); }
     canonical.href='https://magneo.ca/portfolio/legal-websites/';
+    const robots=document.createElement('meta');
+    robots.name='robots';
+    robots.content='noindex, nofollow, noarchive';
+    robots.dataset.legalPortfolioHidden='true';
+    document.head.appendChild(robots);
+    return ()=>robots.remove();
   },[]);
 
   return <div className="lwp lwp-portfolio-copy">
     <section className="lwp-hero">
       <div className="container lwp-hero-grid">
         <div><div className="lwp-overline"><i/> Magneo · Law firm website concepts</div><h1>Your expertise.<br/>A clear reason to <em>choose your firm.</em></h1></div>
-        <div className="lwp-hero-side"><p>Magneo brings positioning, copy, design, and development together for professional-service websites. Explore seven original concepts for personal injury, litigation, immigration, and notary services, each showing a different approach to presenting expertise and guiding visitors toward an enquiry.</p><small className="lwp-hero-disclosure">These are fictional demonstration websites created by Magneo, not commissioned client projects.</small><a href="/portfolio/legal-websites/#legal-collection" onClick={scrollToCollection}>Explore the website concepts <span>↓</span></a></div>
+        <div className="lwp-hero-side"><p>Magneo brings positioning, copy, design, and development together for professional-service websites. Explore seven original concepts for personal injury, litigation, immigration, and notary services, each showing a different approach to presenting expertise and guiding visitors toward an enquiry.</p><small className="lwp-hero-disclosure">These are fictional demonstration websites created by Magneo, not commissioned client projects.</small><a href="/portfolio/#portfolio-websites">Explore the portfolio <span>↗</span></a></div>
       </div>
       <div className="lwp-ticker"><div>STRATEGY <i/> IDENTITY <i/> CONTENT <i/> DESIGN <i/> DEVELOPMENT <i/> STRATEGY <i/> IDENTITY <i/> CONTENT <i/> DESIGN <i/> DEVELOPMENT</div></div>
     </section>

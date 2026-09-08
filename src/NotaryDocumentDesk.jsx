@@ -49,7 +49,7 @@ export default function NotaryDocumentDesk(){
 
   return <div className="nd-page" id="top">
     <header className="nd-header">
-      <Link className="nd-logo" to="/portfolio/legal-websites/" aria-label="The Notary Desk — back to legal website portfolio"><span>ND</span><b>The Notary Desk</b></Link>
+      <Link className="nd-logo" to="/portfolio/" aria-label="The Notary Desk — back to portfolio"><span>ND</span><b>The Notary Desk</b></Link>
       <nav aria-label="Notary concept navigation">
         <a href="#nd-services">Services</a>
         <a href="#nd-bring">What to bring</a>
@@ -117,6 +117,6 @@ export default function NotaryDocumentDesk(){
       </section>
     </main>
 
-    <footer className="nd-footer"><div><Link className="nd-logo" to="/portfolio/legal-websites/"><span>ND</span><b>The Notary Desk</b></Link><p>The Notary Desk and the provider shown are fictional. This website is an original portfolio concept and does not offer notary or legal services.</p></div><Link to="/portfolio/legal-websites/">Back to legal website concepts ↗</Link></footer>
+    <footer className="nd-footer"><div><Link className="nd-logo" to="/portfolio/"><span>ND</span><b>The Notary Desk</b></Link><p>The Notary Desk and the provider shown are fictional. This website is an original portfolio concept and does not offer notary or legal services.</p></div><Link to="/portfolio/">Back to portfolio ↗</Link></footer>
   </div>;
 }

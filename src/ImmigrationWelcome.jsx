@@ -44,7 +44,7 @@ export default function ImmigrationWelcome(){
 
   return <div className="mh7" id="mh7-top">
     <header className="mh7-header">
-      <a className="mh7-brand" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio">
+      <a className="mh7-brand" href="/portfolio/" aria-label="Back to portfolio">
         <span>Maple &amp; Harbour</span><small>Immigration law</small>
       </a>
       <nav aria-label="Primary navigation">
@@ -147,7 +147,7 @@ export default function ImmigrationWelcome(){
 
     <footer className="mh7-footer">
       <p>Maple &amp; Harbour and Alex Morgan are fictional. This website concept was created by Magneo and does not offer legal services. Imagery is illustrative, and the form does not send enquiries.</p>
-      <div><a href="/portfolio/legal-websites/">Back to legal portfolio</a><a href="#mh7-top">Back to top ↑</a></div>
+      <div><a href="/portfolio/">Back to portfolio</a><a href="#mh7-top">Back to top ↑</a></div>
     </footer>
   </div>;
 }

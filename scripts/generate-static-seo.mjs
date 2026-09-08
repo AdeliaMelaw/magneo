@@ -13,6 +13,7 @@ const EXTRA_PATHS = [
   '/services/ai-content-marketing/',
   '/services/compliance-aware-ai-workflows/'
 ];
+const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
 
 const descriptions = {
   '/': 'Authority-first marketing systems for law firms, financial advisors, healthcare providers, and tech companies. Compliance-safe. Measurable. Built to last.',
@@ -119,7 +120,7 @@ function descriptionFor(pathname) {
   return `${label} from Magneo, a digital marketing agency for regulated industries in Canada and the USA.`;
 }
 
-function injectSeo(html, { title, description, canonical, image }) {
+function injectSeo(html, { title, description, canonical, image, noindex = false }) {
   const clean = html
     .replace(/\s*<title>[\s\S]*?<\/title>/i, '')
     .replace(/\s*<meta\s+name=["']description["'][^>]*>/i, '')
@@ -136,6 +137,7 @@ function injectSeo(html, { title, description, canonical, image }) {
     '<meta property="og:type" content="website" />',
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
+    ...(noindex ? ['<meta name="robots" content="noindex, nofollow, noarchive" />'] : []),
     ...(image ? [`<meta property="og:image" content="${escapeHtml(image)}" />`, `<meta name="twitter:image" content="${escapeHtml(image)}" />`] : [])
   ].map((tag) => `    ${tag}`).join('\n');
   return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
@@ -144,12 +146,12 @@ function injectSeo(html, { title, description, canonical, image }) {
 const indexHtml = await readFile(INDEX_PATH, 'utf8');
 const sitemapXml = await readFile(SITEMAP_PATH, 'utf8');
 const sitemapPaths = [...sitemapXml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1].trim()).filter((url) => url.startsWith(BASE_URL)).map(normalizePath);
-const paths = [...new Set([...sitemapPaths, ...EXTRA_PATHS.map(normalizePath)])];
+const paths = [...new Set([...sitemapPaths, ...EXTRA_PATHS.map(normalizePath), ...NOINDEX_PATHS.map(normalizePath)])];
 
 for (const pathname of paths) {
   const canonical = `${BASE_URL}${pathname === '/' ? '/' : pathname}`;
   const image = imageOverrides[pathname] ? `${BASE_URL}${imageOverrides[pathname]}` : undefined;
-  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image });
+  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, noindex: NOINDEX_PATHS.includes(pathname) });
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);

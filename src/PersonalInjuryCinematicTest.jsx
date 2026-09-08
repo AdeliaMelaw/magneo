@@ -77,7 +77,7 @@ export default function PersonalInjuryCinematicTest(){
 
   return <div className={`fn5 fn5-revised${motionPaused ? ' is-paused' : ''}`}>
     <header className="fn5-nav">
-      <a className="fn5-logo" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
+      <a className="fn5-logo" href="/portfolio/" aria-label="Back to portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
       <nav aria-label="Primary navigation"><a href="#fn5-story">After an injury</a><a href="#fn5-proof">How we help</a><a href="#fn5-lawyer">Your lawyer</a></nav>
       <button className="fn5-nav-cta" type="button" onClick={openIntake}>Tell us what happened <Arrow/></button>
     </header>

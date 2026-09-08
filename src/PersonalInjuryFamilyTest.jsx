@@ -52,7 +52,7 @@ export default function PersonalInjuryFamilyTest(){
 
   return <div className="hl6 hl6-revised">
     <header className="hl6-nav" id="hl6-top">
-      <a className="hl6-brand hl6-back" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio"><i aria-hidden="true">←</i><span>Back to portfolio</span></a>
+      <a className="hl6-brand hl6-back" href="/portfolio/" aria-label="Back to portfolio"><i aria-hidden="true">←</i><span>Back to portfolio</span></a>
       <nav aria-label="Primary navigation"><a href="#hl6-support">How we help</a><a href="#hl6-process">What happens next</a><a href="#hl6-contact">Contact</a></nav>
       <a className="hl6-top-cta" href="#hl6-contact">Talk with us <Arrow/></a>
     </header>

@@ -34,7 +34,7 @@ export default function LitigationEditorialTest(){
 
   return <div className="lt3 lt3-updated">
     <header className="lt3-nav">
-      <a className="lt3-logo lt3-back-link" href="/portfolio/legal-websites/" aria-label="Back to legal websites portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
+      <a className="lt3-logo lt3-back-link" href="/portfolio/" aria-label="Back to portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
       <nav aria-label="Primary navigation"><a href="#lt3-capabilities">Disputes we handle</a><a href="#lt3-method">Our approach</a><a href="#lt3-counsel">Counsel</a><a href="#lt3-contact">Contact</a></nav>
       <span className="lt3-location">Toronto</span>
       <a className="lt3-btn lt3-btn-dark" href="#lt3-contact">Discuss a matter <Arrow/></a>
