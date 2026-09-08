@@ -51,7 +51,7 @@ const relatedInsights = [
   ['Reputation Management for Clinics', 'https://blog.magneo.ca/blog/reputation-management-for-clinics-growing-your-google-profile-in-2025/'],
 ];
 
-function useReviewSeo() {
+function useAboutSeo() {
   useEffect(() => {
     document.title = 'About Magneo — Founder-Led Marketing';
     let description = document.querySelector('meta[name="description"]');
@@ -68,19 +68,12 @@ function useReviewSeo() {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = 'https://magneo.ca/about/test/';
-
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    robots.dataset.magneoPrivateReview = 'true';
-    document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/about/';
   }, []);
 }
 
 export default function AboutTest() {
-  useReviewSeo();
+  useAboutSeo();
 
   return <div className="abt-page">
     <section className="abt-hero">
