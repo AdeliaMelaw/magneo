@@ -69,7 +69,7 @@ export default function NotaryDocumentDesk(){
           <div className="nd-actions"><a className="nd-button" href="#nd-request">Request an appointment</a><a className="nd-text-link" href="#nd-bring">What should I bring? <span>↓</span></a></div>
         </div>
         <div className="nd-hero-art" aria-label="Blank papers, a document folder, and a pen arranged on a desk">
-          <img src="/notary-document-desk-hero-v2.png" alt="Fictional Magneo portfolio brief arranged over an ink-blue document folder beside a pen"/>
+          <img src="/notary-document-desk-hero-v3.png" alt="Fictional notary service request arranged over an ink-blue document folder beside a pen"/>
           <small aria-hidden="true">Document desk · 01</small>
         </div>
       </section>

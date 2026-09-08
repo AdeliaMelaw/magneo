@@ -88,7 +88,7 @@ const imageOverrides = {
   '/portfolio/legal-websites/personal-injury-cinematic/': '/test5-cinematic-hero.png',
   '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png',
   '/portfolio/legal-websites/immigration-welcome/': '/immigration-welcome-hero.png',
-  '/portfolio/legal-websites/notary-document-desk/': '/notary-document-desk-hero-v2.png'
+  '/portfolio/legal-websites/notary-document-desk/': '/notary-document-desk-hero-v3.png'
 };
 
 function escapeHtml(value) {
