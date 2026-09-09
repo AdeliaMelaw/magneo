@@ -20,6 +20,7 @@ export default function PersonalInjuryCinematicTest(){
   const [activeScene, setActiveScene] = useState(0);
   const [intakeOpen, setIntakeOpen] = useState(false);
   const [sent, setSent] = useState(false);
+  const [inlineSent, setInlineSent] = useState(false);
   const [motionPaused, setMotionPaused] = useState(false);
   const dialogRef = useRef(null);
   const titleRef = useRef(null);
@@ -118,7 +119,19 @@ export default function PersonalInjuryCinematicTest(){
         <div className="fn5-faq-list">{faqs.map(([question,answer],index)=><details key={question} open={index === 0 ? true : undefined}><summary>{question}<span aria-hidden="true"/></summary><p>{answer}</p></details>)}</div>
       </section>
 
-      <section className="fn5-contact"><div><span>The first conversation</span><h2>You do not need<br/>the whole story<br/>ready.</h2></div><div><p>Start with a general outline of what happened and any known deadline. The first step is to establish whether we can help and what information is needed next.</p><button type="button" onClick={openIntake}>Tell us what happened <Arrow/></button></div></section>
+      <section className="fn5-contact" id="fn5-contact">
+        <div><span>The first conversation</span><h2>You do not need<br/>the whole story<br/>ready.</h2><p>Start with a general outline of what happened and any known deadline. The first step is to establish whether we can help and what information is needed next.</p></div>
+        {inlineSent ? <div className="fn5-inline-success" role="status"><span>Demonstration only</span><h3>Thank you.</h3><p>Your information was not sent or retained.</p><button type="button" onClick={()=>setInlineSent(false)}>Return to form</button></div> :
+          <form className="fn5-inline-form" onSubmit={(event)=>{event.preventDefault();setInlineSent(true)}}>
+            <span className="fn5-inline-kicker">Initial enquiry</span>
+            <label htmlFor="fn5-inline-name">Your name<input id="fn5-inline-name" required autoComplete="name"/></label>
+            <label htmlFor="fn5-inline-contact">Email or phone<input id="fn5-inline-contact" required autoComplete="email"/></label>
+            <label className="fn5-inline-outline" htmlFor="fn5-inline-outline">Short outline — optional<small>A general description is enough. Do not include medical records or confidential details.</small><textarea id="fn5-inline-outline" rows="3"/></label>
+            <label className="fn5-inline-check"><input type="checkbox" required/><span>I understand this message does not create a lawyer-client relationship.</span></label>
+            <button type="submit">Request a conversation <Arrow/></button>
+            <small className="fn5-inline-notice">Demonstration form only. Do not enter personal or confidential information. No enquiry will be sent.</small>
+          </form>}
+      </section>
     </main>
 
     <footer className="fn5-footer"><div className="fn5-logo"><b>F/N</b><span>FIELDING NORTH<small>INJURY COUNSEL</small></span></div><p>Fictional law-firm concept and documentary imagery created for Magneo. Fielding North and Maya Fielding are fictional. This page does not offer legal services, and its form does not send or retain information.</p><a href="#fn5-top">Back to beginning ↑</a></footer>
