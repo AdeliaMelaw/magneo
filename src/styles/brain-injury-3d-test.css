@@ -10,7 +10,7 @@
 .nl4-revised .nl4-eyebrow,.nl4-revised .nl4-title>span,.nl4-revised .nl4-proof-copy>span,.nl4-revised .nl4-section-head>span,.nl4-revised .nl4-statement span,.nl4-revised .nl4-faq>div>span,.nl4-revised .nl4-contact-copy>span{font-size:11px;line-height:1.4}
 .nl4-revised .nl4-actions a:first-child,.nl4-revised .nl4-nav-cta,.nl4-revised .nl4-hero-side>a,.nl4-revised .nl4-motion-toggle,.nl4-revised .nl4-contact form>button{font-size:12px;line-height:1.35}
 .nl4-revised .nl4-visual{min-height:620px;background:radial-gradient(circle at 50% 42%,rgba(92,133,255,.2),transparent 48%)}
-.nl4-revised .nl4-visual:before{inset:9% 6% 8%}
+.nl4-revised .nl4-visual:before{content:none}
 .nl4-revised .nl4-model-stage{inset:14% 0 11%;cursor:default}
 .nl4-revised .nl4-model-tilt img{width:92%;height:92%;transform:none;filter:drop-shadow(0 24px 32px rgba(0,0,0,.62))}
 .nl4-revised .nl4-model-orbit,.nl4-revised .nl4-model-shadow,.nl4-revised .nl4-halo span{animation-play-state:paused}
