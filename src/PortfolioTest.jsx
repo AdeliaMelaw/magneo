@@ -90,7 +90,7 @@ export default function PortfolioTest(){
         <h2 id="pft-social-examples-title">Social media examples</h2>
         <div className="pft-social-example-grid">
           {socialExamples.map((item)=><article className="pft-social-example" key={item.title}>
-            <div><video controls playsInline preload="metadata" poster={item.poster} aria-label={`Play ${item.title}`}><source src={item.video} type="video/mp4"/>Your browser does not support embedded video.</video></div>
+            <div><video controls playsInline preload="metadata" poster={item.poster} aria-label={`Play ${item.title}`} onPlay={(event)=>{event.currentTarget.nextElementSibling.hidden=true;}} onEnded={(event)=>{event.currentTarget.nextElementSibling.hidden=false;}}><source src={item.video} type="video/mp4"/>Your browser does not support embedded video.</video><button className="pft-video-play" type="button" aria-label={`Play ${item.title}`} onClick={(event)=>{event.currentTarget.previousElementSibling.play();}}><span aria-hidden="true">▶</span></button></div>
             <span><small>{item.format}</small><strong>{item.title}</strong></span>
           </article>)}
         </div>
