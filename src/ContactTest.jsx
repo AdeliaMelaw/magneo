@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const HUBSPOT_ENDPOINT = 'https://api.hsforms.com/submissions/v3/integration/submit/342767601/46c6b70f-b1ee-4907-a137-be8b2faff1e8';
 const initialValues = { name: '', email: '', company: '', service: '', message: '' };
 
-function useReviewSeo() {
+function useContactSeo() {
   useEffect(() => {
     document.title = 'Contact Magneo | Discuss Your Project';
     const description = 'Contact Adele Salikhova at Magneo to discuss a website, content, search, advertising, or AI marketing project.';
@@ -20,18 +20,12 @@ function useReviewSeo() {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = 'https://magneo.ca/contact/test/';
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    robots.dataset.magneoContactReview = 'true';
-    document.head.appendChild(robots);
-    return () => robots.remove();
+    canonical.href = 'https://magneo.ca/contact/';
   }, []);
 }
 
 export default function ContactTest() {
-  useReviewSeo();
+  useContactSeo();
   const [values, setValues] = useState(initialValues);
   const [status, setStatus] = useState('idle');
 
