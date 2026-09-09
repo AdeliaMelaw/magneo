@@ -62,6 +62,16 @@
 .lt3-updated .lt3-footer p{font-size:14px;line-height:1.6;color:#c4c4c4}
 .lt3-updated .lt3-mobile{grid-template-columns:1fr}
 
+@media(min-width:1600px){
+  .lt3-updated .lt3-hero{min-height:auto}
+  .lt3-updated .lt3-hero-stage{flex:0 0 auto;width:min(100%,1600px);min-height:clamp(620px,68vh,740px);margin:0 auto;grid-template-columns:minmax(0,1fr) 390px;gap:34px}
+  .lt3-updated .lt3-banner-art{min-height:570px}
+  .lt3-updated .lt3-banner-art>h1{bottom:112px;font-size:clamp(96px,6vw,122px)}
+  .lt3-updated .lt3-banner-portrait{right:0;width:min(78%,760px);height:560px}
+  .lt3-updated .lt3-banner-portrait .lt3-stamp{bottom:100px}
+  .lt3-updated .lt3-hero-form{width:390px}
+}
+
 @media(max-width:1180px){
   .lt3-updated .lt3-hero-stage{min-height:580px;grid-template-columns:minmax(0,1fr) 320px}
   .lt3-updated .lt3-banner-art{min-height:520px}
