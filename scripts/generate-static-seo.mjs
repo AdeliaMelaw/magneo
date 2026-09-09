@@ -13,7 +13,7 @@ const EXTRA_PATHS = [
   '/services/ai-content-marketing/',
   '/services/compliance-aware-ai-workflows/'
 ];
-const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
+const NOINDEX_PATHS = ['/portfolio/legal-websites/', '/contact/test/'];
 
 const descriptions = {
   '/': 'Authority-first marketing systems for law firms, financial advisors, healthcare providers, and tech companies. Compliance-safe. Measurable. Built to last.',
@@ -21,6 +21,7 @@ const descriptions = {
   '/services/': 'Explore Magneo services for regulated industries, including SEO, PPC, LinkedIn marketing, website design, AI automation, and personal branding.',
   '/industries/': 'Magneo builds marketing systems for law firms, financial advisors, healthcare clinics, and tech companies across Canada and the USA.',
   '/contact/': 'Contact Magneo to request a brand, SEO, website, PPC, LinkedIn, or AI automation audit for a regulated-industry business.',
+  '/contact/test/': 'Contact Adele Salikhova at Magneo to discuss a website, content, search, advertising, or AI marketing project.',
   '/law-firm-marketing/': 'Magneo is a law firm marketing agency built for compliance-first growth, authority, rankings, and qualified consultation requests.',
   '/financial-firm-marketing/': 'Marketing systems for financial firms, advisors, portfolio managers, investment firms, insurance advisors, and tax professionals.',
   '/healthcare-marketing/': 'Healthcare marketing systems for clinics and providers that improve visibility, simplify patient decisions, and respect privacy expectations.',
@@ -49,6 +50,7 @@ const titleOverrides = {
   '/services/': 'Services | Magneo',
   '/industries/': 'Industries We Serve | Magneo',
   '/contact/': 'Contact Magneo | Request a Free Audit',
+  '/contact/test/': 'Contact Magneo | Discuss Your Project',
   '/law-firm-marketing/': 'Law Firm Marketing Agency | Magneo',
   '/financial-firm-marketing/': 'Financial Firm Marketing Agency | Magneo',
   '/healthcare-marketing/': 'Healthcare Marketing Agency | Magneo',
