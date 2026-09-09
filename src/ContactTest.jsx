@@ -99,6 +99,7 @@ export default function ContactTest() {
         </div>
 
         <div className="ct-form-panel" id="contact-enquiry">
+          <span id="contact-form" aria-hidden="true" />
           <span className="ct-kicker">Start a conversation</span>
           <h2>Tell me what you have in mind.</h2>
           <p className="ct-next">Your message comes directly to Adele. I’ll review what you share and reply with any questions or a suggested next step.</p>
