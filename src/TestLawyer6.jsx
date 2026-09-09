@@ -60,7 +60,7 @@ export default function TestLawyer6(){
       </section>
 
       <section className="hl6-support" id="hl6-support">
-        <div className="hl6-support-image"><img src="/test6-family-detail.png" alt="A family planning together around a kitchen table"/><span>THE WHOLE PICTURE / 01</span></div>
+        <div className="hl6-support-image"><img src="/test6-family-detail-v2.png" alt="A family reviewing a personal-injury legal action plan together around a kitchen table"/><span>THE WHOLE PICTURE / 01</span></div>
         <div className="hl6-support-copy">
           <span className="hl6-kicker">What does your family need most?</span>
           <div className="hl6-tabs" role="tablist" aria-label="Ways we support families">{needs.map((item)=><button key={item.key} type="button" role="tab" aria-selected={activeNeed===item.key} onClick={()=>setActiveNeed(item.key)}>{item.label}</button>)}</div>
