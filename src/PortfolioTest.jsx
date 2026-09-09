@@ -14,7 +14,7 @@ const websites = [
 
 const socialExamples = [
   { poster:'/portfolio/social/commentary-reel-cover.jpg', video:'/portfolio/social/commentary-reel.mp4', title:'Commentary reel', format:'Video concept' },
-  { poster:'/portfolio/social/podcast-interview-reel-cover.jpg', video:'/portfolio/social/podcast-interview-reel.mp4', title:'Expert perspective', format:'Podcast interview' },
+  { poster:'/portfolio/social/podcast-interview-reel-cover-v2.png', video:'/portfolio/social/podcast-interview-reel.mp4', title:'Expert perspective', format:'Podcast interview' },
   { poster:'/portfolio/social/conversational-reel-cover.jpg', video:'/portfolio/social/conversational-reel.mp4', title:'One clear answer', format:'Conversational reel' },
 ];
 
