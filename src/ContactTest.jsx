@@ -83,7 +83,13 @@ export default function ContactTest() {
 
           <figure className="ct-profile">
             <img src="/adele-salikhova.jpg" alt="Adele Salikhova, Founder of Magneo"/>
-            <figcaption><strong>Adele Salikhova</strong><span>Founder, Magneo</span></figcaption>
+            <figcaption>
+              <strong>Adele Salikhova</strong>
+              <span>Founder, Magneo</span>
+              <a className="ct-linkedin" href="https://www.linkedin.com/in/adele-salikhova/" target="_blank" rel="noopener noreferrer">
+                Chat with Adele on LinkedIn <b aria-hidden="true">↗</b>
+              </a>
+            </figcaption>
           </figure>
 
           <div className="ct-direct">

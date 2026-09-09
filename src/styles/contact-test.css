@@ -11,6 +11,9 @@
 .ct-profile img{width:82px;height:82px;border-radius:16px;object-fit:cover;object-position:center 22%;filter:grayscale(.2)}
 .ct-profile figcaption{display:grid;gap:5px}
 .ct-profile strong{font-size:17px}.ct-profile span{color:rgba(255,255,255,.52);font-size:13px}
+.ct-linkedin{display:inline-flex;align-items:center;gap:7px;width:max-content;margin-top:7px;padding:9px 13px;border:1px solid rgba(143,239,0,.7);border-radius:999px;color:#fff;font-size:12px;font-weight:600;line-height:1;transition:background-color .2s,color .2s,border-color .2s}
+.ct-linkedin:hover{border-color:var(--mg);background:var(--mg);color:#162400}
+.ct-linkedin b{font-size:13px}
 .ct-direct{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:auto;padding-top:44px;position:relative;z-index:1}
 .ct-direct div{display:grid;gap:8px;padding-top:17px;border-top:1px solid rgba(255,255,255,.18)}
 .ct-direct span{color:rgba(255,255,255,.48);font-size:13px}
@@ -25,7 +28,7 @@
 .ct-form label>span{color:#5aaa00}.ct-form label>small{justify-self:end;color:#838981;font-size:12px;font-weight:400}
 .ct-form input,.ct-form select,.ct-form textarea{grid-column:1/-1;border:1px solid #d9dcd6;border-radius:10px;background:#fff;padding:13px 14px;color:var(--ink);font:400 16px var(--body)}
 .ct-form textarea{resize:vertical;min-height:112px}
-.ct-form input:focus-visible,.ct-form select:focus-visible,.ct-form textarea:focus-visible,.ct-form button:focus-visible,.ct-direct a:focus-visible,.ct-privacy a:focus-visible{outline:3px solid rgba(143,239,0,.55);outline-offset:2px;border-color:#5aaa00}
+.ct-form input:focus-visible,.ct-form select:focus-visible,.ct-form textarea:focus-visible,.ct-form button:focus-visible,.ct-direct a:focus-visible,.ct-linkedin:focus-visible,.ct-privacy a:focus-visible{outline:3px solid rgba(143,239,0,.55);outline-offset:2px;border-color:#5aaa00}
 .ct-helper,.ct-error,.ct-privacy{grid-column:1/-1;margin:0}
 .ct-helper{margin-top:-10px;color:#747a73;font-size:13px}
 .ct-error{padding:12px 14px;border-left:3px solid #b42318;background:#fff3f1;color:#762018;font-size:14px;line-height:1.55}
