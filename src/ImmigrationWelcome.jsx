@@ -58,7 +58,7 @@ export default function ImmigrationWelcome(){
 
     <main>
       <section className="mh7-hero">
-        <div className="mh7-leaves" aria-hidden="true"><i/><i/><i/></div>
+        <div className="mh7-leaves" aria-hidden="true"><i/><i/><i/><i/><i/></div>
         <div className="mh7-hero-copy">
           <span className="mh7-disclosure">Fictional website concept</span>
           <span className="mh7-eyebrow">Canadian immigration law</span>
