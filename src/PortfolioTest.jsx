@@ -13,9 +13,9 @@ const websites = [
 ];
 
 const socialExamples = [
-  { image:'/portfolio/social/immersive-scenario.webp', title:'Know your rights', format:'Video concept' },
-  { image:'/portfolio/social/podcast-interview.webp', title:'Expert perspective', format:'Interview video concept' },
-  { image:'/portfolio/social/conversational-reel.webp', title:'One clear answer', format:'Conversational video concept' },
+  { poster:'/portfolio/social/commentary-reel-cover.jpg', video:'/portfolio/social/commentary-reel.mp4', title:'Commentary reel', format:'Video concept' },
+  { poster:'/portfolio/social/podcast-interview-reel-cover.jpg', video:'/portfolio/social/podcast-interview-reel.mp4', title:'Expert perspective', format:'Podcast interview' },
+  { poster:'/portfolio/social/conversational-reel-cover.jpg', video:'/portfolio/social/conversational-reel.mp4', title:'One clear answer', format:'Conversational reel' },
 ];
 
 function SocialBoard(){
@@ -78,7 +78,7 @@ export default function PortfolioTest(){
 
     <section className="pft-social-story">
       <div className="container pft-social-story-grid">
-        <div className="pft-social-story-image"><img src="/portfolio/social/commentary-reel.webp" alt="Social-media video creative featuring an expert explaining an idea" loading="lazy"/></div>
+        <div className="pft-social-story-image"><video controls playsInline preload="metadata" poster="/portfolio/social/immersive-scenario-reel-cover.jpg" aria-label="Play the immersive scenario reel"><source src="/portfolio/social/immersive-scenario-reel.mp4" type="video/mp4"/>Your browser does not support embedded video.</video></div>
         <div><span>Content in context</span><h2>One idea. Different ways to tell it.</h2><p>A useful question can become a post, a carousel, or a short video—each shaped for the format while keeping a consistent message and visual style.</p></div>
       </div>
     </section>
@@ -90,7 +90,7 @@ export default function PortfolioTest(){
         <h2 id="pft-social-examples-title">Social media examples</h2>
         <div className="pft-social-example-grid">
           {socialExamples.map((item)=><article className="pft-social-example" key={item.title}>
-            <div><img src={item.image} alt={`${item.title} ${item.format.toLowerCase()} preview`} loading="lazy"/></div>
+            <div><video controls playsInline preload="metadata" poster={item.poster} aria-label={`Play ${item.title}`}><source src={item.video} type="video/mp4"/>Your browser does not support embedded video.</video></div>
             <span><small>{item.format}</small><strong>{item.title}</strong></span>
           </article>)}
         </div>
