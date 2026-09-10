@@ -16,6 +16,7 @@ import NotaryDocumentDesk from './NotaryDocumentDesk.jsx';
 import PersonalInjuryClassic from './PersonalInjuryClassic.jsx';
 import PortfolioTest from './PortfolioTest.jsx';
 import AboutTest from './AboutTest.jsx';
+import AboutLegalTest from './AboutLegalTest.jsx';
 import ContactTest from './ContactTest.jsx';
 import HomeTest from './HomeTest.jsx';
 import './styles/test-lawyer.css';
@@ -150,6 +151,7 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/services/ai-powered-digital-marketing" element={<AIPage/>}/><Route path="/services/ai-powered-digital-marketing/" element={<AIPage/>}/>
   <Route path="/industries" element={<IndustriesHub/>}/><Route path="/industries/" element={<IndustriesHub/>}/>
   <Route path="/about" element={<AboutTest/>}/><Route path="/about/" element={<AboutTest/>}/>
+  <Route path="/about/test" element={<AboutLegalTest/>}/><Route path="/about/test/" element={<AboutLegalTest/>}/>
   <Route path="/our-team" element={<About/>}/><Route path="/our-team/" element={<About/>}/>
   <Route path="/contact" element={<Contact/>}/><Route path="/contact/" element={<Contact/>}/>
   {Object.entries(industries).map(([k,i])=><Route key={k} path={i.route.replace(/^\//,'').replace(/\/$/,'')} element={<IndustryPage kind={k}/>}/>) }
