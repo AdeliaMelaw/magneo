@@ -32,14 +32,6 @@ const publicWork = [
   },
 ];
 
-const relatedServices = [
-  ['Website Design', '/services/website-design-for-regulated-professional-industries-magneo/'],
-  ['Social Media & LinkedIn', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
-  ['AI Creative & Content', '/services/ai-powered-digital-marketing/'],
-  ['AI Automation', '/services/ai-automation-for-regulated-industries-magneo/'],
-  ['Personal Branding', '/services/personal-branding-for-regulated-professionals/'],
-];
-
 const industries = [
   ['Law Firms', 'Flagship focus', 'Practice positioning, lawyer visibility, and clear communication that helps prospective clients understand your services.', '/law-firm-marketing/'],
   ['Financial Services', '', 'Brand positioning, educational content, and websites shaped around your audience and your firm’s review process.', '/financial-firm-marketing/'],
@@ -47,8 +39,31 @@ const industries = [
   ['Technology Companies', '', 'Product positioning, websites, and content that make complex SaaS, AI, FinTech, and LegalTech offerings easier to understand.', '/tech-company-marketing/'],
 ];
 
-const legalInsights = [
-  ['Reimagining Digital Marketing Fundamentals for Law Firms', 'https://blog.magneo.ca/blog/reimagining-digital-marketing-fundamentals-for-law-firms-2025/'],
+const portfolioPreviews = [
+  {
+    title: 'Websites',
+    label: 'Original concepts',
+    description: 'Explore distinctive website directions that can be tailored to a business.',
+    image: '/portfolio/websites/litigation-editorial-preview-v2.png',
+    alt: 'Preview of an original Magneo website concept',
+    href: '/portfolio/#portfolio-websites',
+  },
+  {
+    title: 'Video & Reels',
+    label: 'Original concepts',
+    description: 'See short-form video and reel concepts built to make expertise easier to follow.',
+    image: '/portfolio/social/podcast-interview-reel-cover-v2.png',
+    alt: 'Cover for an original podcast interview reel concept',
+    href: '/portfolio/#social-media',
+  },
+  {
+    title: 'AI Automation',
+    label: 'Workflow concept',
+    description: 'Review a visual concept showing how connected tools can support marketing workflows.',
+    image: '/portfolio/ai/hubspot-automation.webp',
+    alt: 'Visual concept for a connected marketing automation workflow',
+    href: '/portfolio/#ai-marketing',
+  },
 ];
 
 function useAboutTestSeo() {
@@ -173,18 +188,20 @@ export default function AboutLegalTest() {
     </section>
 
     <section className="abt-portfolio">
-      <div className="container abt-portfolio-box"><div><span className="abt-label">Original concepts &amp; demonstrations</span><h2>See how the ideas take shape.</h2></div><div><p>Explore website concepts, social content, and AI demonstrations that show how Magneo approaches messaging, design, and practical applications of AI.</p><Link className="btn" to="/portfolio/">Explore the portfolio</Link></div></div>
+      <div className="container abt-portfolio-showcase">
+        <div className="abt-section-head abt-portfolio-head"><div><span className="abt-label">Original concepts &amp; demonstrations</span><h2>See how the ideas take shape.</h2></div><p>Explore website concepts, social content, and AI demonstrations that show how Magneo approaches messaging, design, and practical applications of AI.</p></div>
+        <div className="abt-portfolio-grid">
+          {portfolioPreviews.map((item) => <Link className="abt-portfolio-card" to={item.href} key={item.title}>
+            <img src={item.image} alt={item.alt}/>
+            <div><span>{item.label}</span><h3>{item.title}</h3><p>{item.description}</p><b>Explore <i aria-hidden="true">↗</i></b></div>
+          </Link>)}
+        </div>
+      </div>
     </section>
 
     <section className="abt-contact">
       <div className="container"><div className="abt-contact-box"><span className="abt-label">Start a conversation</span><h2>Let’s talk about your next move.</h2><p>Whether you need a clearer message, distinctive content, a new website, or help with AI automation, tell Adele what you want to improve.</p><Link className="btn" to="/contact/">Talk with Adele</Link></div></div>
     </section>
 
-    <section className="related-section abt-related abt-related-two">
-      <div className="container related-grid">
-        <div><h2>Explore Services</h2><i/><ul>{relatedServices.map(([name, path]) => <li key={path}><Link to={path}>{name}</Link></li>)}</ul></div>
-        <div><h2>Legal Marketing Insights</h2><i/><ul>{legalInsights.map(([name, path]) => <li key={path}><a href={path}>{name}</a></li>)}</ul></div>
-      </div>
-    </section>
   </div>;
 }
