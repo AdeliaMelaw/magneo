@@ -40,6 +40,23 @@ export default function PortfolioTest(){
     canonical.href='https://magneo.ca/portfolio/';
   },[]);
 
+  useEffect(()=>{
+    const scrollToHash = () => {
+      if (!window.location.hash) {
+        window.scrollTo(0,0);
+        return;
+      }
+      const targetId = decodeURIComponent(window.location.hash.slice(1));
+      document.getElementById(targetId)?.scrollIntoView({ block:'start' });
+    };
+    const frame = window.requestAnimationFrame(scrollToHash);
+    const retryTimer = window.setTimeout(scrollToHash,100);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(retryTimer);
+    };
+  },[]);
+
   return <div className="pf-main pf-portfolio-hub pf-portfolio-test">
     <section className="pf-hero">
       <div className="container pf-hero-inner">

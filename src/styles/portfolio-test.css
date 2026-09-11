@@ -1,4 +1,4 @@
-.pf-portfolio-test #portfolio-websites{scroll-margin-top:90px}
+.pf-portfolio-test #portfolio-websites,.pf-portfolio-test #social-media,.pf-portfolio-test #ai-marketing{scroll-margin-top:90px}
 .pf-portfolio-test .pf-web-info{padding:104px 0 92px;border-top:10px solid var(--lime)}
 .pf-portfolio-test .pf-hero{border:0;box-shadow:none}
 .pf-portfolio-test .pf-hero:before{display:none}
