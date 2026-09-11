@@ -17,7 +17,7 @@ const process = [
   ['04', 'Launch and improve', 'We prepare the final assets, support launch, and identify useful next steps.']
 ];
 
-function TestSeo() {
+function HomeSeo() {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = 'Magneo | Marketing That Makes Your Expertise Clear';
@@ -38,7 +38,7 @@ function TestSeo() {
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = 'https://magneo.ca/home/test/';
+    canonical.href = 'https://magneo.ca/';
     let robots = document.querySelector('meta[name="robots"]');
     const existing = robots;
     const previousRobots = robots?.content;
@@ -47,7 +47,7 @@ function TestSeo() {
       robots.name = 'robots';
       document.head.appendChild(robots);
     }
-    robots.content = 'noindex, nofollow, noarchive';
+    robots.content = 'index, follow';
     return () => {
       document.title = previousTitle;
       if (!existingDescription) description.remove();
@@ -63,7 +63,7 @@ function TestSeo() {
 
 export default function HomeTest() {
   return <div className="ht-page">
-    <TestSeo />
+    <HomeSeo />
     <header className="ht-header">
       <div className="ht-header-inner">
         <Link className="ht-brand" to="/">Mag<span>neo</span></Link>

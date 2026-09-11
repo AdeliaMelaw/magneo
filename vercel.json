@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/home/test/?",
+      "status": 301,
+      "headers": {
+        "Location": "https://magneo.ca/"
+      }
+    },
+    {
       "src": "/services/test/?",
       "headers": {
         "X-Robots-Tag": "noindex, nofollow, noarchive"

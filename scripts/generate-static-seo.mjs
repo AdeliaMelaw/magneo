@@ -18,7 +18,7 @@ const EXTRA_PATHS = [
 const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
 
 const descriptions = {
-  '/': 'Authority-first marketing systems for law firms, financial advisors, healthcare providers, and tech companies. Compliance-safe. Measurable. Built to last.',
+  '/': 'Website design, content, and AI-powered marketing for regulated and expert-led businesses.',
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore marketing, creative, and AI services for regulated industries, with legal marketing as the flagship focus.',
   '/services/': 'Explore website design, SEO, social media, paid advertising, AI creative, and automation for regulated industries and expert-led businesses.',
   '/services/directory/': 'Browse Magneo’s marketing services by industry, including websites, SEO, social media, AI creative, automation, and paid advertising.',
@@ -53,7 +53,7 @@ const descriptions = {
 };
 
 const titleOverrides = {
-  '/': 'Magneo | Digital Marketing for Regulated Industries',
+  '/': 'Magneo | Marketing That Makes Your Expertise Clear',
   '/about/': 'About Magneo | Marketing for Regulated Industries',
   '/services/': 'Marketing Services for Regulated Industries | Magneo',
   '/services/directory/': 'Marketing Service Directory by Industry | Magneo',

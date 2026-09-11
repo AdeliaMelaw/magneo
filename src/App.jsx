@@ -144,9 +144,9 @@ function Generic({ title='Page', path='/' }){ useSeo(`${title} | Magneo`,'Magneo
 function Footer({description='Digital marketing agency for regulated industries. Toronto, serving Canada and USA.',showLocation=true}){ return <footer className="footer"><div className="container footer-grid"><div><Link className="brand" to="/">Magneo</Link><p>{description}</p><div className="footer-contact">{showLocation&&<span>Toronto, ON - serving Canada & USA</span>}<a href="mailto:contact@magneo.ca">contact@magneo.ca</a><a href="tel:+14378731155">437 873 1155</a></div></div><div><b>Services</b>{coreServices.slice(0,4).map(([n,p])=><Link key={p} to={p}>{n}</Link>)}</div><div><b>Industries</b>{Object.values(industries).map((i)=><Link key={i.route} to={i.route}>{i.label}</Link>)}</div><div><b>Company</b><Link to="/portfolio/">Portfolio</Link><Link to="/about/">About Magneo</Link><Link to="/contact/">Contact</Link><a href={BLOG}>Insights & Blog</a></div></div></footer>; }
 
 export default function App(){ return <Layout><ScrollTop/><Routes>
-  <Route path="/" element={<Home/>}/>
-  <Route path="/home/test" element={<HomeTest/>}/>
-  <Route path="/home/test/" element={<HomeTest/>}/>
+  <Route path="/" element={<HomeTest/>}/>
+  <Route path="/home/test" element={<Navigate to="/" replace/>}/>
+  <Route path="/home/test/" element={<Navigate to="/" replace/>}/>
   <Route path="/test" element={<TestLawyer/>}/><Route path="/test/" element={<TestLawyer/>}/>
   <Route path="/test2" element={<TestLawyer2/>}/><Route path="/test2/" element={<TestLawyer2/>}/>
   <Route path="/test3" element={<TestLawyer3/>}/><Route path="/test3/" element={<TestLawyer3/>}/>
