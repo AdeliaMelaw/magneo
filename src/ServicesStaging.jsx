@@ -1,6 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import './styles/services-staging.css';
+
+const SERVICES_SHARE_IMAGE = 'https://magneo.ca/portfolio-og.png';
+const SERVICES_SHARE_IMAGE_ALT = 'Magneo service system for website design, social media, and AI-powered marketing.';
 
 const overviewServices = [
   {
@@ -158,7 +161,7 @@ const directoryGroups = [
   },
 ];
 
-function useReviewSeo(title, description, canonical) {
+export function useServicesPageSeo(title, description, canonical) {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = title;
@@ -183,11 +186,37 @@ function useReviewSeo(title, description, canonical) {
     }
     canonicalLink.href = canonical;
 
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    robots.dataset.servicesReview = 'true';
-    document.head.appendChild(robots);
+    const managed = [];
+    const setMeta = (attribute, key, content) => {
+      const selector = `meta[${attribute}="${key}"]`;
+      const matches = [...document.querySelectorAll(selector)];
+      let node = matches.shift();
+      matches.forEach((duplicate) => duplicate.remove());
+      const created = !node;
+      const previous = node?.getAttribute('content');
+      if (!node) {
+        node = document.createElement('meta');
+        node.setAttribute(attribute, key);
+        document.head.appendChild(node);
+      }
+      node.setAttribute('content', content);
+      managed.push(() => created ? node.remove() : node.setAttribute('content', previous || ''));
+    };
+
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('property', 'og:url', canonical);
+    setMeta('property', 'og:type', 'website');
+    setMeta('property', 'og:image', SERVICES_SHARE_IMAGE);
+    setMeta('property', 'og:image:alt', SERVICES_SHARE_IMAGE_ALT);
+    setMeta('name', 'twitter:card', 'summary_large_image');
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
+    setMeta('name', 'twitter:image', SERVICES_SHARE_IMAGE);
+    setMeta('name', 'twitter:image:alt', SERVICES_SHARE_IMAGE_ALT);
+
+    const isReview = window.location.pathname.split('/').includes('test');
+    setMeta('name', 'robots', isReview ? 'noindex, nofollow, noarchive' : 'index, follow');
 
     return () => {
       document.title = previousTitle;
@@ -195,15 +224,16 @@ function useReviewSeo(title, description, canonical) {
       else meta.content = previousDescription || '';
       if (!existingCanonical) canonicalLink.remove();
       else canonicalLink.href = previousCanonical || '';
-      robots.remove();
+      managed.reverse().forEach((restore) => restore());
     };
   }, [title, description, canonical]);
 }
 
 export function ServicesOverviewReview() {
-  useReviewSeo(
-    'Marketing Services | Websites, Creative & AI | Magneo',
-    'Explore Magneo’s marketing services for regulated industries: social content, AI creative, automation, website design, SEO, and paid advertising.',
+  const isReview = useLocation().pathname.split('/').includes('test');
+  useServicesPageSeo(
+    'Marketing Services for Regulated Industries | Magneo',
+    'Explore website design, SEO, social media, paid advertising, AI creative, and automation for regulated industries and expert-led businesses.',
     'https://magneo.ca/services/',
   );
 
@@ -239,7 +269,7 @@ export function ServicesOverviewReview() {
       </div>
     </section>
 
-    <section className="sr-directory-row"><div className="container"><p>Looking for a specific service or industry?</p><Link to="/services/directory/test/">Browse the full service directory <span aria-hidden="true">→</span></Link></div></section>
+    <section className="sr-directory-row"><div className="container"><p>Looking for a specific service or industry?</p><Link to={isReview ? '/services/directory/test/' : '/services/directory/'}>Browse the full service directory <span aria-hidden="true">→</span></Link></div></section>
 
     <section className="sr-section sr-contact"><div className="container"><div className="sr-contact-box"><span className="sr-eyebrow">Start a conversation</span><h2>Not sure which service you need?</h2><p>Tell Adele what you want to improve and what you already have. You don’t need to choose a package before starting a conversation.</p><Link className="btn" to="/contact/#contact-enquiry">Discuss your project</Link></div></div></section>
   </div>;
@@ -250,20 +280,22 @@ function DirectoryLinks({ links }) {
 }
 
 export function ServicesDirectoryReview() {
-  useReviewSeo(
-    'Service Directory | Marketing by Industry | Magneo',
-    'Browse Magneo’s complete directory of marketing services and industry-specific pages for websites, content, AI, automation, SEO, and advertising.',
+  const isReview = useLocation().pathname.split('/').includes('test');
+  const servicesOverviewPath = isReview ? '/services/test/' : '/services/';
+  useServicesPageSeo(
+    'Marketing Service Directory by Industry | Magneo',
+    'Browse Magneo’s marketing services by industry, including websites, SEO, social media, AI creative, automation, and paid advertising.',
     'https://magneo.ca/services/directory/',
   );
 
   return <div className="services-review services-directory-review">
     <section className="sr-directory-hero">
       <div className="container">
-        <nav className="sr-breadcrumb" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to="/services/test/">Services</Link><span>/</span><span aria-current="page">Directory</span></nav>
+        <nav className="sr-breadcrumb" aria-label="Breadcrumb"><Link to="/">Home</Link><span>/</span><Link to={servicesOverviewPath}>Services</Link><span>/</span><span aria-current="page">Directory</span></nav>
         <div className="sr-eyebrow">Service directory</div>
         <h1>All services by industry.</h1>
         <p>Browse Magneo’s service pages by marketing need and industry.</p>
-        <Link className="sr-back-link" to="/services/test/">Back to the services overview <span aria-hidden="true">→</span></Link>
+        <Link className="sr-back-link" to={servicesOverviewPath}>Back to the services overview <span aria-hidden="true">→</span></Link>
       </div>
     </section>
 

@@ -18,7 +18,8 @@ const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
 const descriptions = {
   '/': 'Authority-first marketing systems for law firms, financial advisors, healthcare providers, and tech companies. Compliance-safe. Measurable. Built to last.',
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore the experience and creative approach behind marketing, content, websites, and AI for law firms.',
-  '/services/': 'Explore Magneo services for regulated industries, including SEO, PPC, LinkedIn marketing, website design, AI automation, and personal branding.',
+  '/services/': 'Explore website design, SEO, social media, paid advertising, AI creative, and automation for regulated industries and expert-led businesses.',
+  '/services/directory/': 'Browse Magneo’s marketing services by industry, including websites, SEO, social media, AI creative, automation, and paid advertising.',
   '/industries/': 'Magneo builds marketing systems for law firms, financial advisors, healthcare clinics, and tech companies across Canada and the USA.',
   '/contact/': 'Contact Adele Salikhova at Magneo to discuss a website, content, search, advertising, or AI marketing project.',
   '/law-firm-marketing/': 'Magneo is a law firm marketing agency built for compliance-first growth, authority, rankings, and qualified consultation requests.',
@@ -46,7 +47,8 @@ const descriptions = {
 const titleOverrides = {
   '/': 'Magneo | Digital Marketing for Regulated Industries',
   '/about/': 'About Magneo | Legal Marketing & Creative',
-  '/services/': 'Services | Magneo',
+  '/services/': 'Marketing Services for Regulated Industries | Magneo',
+  '/services/directory/': 'Marketing Service Directory by Industry | Magneo',
   '/industries/': 'Industries We Serve | Magneo',
   '/contact/': 'Contact Magneo | Discuss Your Project',
   '/law-firm-marketing/': 'Law Firm Marketing Agency | Magneo',
@@ -77,6 +79,8 @@ const titleOverrides = {
 };
 
 const imageOverrides = {
+  '/services/': '/portfolio-og.png',
+  '/services/directory/': '/portfolio-og.png',
   '/portfolio/': '/portfolio-og.png',
   '/portfolio/legal-websites/': '/legal-websites-og.png',
   '/portfolio/legal-websites/personal-injury-classic/': '/pi-lawyer-hero-generated.png',
@@ -87,6 +91,11 @@ const imageOverrides = {
   '/portfolio/legal-websites/personal-injury-family-focused/': '/test6-family-hero.png',
   '/portfolio/legal-websites/immigration-welcome/': '/immigration-welcome-hero.png',
   '/portfolio/notary-services/': '/notary-document-desk-hero-v5.png'
+};
+
+const imageAltOverrides = {
+  '/services/': 'Magneo service system for website design, social media, and AI-powered marketing.',
+  '/services/directory/': 'Magneo service system for website design, social media, and AI-powered marketing.'
 };
 
 function escapeHtml(value) {
@@ -118,7 +127,7 @@ function descriptionFor(pathname) {
   return `${label} from Magneo, a digital marketing agency for regulated industries in Canada and the USA.`;
 }
 
-function injectSeo(html, { title, description, canonical, image, noindex = false }) {
+function injectSeo(html, { title, description, canonical, image, imageAlt, noindex = false }) {
   const clean = html
     .replace(/\s*<title>[\s\S]*?<\/title>/i, '')
     .replace(/\s*<meta\s+name=["']description["'][^>]*>/i, '')
@@ -133,10 +142,11 @@ function injectSeo(html, { title, description, canonical, image, noindex = false
     `<meta property="og:description" content="${escapeHtml(description)}" />`,
     `<meta property="og:url" content="${escapeHtml(canonical)}" />`,
     '<meta property="og:type" content="website" />',
+    '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
     ...(noindex ? ['<meta name="robots" content="noindex, nofollow, noarchive" />'] : []),
-    ...(image ? [`<meta property="og:image" content="${escapeHtml(image)}" />`, `<meta name="twitter:image" content="${escapeHtml(image)}" />`] : [])
+    ...(image ? [`<meta property="og:image" content="${escapeHtml(image)}" />`, `<meta property="og:image:alt" content="${escapeHtml(imageAlt || '')}" />`, `<meta name="twitter:image" content="${escapeHtml(image)}" />`, `<meta name="twitter:image:alt" content="${escapeHtml(imageAlt || '')}" />`] : [])
   ].map((tag) => `    ${tag}`).join('\n');
   return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
 }
@@ -149,7 +159,8 @@ const paths = [...new Set([...sitemapPaths, ...EXTRA_PATHS.map(normalizePath), .
 for (const pathname of paths) {
   const canonical = `${BASE_URL}${pathname === '/' ? '/' : pathname}`;
   const image = imageOverrides[pathname] ? `${BASE_URL}${imageOverrides[pathname]}` : undefined;
-  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, noindex: NOINDEX_PATHS.includes(pathname) });
+  const imageAlt = imageAltOverrides[pathname];
+  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, noindex: NOINDEX_PATHS.includes(pathname) });
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);
