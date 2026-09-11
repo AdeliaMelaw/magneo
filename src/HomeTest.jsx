@@ -64,21 +64,6 @@ function HomeSeo() {
 export default function HomeTest() {
   return <div className="ht-page">
     <HomeSeo />
-    <header className="ht-header">
-      <div className="ht-header-inner">
-        <Link className="ht-brand" to="/">Mag<span>neo</span></Link>
-        <nav className="ht-nav" aria-label="Main navigation">
-          <Link className="ht-wide-link" to="/">Home</Link>
-          <Link className="ht-wide-link" to="/services/">Services</Link>
-          <Link to="/portfolio/">Portfolio</Link>
-          <Link className="ht-wide-link" to="/about/">About</Link>
-          <a className="ht-wide-link" href="https://blog.magneo.ca">Insights &amp; Blog</a>
-          <Link className="ht-contact-link" to="/contact/">Contact</Link>
-        </nav>
-        <Link className="ht-header-cta" to="/contact/#contact-form">Let’s talk</Link>
-      </div>
-    </header>
-
     <main>
       <section className="ht-hero">
         <div className="ht-shell ht-hero-inner">
