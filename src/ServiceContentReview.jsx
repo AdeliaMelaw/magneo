@@ -28,7 +28,7 @@ const pageData = {
       image: '/portfolio/websites/personal-injury-modern-hero-preview.webp',
       imageAlt: 'Preview of Magneo’s modern personal-injury website concept',
       demoUrl: '/portfolio/legal-websites/personal-injury-bold/',
-      portfolioUrl: portfolioLinks.websites,
+      portfolioUrl: '/portfolio/',
     },
     included: ['Website structure and page planning','Messaging and website copy','Visual design and mobile layouts','Website development and agreed integrations','Forms, on-page SEO, and agreed analytics setup','Pre-launch checks and handover guidance'],
     examples: [
