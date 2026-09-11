@@ -22,6 +22,14 @@ const pageData = {
     description: 'Website strategy, copy, design, and development for businesses where credibility matters. Help visitors understand your services, find relevant information, and take the next step.',
     primary: ['Discuss your website', '/contact/#contact-enquiry'], secondary: ['Explore website concepts', portfolioLinks.websites],
     card: ['WEBSITES', 'Positioning, copy, design, and development.'],
+    heroPortfolio: {
+      label: 'WEBSITE CONCEPT',
+      title: 'Personal Injury · Modern',
+      image: '/portfolio/websites/personal-injury-modern-hero-preview.webp',
+      imageAlt: 'Preview of Magneo’s modern personal-injury website concept',
+      demoUrl: '/portfolio/legal-websites/personal-injury-bold/',
+      portfolioUrl: portfolioLinks.websites,
+    },
     included: ['Website structure and page planning','Messaging and website copy','Visual design and mobile layouts','Website development and agreed integrations','Forms, on-page SEO, and agreed analytics setup','Pre-launch checks and handover guidance'],
     examples: [
       ['Redesign an existing website','Reorganise your pages, clarify your services, and update the design around what visitors need to know.'],
@@ -180,8 +188,25 @@ function useReviewMetadata(data, slug, isReview) {
   }, [data, slug, isReview]);
 }
 
+function PortfolioHeroCard({ preview }) {
+  return <aside className="scr-portfolio-card" aria-label={`${preview.title} website concept`}>
+    <Link className="scr-portfolio-image-link" to={preview.demoUrl} aria-label={`View ${preview.title} website demo`}>
+      <span className="scr-browser-chrome" aria-hidden="true"><i/><i/><i/></span>
+      <img src={preview.image} alt={preview.imageAlt} width="1440" height="720" loading="eager" decoding="async"/>
+    </Link>
+    <div className="scr-portfolio-card-copy">
+      <span>{preview.label}</span>
+      <h2>{preview.title}</h2>
+      <div className="scr-portfolio-actions">
+        <Link to={preview.demoUrl}>View website demo <span aria-hidden="true">→</span></Link>
+        <Link to={preview.portfolioUrl}>Explore website designs <span aria-hidden="true">→</span></Link>
+      </div>
+    </div>
+  </aside>;
+}
+
 function ReviewHero({ data }) {
-  return <section className="hero scr-hero"><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div><div className="glass scr-hero-card"><strong>{data.card[0]}</strong><p>{data.card[1]}</p></div></div></section>;
+  return <section className={`hero scr-hero${data.heroPortfolio ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : <div className="glass scr-hero-card"><strong>{data.card[0]}</strong><p>{data.card[1]}</p></div>}</div></section>;
 }
 
 function ProcessSection({ items }) {
