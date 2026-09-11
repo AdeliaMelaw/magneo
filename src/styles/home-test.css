@@ -3,4 +3,32 @@
 @media(max-width:700px){.ht-shell{width:calc(100% - 30px)}.ht-header-inner{min-height:64px;gap:14px}.ht-brand{font-size:21px}.ht-nav{gap:14px}.ht-nav a{font-size:10px}.ht-contact-link{display:none}.ht-header-cta{min-height:40px;padding:0 14px;font-size:10px}.ht-hero{min-height:0}.ht-hero-inner{padding:80px 0}.ht-hero h1{font-size:clamp(50px,16vw,76px)}.ht-hero>div>p{margin-top:30px;font-size:17px}.ht-actions{align-items:stretch;flex-direction:column}.ht-section{padding:76px 0}.ht-section-copy{margin-bottom:35px}.ht-section-copy h2{font-size:46px}.ht-preview-grid,.ht-service-grid,.ht-footer-grid{grid-template-columns:1fr}.ht-preview-body h3{font-size:29px}.ht-service-card{min-height:250px}.ht-adele-card{grid-template-columns:1fr}.ht-adele-card img{min-height:300px;height:340px}.ht-adele-card>div,.ht-review-card{padding:30px}.ht-process-list article{grid-template-columns:45px 1fr;gap:12px}.ht-process-list p{grid-column:2}.ht-final-panel{padding:45px 28px}.ht-footer-grid{gap:38px}.ht-footer{padding:58px 0}}
 @media(prefers-reduced-motion:reduce){.ht-page *{scroll-behavior:auto!important;transition:none!important}}
 body:has(.ht-page) #root>.footer{display:none}
-.ht-page{margin-top:0}.ht-page>main{padding-top:0}
+.ht-page{margin-top:0}.ht-page>main{padding-top:0!important}
+
+.ht-preview-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ht-preview-media,.ht-preview-card>a.ht-preview-media{position:relative;display:block;width:100%;aspect-ratio:4/3;overflow:hidden;border:0;background:#141714;padding:0;cursor:pointer}
+.ht-preview-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:top center;transition:transform .45s ease}
+.ht-preview-card:hover .ht-preview-media img{transform:scale(1.025)}
+.ht-preview-body{display:flex;flex-direction:column;min-height:330px}
+.ht-preview-body h3{font-size:clamp(28px,2.3vw,36px);line-height:1.02}
+.ht-preview-body p{margin:0 0 24px;color:#aeb3ad;line-height:1.55}
+.ht-preview-body>a,.ht-card-action{margin-top:auto}
+.ht-card-action{align-self:flex-start;border:0;background:transparent;padding:0;color:#fff;font:800 12px Arial,Helvetica,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer}
+.ht-card-action b{color:var(--lime)}
+.ht-card-action:focus-visible,.ht-preview-media:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.ht-play{position:absolute;left:50%;top:50%;width:64px;height:64px;display:grid;place-items:center;border-radius:50%;background:var(--lime);color:#112400;font-size:22px;transform:translate(-50%,-50%);box-shadow:0 12px 35px rgba(0,0,0,.35)}
+.ht-workflow-path{display:grid;gap:7px;margin:0 0 24px;padding:15px 0;border-top:1px solid #2d312d;border-bottom:1px solid #2d312d}
+.ht-workflow-path small{color:#c2c6c1;font-size:11px;line-height:1.35}
+
+.ht-modal-backdrop{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:rgba(0,0,0,.84)}
+.ht-video-dialog{width:min(920px,100%);max-height:calc(100vh - 48px);overflow:auto;background:#0a0c0b;border:1px solid #343834;color:#fff;box-shadow:0 30px 100px rgba(0,0,0,.55)}
+.ht-video-head{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 24px;border-bottom:1px solid #30332f}
+.ht-video-head span{color:var(--lime);font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.ht-video-head h2{margin:6px 0 0;font:400 34px/1 Georgia,'Times New Roman',serif}
+.ht-video-head button{border:1px solid #4b504a;background:transparent;padding:11px 14px;color:#fff;font-weight:800;cursor:pointer}
+.ht-video-head button:hover,.ht-video-head button:focus-visible{border-color:var(--lime);color:var(--lime);outline:0}
+.ht-video-head button b{font-size:18px;margin-left:8px}
+.ht-video-dialog video{display:block;width:100%;max-height:72vh;background:#000}
+
+@media(max-width:1000px){.ht-preview-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.ht-preview-body{min-height:360px;padding:22px}.ht-preview-body h3{font-size:28px}}
+@media(max-width:700px){.ht-preview-grid{grid-template-columns:1fr}.ht-preview-body{min-height:0}.ht-modal-backdrop{padding:12px}.ht-video-head{padding:16px}.ht-video-head h2{font-size:28px}}

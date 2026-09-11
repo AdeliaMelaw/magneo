@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const services = [
   ['Website Design & Development', 'Custom websites that help visitors understand your value, explore your services, and take the next step.', '/services/website-design-for-regulated-professional-industries-magneo/'],
@@ -62,6 +62,32 @@ function HomeSeo() {
 }
 
 export default function HomeTest() {
+  const [videoOpen, setVideoOpen] = useState(false);
+  const dialogRef = useRef(null);
+  const videoButtonRef = useRef(null);
+
+  const closeVideo = () => {
+    setVideoOpen(false);
+    window.setTimeout(() => videoButtonRef.current?.focus(), 0);
+  };
+
+  useEffect(() => {
+    if (!videoOpen) return undefined;
+    dialogRef.current?.focus();
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') closeVideo();
+      if (event.key !== 'Tab' || !dialogRef.current) return;
+      const focusable = [...dialogRef.current.querySelectorAll('button, video, [href], [tabindex]:not([tabindex="-1"])')];
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [videoOpen]);
+
   return <div className="ht-page">
     <HomeSeo />
     <main>
@@ -81,20 +107,24 @@ export default function HomeTest() {
         <div className="ht-shell">
           <div className="ht-section-copy">
             <span className="ht-eyebrow">Portfolio</span>
-            <h2 id="ht-portfolio-title">Explore what we create.</h2>
-            <p>Website and content concepts that show our approach to design, messaging, and user experience.</p>
+            <h2 id="ht-portfolio-title">See what we can create for your business.</h2>
+            <p>Explore website concepts, video creative, and automation demonstrations to see how the ideas work in practice.</p>
           </div>
           <div className="ht-preview-grid">
             <article className="ht-preview-card">
-              <Link to="/portfolio/legal-websites/personal-injury-classic/" aria-label="View Personal injury classic demonstration"><img src="/portfolio/websites/personal-injury-classic-preview-v2.png" alt="Preview of the Personal injury classic website concept" /></Link>
-              <div className="ht-preview-body"><span>Original concept · Demonstration project</span><h3>Personal injury · Classic</h3><Link to="/portfolio/legal-websites/personal-injury-classic/">View demo <b aria-hidden="true">↗</b></Link></div>
+              <Link className="ht-preview-media" to="/portfolio/#portfolio-websites" aria-label="Explore website designs"><img src="/portfolio/websites/litigation-editorial-preview-v2.png" alt="Preview of an original Magneo website concept" /></Link>
+              <div className="ht-preview-body"><span>Original concept</span><h3>Find your next website.</h3><p>Explore original website concepts and choose a direction to tailor to your business.</p><Link to="/portfolio/#portfolio-websites">Explore website designs <b aria-hidden="true">↗</b></Link></div>
             </article>
             <article className="ht-preview-card">
-              <Link to="/portfolio/legal-websites/litigation-editorial/" aria-label="View Litigation editorial demonstration"><img src="/portfolio/websites/litigation-editorial-preview-v2.png" alt="Preview of the Litigation editorial website concept" /></Link>
-              <div className="ht-preview-body"><span>Original concept · Demonstration project</span><h3>Litigation · Editorial</h3><Link to="/portfolio/legal-websites/litigation-editorial/">View demo <b aria-hidden="true">↗</b></Link></div>
+              <button className="ht-preview-media ht-video-trigger" type="button" onClick={() => setVideoOpen(true)} aria-label="Play the commentary reel"><img src="/portfolio/social/commentary-reel-cover.jpg" alt="Commentary reel cover showing an expert conversation" /><span className="ht-play" aria-hidden="true">▶</span></button>
+              <div className="ht-preview-body"><span>Original concept</span><h3>Give your message a new format.</h3><p>Explore short-form video and AI-assisted creative designed to make ideas engaging and easy to follow.</p><button ref={videoButtonRef} className="ht-card-action" type="button" onClick={() => setVideoOpen(true)}>Watch a reel <b aria-hidden="true">↗</b></button></div>
+            </article>
+            <article className="ht-preview-card">
+              <Link className="ht-preview-media" to="/portfolio/#ai-marketing" aria-label="Explore the AI workflow concept"><img src="/portfolio/ai/hubspot-automation.webp" alt="Visual concept for a connected marketing workflow" /></Link>
+              <div className="ht-preview-body"><span>Workflow concept</span><h3>See a workflow in action.</h3><p>Explore how connected tools can support content production, enquiries, or follow-up.</p><div className="ht-workflow-path" aria-label="Workflow concept: enquiry input, capture and routing steps, organized follow-up output"><small>Input · Enquiry</small><small>Steps · Capture, route, follow up</small><small>Output · Organized handoff</small></div><Link to="/portfolio/#ai-marketing">Explore the concept <b aria-hidden="true">↗</b></Link></div>
             </article>
           </div>
-          <Link className="ht-text-link" to="/portfolio/">Explore the portfolio <span aria-hidden="true">→</span></Link>
+          <Link className="ht-text-link" to="/portfolio/">Explore the full portfolio <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 
@@ -124,6 +154,13 @@ export default function HomeTest() {
 
       <section className="ht-section ht-final" aria-labelledby="ht-final-title"><div className="ht-shell"><div className="ht-final-panel"><span className="ht-eyebrow">Start a conversation</span><h2 id="ht-final-title">Have a project in mind?</h2><p>Tell us what you want to improve. You do not need a finished brief.</p><Link className="ht-button" to="/contact/#contact-form">Discuss your project</Link></div></div></section>
     </main>
+
+    {videoOpen && <div className="ht-modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) closeVideo(); }}>
+      <div className="ht-video-dialog" role="dialog" aria-modal="true" aria-labelledby="ht-video-title" tabIndex="-1" ref={dialogRef}>
+        <div className="ht-video-head"><div><span>Original concept</span><h2 id="ht-video-title">Commentary reel</h2></div><button type="button" onClick={closeVideo} aria-label="Close video">Close <b aria-hidden="true">×</b></button></div>
+        <video controls preload="metadata" poster="/portfolio/social/commentary-reel-cover.jpg"><source src="/portfolio/social/commentary-reel.mp4" type="video/mp4"/>Your browser does not support embedded video.</video>
+      </div>
+    </div>}
 
     <footer className="ht-footer"><div className="ht-shell ht-footer-grid"><div><Link className="ht-brand" to="/">Mag<span>neo</span></Link><p>Website design, content, and AI-powered marketing for regulated and expert-led businesses.</p><a href="mailto:contact@magneo.ca">contact@magneo.ca</a><a href="tel:+14378731155">437 873 1155</a></div><div><strong>Services</strong><Link to="/services/website-design-for-regulated-professional-industries-magneo/">Website Design</Link><Link to="/services/seo-for-regulated-industries/">SEO &amp; Content</Link><Link to="/services/ppc-landing-pages-for-regulated-industries/">Paid Advertising</Link><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Social Media</Link><Link to="/services/ai-automation-for-regulated-industries-magneo/">AI Automation</Link></div><div><strong>Company</strong><Link to="/portfolio/">Portfolio</Link><Link to="/about/">About Magneo</Link><Link to="/contact/">Contact</Link><a href="https://blog.magneo.ca">Insights &amp; Blog</a></div></div></footer>
   </div>;
