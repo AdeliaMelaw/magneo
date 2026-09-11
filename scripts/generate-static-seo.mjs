@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { childServiceSlugs, getChildServiceData } from '../src/data/child-service-review-data.js';
 
 const BASE_URL = 'https://magneo.ca';
 const DIST_DIR = 'dist';
@@ -11,7 +12,8 @@ const EXTRA_PATHS = [
   '/services/ai-ugc-ai-video-production/',
   '/services/ai-web-design-conversion/',
   '/services/ai-content-marketing/',
-  '/services/compliance-aware-ai-workflows/'
+  '/services/compliance-aware-ai-workflows/',
+  ...childServiceSlugs.map((slug) => `/services/${slug}/`)
 ];
 const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
 
@@ -20,6 +22,12 @@ const descriptions = {
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore the experience and creative approach behind marketing, content, websites, and AI for law firms.',
   '/services/': 'Explore website design, SEO, social media, paid advertising, AI creative, and automation for regulated industries and expert-led businesses.',
   '/services/directory/': 'Browse Magneo’s marketing services by industry, including websites, SEO, social media, AI creative, automation, and paid advertising.',
+  '/services/website-design-for-regulated-professional-industries-magneo/': 'Website strategy, copy, design, and development for businesses where credibility matters. Help visitors understand your services, find relevant information, and take the next step.',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
+  '/services/ai-automation-for-regulated-industries-magneo/': 'Connect repetitive marketing tasks across your existing tools. Start with a defined workflow for content, enquiries, or follow-up, with clear responsibilities and human review where needed.',
+  '/services/ppc-landing-pages-for-regulated-industries/': 'Paid advertising and landing pages built around a defined offer, audience, and budget. Connect your campaign message to a clear next step and measure the actions that matter to your business.',
+  '/services/personal-branding-for-regulated-professionals/': 'Clarify what you want to be known for and how you communicate it. Develop positioning, profile messaging, and content direction that reflect your real expertise and professional voice.',
+  '/services/ai-powered-digital-marketing/': 'Explore practical uses of AI across content, video, search, websites, and marketing workflows, with a defined purpose and agreed human review process.',
   '/industries/': 'Magneo builds marketing systems for law firms, financial advisors, healthcare clinics, and tech companies across Canada and the USA.',
   '/contact/': 'Contact Adele Salikhova at Magneo to discuss a website, content, search, advertising, or AI marketing project.',
   '/law-firm-marketing/': 'Magneo is a law firm marketing agency built for compliance-first growth, authority, rankings, and qualified consultation requests.',
@@ -49,6 +57,12 @@ const titleOverrides = {
   '/about/': 'About Magneo | Legal Marketing & Creative',
   '/services/': 'Marketing Services for Regulated Industries | Magneo',
   '/services/directory/': 'Marketing Service Directory by Industry | Magneo',
+  '/services/website-design-for-regulated-professional-industries-magneo/': 'Website Design for Regulated Industries | Magneo',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social Media & LinkedIn Marketing for Regulated Industries | Magneo',
+  '/services/ai-automation-for-regulated-industries-magneo/': 'AI Automation for Regulated Industries | Magneo',
+  '/services/ppc-landing-pages-for-regulated-industries/': 'PPC & Landing Pages for Regulated Industries | Magneo',
+  '/services/personal-branding-for-regulated-professionals/': 'Personal Branding for Regulated Professionals | Magneo',
+  '/services/ai-powered-digital-marketing/': 'AI-Powered Digital Marketing for Regulated Industries | Magneo',
   '/industries/': 'Industries We Serve | Magneo',
   '/contact/': 'Contact Magneo | Discuss Your Project',
   '/law-firm-marketing/': 'Law Firm Marketing Agency | Magneo',
@@ -64,8 +78,6 @@ const titleOverrides = {
   '/services/personal-branding-for-financial-advisors-wealth-professionals/': 'Personal Branding for Financial Advisors | Magneo',
   '/services/social-media-linkedin-leadership-for-healthcare-providers-magneo/': 'LinkedIn Marketing for Healthcare Providers | Magneo',
   '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/': 'LinkedIn Marketing for Tech & SaaS Companies | Magneo',
-  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'LinkedIn Marketing for Regulated Industries | Magneo',
-  '/services/website-design-for-regulated-professional-industries-magneo/': 'Web Design for Regulated Industries | Magneo',
   '/portfolio/': 'Portfolio | Magneo — Web, Social & AI Marketing',
   '/portfolio/legal-websites/': 'Legal Website Design Portfolio | Magneo',
   '/portfolio/legal-websites/personal-injury-classic/': 'Classic Personal Injury Website Concept | Magneo',
@@ -113,10 +125,14 @@ function titleCase(pathname) {
 }
 
 function titleFor(pathname) {
+  const child = childServiceDataForPath(pathname);
+  if (child) return `${child.title} | Magneo`;
   return titleOverrides[pathname] || `${titleCase(pathname)} | Magneo`;
 }
 
 function descriptionFor(pathname) {
+  const child = childServiceDataForPath(pathname);
+  if (child) return child.description;
   if (descriptions[pathname]) return descriptions[pathname];
   const label = titleCase(pathname);
   if (pathname.startsWith('/services/')) return `${label} from Magneo for regulated industries, built around authority, compliance-aware messaging, qualified demand, and measurable conversion.`;
@@ -125,6 +141,11 @@ function descriptionFor(pathname) {
   if (pathname.includes('healthcare-marketing')) return `${label} with Magneo: privacy-aware marketing systems for healthcare clinics, providers, and patient-facing practices.`;
   if (pathname.includes('tech-company-marketing')) return `${label} with Magneo: authority, content, website, and demand systems for tech, SaaS, AI, FinTech, and LegalTech companies.`;
   return `${label} from Magneo, a digital marketing agency for regulated industries in Canada and the USA.`;
+}
+
+function childServiceDataForPath(pathname) {
+  const match = pathname.match(/^\/services\/([^/]+)\/$/);
+  return match ? getChildServiceData(match[1]) : null;
 }
 
 function injectSeo(html, { title, description, canonical, image, imageAlt, noindex = false }) {

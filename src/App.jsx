@@ -21,6 +21,7 @@ import ContactTest from './ContactTest.jsx';
 import HomeTest from './HomeTest.jsx';
 import { ServicesDirectoryReview, ServicesOverviewReview, useServicesPageSeo } from './ServicesStaging.jsx';
 import ServiceContentReview from './ServiceContentReview.jsx';
+import { childServiceSlugs } from './data/child-service-review-data.js';
 import './styles/test-lawyer.css';
 import './styles/personal-injury-classic.css';
 import './styles/test-lawyer2.css';
@@ -81,6 +82,8 @@ const aiServices = [
 
 const verticals = Object.values(industries).flatMap((i) => i.subs.map(([label, path]) => ({ label, path, intro: `Compliance-aware SEO, website, PPC, LinkedIn, AI automation, and authority systems for ${label.toLowerCase()}.` })));
 const extraServiceSlugs = serviceMenus.flatMap(([, path, items]) => [path, ...items.map(([, itemPath]) => itemPath)]).map((path) => path.split('/').filter(Boolean).pop()).concat(['healthcare-medtech']);
+const correctedParentServiceSlugs = ['website-design-for-regulated-professional-industries-magneo', 'social-media-linkedin-marketing-for-regulated-industries', 'ai-automation-for-regulated-industries-magneo', 'ppc-landing-pages-for-regulated-industries', 'personal-branding-for-regulated-professionals'];
+const correctedServiceSlugs = new Set([...correctedParentServiceSlugs, ...childServiceSlugs]);
 const blogInsights = [['Hyper-Personalization with AI for SaaS & Tech Brands', `${BLOG}/blog/hyper-personalization-with-ai-for-saas-tech-brands/`], ['Community Building & User-Generated Content for SaaS & AI Companies', `${BLOG}/blog/community-building-user-generated-content-for-saas-ai-companies/`], ['Reimagining Digital Marketing Fundamentals for Law Firms', `${BLOG}/blog/reimagining-digital-marketing-fundamentals-for-law-firms-2025/`], ['Reputation Management for Clinics', `${BLOG}/blog/reputation-management-for-clinics-growing-your-google-profile-in-2025/`]];
 const process = [['01', 'Discovery & Audit', 'We review positioning, search visibility, conversion paths, and compliance constraints.'], ['02', 'Strategy Blueprint', 'We map page architecture, messaging, campaigns, and proof points needed to earn trust.'], ['03', 'Execution', 'We build content, pages, funnels, automation, and reporting around the approved strategy.'], ['04', 'Optimization', 'We refine based on rankings, qualified inquiries, booked calls, and pipeline quality.']];
 
@@ -149,12 +152,12 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/test3" element={<TestLawyer3/>}/><Route path="/test3/" element={<TestLawyer3/>}/>
   <Route path="/test4" element={<TestLawyer4/>}/><Route path="/test4/" element={<TestLawyer4/>}/>
   <Route path="/test5" element={<TestLawyer5/>}/><Route path="/test5/" element={<TestLawyer5/>}/>
-  <Route path="/services" element={<ServicesHub/>}/><Route path="/services/" element={<ServicesHub/>}/>
+  <Route path="/services" element={<ServicesOverviewReview/>}/><Route path="/services/" element={<ServicesOverviewReview/>}/>
   <Route path="/services/directory" element={<ServicesDirectoryReview/>}/><Route path="/services/directory/" element={<ServicesDirectoryReview/>}/>
   <Route path="/services/test" element={<ServicesOverviewReview/>}/><Route path="/services/test/" element={<ServicesOverviewReview/>}/>
   <Route path="/services/directory/test" element={<ServicesDirectoryReview/>}/><Route path="/services/directory/test/" element={<ServicesDirectoryReview/>}/>
   <Route path="/services/:serviceSlug/test" element={<ServiceContentReview/>}/><Route path="/services/:serviceSlug/test/" element={<ServiceContentReview/>}/>
-  <Route path="/services/ai-powered-digital-marketing" element={<AIPage/>}/><Route path="/services/ai-powered-digital-marketing/" element={<AIPage/>}/>
+  <Route path="/services/ai-powered-digital-marketing" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/><Route path="/services/ai-powered-digital-marketing/" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/>
   <Route path="/industries" element={<IndustriesHub/>}/><Route path="/industries/" element={<IndustriesHub/>}/>
   <Route path="/about" element={<AboutLegalTest/>}/><Route path="/about/" element={<AboutLegalTest/>}/>
   <Route path="/about/test" element={<Navigate to="/about/" replace/>}/><Route path="/about/test/" element={<Navigate to="/about/" replace/>}/>
@@ -162,7 +165,7 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/contact" element={<Contact/>}/><Route path="/contact/" element={<Contact/>}/>
   {Object.entries(industries).map(([k,i])=><Route key={k} path={i.route.replace(/^\//,'').replace(/\/$/,'')} element={<IndustryPage kind={k}/>}/>) }
   {verticals.map((v)=><Route key={v.path} path={v.path.replace(/^\//,'').replace(/\/$/,'')} element={<Vertical item={v}/>}/>) }
-  {[...new Set(extraServiceSlugs.concat(aiServices.map(([, , path])=>path.split('/').filter(Boolean).pop())) )].map((slug)=><Route key={slug} path={`services/${slug}`} element={<ServicePage name={slug}/>}/>) }
+  {[...new Set(extraServiceSlugs.concat(aiServices.map(([, , path])=>path.split('/').filter(Boolean).pop())) )].map((slug)=><Route key={slug} path={`services/${slug}`} element={correctedServiceSlugs.has(slug)?<ServiceContentReview serviceSlugOverride={slug}/>:<ServicePage name={slug}/>}/>) }
   <Route path="privacy-policy" element={<Generic title="Privacy Policy" path="/privacy-policy/"/>}/>
   <Route path="terms-of-service" element={<Generic title="Terms of Service" path="/terms-of-service/"/>}/>
   <Route path="blog" element={<Generic title="Insights" path="/blog/"/>}/>

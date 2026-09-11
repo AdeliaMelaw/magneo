@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import './styles/service-content-review.css';
 import { getChildServiceData } from './data/child-service-review-data.js';
 
@@ -149,9 +149,9 @@ const aiServices = [
   ['Compliance-Aware AI Workflows','/services/compliance-aware-ai-workflows/','Define review points, claim checks, and approval responsibilities around AI-assisted work.'],
 ];
 
-function useReviewMetadata(data, slug) {
+function useReviewMetadata(data, slug, isReview) {
   useEffect(() => {
-    const title = `${data.title.replace(/\.$/, '')} | Magneo`;
+    const title = data.seoTitle || `${data.title.replace(/\.$/, '')} | Magneo`;
     document.title = title;
     const canonicalUrl = `https://magneo.ca/services/${slug}/`;
     const setMeta = (selector, attributes, content) => {
@@ -174,10 +174,10 @@ function useReviewMetadata(data, slug) {
     if (!canonical.parentNode) document.head.appendChild(canonical);
     canonicals.forEach((duplicate) => duplicate.remove());
     const robots = document.createElement('meta');
-    robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.serviceContentReview = 'true';
+    robots.name = 'robots'; robots.content = isReview ? 'noindex, nofollow, noarchive' : 'index, follow'; robots.dataset.serviceContentReview = 'true';
     document.head.appendChild(robots);
     return () => robots.remove();
-  }, [data, slug]);
+  }, [data, slug, isReview]);
 }
 
 function ReviewHero({ data }) {
@@ -225,11 +225,13 @@ function AiOverviewReview() {
   </div>;
 }
 
-export default function ServiceContentReview() {
-  const { serviceSlug } = useParams();
+export default function ServiceContentReview({ serviceSlugOverride }) {
+  const params = useParams();
+  const isReview = useLocation().pathname.split('/').includes('test');
+  const serviceSlug = serviceSlugOverride || params.serviceSlug;
   const childData = getChildServiceData(serviceSlug);
   const data = childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : pageData[serviceSlug]);
-  useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing');
+  useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
   if (childData) return <ChildReview data={childData}/>;
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data}/>;

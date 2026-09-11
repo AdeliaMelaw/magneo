@@ -135,6 +135,7 @@
     if (path.indexOf('/services/') !== 0 || path === '/services/' || path.indexOf('/test') >= 0 || path.indexOf('/services/ai-powered-digital-marketing/') === 0) return true;
     var main = document.querySelector('main');
     if (!main) return false;
+    if (main.querySelector('.scr-page')) return true;
     var existing = main.querySelector('.service-depth');
     if (existing && existing.dataset.path === path) return true;
     if (existing) existing.remove();
