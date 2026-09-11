@@ -241,7 +241,7 @@ export function ServicesOverviewReview() {
     <section className="sr-hero">
       <div className="container sr-hero-inner">
         <div className="sr-eyebrow">Marketing services</div>
-        <h1>Strategy, creative, and AI.<br/><em>Built around your business.</em></h1>
+        <h1>Strategy, creative, and AI.<br/> <em>Built around your business.</em></h1>
         <p>Website design, content, campaigns, and automation for regulated industries and expert-led businesses. Start with one priority or bring several services together.</p>
         <div className="sr-actions"><a className="btn" href="#service-areas">Browse services</a><Link className="sr-outline" to="/portfolio/">Explore the portfolio</Link></div>
       </div>
