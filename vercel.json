@@ -2,10 +2,10 @@
   "routes": [
     {
       "src": "/about/test/?",
+      "status": 301,
       "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
+        "Location": "https://magneo.ca/about/"
+      }
     },
     {
       "src": "/about/adele-salikhova/?",

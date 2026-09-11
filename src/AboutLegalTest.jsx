@@ -68,19 +68,12 @@ function useAboutTestSeo() {
     }
     canonical.href = 'https://magneo.ca/about/';
 
-    const robots = document.createElement('meta');
-    robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
-    robots.dataset.aboutLegalTest = 'true';
-    document.head.appendChild(robots);
-
     return () => {
       document.title = previousTitle;
       if (!existingDescription) description.remove();
       else description.content = previousDescription || '';
       if (!existingCanonical) canonical.remove();
       else canonical.href = previousCanonical || '';
-      robots.remove();
     };
   }, []);
 }

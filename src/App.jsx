@@ -150,8 +150,8 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/services" element={<ServicesHub/>}/><Route path="/services/" element={<ServicesHub/>}/>
   <Route path="/services/ai-powered-digital-marketing" element={<AIPage/>}/><Route path="/services/ai-powered-digital-marketing/" element={<AIPage/>}/>
   <Route path="/industries" element={<IndustriesHub/>}/><Route path="/industries/" element={<IndustriesHub/>}/>
-  <Route path="/about" element={<AboutTest/>}/><Route path="/about/" element={<AboutTest/>}/>
-  <Route path="/about/test" element={<AboutLegalTest/>}/><Route path="/about/test/" element={<AboutLegalTest/>}/>
+  <Route path="/about" element={<AboutLegalTest/>}/><Route path="/about/" element={<AboutLegalTest/>}/>
+  <Route path="/about/test" element={<Navigate to="/about/" replace/>}/><Route path="/about/test/" element={<Navigate to="/about/" replace/>}/>
   <Route path="/our-team" element={<About/>}/><Route path="/our-team/" element={<About/>}/>
   <Route path="/contact" element={<Contact/>}/><Route path="/contact/" element={<Contact/>}/>
   {Object.entries(industries).map(([k,i])=><Route key={k} path={i.route.replace(/^\//,'').replace(/\/$/,'')} element={<IndustryPage kind={k}/>}/>) }
