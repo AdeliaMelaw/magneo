@@ -1,6 +1,20 @@
 {
   "routes": [
     {
+      "src": "/services/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
+      "src": "/services/directory/test/?",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      },
+      "continue": true
+    },
+    {
       "src": "/about/test/?",
       "status": 301,
       "headers": {
