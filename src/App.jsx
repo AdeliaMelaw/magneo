@@ -20,6 +20,7 @@ import AboutLegalTest from './AboutLegalTest.jsx';
 import ContactTest from './ContactTest.jsx';
 import HomeTest from './HomeTest.jsx';
 import { ServicesDirectoryReview, ServicesOverviewReview, useServicesPageSeo } from './ServicesStaging.jsx';
+import ServiceContentReview from './ServiceContentReview.jsx';
 import './styles/test-lawyer.css';
 import './styles/personal-injury-classic.css';
 import './styles/test-lawyer2.css';
@@ -152,6 +153,7 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/services/directory" element={<ServicesDirectoryReview/>}/><Route path="/services/directory/" element={<ServicesDirectoryReview/>}/>
   <Route path="/services/test" element={<ServicesOverviewReview/>}/><Route path="/services/test/" element={<ServicesOverviewReview/>}/>
   <Route path="/services/directory/test" element={<ServicesDirectoryReview/>}/><Route path="/services/directory/test/" element={<ServicesDirectoryReview/>}/>
+  <Route path="/services/:serviceSlug/test" element={<ServiceContentReview/>}/><Route path="/services/:serviceSlug/test/" element={<ServiceContentReview/>}/>
   <Route path="/services/ai-powered-digital-marketing" element={<AIPage/>}/><Route path="/services/ai-powered-digital-marketing/" element={<AIPage/>}/>
   <Route path="/industries" element={<IndustriesHub/>}/><Route path="/industries/" element={<IndustriesHub/>}/>
   <Route path="/about" element={<AboutLegalTest/>}/><Route path="/about/" element={<AboutLegalTest/>}/>

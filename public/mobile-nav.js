@@ -132,7 +132,7 @@
 
   function initServiceDepth() {
     var path = window.location.pathname;
-    if (path.indexOf('/services/') !== 0 || path === '/services/' || path.indexOf('/services/ai-powered-digital-marketing/') === 0) return true;
+    if (path.indexOf('/services/') !== 0 || path === '/services/' || path.indexOf('/test') >= 0 || path.indexOf('/services/ai-powered-digital-marketing/') === 0) return true;
     var main = document.querySelector('main');
     if (!main) return false;
     var existing = main.querySelector('.service-depth');
