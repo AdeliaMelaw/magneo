@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import './styles/service-content-review.css';
+import { getChildServiceData } from './data/child-service-review-data.js';
 
 const portfolioLinks = {
   websites: '/portfolio/#portfolio-websites',
@@ -152,12 +153,26 @@ function useReviewMetadata(data, slug) {
   useEffect(() => {
     const title = `${data.title.replace(/\.$/, '')} | Magneo`;
     document.title = title;
-    let description = document.querySelector('meta[name="description"]');
-    if (!description) { description = document.createElement('meta'); description.name = 'description'; document.head.appendChild(description); }
-    description.content = data.description;
-    let canonical = document.querySelector('link[rel="canonical"]');
-    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
-    canonical.href = `https://magneo.ca/services/${slug}/`;
+    const canonicalUrl = `https://magneo.ca/services/${slug}/`;
+    const setMeta = (selector, attributes, content) => {
+      const matches = [...document.head.querySelectorAll(selector)];
+      const element = matches.shift() || document.createElement('meta');
+      Object.entries(attributes).forEach(([name, value]) => element.setAttribute(name, value));
+      element.setAttribute('content', content);
+      if (!element.parentNode) document.head.appendChild(element);
+      matches.forEach((duplicate) => duplicate.remove());
+    };
+    setMeta('meta[name="description"]', { name: 'description' }, data.description);
+    setMeta('meta[property="og:title"]', { property: 'og:title' }, title);
+    setMeta('meta[property="og:description"]', { property: 'og:description' }, data.description);
+    setMeta('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl);
+    setMeta('meta[name="twitter:title"]', { name: 'twitter:title' }, title);
+    setMeta('meta[name="twitter:description"]', { name: 'twitter:description' }, data.description);
+    const canonicals = [...document.head.querySelectorAll('link[rel="canonical"]')];
+    const canonical = canonicals.shift() || document.createElement('link');
+    canonical.rel = 'canonical'; canonical.href = canonicalUrl;
+    if (!canonical.parentNode) document.head.appendChild(canonical);
+    canonicals.forEach((duplicate) => duplicate.remove());
     const robots = document.createElement('meta');
     robots.name = 'robots'; robots.content = 'noindex, nofollow, noarchive'; robots.dataset.serviceContentReview = 'true';
     document.head.appendChild(robots);
@@ -189,6 +204,18 @@ function StandardReview({ data }) {
   </div>;
 }
 
+function ChildReview({ data }) {
+  return <div className="scr-page"><ReviewHero data={data}/>
+    {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
+    <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
+    <section className="section soft"><div className="container"><div className="label">Example applications</div><h2>Example applications.</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <ProcessSection items={data.process}/>
+    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+    <section className="related-section scr-related scr-child-related"><div className="container"><div><h2>Continue exploring</h2><i/><ul>{data.related.map(([label,path])=><li key={`${path}-${label}`}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>
+    <FinalCta data={data}/>
+  </div>;
+}
+
 function AiOverviewReview() {
   return <div className="scr-page"><ReviewHero data={aiOverview}/>
     <section className="section"><div className="container"><div className="label">AI service areas</div><h2>Use AI where it supports a defined marketing task.</h2><p className="scr-ai-intro">AI creative produces assets such as visuals and video. Brand-voice tools and custom GPTs support drafting and repeatable tasks. Automation connects steps across tools. These can be scoped separately or combined.</p><div className="grid scr-ai-grid">{aiServices.map(([title,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{title}</h3><p>{copy}</p></Link>)}</div></div></section>
@@ -200,8 +227,10 @@ function AiOverviewReview() {
 
 export default function ServiceContentReview() {
   const { serviceSlug } = useParams();
-  const data = serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : pageData[serviceSlug];
+  const childData = getChildServiceData(serviceSlug);
+  const data = childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : pageData[serviceSlug]);
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing');
   if (!data) return <Navigate to="/services/test/" replace/>;
+  if (childData) return <ChildReview data={childData}/>;
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data}/>;
 }
