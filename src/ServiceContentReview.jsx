@@ -160,6 +160,63 @@ const pageData = {
       ['SEO for Healthcare & MedTech', '/services/seo-for-the-healthcare-medtech-industry/'],
     ],
   },
+  'seo-for-the-legal-industry': {
+    title: 'SEO for Law Firms & Legal Professionals',
+    seoTitle: 'SEO for Law Firms & Lawyers | Magneo',
+    metaDescription: 'Law firm SEO covering practice-area content, technical improvements, local search, and enquiry measurement, with firm review before publication.',
+    description: 'People searching for legal help need to understand whether your firm handles their matter and serves their location. Magneo develops legal SEO strategies around relevant practice areas, clear service pages, and the questions prospective clients ask before making contact.',
+    primary: ['Discuss your law firm’s SEO', '/contact/#contact-enquiry'],
+    secondary: ['Explore the legal SEO scope', '#legal-seo-scope'],
+    cardEyebrow: 'PRACTICE-AREA SEARCH',
+    card: ['The right matter.\nThe relevant page.', 'Search planning based on the services your firm actually offers.'],
+    seoPage: true,
+    hideAudience: true,
+    scopeId: 'legal-seo-scope',
+    scopeHeading: 'Search foundations for the matters your firm handles.',
+    scopeIntro: '',
+    included: [
+      ['Practice-area mapping', 'Relevant searches matched to the appropriate service pages, with overlapping pages reviewed before new ones are proposed.'],
+      ['Legal content', 'Service explanations and supporting articles developed from approved information and reviewed by the firm.'],
+      ['Local visibility', 'Accurate office and service-area information, with eligible business-profile work where included.'],
+      ['Technical improvements', 'Agreed checks and fixes affecting the accessibility, indexing, and organisation of website content.'],
+      ['Enquiry measurement', 'Reporting that distinguishes website activity and enquiries from retained clients.'],
+    ],
+    workedExample: {
+      eyebrow: 'ILLUSTRATIVE SEO APPROACH',
+      heading: 'A service page and an information article have different jobs.',
+      pages: [
+        ['Service page', 'An employment-law service page explains the matters handled, the people the firm advises, its service area, and how to enquire.'],
+        ['Supporting article', 'An article explains a relevant question in more detail and links to the service page where appropriate. Legal statements require firm review.'],
+      ],
+      explanationTitle: 'Why the distinction matters',
+      explanation: 'The service page helps visitors assess the offer. The article supports their research. Both should have a clear purpose rather than repeat the same content.',
+      label: 'Illustrative content plan, not a client case study.',
+    },
+    examples: [],
+    processHeading: 'A focused plan for your practice areas.',
+    process: [
+      ['Practice priorities', 'Magneo reviews the firm’s services, locations, website, and available search data.'],
+      ['Page and content plan', 'The proposed scope identifies pages to improve, content gaps, and any overlap requiring attention.'],
+      ['Firm review and implementation', 'Approved changes are implemented, with legal information checked by your designated reviewer.'],
+      ['Performance review', 'Search trends and agreed enquiry data inform the next priorities. Retained-client outcomes require the firm’s own intake information.'],
+    ],
+    faq: [
+      ['Do all practice areas need separate pages?', 'Distinct services may justify separate pages when visitors need different information. Closely overlapping topics should be assessed before creating additional pages.'],
+      ['Can location pages be included?', 'Yes, where they accurately reflect the firm’s offices or services and provide useful local information. Repeated city pages with little meaningful difference are not the default approach.'],
+      ['Who approves legal content?', 'The firm’s designated reviewer confirms legal accuracy, professional details, and approval before publication.'],
+      ['How is progress measured?', 'Reporting can cover completed work, relevant search queries, landing-page activity, and agreed enquiries. Enquiries and retained clients are measured separately.'],
+      ['Do you guarantee rankings?', 'No. Deliverables and reporting are defined in the scope; rankings and client acquisition are not guaranteed.'],
+    ],
+    cta: ['Which matters should prospective clients find your firm for?', 'Share your website, priority practice areas, and the locations you serve. Include any concerns about visibility or irrelevant enquiries.'],
+    ctaButton: ['Discuss your law firm’s SEO', '/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
+    relatedIndustries: [['Law firms', '/law-firm-marketing/']],
+    related: [
+      ['SEO services', '/services/seo-for-regulated-industries/'],
+      ['Website Design for Law Firms', '/services/website-design-rebrand-for-law-firms-magneo/'],
+      ['PPC & Landing Pages for Law Firms', '/services/ppc-landing-pages-for-law-firms-magneo/'],
+    ],
+  },
   'social-media-linkedin-marketing-for-regulated-industries': {
     title: 'Social Media & LinkedIn Marketing for Regulated Industries',
     description: 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
@@ -416,6 +473,11 @@ function ProgressSection({ progress }) {
   return <section className="section soft scr-progress"><div className="container"><h2>{progress.heading}</h2><div className="grid scr-progress-grid">{progress.items.map(([title, copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-progress-closing">{progress.closing}</p></div></section>;
 }
 
+function WorkedExampleSection({ example }) {
+  if (!example) return null;
+  return <section className="section soft scr-worked-example"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><div className="scr-worked-grid"><div className="scr-page-diagram" aria-label="Illustration showing a service page linking with a supporting article">{example.pages.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p>{index === 0 && <i aria-hidden="true">↔</i>}</article>)}</div><aside><h3>{example.explanationTitle}</h3><p>{example.explanation}</p><strong>{example.label}</strong></aside></div></div></section>;
+}
+
 function FinalCta({ data }) {
   const button = data.ctaButton || ['Discuss your project', '/contact/#contact-enquiry'];
   return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link></div></div></div></section>;
@@ -437,10 +499,10 @@ function StandardReview({ data, slug }) {
   const pageAudiences = data.audiences || audiences;
   const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries || pageAudiences} articles={relatedArticles}/>;
   return <div className={`scr-page${data.seoPage ? ' scr-page-seo' : ''}`}><ReviewHero data={data}/>
-    <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>
-    <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2><p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p></div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
+    {!data.hideAudience && <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>}
+    <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <ProgressSection progress={data.progress}/>
-    <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>
+    {data.workedExample ? <WorkedExampleSection example={data.workedExample}/> : <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
     <PurposeVisualSection visual={data.purposeVisual}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
@@ -487,9 +549,10 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const isReview = useLocation().pathname.split('/').includes('test');
   const serviceSlug = serviceSlugOverride || params.serviceSlug;
   const childData = getChildServiceData(serviceSlug);
-  const data = childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : pageData[serviceSlug]);
+  const parentData = pageData[serviceSlug];
+  const data = parentData || childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : undefined);
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
-  if (childData) return <ChildReview data={childData}/>;
+  if (childData && !parentData) return <ChildReview data={childData}/>;
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;
 }

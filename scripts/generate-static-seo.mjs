@@ -24,6 +24,7 @@ const descriptions = {
   '/services/directory/': 'Browse Magneo’s marketing services by industry, including websites, SEO, social media, AI creative, automation, and paid advertising.',
   '/services/website-design-for-regulated-professional-industries-magneo/': 'Website strategy, copy, design, and development for regulated industries. Explore industry-specific services, website concepts, and project options.',
   '/services/seo-for-regulated-industries/': 'Technical SEO, search strategy, and content for regulated industries. Explore project scopes, industry-specific services, and practical measurement.',
+  '/services/seo-for-the-legal-industry/': 'Law firm SEO covering practice-area content, technical improvements, local search, and enquiry measurement, with firm review before publication.',
   '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
   '/services/ai-automation-for-regulated-industries-magneo/': 'Connect repetitive marketing tasks across your existing tools. Start with a defined workflow for content, enquiries, or follow-up, with clear responsibilities and human review where needed.',
   '/services/ppc-landing-pages-for-regulated-industries/': 'Paid advertising and landing pages built around a defined offer, audience, and budget. Connect your campaign message to a clear next step and measure the actions that matter to your business.',
@@ -60,6 +61,7 @@ const titleOverrides = {
   '/services/directory/': 'Marketing Service Directory by Industry | Magneo',
   '/services/website-design-for-regulated-professional-industries-magneo/': 'Website Design for Regulated Industries | Magneo',
   '/services/seo-for-regulated-industries/': 'SEO for Regulated Industries | Magneo',
+  '/services/seo-for-the-legal-industry/': 'SEO for Law Firms & Lawyers | Magneo',
   '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social Media & LinkedIn Marketing for Regulated Industries | Magneo',
   '/services/ai-automation-for-regulated-industries-magneo/': 'AI Automation for Regulated Industries | Magneo',
   '/services/ppc-landing-pages-for-regulated-industries/': 'PPC & Landing Pages for Regulated Industries | Magneo',
@@ -127,15 +129,16 @@ function titleCase(pathname) {
 }
 
 function titleFor(pathname) {
+  if (titleOverrides[pathname]) return titleOverrides[pathname];
   const child = childServiceDataForPath(pathname);
   if (child) return child.seoTitle || `${child.title} | Magneo`;
-  return titleOverrides[pathname] || `${titleCase(pathname)} | Magneo`;
+  return `${titleCase(pathname)} | Magneo`;
 }
 
 function descriptionFor(pathname) {
+  if (descriptions[pathname]) return descriptions[pathname];
   const child = childServiceDataForPath(pathname);
   if (child) return child.metaDescription || child.description;
-  if (descriptions[pathname]) return descriptions[pathname];
   const label = titleCase(pathname);
   if (pathname.startsWith('/services/')) return `${label} from Magneo for regulated industries, built around authority, compliance-aware messaging, qualified demand, and measurable conversion.`;
   if (pathname.includes('law-firm-marketing')) return `${label} with Magneo: compliance-aware SEO, website, PPC, LinkedIn, AI automation, and authority systems for legal practices.`;
