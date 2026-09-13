@@ -154,28 +154,46 @@ const pageData = {
   },
   'personal-branding-for-regulated-professionals': {
     title: 'Personal Branding for Regulated Professionals',
-    description: 'Clarify what you want to be known for and how you communicate it. Develop positioning, profile messaging, and content direction that reflect your real expertise and professional voice.',
-    primary: ['Discuss your positioning', '/contact/#contact-enquiry'], secondary: ['View all services', '/services/'],
+    description: 'Personal branding for lawyers, financial advisors, healthcare professionals, and technology founders. Magneo develops your professional positioning, LinkedIn profile, biography, and content direction so potential clients can understand your expertise and what you offer.',
+    seoTitle: 'Personal Branding for Regulated Professionals | Magneo',
+    metaDescription: 'Personal brand strategy, LinkedIn profile writing, and professional bios for lawyers, financial advisors, healthcare professionals, and tech founders.',
+    primary: ['Talk about your personal brand', '/contact/#contact-enquiry'], secondary: ['View all services', '/services/'],
     card: ['YOUR VOICE', 'Positioning, profile messaging, and content direction.'],
-    included: ['Audience and positioning discovery','A clear professional introduction and core messages','LinkedIn headline, About section, and biography copy','Voice and content-theme guidance','Direction for profile imagery and visual consistency','A practical plan for putting the positioning into use'],
+    audiences: [
+      ['Lawyers & law firm leaders', '/law-firm-marketing/'],
+      ['Financial advisors & wealth professionals', '/financial-firm-marketing/'],
+      ['Healthcare practitioners & clinic founders', '/healthcare-marketing/'],
+      ['Technology founders & executives', '/tech-company-marketing/'],
+    ],
+    included: [
+      ['Personal brand strategy','Your audience, professional focus, key messages, and how your experience supports your positioning.'],
+      ['LinkedIn profile writing','Headline and About copy that explain your work, your expertise, and who you help.'],
+      ['Professional biography','An introduction for your website, speaking opportunities, and professional profiles, adapted to the agreed formats.'],
+      ['Content strategy and voice','Themes and writing guidance for sharing your expertise through posts, articles, or video.'],
+      ['Visual direction','Recommendations for profile imagery and a consistent presentation across your professional channels.'],
+      ['Putting your positioning into practice','Guidance on using the approved messages and materials across your profiles and content.'],
+    ],
     examples: [
-      ['Specialist positioning','We clarify who you help, what you focus on, and what makes your perspective relevant.'],
-      ['Professional profile refresh','We bring your headline, biography, and profile messaging into a consistent direction.'],
-      ['Multi-role professional narrative','We develop a clear personal narrative that explains how your businesses or areas of expertise relate.'],
+      ['A clear professional focus','When your profile lists everything you do but leaves your specialism unclear, Magneo develops messaging that explains your focus, audience, and relevant experience.'],
+      ['A profile that reflects your experience','An outdated headline or biography can miss what matters about your work today. Your profile copy is refreshed to reflect your current expertise and professional direction.'],
+      ['One clear story across multiple roles','If you lead several businesses or work across different disciplines, Magneo develops a coherent introduction that explains how those roles connect.'],
     ],
     examplesEyebrow: 'What we can create',
     examplesHeading: 'Personal-brand assets grounded in your real expertise.',
     processEyebrow: 'How we work',
-    processHeading: 'We shape how your expertise is presented.',
-    process: [['We define your positioning','We discuss your experience, audience, and goals, then recommend the themes and messages that will guide your personal brand.'],['We develop your profiles and content','We create the agreed biographies, profile copy, and content direction using information and examples you provide.'],['We refine with your feedback','You confirm that the work accurately reflects your experience and point of view. We make the agreed revisions.'],['We prepare you to use it','We deliver the approved materials and guidance for applying them consistently. Ongoing content creation or profile management is scoped separately.']],
+    processHeading: 'From professional experience to a clear personal brand.',
+    process: [['Positioning','A conversation about your experience, audience, and goals gives Magneo the foundation to recommend your professional focus and key messages.'],['Profile development','Magneo develops the agreed biographies, profile copy, and content direction using information and examples you provide.'],['Feedback and refinement','You confirm accuracy and share feedback. The agreed revisions refine the wording so it reflects your experience and point of view.'],['Delivery and guidance','You receive the approved materials and guidance for using them consistently. Ongoing content creation or profile management is scoped separately.']],
     faq: [
       ['How is personal branding different from social media management?','Personal branding defines your positioning, message, and voice. Social media management handles ongoing content and publishing. They can be combined, but are scoped separately.'],
       ['What do you need from me?','We need your background, areas of expertise, goals, and examples of how you communicate. Interviews and feedback help the work reflect your actual perspective.'],
       ['Do I need to appear on video?','No. Your positioning can be expressed through written profiles, articles, presentations, and other formats. Video is an option.'],
       ['Can you help me communicate more than one role or business?','Yes. The work can clarify how your roles connect while keeping the message understandable to your intended audience.'],
       ['Is ongoing content included?','Only where specified. Your proposal distinguishes positioning and profile work from recurring content production.'],
+      ['Can personal branding help people find me online?',<>Clear, consistent profiles help people understand your expertise when they search for your name or visit your professional pages. Personal branding can support your wider online presence, but <Link to="/services/seo-for-regulated-industries/">website SEO</Link> and ongoing search optimisation are separate services.</>],
+      ['Can my personal brand fit within my firm’s brand?','Yes. Your positioning and profile can reflect your individual expertise while following your firm’s tone, visual identity, and approval requirements.'],
     ],
-    cta: ['What do you want to be known for?','Tell Adele about your work, your audience, and what your current profile does not yet communicate.'],
+    cta: ['What do you want to be known for?','Tell us about your work, the people you want to reach, and what your current profile does not yet communicate.'],
+    ctaButton: ['Talk about your personal brand', '/contact/#contact-enquiry'],
     related: [['Social Media & LinkedIn','/services/social-media-linkedin-marketing-for-regulated-industries/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
   },
 };
@@ -203,6 +221,7 @@ const aiServices = [
 function useReviewMetadata(data, slug, isReview) {
   useEffect(() => {
     const title = data.seoTitle || `${data.title.replace(/\.$/, '')} | Magneo`;
+    const description = data.metaDescription || data.description;
     document.title = title;
     const canonicalUrl = `https://magneo.ca/services/${slug}/`;
     const setMeta = (selector, attributes, content) => {
@@ -213,12 +232,12 @@ function useReviewMetadata(data, slug, isReview) {
       if (!element.parentNode) document.head.appendChild(element);
       matches.forEach((duplicate) => duplicate.remove());
     };
-    setMeta('meta[name="description"]', { name: 'description' }, data.description);
+    setMeta('meta[name="description"]', { name: 'description' }, description);
     setMeta('meta[property="og:title"]', { property: 'og:title' }, title);
-    setMeta('meta[property="og:description"]', { property: 'og:description' }, data.description);
+    setMeta('meta[property="og:description"]', { property: 'og:description' }, description);
     setMeta('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl);
     setMeta('meta[name="twitter:title"]', { name: 'twitter:title' }, title);
-    setMeta('meta[name="twitter:description"]', { name: 'twitter:description' }, data.description);
+    setMeta('meta[name="twitter:description"]', { name: 'twitter:description' }, description);
     const canonicals = [...document.head.querySelectorAll('link[rel="canonical"]')];
     const canonical = canonicals.shift() || document.createElement('link');
     canonical.rel = 'canonical'; canonical.href = canonicalUrl;
@@ -275,7 +294,8 @@ function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define t
 }
 
 function FinalCta({ data }) {
-  return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to="/contact/#contact-enquiry">Discuss your project</Link></div></div></div></section>;
+  const button = data.ctaButton || ['Discuss your project', '/contact/#contact-enquiry'];
+  return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link></div></div></div></section>;
 }
 
 function RelatedColumns({ serviceLinks, industryLinks, articles }) {
@@ -291,13 +311,14 @@ function RelatedColumns({ serviceLinks, industryLinks, articles }) {
 
 function StandardReview({ data, slug }) {
   const relatedArticles = relatedArticlesFor({ slug });
+  const pageAudiences = data.audiences || audiences;
   return <div className="scr-page"><ReviewHero data={data}/>
-    <section className="section soft"><div className="container"><div className="label">Audience</div><h2>Who this service is for.</h2><div className="grid four scr-audience">{audiences.map(([label,path])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3></Link>)}</div></div></section>
-    <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal will confirm the deliverables, responsibilities, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
+    <section className="section soft"><div className="container"><div className="label">Audience</div><h2>Who this service is for.</h2><div className="grid four scr-audience">{pageAudiences.map(([label,path])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3></Link>)}</div></div></section>
+    <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal will confirm the deliverables, responsibilities, and any ongoing support.</p></div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
-    <RelatedColumns serviceLinks={data.related} industryLinks={audiences} articles={relatedArticles}/>
+    <RelatedColumns serviceLinks={data.related} industryLinks={pageAudiences} articles={relatedArticles}/>
     <FinalCta data={data}/>
   </div>;
 }

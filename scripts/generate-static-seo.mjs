@@ -26,7 +26,7 @@ const descriptions = {
   '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
   '/services/ai-automation-for-regulated-industries-magneo/': 'Connect repetitive marketing tasks across your existing tools. Start with a defined workflow for content, enquiries, or follow-up, with clear responsibilities and human review where needed.',
   '/services/ppc-landing-pages-for-regulated-industries/': 'Paid advertising and landing pages built around a defined offer, audience, and budget. Connect your campaign message to a clear next step and measure the actions that matter to your business.',
-  '/services/personal-branding-for-regulated-professionals/': 'Clarify what you want to be known for and how you communicate it. Develop positioning, profile messaging, and content direction that reflect your real expertise and professional voice.',
+  '/services/personal-branding-for-regulated-professionals/': 'Personal brand strategy, LinkedIn profile writing, and professional bios for lawyers, financial advisors, healthcare professionals, and tech founders.',
   '/services/ai-powered-digital-marketing/': 'Explore practical uses of AI across content, video, search, websites, and marketing workflows, with a defined purpose and agreed human review process.',
   '/industries/': 'Magneo builds marketing systems for law firms, financial advisors, healthcare clinics, and tech companies across Canada and the USA.',
   '/contact/': 'Contact Adele Salikhova at Magneo to discuss a website, content, search, advertising, or AI marketing project.',
