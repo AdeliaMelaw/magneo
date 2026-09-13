@@ -33,6 +33,7 @@
 .scr-orbit-copy{position:relative;z-index:3}.scr-orbit-copy h2{margin:0 0 10px;color:#fff;font:400 clamp(26px,3vw,34px)/1.04 var(--display)}.scr-orbit-copy p{max-width:390px;margin:0 0 19px;color:rgba(255,255,255,.62);font-size:14px;line-height:1.6}.scr-orbit-copy b{color:#fff;font-size:13px;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:3px}.scr-orbit-card:hover .scr-orbit-copy b{color:var(--mg);border-color:var(--mg)}
 @keyframes scr-orbit-breathe{0%,100%{transform:rotateY(-2deg) translateY(0)}50%{transform:rotateY(3deg) translateY(-5px)}}
 .scr-audience .card{min-height:132px}.scr-audience .card h3{margin-top:auto}
+.scr-section-intro{max-width:760px;margin:-20px 0 34px;color:var(--muted);font-size:16px;line-height:1.7}.scr-audience .card p{margin:10px 0 0;color:var(--muted);font-size:13px;line-height:1.6}.scr-audience .card:has(p){min-height:210px}
 .scr-included{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:72px;align-items:start}
 .scr-included h2{margin-bottom:18px}.scr-included>div>p,.scr-ai-intro{color:var(--muted);font-size:16px;line-height:1.75}
 .scr-included ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}

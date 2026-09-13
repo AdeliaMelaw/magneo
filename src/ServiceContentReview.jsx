@@ -20,7 +20,9 @@ const audiences = [
 const pageData = {
   'website-design-for-regulated-professional-industries-magneo': {
     title: 'Website Design for Regulated Industries',
-    description: 'Website strategy, copy, design, and development for businesses where credibility matters. Help visitors understand your services, find relevant information, and take the next step.',
+    description: 'A professional website should explain your services, make your expertise easy to assess, and give visitors a clear next step. Magneo brings website strategy, copy, design, and development together for regulated industries and expert-led businesses.',
+    seoTitle: 'Website Design for Regulated Industries | Magneo',
+    metaDescription: 'Website strategy, copy, design, and development for regulated industries. Explore industry-specific services, website concepts, and project options.',
     primary: ['Discuss your website', '/contact/#contact-enquiry'], secondary: ['Explore website concepts', portfolioLinks.websites],
     card: ['WEBSITES', 'Positioning, copy, design, and development.'],
     heroPortfolio: {
@@ -31,25 +33,47 @@ const pageData = {
       demoUrl: '/portfolio/legal-websites/personal-injury-bold/',
       portfolioUrl: '/portfolio/',
     },
-    included: ['Website structure and page planning','Messaging and website copy','Visual design and mobile layouts','Website development and agreed integrations','Forms, on-page SEO, and agreed analytics setup','Pre-launch checks and handover guidance'],
+    audienceHeading: 'Find the website approach for your industry.',
+    audienceIntro: 'Different visitors need different information before they enquire. Explore the website service shaped around your audience.',
+    audiences: [
+      ['Law firms', '/services/website-design-rebrand-for-law-firms-magneo/', 'Practice areas, lawyer profiles, and clear routes for prospective client enquiries.'],
+      ['Financial advisors and wealth firms', '/services/website-design-for-financial-advisors-wealth-firms-magneo/', 'Service explanations, advisor credentials, and information about starting a professional relationship.'],
+      ['Healthcare clinics and doctors', '/services/website-design-for-healthcare-clinics-doctors-magneo/', 'Treatment and service information, practitioner profiles, locations, and appointment guidance.'],
+      ['Tech companies and SaaS products', '/services/website-design-for-tech-companies-saas-products-magneo/', 'Product messaging, use cases, and journeys towards a demo or trial.'],
+    ],
+    scopeHeading: 'From website planning to launch.',
+    scopeIntro: 'Your proposal confirms the pages, functionality, review stages, and support included.',
+    included: [
+      ['Structure and messaging','A page plan based on your services, audience, and the information visitors need before making contact.'],
+      ['Copy and design','Website copy and visual layouts developed together so the message and presentation support each other.'],
+      ['Development and connections','Responsive pages, enquiry forms, and agreed integrations with the tools your business uses.'],
+      ['Search foundations','Descriptive page titles, headings, internal links, and agreed technical checks to support a usable, discoverable website.'],
+      ['Launch and handover','Testing, launch preparation, and guidance for managing the finished website.'],
+    ],
     examples: [
-      ['Website redesign','We reorganise your pages, clarify your services, and refresh the design so visitors can understand your business and find the information they need.'],
-      ['Service-focused website','We write, design, and build a website that explains your services, presents your expertise, and gives visitors a clear way to enquire.'],
-      ['Campaign landing page','We create a dedicated landing page that carries your campaign message through to a clear next step, such as an enquiry or booking.'],
+      ['New business website','A clear introduction to your business, services, and expertise, with a practical route from browsing to enquiry.'],
+      ['Existing website redesign','An updated structure, message, and visual presentation for a website that no longer reflects your business.'],
+      ['Additional service pages','New pages that explain a growing service range without making the website harder to navigate.'],
     ],
     examplesEyebrow: 'What we can create',
-    examplesHeading: 'Websites built around what your business needs.',
+    examplesHeading: 'A new website, a redesign, or a focused addition.',
     processEyebrow: 'How we work',
-    processHeading: 'We plan, create, and build your website.',
-    process: [['We plan the website','We review your business, audience, and goals, then propose the page structure, functionality, and project scope for your approval.'],['We develop the copy and design','We create the agreed copy and visual direction. You provide business information, confirm accuracy, and share feedback.'],['We build and test','We develop the approved website and test its pages, forms, and agreed functionality across desktop and mobile.'],['We prepare for launch','Once you approve the website, we complete the agreed launch tasks and explain how to manage it. Ongoing maintenance and updates are scoped separately.']],
+    processHeading: 'A clear route from brief to launch.',
+    process: [['Project definition','Magneo reviews your goals and existing materials, then proposes the website scope and direction.'],['Copy and visual direction','The agreed content and layouts are developed for your review. You confirm business information and provide feedback.'],['Development and testing','Approved designs become responsive pages, with checks on navigation, forms, and included functionality.'],['Launch and handover','Following approval, Magneo completes the agreed launch tasks and provides guidance on managing the website.']],
     faq: [
       ['Is website copy included?','Copywriting can be included in the scope. The proposal will specify which pages we write and which information or materials you provide.'],
       ['Can you redesign an existing website?','Yes. We first review the existing website, content, and platform to determine what can be retained and what needs to change.'],
       ['How long does a website project take?','Timing depends on the number of pages, required functionality, content readiness, and review stages. Your proposal will include a project timeline.'],
       ['Who handles content approval?','You approve the final content. Where industry-specific claims need specialist review, we agree who reviews them before publication.'],
       ['What happens after launch?','Handover and any ongoing maintenance, hosting, or content support are defined in the proposal. Recurring services are scoped separately.'],
+      ['What affects the cost of a website?','Page count, content requirements, design scope, integrations, and migration work all affect the cost. A proposal confirms the deliverables and fees before the project begins.'],
+      ['Does website design include ongoing SEO?','A website project can include on-page and technical search foundations. Ongoing keyword research, content development, and SEO monitoring are separate services unless included in the proposal.'],
+      ['Can an existing website be redesigned without changing every URL?','Existing URLs and content can be reviewed before the new structure is agreed. Where a URL needs to change, the launch plan should include the appropriate redirect. A redesign cannot guarantee unchanged search rankings.'],
     ],
-    cta: ['Planning a new website?','Share your current website or your plans, and tell Adele what needs to improve.'],
+    cta: ['What does your next website need to do?','Share your existing website or describe what you are planning. Include the services it needs to explain and the next step you want visitors to take.'],
+    ctaButton: ['Discuss your website', '/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
+    relatedIndustries: audiences,
     related: [['SEO & Content','/services/seo-for-regulated-industries/'],['PPC & Landing Pages','/services/ppc-landing-pages-for-regulated-industries/']],
   },
   'social-media-linkedin-marketing-for-regulated-industries': {
@@ -312,14 +336,16 @@ function RelatedColumns({ serviceLinks, industryLinks, articles }) {
 function StandardReview({ data, slug }) {
   const relatedArticles = relatedArticlesFor({ slug });
   const pageAudiences = data.audiences || audiences;
+  const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries || pageAudiences} articles={relatedArticles}/>;
   return <div className="scr-page"><ReviewHero data={data}/>
-    <section className="section soft"><div className="container"><div className="label">Audience</div><h2>Who this service is for.</h2><div className="grid four scr-audience">{pageAudiences.map(([label,path])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3></Link>)}</div></div></section>
-    <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal will confirm the deliverables, responsibilities, and any ongoing support.</p></div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
+    <section className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className="grid four scr-audience">{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div></div></section>
+    <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2><p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p></div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
-    <RelatedColumns serviceLinks={data.related} industryLinks={pageAudiences} articles={relatedArticles}/>
+    {!data.resourcesAfterCta && resources}
     <FinalCta data={data}/>
+    {data.resourcesAfterCta && resources}
   </div>;
 }
 
