@@ -54,6 +54,7 @@ const bySlug = {
   'website-design-for-regulated-professional-industries-magneo': [a.legalFundamentals, a.clinicLocalSeo, a.productLed],
   'seo-for-regulated-industries': [a.legalSeo, a.medicalSeo, a.financeContent],
   'seo-for-the-legal-industry': [a.legalSeo, a.legalFundamentals, a.legalAnalytics],
+  'seo-for-financial-advisors-wealth-firms': [a.financeContent, a.advisorEmail, a.financeSocial],
   'social-media-linkedin-marketing-for-regulated-industries': [a.lawyerVideo, a.clinicVideo, a.financeSocial],
   'ai-automation-for-regulated-industries-magneo': [a.aiPersonalization, a.advisorAi, a.legalAi],
   'ai-powered-digital-marketing': [a.aiPersonalization, a.advisorAi, a.legalAi],

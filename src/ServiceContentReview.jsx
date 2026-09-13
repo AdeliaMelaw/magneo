@@ -217,6 +217,65 @@ const pageData = {
       ['PPC & Landing Pages for Law Firms', '/services/ppc-landing-pages-for-law-firms-magneo/'],
     ],
   },
+  'seo-for-financial-advisors-wealth-firms': {
+    title: 'SEO for Financial Advisors & Wealth Firms',
+    seoTitle: 'SEO for Financial Advisors & Wealth Firms | Magneo',
+    metaDescription: 'SEO for financial advisors and wealth firms, including advisory-service pages, reviewed educational content, technical improvements, and reporting.',
+    description: 'Search traffic is useful when it connects with the advice your firm actually provides. Magneo develops SEO and content priorities around your services, intended clients, and approved areas of expertise, with financial-content review built into the workflow.',
+    primary: ['Discuss your firm’s SEO', '/contact/#contact-enquiry'],
+    secondary: ['Explore the SEO scope', '#financial-seo-scope'],
+    cardEyebrow: 'ADVISORY SEARCH',
+    card: ['Your services.\nYour intended clients.', 'Content priorities grounded in the advice your firm provides.'],
+    seoPage: true,
+    hideAudience: true,
+    scopeId: 'financial-seo-scope',
+    scopeHeading: 'SEO built around your advisory services.',
+    scopeIntro: '',
+    included: [
+      ['Service-page clarity', 'Pages that explain the advice available, intended clients, and how a relationship begins.'],
+      ['Search research', 'Relevant service and educational topics prioritised according to your offer, rather than traffic volume alone.'],
+      ['Reviewed financial content', 'Drafts developed from approved information, with specialist review and publication responsibilities defined.'],
+      ['Firm and advisor information', 'Accurate biographies, service details, and business information that support a consistent website.'],
+      ['Technical and local foundations', 'Agreed website improvements and local-search work where relevant to the business.'],
+      ['Progress reporting', 'Completed work, search activity, and agreed enquiry measures presented separately.'],
+    ],
+    decision: {
+      eyebrow: 'TOPIC SELECTION',
+      heading: 'Useful traffic starts with a relevant topic.',
+      text: 'A widely searched financial question is not automatically the right content opportunity for an advisory firm. Topic selection should consider the service available, the intended audience, and whether the page gives visitors a relevant next step.',
+      example: 'For a firm offering retirement planning, a service page can explain the scope of advice and client fit. A supporting article can address a specific planning question using approved information.',
+      label: 'Illustrative topic selection, not a performance case study.',
+    },
+    examples: [
+      ['Advisory-service content', 'Clearer pages for services that are currently buried within broad descriptions.'],
+      ['Educational content planning', 'A focused set of topics reflecting the firm’s expertise and review capacity.'],
+      ['Existing-content refresh', 'A review of older pages for relevance, accuracy, and alignment with the current offer.'],
+    ],
+    examplesHeading: 'Search content shaped around your advisory services.',
+    processHeading: 'From advisory priorities to reviewed search content.',
+    process: [
+      ['Service and audience review', 'Magneo assesses the firm’s offer, existing website, and available search data.'],
+      ['Topic selection', 'The proposed priorities connect relevant searches with your services and approved areas of expertise.'],
+      ['Review and implementation', 'Copy and technical changes follow the agreed scope. Your designated reviewers approve financial information before publication.'],
+      ['Progress assessment', 'Reporting explains the work completed and the search or enquiry trends available, with recommendations for the next stage.'],
+    ],
+    faq: [
+      ['Can the work follow our compliance review process?', 'Yes. Reviewers, approval stages, and publication responsibilities can be included in the project plan.'],
+      ['Do you publish financial content without approval?', 'Financial content follows the agreed approval process before publication. Business-specific claims and specialist information require your designated reviewer’s confirmation.'],
+      ['Is local SEO relevant to every advisory firm?', 'Not equally. Its relevance depends on the firm’s service area, business model, and eligibility for local-search features.'],
+      ['Can existing content be improved instead of creating more articles?', 'Yes. Existing pages may benefit from clearer service information, updated content, or better internal connections before additional articles are needed.'],
+      ['How are results assessed?', 'Reporting distinguishes visibility and visits from enquiries. Whether an enquiry becomes a suitable client depends on the firm’s intake and engagement process.'],
+    ],
+    cta: ['Is your search content attracting interest in the advice you offer?', 'Share your website, priority services, and intended client audience. The next conversation can focus on where the current content supports—or misses—that fit.'],
+    ctaButton: ['Discuss your firm’s SEO', '/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
+    relatedIndustries: [['Financial firms', '/financial-firm-marketing/']],
+    related: [
+      ['SEO services', '/services/seo-for-regulated-industries/'],
+      ['Website Design for Financial Advisors', '/services/website-design-for-financial-advisors-wealth-firms-magneo/'],
+      ['PPC & Landing Pages for Financial Advisors', '/services/ppc-landing-pages-for-financial-advisors-fintech-magneo/'],
+    ],
+  },
   'social-media-linkedin-marketing-for-regulated-industries': {
     title: 'Social Media & LinkedIn Marketing for Regulated Industries',
     description: 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
@@ -460,7 +519,7 @@ function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define t
 
 function DecisionSection({ decision }) {
   if (!decision) return null;
-  return <section className="section soft scr-decision"><div className="container"><div className="label">Website journey</div><h2>{decision.heading}</h2>{decision.text && <p className="scr-decision-copy">{decision.text}</p>}{decision.supporting && <p className="scr-decision-supporting">{decision.supporting}</p>}{decision.panels && <div className="scr-decision-grid">{decision.panels.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>}{decision.closing && <p className="scr-decision-closing">{decision.closing}</p>}</div></section>;
+  return <section className="section soft scr-decision"><div className="container"><div className="label">{decision.eyebrow || 'Website journey'}</div><h2>{decision.heading}</h2>{decision.text && <p className="scr-decision-copy">{decision.text}</p>}{decision.supporting && <p className="scr-decision-supporting">{decision.supporting}</p>}{decision.example && <div className="scr-decision-example"><strong>Example</strong><p>{decision.example}</p></div>}{decision.panels && <div className="scr-decision-grid">{decision.panels.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>}{decision.closing && <p className="scr-decision-closing">{decision.closing}</p>}{decision.label && <p className="scr-decision-label">{decision.label}</p>}</div></section>;
 }
 
 function PurposeVisualSection({ visual }) {
@@ -502,6 +561,7 @@ function StandardReview({ data, slug }) {
     {!data.hideAudience && <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>}
     <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <ProgressSection progress={data.progress}/>
+    <DecisionSection decision={data.decision}/>
     {data.workedExample ? <WorkedExampleSection example={data.workedExample}/> : <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
     <PurposeVisualSection visual={data.purposeVisual}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
