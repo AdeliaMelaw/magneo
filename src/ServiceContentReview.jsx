@@ -32,10 +32,12 @@ const pageData = {
     },
     included: ['Website structure and page planning','Messaging and website copy','Visual design and mobile layouts','Website development and agreed integrations','Forms, on-page SEO, and agreed analytics setup','Pre-launch checks and handover guidance'],
     examples: [
-      ['Redesign an existing website','Reorganise your pages, clarify your services, and update the design around what visitors need to know.'],
-      ['Create a focused service website','Build a clear set of pages explaining your offer, relevant experience, and how to enquire.'],
-      ['Build a campaign landing page','Create a dedicated page that connects a specific campaign message with a relevant next step.'],
+      ['Website redesign','We reorganise your pages, clarify your services, and refresh the design so visitors can understand your business and find the information they need.'],
+      ['Service-focused website','We write, design, and build a website that explains your services, presents your expertise, and gives visitors a clear way to enquire.'],
+      ['Campaign landing page','We create a dedicated landing page that carries your campaign message through to a clear next step, such as an enquiry or booking.'],
     ],
+    examplesEyebrow: 'What we can create',
+    examplesHeading: 'Websites built around what your business needs.',
     processEyebrow: 'How we work',
     processHeading: 'We plan, create, and build your website.',
     process: [['We plan the website','We review your business, audience, and goals, then propose the page structure, functionality, and project scope for your approval.'],['We develop the copy and design','We create the agreed copy and visual direction. You provide business information, confirm accuracy, and share feedback.'],['We build and test','We develop the approved website and test its pages, forms, and agreed functionality across desktop and mobile.'],['We prepare for launch','Once you approve the website, we complete the agreed launch tasks and explain how to manage it. Ongoing maintenance and updates are scoped separately.']],
@@ -66,10 +68,12 @@ const pageData = {
     },
     included: ['Audience and channel planning','Content themes and editorial calendars','Post copy and visual creative','Short-form video concepts, scripts, and agreed production','Content approval and publishing arrangements','Reporting on agreed content and enquiry metrics'],
     examples: [
-      ['Build a LinkedIn content series','Turn recurring audience questions and your professional perspective into a connected series of posts.'],
-      ['Repurpose an interview','Develop short clips, post ideas, and supporting copy from a recorded conversation.'],
-      ['Plan content around a service','Create a sequence of explanations, examples, and invitations that help people understand a specific offer.'],
+      ['LinkedIn content series','We turn recurring audience questions and your professional perspective into a connected series of posts.'],
+      ['Interview content package','We develop short clips, post ideas, and supporting copy from a recorded conversation.'],
+      ['Service content campaign','We create a sequence of explanations, examples, and invitations that helps people understand a specific offer.'],
     ],
+    examplesEyebrow: 'What we can create',
+    examplesHeading: 'Content shaped around your expertise and audience.',
     processEyebrow: 'How we work',
     processHeading: 'We turn your expertise into content.',
     process: [['We define the direction','We discuss your audience, goals, and point of view, then recommend content themes, formats, and channels.'],['We create the content','We develop the agreed posts, visuals, or scripts using your input and approved source material.'],['We refine with your feedback','You review the drafts for accuracy and tone and arrange any required internal approvals. We make the agreed revisions.'],['We prepare for publication','We deliver approved content ready to use, or schedule it where publishing is included. For ongoing engagements, we review performance to guide future content.']],
@@ -94,10 +98,12 @@ const pageData = {
     },
     included: ['Review of the current process and tools','Workflow mapping and requirements','Agreed integrations and automation setup','AI-assisted steps where appropriate','Review points, exception handling, and testing','Documentation, handover, and separately scoped maintenance'],
     examples: [
-      ['Route an enquiry','Transfer agreed form information into a CRM, notify the responsible person, and create a follow-up task.'],
-      ['Coordinate content approval','Move a draft through defined review stages and notify the next person when action is needed.'],
-      ['Prepare a reporting summary','Bring selected marketing data into a draft summary for someone to check before sharing.'],
+      ['Enquiry-routing workflow','We transfer agreed form information into a CRM, notify the responsible person, and create a follow-up task.'],
+      ['Content-approval workflow','We connect defined review stages and notify the next person when action is needed.'],
+      ['Reporting-summary workflow','We bring selected marketing data into a draft summary for someone to check before sharing.'],
     ],
+    examplesEyebrow: 'What we can create',
+    examplesHeading: 'Automation designed around repeatable marketing tasks.',
     processEyebrow: 'How we work',
     processHeading: 'We build automation around how you work.',
     process: [['We map the workflow','We review the task, tools, and handoffs involved, then identify what could be automated and where human review is needed.'],['We build the agreed setup','We confirm the workflow, required access, and responsibilities, then configure the connections and AI steps included in the scope.'],['We test it with you','We test typical scenarios, exceptions, and approval steps. You confirm that the workflow fits your process before it is put into use.'],['We explain and hand over','We document how the workflow operates, what needs monitoring, and how to pause it. Ongoing support and third-party tool costs are clarified in the scope.']],
@@ -125,10 +131,12 @@ const pageData = {
     cardClass: 'scr-hero-card-campaigns',
     included: ['Campaign objectives and audience planning','Keyword or targeting research for the agreed platform','Ad copy and agreed creative assets','Landing-page copy, design, and implementation','Conversion tracking and pre-launch checks','Campaign management and reporting where included'],
     examples: [
-      ['Promote a specific service','Connect an advertisement to a landing page explaining one offer and how to enquire.'],
-      ['Support an event or consultation offer','Build a campaign around a defined invitation, with a relevant registration or enquiry page.'],
-      ['Refine an existing campaign','Review the targeting, message, landing page, and tracking to identify changes worth testing.'],
+      ['Service campaign','We connect an advertisement to a landing page that explains one offer and how to enquire.'],
+      ['Event or consultation campaign','We build a campaign around a defined invitation, with a relevant registration or enquiry page.'],
+      ['Existing campaign refinement','We review the targeting, message, landing page, and tracking to identify changes worth testing.'],
     ],
+    examplesEyebrow: 'What we can create',
+    examplesHeading: 'Campaigns built around a clear offer and next step.',
     processEyebrow: 'How we work',
     processHeading: 'We plan, create, and launch your campaign.',
     process: [
@@ -155,10 +163,12 @@ const pageData = {
     card: ['YOUR VOICE', 'Positioning, profile messaging, and content direction.'],
     included: ['Audience and positioning discovery','A clear professional introduction and core messages','LinkedIn headline, About section, and biography copy','Voice and content-theme guidance','Direction for profile imagery and visual consistency','A practical plan for putting the positioning into use'],
     examples: [
-      ['Clarify a specialist position','Explain who you help, what you focus on, and what makes your perspective relevant.'],
-      ['Refresh a professional profile','Bring your headline, biography, and profile messaging into a consistent direction.'],
-      ['Connect several professional roles','Develop a clear personal narrative that explains how your businesses or areas of expertise relate.'],
+      ['Specialist positioning','We clarify who you help, what you focus on, and what makes your perspective relevant.'],
+      ['Professional profile refresh','We bring your headline, biography, and profile messaging into a consistent direction.'],
+      ['Multi-role professional narrative','We develop a clear personal narrative that explains how your businesses or areas of expertise relate.'],
     ],
+    examplesEyebrow: 'What we can create',
+    examplesHeading: 'Personal-brand assets grounded in your real expertise.',
     processEyebrow: 'How we work',
     processHeading: 'We shape how your expertise is presented.',
     process: [['We define your positioning','We discuss your experience, audience, and goals, then recommend the themes and messages that will guide your personal brand.'],['We develop your profiles and content','We create the agreed biographies, profile copy, and content direction using information and examples you provide.'],['We refine with your feedback','You confirm that the work accurately reflects your experience and point of view. We make the agreed revisions.'],['We prepare you to use it','We deliver the approved materials and guidance for applying them consistently. Ongoing content creation or profile management is scoped separately.']],
@@ -186,12 +196,12 @@ const aiOverview = {
 };
 
 const aiServices = [
-  ['AI SEO','/services/ai-seo/','Plan search architecture, content briefs, and optimisation workflows with defined review steps.'],
-  ['AI Social Media Marketing','/services/ai-social-media-marketing/','Support repeatable social-content planning, drafting, and review.'],
-  ['AI UGC & AI Video Production','/services/ai-ugc-ai-video-production/','Develop clearly labelled visual and video concepts without presenting generated people as real customers.'],
-  ['AI Web Design & Conversion','/services/ai-web-design-conversion/','Use AI-assisted exploration to support website messaging, layouts, and conversion ideas.'],
-  ['AI Content Marketing','/services/ai-content-marketing/','Support content research, drafting, repurposing, and editorial workflows.'],
-  ['Compliance-Aware AI Workflows','/services/compliance-aware-ai-workflows/','Define review points, claim checks, and approval responsibilities around AI-assisted work.'],
+  ['AI SEO','/services/ai-seo/','We plan search architecture, content briefs, and optimisation workflows with defined review steps.'],
+  ['AI Social Media Marketing','/services/ai-social-media-marketing/','We support repeatable social-content planning, drafting, and review.'],
+  ['AI UGC & AI Video Production','/services/ai-ugc-ai-video-production/','We develop clearly labelled visual and video concepts without presenting generated people as real customers.'],
+  ['AI Web Design & Conversion','/services/ai-web-design-conversion/','We use AI-assisted exploration to support website messaging, layouts, and conversion ideas.'],
+  ['AI Content Marketing','/services/ai-content-marketing/','We support content research, drafting, repurposing, and editorial workflows.'],
+  ['Compliance-Aware AI Workflows','/services/compliance-aware-ai-workflows/','We define review points, claim checks, and approval responsibilities around AI-assisted work.'],
 ];
 
 function useReviewMetadata(data, slug, isReview) {
@@ -276,7 +286,7 @@ function StandardReview({ data }) {
   return <div className="scr-page"><ReviewHero data={data}/>
     <section className="section soft"><div className="container"><div className="label">Audience</div><h2>Who this service is for.</h2><div className="grid four scr-audience">{audiences.map(([label,path])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3></Link>)}</div></div></section>
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal will confirm the deliverables, responsibilities, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
-    <section className="section soft"><div className="container"><div className="label">Example applications</div><h2>Practical ways to apply the service.</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <section className={`related-section scr-related${data.relatedArticles ? ' scr-related-with-articles' : ''}`}><div className="container"><div><h2>Related Services</h2><i/><ul>{data.related.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div><div><h2>Related Industries</h2><i/><ul>{audiences.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div>{data.relatedArticles && <div><h2>Related Articles</h2><i/><ul>{data.relatedArticles.map(([label,path])=><li key={path}><a href={path}>{label}</a></li>)}</ul></div>}</div></section>
@@ -288,7 +298,7 @@ function ChildReview({ data }) {
   return <div className="scr-page"><ReviewHero data={data}/>
     {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
-    <section className="section soft"><div className="container"><div className="label">Example applications</div><h2>Example applications.</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <section className="related-section scr-related scr-child-related"><div className="container"><div><h2>Continue exploring</h2><i/><ul>{data.related.map(([label,path])=><li key={`${path}-${label}`}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>

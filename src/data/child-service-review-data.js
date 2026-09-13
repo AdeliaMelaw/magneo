@@ -4,6 +4,7 @@ const familyInfo = {
     card: ['WEBSITES', 'Messaging, design, development, and a clear next step.'],
     included: ['Audience, messaging, and page planning', 'Copy and visual design', 'Mobile implementation', 'Agreed forms and integrations', 'On-page SEO and agreed measurement', 'Pre-launch checks and handover'],
     processHeading: 'We plan, create, and build your website.',
+    examplesHeading: 'Websites built around what your business needs.',
     process: [['We plan the website', 'We review your business, audience, and goals, then propose the page structure, functionality, and project scope for your approval.'], ['We develop the copy and design', 'We create the agreed copy and visual direction. You provide business information, confirm accuracy, and share feedback.'], ['We build and test', 'We develop the approved website and test its pages, forms, and agreed functionality across desktop and mobile.'], ['We prepare for launch', 'Once you approve the website, we complete the agreed launch tasks and explain how to manage it. Ongoing maintenance and updates are scoped separately.']],
     faq: [['Who is responsible for the website copy?', 'Copywriting can be included. The proposal confirms which pages Magneo writes and which information or materials you provide.'], ['Which platform and maintenance arrangements are included?', 'The platform, hosting, handover, and any ongoing maintenance are defined in the proposal.']],
     cta: ['Planning your next website?', 'Tell Adele what your current website needs to explain or improve.'],
@@ -13,6 +14,7 @@ const familyInfo = {
     card: ['SEARCH', 'Technical foundations, useful content, and relevant search visibility.'],
     included: ['Technical and existing-content review', 'Search-intent and keyword research', 'Priority page improvements', 'Content planning and internal linking', 'Relevant local-search work where applicable', 'Search Console and agreed enquiry reporting'],
     processHeading: 'We turn search priorities into practical improvements.',
+    examplesHeading: 'SEO improvements focused on how your audience searches.',
     process: [['We review your search presence', 'We assess your website, content, and available search data to identify relevant opportunities and technical issues.'], ['We recommend the priorities', 'We propose the pages, topics, and improvements to focus on. You confirm which services and audiences matter most to your business.'], ['We implement the agreed work', 'We complete the improvements included in the scope. You confirm specialist information and approve content before publication.'], ['We review progress', 'We explain the work completed and the available performance data. For ongoing engagements, we use those findings to refine the next priorities.']],
     faq: [['What access is required?', 'The proposal identifies the website, analytics, Search Console, and profile access needed for the agreed work.'], ['How will progress be measured?', 'We agree on relevant visibility, website, and enquiry measures. Search positions and ranking improvements are not guaranteed.']],
     cta: ['Where does your search presence need work?', 'Share your website and the services or topics you want people to find.'],
@@ -22,6 +24,7 @@ const familyInfo = {
     card: ['CONTENT', 'A clear voice, relevant formats, and consistent communication.'],
     included: ['Audience and channel planning', 'Content themes and calendar', 'Post copy and visual direction', 'Agreed video or reel production', 'Review and publishing responsibilities', 'Reporting on agreed measures'],
     processHeading: 'We turn your expertise into content.',
+    examplesHeading: 'Content shaped around your expertise and audience.',
     process: [['We define the direction', 'We discuss your audience, goals, and point of view, then recommend content themes, formats, and channels.'], ['We create the content', 'We develop the agreed posts, visuals, or scripts using your input and approved source material.'], ['We refine with your feedback', 'You review the drafts for accuracy and tone and arrange any required internal approvals. We make the agreed revisions.'], ['We prepare for publication', 'We deliver approved content ready to use, or schedule it where publishing is included. For ongoing engagements, we review performance to guide future content.']],
     faq: [['How is content approved?', 'We agree on reviewers, feedback stages, and final approval before production begins.'], ['Does the service include production and publishing?', 'The proposal defines the formats, production work, channels, and who publishes each item.']],
     cta: ['What should your content communicate?', 'Tell Adele about your audience, current channels, and the ideas you want to explain.'],
@@ -31,6 +34,7 @@ const familyInfo = {
     card: ['WORKFLOWS', 'Connected tasks, defined responsibilities, and review points.'],
     included: ['Current-process and tool review', 'Workflow mapping', 'Agreed integrations and AI-assisted steps', 'Approval points and exception handling', 'Testing and documentation', 'Handover and maintenance arrangements'],
     processHeading: 'We build automation around how you work.',
+    examplesHeading: 'Automation designed around repeatable marketing tasks.',
     process: [['We map the workflow', 'We review the task, tools, and handoffs involved, then identify what could be automated and where human review is needed.'], ['We build the agreed setup', 'We confirm the workflow, required access, and responsibilities, then configure the connections and AI steps included in the scope.'], ['We test it with you', 'We test typical scenarios, exceptions, and approval steps. You confirm that the workflow fits your process before it is put into use.'], ['We explain and hand over', 'We document how the workflow operates, what needs monitoring, and how to pause it. Ongoing support and third-party tool costs are clarified in the scope.']],
     faq: [['Can you work with our existing tools?', 'We first check available integrations, permissions, and limitations before confirming the workflow.'], ['Are subscriptions and maintenance included?', 'The proposal separates implementation from third-party charges and any ongoing monitoring or maintenance.']],
     cta: ['Which task keeps repeating?', 'Tell Adele how the process works today and where the handoff slows down.'],
@@ -38,6 +42,7 @@ const familyInfo = {
   ai: {
     parent: ['AI-Powered Digital Marketing', '/services/ai-powered-digital-marketing/'],
     processHeading: 'We bring AI into your marketing with clear responsibilities.',
+    examplesHeading: 'AI-assisted deliverables with human direction and review.',
     process: [['We define the application', 'We discuss the intended audience, purpose, source material, and output, then recommend an appropriate AI-assisted approach.'], ['We develop the agreed work', 'We create the drafts, concepts, assets, or workflow included in the project using the information you provide.'], ['We review and refine', 'We check quality, consistency, and the agreed safeguards. You confirm business-specific facts and arrange any required specialist approvals.'], ['We prepare it for use', 'We deliver the approved output with guidance on its intended use and limitations. Further production, updates, and support are scoped separately.']],
     faq: [['How is AI-assisted work reviewed?', 'Human editing, source checking, and any subject-expert approval are assigned before publication or delivery.'], ['Which tools and subscriptions are included?', 'The proposal identifies the selected tools, limitations, and any third-party usage or subscription charges.']],
     cta: ['What would you like to create?', 'Bring a specific idea, asset, or recurring marketing task to discuss with Adele.'],
@@ -47,6 +52,7 @@ const familyInfo = {
     card: ['CAMPAIGNS', 'A defined offer, relevant advertising, and focused landing pages.'],
     included: ['Campaign objectives and targeting', 'Ad copy and agreed creative', 'Landing-page planning and implementation', 'Agreed conversion tracking', 'Launch checks', 'Management and reporting where included'],
     processHeading: 'We plan, create, and launch your campaign.',
+    examplesHeading: 'Campaigns built around a clear offer and next step.',
     process: [['We plan the campaign', 'We discuss your goals and audience, then propose the campaign approach, scope, advertising budget, and measurement plan for your approval.'], ['We create the ads and landing page', 'We develop the agreed copy, creative, and landing page. You review business details, provide feedback, and arrange any required internal approvals.'], ['We check and launch', 'We test the landing page, check the agreed tracking, and complete campaign setup. We submit approved ads to the platform and launch once its required review is complete.'], ['We review the next steps', 'We explain what has been delivered and how to access it. Where ongoing campaign management is included, we monitor performance and make adjustments within the agreed scope.']],
     faq: [['Are advertising spend and Magneo fees separate?', 'Yes. The proposal separates Magneo’s work from the budget paid directly to advertising platforms.'], ['Who is responsible for tracking and approval?', 'The proposal defines tracking access and responsibilities. You approve the final offer and claims before launch.']],
     cta: ['What would you like to promote?', 'Tell Adele about the offer, audience, and any campaigns already running.'],
@@ -56,6 +62,7 @@ const familyInfo = {
     card: ['POSITIONING', 'Your expertise, professional voice, and public presence.'],
     included: ['Positioning and audience discovery', 'Professional introduction and biography', 'Profile messaging', 'Voice and content themes', 'Visual direction', 'A plan for applying the positioning'],
     processHeading: 'We shape how your expertise is presented.',
+    examplesHeading: 'Personal-brand assets grounded in your real expertise.',
     process: [['We define your positioning', 'We discuss your experience, audience, and goals, then recommend the themes and messages that will guide your personal brand.'], ['We develop your profiles and content', 'We create the agreed biographies, profile copy, and content direction using information and examples you provide.'], ['We refine with your feedback', 'You confirm that the work accurately reflects your experience and point of view. We make the agreed revisions.'], ['We prepare you to use it', 'We deliver the approved materials and guidance for applying them consistently. Ongoing content creation or profile management is scoped separately.']],
     faq: [['What input do you need from me?', 'Your experience, audience, goals, and feedback are essential so the work reflects your real perspective.'], ['Is ongoing content included?', 'Only where specified. The proposal distinguishes positioning and profile work from recurring content production.']],
     cta: ['What do you want to be known for?', 'Tell Adele about your work, audience, and what your current profile does not yet communicate.'],
@@ -136,6 +143,15 @@ const industryInputs = {
   },
 };
 
+const specialistExamplesHeadings = {
+  'ai-seo': 'AI-assisted SEO research, briefs, and content improvements.',
+  'ai-social-media-marketing': 'AI-assisted social content shaped by human editorial direction.',
+  'ai-ugc-ai-video-production': 'AI-assisted video concepts produced for specific marketing uses.',
+  'ai-web-design-conversion': 'Website and landing-page concepts developed for clearer conversion paths.',
+  'ai-content-marketing': 'Articles and content assets developed from approved briefs and sources.',
+  'compliance-aware-ai-workflows': 'Review workflows designed around your approval requirements.',
+};
+
 function processForPage(page, family) {
   if (page.process) return page.process;
   if (!page.industry) return family.process;
@@ -147,6 +163,11 @@ function processForPage(page, family) {
   if (page.family === 'ppc') return family.process.map((step, index) => index === 0 ? [step[0], `We discuss your ${input.ppc}, then propose the campaign approach, scope, advertising budget, and measurement plan for your approval.`] : step);
   if (page.family === 'branding') return family.process.map((step, index) => index === 0 ? [step[0], `We discuss your ${input.branding}, then recommend the themes and messages that will guide your personal brand.`] : step);
   return family.process;
+}
+
+function describeOffering(copy) {
+  if (/^(We|You)\b/.test(copy)) return copy;
+  return `We ${copy.charAt(0).toLowerCase()}${copy.slice(1)}`;
 }
 
 const familySlugs = Object.entries(pages).reduce((groups, [slug, page]) => {
@@ -172,6 +193,9 @@ export function getChildServiceData(slug) {
     ...page,
     card: page.card || family.card,
     included: page.family === 'ai' ? page.focus : [...family.included, ...page.focus],
+    examples: page.examples.map(([title, copy]) => [title, describeOffering(copy)]),
+    examplesEyebrow: 'What we can create',
+    examplesHeading: page.examplesHeading || specialistExamplesHeadings[slug] || family.examplesHeading,
     process: processForPage(page, family),
     processEyebrow: 'How we work',
     processHeading: page.processHeading || family.processHeading,
