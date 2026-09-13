@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, Navigate, useLocation, useParams } from 'react-router-dom';
 import './styles/service-content-review.css';
 import { getChildServiceData } from './data/child-service-review-data.js';
+import { relatedArticlesFor } from './data/related-articles.js';
 
 const portfolioLinks = {
   websites: '/portfolio/#portfolio-websites',
@@ -117,11 +118,6 @@ const pageData = {
     ],
     cta: ['Which task keeps repeating?','Tell Adele how the process works today and where it slows you down.'],
     related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
-    relatedArticles: [
-      ['Hyper-Personalization with AI for SaaS & Tech Brands','https://blog.magneo.ca/blog/hyper-personalization-with-ai-for-saas-tech-brands/'],
-      ['Using AI to Repurpose Content and Personalize Advisor Outreach','https://blog.magneo.ca/blog/using-ai-to-repurpose-content-and-personalize-advisor-outreach/'],
-      ['AI Marketing for Law Firms: Balancing AI and Human Creativity','https://blog.magneo.ca/blog/ai-marketing-for-law-firms/'],
-    ],
   },
   'ppc-landing-pages-for-regulated-industries': {
     title: 'PPC & Landing Pages for Regulated Industries',
@@ -282,35 +278,51 @@ function FinalCta({ data }) {
   return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to="/contact/#contact-enquiry">Discuss your project</Link></div></div></div></section>;
 }
 
-function StandardReview({ data }) {
+function RelatedColumns({ serviceLinks, industryLinks, articles }) {
+  useEffect(() => {
+    if (window.location.hash === '#related-resources') document.getElementById('related-resources')?.scrollIntoView();
+  }, []);
+  return <section id="related-resources" className="related-section scr-related scr-related-with-articles"><div className="container">
+    <div><h2>Related Services</h2><i/><ul>{serviceLinks.map(([label,path])=><li key={`${path}-${label}`}><Link to={path}>{label}</Link></li>)}</ul></div>
+    <div><h2>Related Industries</h2><i/><ul>{industryLinks.map(([label,path])=><li key={`${path}-${label}`}><Link to={path}>{label}</Link></li>)}</ul></div>
+    <div><h2>Related Articles</h2><i/><ul>{articles.map(([label,path])=><li key={path}><a href={path}>{label}</a></li>)}</ul></div>
+  </div></section>;
+}
+
+function StandardReview({ data, slug }) {
+  const relatedArticles = relatedArticlesFor({ slug });
   return <div className="scr-page"><ReviewHero data={data}/>
     <section className="section soft"><div className="container"><div className="label">Audience</div><h2>Who this service is for.</h2><div className="grid four scr-audience">{audiences.map(([label,path])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3></Link>)}</div></div></section>
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal will confirm the deliverables, responsibilities, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
-    <section className={`related-section scr-related${data.relatedArticles ? ' scr-related-with-articles' : ''}`}><div className="container"><div><h2>Related Services</h2><i/><ul>{data.related.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div><div><h2>Related Industries</h2><i/><ul>{audiences.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div>{data.relatedArticles && <div><h2>Related Articles</h2><i/><ul>{data.relatedArticles.map(([label,path])=><li key={path}><a href={path}>{label}</a></li>)}</ul></div>}</div></section>
+    <RelatedColumns serviceLinks={data.related} industryLinks={audiences} articles={relatedArticles}/>
     <FinalCta data={data}/>
   </div>;
 }
 
 function ChildReview({ data }) {
+  const serviceLinks = data.related.filter(([,path]) => path.startsWith('/services/') || path.startsWith('/portfolio/'));
+  const industryLinks = data.related.filter(([,path]) => !path.startsWith('/services/') && !path.startsWith('/portfolio/'));
+  const relatedArticles = relatedArticlesFor(data);
   return <div className="scr-page"><ReviewHero data={data}/>
     {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
-    <section className="related-section scr-related scr-child-related"><div className="container"><div><h2>Continue exploring</h2><i/><ul>{data.related.map(([label,path])=><li key={`${path}-${label}`}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>
+    <RelatedColumns serviceLinks={serviceLinks} industryLinks={industryLinks} articles={relatedArticles}/>
     <FinalCta data={data}/>
   </div>;
 }
 
 function AiOverviewReview() {
+  const relatedArticles = relatedArticlesFor({ slug: 'ai-powered-digital-marketing' });
   return <div className="scr-page"><ReviewHero data={aiOverview}/>
     <section className="section"><div className="container"><div className="label">AI service areas</div><h2>Use AI where it supports a defined marketing task.</h2><p className="scr-ai-intro">AI creative produces assets such as visuals and video. Brand-voice tools and custom GPTs support drafting and repeatable tasks. Automation connects steps across tools. These can be scoped separately or combined.</p><div className="grid scr-ai-grid">{aiServices.map(([title,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{title}</h3><p>{copy}</p></Link>)}</div></div></section>
     <ProcessSection items={aiOverview.process} eyebrow={aiOverview.processEyebrow} heading={aiOverview.processHeading}/>
-    <section className="related-section scr-related"><div className="container"><div><h2>Related Services</h2><i/><ul><li><Link to="/services/ai-automation-for-regulated-industries-magneo/">AI Automation</Link></li><li><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Social Media & LinkedIn</Link></li></ul></div><div><h2>Related Industries</h2><i/><ul>{audiences.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>
+    <RelatedColumns serviceLinks={[["AI Automation", "/services/ai-automation-for-regulated-industries-magneo/"], ["Social Media & LinkedIn", "/services/social-media-linkedin-marketing-for-regulated-industries/"]]} industryLinks={audiences} articles={relatedArticles}/>
     <FinalCta data={aiOverview}/>
   </div>;
 }
@@ -324,5 +336,5 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
   if (childData) return <ChildReview data={childData}/>;
-  return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data}/>;
+  return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;
 }

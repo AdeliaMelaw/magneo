@@ -191,6 +191,7 @@ export function getChildServiceData(slug) {
   related.push(['All services', '/services/'], ['Complete service directory', '/services/directory/']);
   return {
     ...page,
+    slug,
     card: page.card || family.card,
     included: page.family === 'ai' ? page.focus : [...family.included, ...page.focus],
     examples: page.examples.map(([title, copy]) => [title, describeOffering(copy)]),
