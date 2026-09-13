@@ -157,8 +157,8 @@ function Footer({description='Digital marketing agency for regulated industries.
 
 export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/" element={<HomeTest/>}/>
-  <Route path="/home/test" element={<Navigate to="/" replace/>}/>
-  <Route path="/home/test/" element={<Navigate to="/" replace/>}/>
+  <Route path="/home/test" element={<HomeTest isTest/>}/>
+  <Route path="/home/test/" element={<HomeTest isTest/>}/>
   <Route path="/test" element={<TestLawyer/>}/><Route path="/test/" element={<TestLawyer/>}/>
   <Route path="/test2" element={<TestLawyer2/>}/><Route path="/test2/" element={<TestLawyer2/>}/>
   <Route path="/test3" element={<TestLawyer3/>}/><Route path="/test3/" element={<TestLawyer3/>}/>

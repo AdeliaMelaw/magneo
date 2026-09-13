@@ -17,7 +17,13 @@ const process = [
   ['04', 'Launch and improve', 'We prepare the final assets, support launch, and identify useful next steps.']
 ];
 
-function HomeSeo() {
+const collaborationPanels = [
+  { label: 'Strategy', eyebrow: 'Strategy first', heading: 'We start with your business.', text: 'We review your audience, offer, and priorities, then recommend what to create. You know what the project includes and how it supports your goals before work begins.' },
+  { label: 'Creative', eyebrow: 'Creative with purpose', heading: 'We make your expertise easier to understand.', text: 'We turn complex services into clear messages, distinctive design, and useful content. Each piece is shaped around your brand and what your audience needs to know.' },
+  { label: 'Collaboration', eyebrow: 'Built for collaboration', heading: 'We keep you involved at the right moments.', text: 'We create the work and share it at agreed review stages. You provide feedback and confirm business details. Where needed, we include your internal approval process before publication.' }
+];
+
+function HomeSeo({ isTest = false }) {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = 'Magneo | Marketing That Makes Your Expertise Clear';
@@ -47,7 +53,7 @@ function HomeSeo() {
       robots.name = 'robots';
       document.head.appendChild(robots);
     }
-    robots.content = 'index, follow';
+    robots.content = isTest ? 'noindex, nofollow, noarchive' : 'index, follow';
     return () => {
       document.title = previousTitle;
       if (!existingDescription) description.remove();
@@ -57,12 +63,13 @@ function HomeSeo() {
       if (!existing) robots.remove();
       else robots.content = previousRobots || '';
     };
-  }, []);
+  }, [isTest]);
   return null;
 }
 
-export default function HomeTest() {
+export default function HomeTest({ isTest = false }) {
   const [videoOpen, setVideoOpen] = useState(false);
+  const [activeCollaborationPanel, setActiveCollaborationPanel] = useState(0);
   const dialogRef = useRef(null);
   const videoButtonRef = useRef(null);
 
@@ -70,6 +77,10 @@ export default function HomeTest() {
     setVideoOpen(false);
     window.setTimeout(() => videoButtonRef.current?.focus(), 0);
   };
+
+  useEffect(() => {
+    if (window.location.hash === '#home-collaboration') document.getElementById('home-collaboration')?.scrollIntoView({ block: 'center' });
+  }, []);
 
   useEffect(() => {
     if (!videoOpen) return undefined;
@@ -89,7 +100,7 @@ export default function HomeTest() {
   }, [videoOpen]);
 
   return <div className="ht-page">
-    <HomeSeo />
+    <HomeSeo isTest={isTest} />
     <main>
       <section className="ht-hero">
         <div className="ht-shell ht-hero-inner">
@@ -143,7 +154,16 @@ export default function HomeTest() {
           <div className="ht-section-copy ht-section-copy-light"><span className="ht-eyebrow">Why Magneo</span><h2 id="ht-why-title">Clear scope. Thoughtful work. Practical collaboration.</h2></div>
           <div className="ht-why-grid">
             <article className="ht-why-card ht-adele-card"><img src="/adele-salikhova.jpg" alt="Adele Salikhova, founder of Magneo" /><div><span>Founder-led</span><h3>Led by Adele Salikhova</h3><p>Adele brings 10+ years of marketing experience to businesses in regulated industries and stays closely involved from strategy through delivery.</p><Link to="/about/">About Magneo <b aria-hidden="true">→</b></Link></div></article>
-            <article className="ht-why-card ht-review-card"><span>Built for collaboration</span><h3>A clear review process</h3><p>You know what is being created, when feedback is needed, and what happens next. For regulated businesses, the process can include internal review before anything is published.</p><div className="ht-review-line" aria-hidden="true"><i /><i /><i /></div></article>
+            <article className="ht-why-card ht-review-card" id="home-collaboration">
+              <div className="ht-review-content" id="ht-collaboration-panel" role="region" aria-live="polite" aria-labelledby={`ht-collaboration-tab-${activeCollaborationPanel + 1}`} key={activeCollaborationPanel}>
+                <span>{collaborationPanels[activeCollaborationPanel].eyebrow}</span>
+                <h3>{collaborationPanels[activeCollaborationPanel].heading}</h3>
+                <p>{collaborationPanels[activeCollaborationPanel].text}</p>
+              </div>
+              <div className="ht-review-controls" role="group" aria-label="Choose collaboration panel">
+                {collaborationPanels.map((panel, index) => <button id={`ht-collaboration-tab-${index + 1}`} type="button" aria-pressed={activeCollaborationPanel === index} aria-controls="ht-collaboration-panel" className={activeCollaborationPanel === index ? 'is-active' : ''} onClick={() => setActiveCollaborationPanel(index)} key={panel.label}><i aria-hidden="true" /><span>{panel.label}</span></button>)}
+              </div>
+            </article>
           </div>
         </div>
       </section>
