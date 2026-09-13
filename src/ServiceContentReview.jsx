@@ -666,6 +666,16 @@ function RelatedColumns({ serviceLinks, industryLinks, articles }) {
   </div></section>;
 }
 
+function FaqAnswer({ answer }) {
+  if (typeof answer !== 'object' || answer === null || !answer.path) return answer;
+  return <>{answer.before}<Link to={answer.path}>{answer.label}</Link>{answer.after}</>;
+}
+
+function ChildVisualExample({ example }) {
+  if (!example) return null;
+  return <section className="section scr-child-visual"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><article className="scr-child-visual-card"><div className="scr-social-video"><video controls playsInline preload="metadata" poster={example.poster} aria-label={example.alt} onPlay={(event)=>{event.currentTarget.nextElementSibling.hidden=true;}} onEnded={(event)=>{event.currentTarget.nextElementSibling.hidden=false;}}><source src={example.video} type="video/mp4"/>Your browser does not support embedded video.</video><button type="button" aria-label={example.alt} onClick={(event)=>{event.currentTarget.previousElementSibling.play();}}><span aria-hidden="true">▶</span></button></div><div><span className="label">{example.label}</span><h3>{example.title}</h3><p>{example.copy}</p><Link to={example.link}>Explore social content examples <span aria-hidden="true">→</span></Link></div></article></div></section>;
+}
+
 function StandardReview({ data, slug }) {
   const relatedArticles = relatedArticlesFor({ slug });
   const pageAudiences = data.audiences || audiences;
@@ -680,7 +690,7 @@ function StandardReview({ data, slug }) {
     {data.visualExamples && <SocialVisualExamples/>}
     <PurposeVisualSection visual={data.purposeVisual}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
-    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p><FaqAnswer answer={answer}/></p></details>)}</div></div></section>
     {!data.resourcesAfterCta && resources}
     <FinalCta data={data}/>
     {data.resourcesAfterCta && resources}
@@ -698,11 +708,12 @@ function ChildReview({ data }) {
   const resources = <RelatedColumns serviceLinks={serviceLinks} industryLinks={industryLinks} articles={relatedArticles}/>;
   return <div className="scr-page"><ReviewHero data={data}/>
     {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
-    <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
+    <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div>{data.scopeNote && <div className="container"><p className="scr-scope-note">{data.scopeNote}</p></div>}</section>
     <DecisionSection decision={data.decision}/>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <ChildVisualExample example={data.visualExample}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
-    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p><FaqAnswer answer={answer}/></p></details>)}</div></div></section>
     {!data.resourcesAfterCta && resources}
     <FinalCta data={data}/>
     {data.resourcesAfterCta && resources}
