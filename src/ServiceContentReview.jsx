@@ -91,6 +91,75 @@ const pageData = {
     relatedIndustries: audiences,
     related: [['SEO & Content','/services/seo-for-regulated-industries/'],['PPC & Landing Pages','/services/ppc-landing-pages-for-regulated-industries/']],
   },
+  'seo-for-regulated-industries': {
+    title: 'SEO for Regulated Industries',
+    seoTitle: 'SEO for Regulated Industries | Magneo',
+    metaDescription: 'Technical SEO, search strategy, and content for regulated industries. Explore project scopes, industry-specific services, and practical measurement.',
+    description: 'Relevant search visibility starts with a website that answers the right questions. Magneo combines technical SEO, search research, and content development to help regulated businesses present their services clearly and address the information prospective clients need.',
+    primary: ['Discuss your SEO priorities', '/contact/#contact-enquiry'],
+    secondary: ['Explore SEO services by industry', '#seo-industries'],
+    cardEyebrow: 'SEARCH WITH A PURPOSE',
+    card: ['Relevant searches.\nUseful pages.', 'A focused plan connecting your services, website content, and enquiry routes.'],
+    seoPage: true,
+    audienceId: 'seo-industries',
+    audienceHeading: 'SEO shaped around your audience.',
+    audiences: [
+      ['Law firms', '/services/seo-for-the-legal-industry/', 'Practice-area content and local search information for people researching legal help.'],
+      ['Financial advisors and wealth firms', '/services/seo-for-financial-advisors-wealth-firms/', 'Service explanations and reviewed educational content for prospective advisory clients.'],
+      ['Healthcare and MedTech', '/services/seo-for-the-healthcare-medtech-industry/', 'Patient-facing service information or product content for professional buyers.'],
+    ],
+    audienceClosing: ['Working in another regulated or expert-led sector? Describe your business when you ', 'enquire', '.'],
+    scopeHeading: 'What an SEO engagement can include.',
+    scopeIntro: 'Your proposal identifies the priorities, deliverables, implementation responsibilities, and reporting included.',
+    included: [
+      ['Technical review', 'Checks on crawling, indexing, page structure, and technical issues affecting the agreed website scope.'],
+      ['Search and page mapping', 'Research connecting relevant searches with existing pages or clearly justified new content.'],
+      ['Content improvement', 'Revised service information, headings, internal links, and supporting content developed around visitor questions.'],
+      ['Local search', 'Accurate location information and eligible business-profile work where local visibility is relevant.'],
+      ['Implementation', 'Agreed changes completed by Magneo or coordinated with your developer, with responsibilities confirmed in advance.'],
+      ['Reporting', 'A record of completed work, available search data, and agreed enquiry measurements.'],
+    ],
+    progress: {
+      heading: 'A clear view of the work and its progress.',
+      items: [
+        ['Completed work', 'The pages, fixes, and content delivered during the engagement.'],
+        ['Search visibility', 'Relevant queries, impressions, clicks, and landing-page trends where data is available.'],
+        ['Enquiry activity', 'Agreed website actions and enquiries, with business outcomes assessed separately.'],
+      ],
+      closing: 'Search visibility is one part of the picture. Enquiry relevance and the services attracting interest help inform the next priorities.',
+    },
+    examplesHeading: 'Start with a defined SEO priority.',
+    examplesSoft: false,
+    examples: [
+      ['Website review and action plan', 'An assessment of the agreed website scope, with prioritised recommendations and a clear distinction between findings and implementation.'],
+      ['Focused improvement project', 'A defined set of page, content, or technical changes addressing an agreed priority.'],
+      ['Ongoing SEO support', 'Continued implementation, content work, and review within an agreed recurring scope.'],
+    ],
+    examplesNote: 'Availability, fees, reporting frequency, and terms are confirmed in the proposal.',
+    processHeading: 'From search questions to practical improvements.',
+    process: [
+      ['Baseline and priorities', 'Magneo reviews the website, available data, and business goals to identify the work worth prioritising.'],
+      ['Agreed action plan', 'You receive a proposed scope explaining the changes, responsibilities, and measures of progress.'],
+      ['Implementation and review', 'Technical and content work proceeds within the agreed scope. Your designated reviewer confirms specialist information before publication.'],
+      ['Progress and next steps', 'Completed work and available performance data guide the next recommendations.'],
+    ],
+    faq: [
+      ['How long does SEO take?', 'Timing depends on the website’s starting point, competition, implementation, and how search engines process changes. The proposal sets delivery milestones; ranking or enquiry improvements cannot be promised by a fixed date.'],
+      ['What affects the cost?', 'Website size, technical complexity, content requirements, and the amount of implementation affect the scope. Fees and any recurring commitment are confirmed before work begins.'],
+      ['Can you work with our existing developer?', 'Yes. The scope can separate recommendations from implementation and identify which changes Magneo handles and which remain with your developer.'],
+      ['Is content approval included in the process?', 'The project can include your internal review stages. Your designated reviewers remain responsible for confirming specialist facts and publication approval.'],
+      ['Can you guarantee first-page rankings?', 'No. Search rankings depend on factors outside any agency’s control. The engagement focuses on defined work, relevant priorities, and transparent measurement.'],
+    ],
+    cta: ['What should the right people find you for?', 'Share your website, priority services, and the markets you serve. Those details help establish whether the next step is a review, a focused project, or ongoing support.'],
+    ctaButton: ['Discuss your SEO priorities', '/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
+    relatedIndustries: audiences,
+    related: [
+      ['SEO for Law Firms & Legal Professionals', '/services/seo-for-the-legal-industry/'],
+      ['SEO for Financial Advisors & Wealth Firms', '/services/seo-for-financial-advisors-wealth-firms/'],
+      ['SEO for Healthcare & MedTech', '/services/seo-for-the-healthcare-medtech-industry/'],
+    ],
+  },
   'social-media-linkedin-marketing-for-regulated-industries': {
     title: 'Social Media & LinkedIn Marketing for Regulated Industries',
     description: 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
@@ -325,7 +394,7 @@ function AutomationOrbitCard({ orbit }) {
 
 function ReviewHero({ data }) {
   const hasFeatureCard = data.heroPortfolio || data.heroOrbit;
-  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0]}</strong><p>{data.card[1]}</p></div>}</div></section>;
+  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
 }
 
 function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define the work, responsibilities, and next steps.' }) {
@@ -340,6 +409,11 @@ function DecisionSection({ decision }) {
 function PurposeVisualSection({ visual }) {
   if (!visual) return null;
   return <section className="section scr-purpose"><div className="container"><div className="label">{visual.eyebrow}</div><h2>{visual.heading}</h2><div className="scr-purpose-grid"><figure className="scr-purpose-figure"><Link className="scr-purpose-image-link" to={visual.url} aria-label={visual.linkLabel}><span className="scr-browser-chrome" aria-hidden="true"><i/><i/><i/></span><span className="scr-purpose-image"><img src={visual.image} alt={visual.imageAlt} width="1440" height="720" loading="lazy" decoding="async"/>{visual.points.map(([, , markerLabel], index)=><span className={`scr-purpose-marker scr-purpose-marker-${index + 1}`} aria-label={`${index + 1}. ${markerLabel}`} key={markerLabel}>{index + 1}</span>)}</span></Link><figcaption><strong>{visual.conceptLabel}</strong><span>{visual.caption}</span><Link to={visual.url}>{visual.linkLabel}</Link></figcaption></figure><ol className="scr-purpose-points">{visual.points.map(([title, description], index)=><li key={title}><span>{index + 1}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol></div></div></section>;
+}
+
+function ProgressSection({ progress }) {
+  if (!progress) return null;
+  return <section className="section soft scr-progress"><div className="container"><h2>{progress.heading}</h2><div className="grid scr-progress-grid">{progress.items.map(([title, copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-progress-closing">{progress.closing}</p></div></section>;
 }
 
 function FinalCta({ data }) {
@@ -362,10 +436,11 @@ function StandardReview({ data, slug }) {
   const relatedArticles = relatedArticlesFor({ slug });
   const pageAudiences = data.audiences || audiences;
   const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries || pageAudiences} articles={relatedArticles}/>;
-  return <div className="scr-page"><ReviewHero data={data}/>
-    <section className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className="grid four scr-audience">{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div></div></section>
+  return <div className={`scr-page${data.seoPage ? ' scr-page-seo' : ''}`}><ReviewHero data={data}/>
+    <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2><p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p></div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
-    <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <ProgressSection progress={data.progress}/>
+    <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>
     <PurposeVisualSection visual={data.purposeVisual}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
