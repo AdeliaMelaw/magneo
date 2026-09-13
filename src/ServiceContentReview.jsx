@@ -414,34 +414,86 @@ const pageData = {
   },
   'ai-automation-for-regulated-industries-magneo': {
     title: 'AI Automation for Regulated Industries',
-    description: 'Connect repetitive marketing tasks across your existing tools. Start with a defined workflow for content, enquiries, or follow-up, with clear responsibilities and human review where needed.',
-    primary: ['Discuss a workflow', '/contact/#contact-enquiry'], secondary: ['Explore workflow examples', portfolioLinks.ai],
+    seoTitle: 'AI Automation for Regulated Industries | Magneo',
+    metaDescription: 'Connect enquiries, content approvals and reporting with AI automation for regulated industries. Explore workflow mapping, integrations, testing and handover.',
+    description: 'Less manual copying, fewer disconnected handoffs, and a clearer follow-up process. Magneo maps and builds marketing workflows for enquiries, content approvals, and reporting, with AI-assisted steps where useful and human review where decisions matter.',
+    primary: ['Discuss your workflow', '/contact/#contact-enquiry'], secondary: ['See a workflow example', '#workflow-example'],
+    heroMicrocopy: 'Start with one recurring task. No technical brief required.',
     card: ['WORKFLOWS', 'Connect repetitive tasks with clear review and approval steps.'],
     heroOrbit: {
       url: '/portfolio/#ai-marketing',
       tools: ['ChatGPT', 'Claude', 'Make', 'AI agents', 'HubSpot', 'Zapier'],
     },
-    included: ['Review of the current process and tools','Workflow mapping and requirements','Agreed integrations and automation setup','AI-assisted steps where appropriate','Review points, exception handling, and testing','Documentation, handover, and separately scoped maintenance'],
+    hideAudience: true,
+    scopeHeading: 'What an automation project can include.',
+    scopeIntro: 'Your proposal defines the workflow, connected tools, review points, and support arrangements before the build begins.',
+    included: [
+      ['Workflow mapping','A documented starting point, sequence of actions, responsible people, and intended outcome.'],
+      ['Tool and access review','Confirmation of available integrations, permissions, subscription requirements, and technical limitations.'],
+      ['Configuration and connections','The agreed triggers, actions, data fields, and AI-assisted steps.'],
+      ['Testing and exception handling','Checks for normal operation, missing information, failed connections, and review requirements.'],
+      ['Documentation and handover','A walkthrough of how the workflow runs, how to pause it, and who handles routine checks.'],
+      ['Support arrangements','A clear distinction between the initial project and any ongoing monitoring, maintenance, or future changes.'],
+    ],
+    industryCards: {
+      heading: 'Automation for your industry.',
+      items: [
+        ['Law firms and legal departments','/services/ai-automation-for-law-firms-legal-departments-magneo/','Enquiry handoffs, content review, and routine marketing administration.'],
+        ['Financial advisors and firms','/services/ai-automation-for-financial-advisors-firms-fintech-magneo/','CRM handoffs, reviewed communications, and recurring marketing reporting.'],
+        ['Healthcare providers and clinics','/services/ai-automation-for-healthcare-providers-clinics-magneo/','Administrative enquiry routing and content approvals, with information boundaries defined before setup.'],
+        ['Tech, SaaS and AI companies','/services/ai-marketing-automation-for-tech-saas-ai-companies-magneo/','Demo enquiries, CRM routing, launch-content handoffs, and reporting workflows.'],
+      ],
+    },
     examples: [
-      ['Enquiry-routing workflow','We transfer agreed form information into a CRM, notify the responsible person, and create a follow-up task.'],
-      ['Content-approval workflow','We connect defined review stages and notify the next person when action is needed.'],
-      ['Reporting-summary workflow','We bring selected marketing data into a draft summary for someone to check before sharing.'],
+      ['Enquiry routing and follow-up','Form details move into the agreed CRM, the right person receives a notification, and a follow-up task is created. A defined handoff makes responsibility clear after an enquiry arrives.'],
+      ['Content review and approval','Drafts move through defined review stages, with notifications for the next reviewer and a clear approval status. Publishing can remain a separate, authorised step.'],
+      ['Marketing reporting summaries','Selected marketing data is brought together in a draft summary for review. AI can assist with the written explanation, while a responsible person checks the figures and conclusions.'],
     ],
-    examplesEyebrow: 'What we can create',
-    examplesHeading: 'Automation designed around repeatable marketing tasks.',
-    processEyebrow: 'How we work',
-    processHeading: 'We build automation around how you work.',
-    process: [['We map the workflow','We review the task, tools, and handoffs involved, then identify what could be automated and where human review is needed.'],['We build the agreed setup','We confirm the workflow, required access, and responsibilities, then configure the connections and AI steps included in the scope.'],['We test it with you','We test typical scenarios, exceptions, and approval steps. You confirm that the workflow fits your process before it is put into use.'],['We explain and hand over','We document how the workflow operates, what needs monitoring, and how to pause it. Ongoing support and third-party tool costs are clarified in the scope.']],
+    examplesEyebrow: 'Automation examples',
+    examplesHeading: 'Less manual work between the steps.',
+    examplesIntro: 'Useful automation connects a recurring task to a clear next action. The right starting point depends on your tools, review requirements, and where work currently slows down.',
+    examplesNote: 'Examples illustrate possible project scopes. Tool compatibility and required access are confirmed before implementation.',
+    automationWorkflow: {
+      heading: 'From a new enquiry to a clear next step.',
+      label: 'Illustrative workflow — not a client case study',
+      steps: ['Website enquiry','CRM record','Owner notification','Follow-up task','Human response'],
+      copy: 'A new enquiry can trigger the routine administrative steps that follow. The responsible person receives the details and next action without manually moving the same information between tools.',
+      panelHeading: 'Where AI could help',
+      panelCopy: 'An optional AI step could draft a short enquiry summary for the recipient to check. The record creation, notification, and task assignment may only need standard automation rules.',
+      note: 'If required information is missing or a connection fails, the workflow should flag the issue for attention.',
+    },
+    processEyebrow: 'Project process',
+    processHeading: 'From a recurring task to a working workflow.',
+    processIntro: 'Magneo handles workflow planning, configuration, and testing. Your input confirms the business rules, access permissions, and approval responsibilities.',
+    process: [
+      ['Workflow discovery','The starting point is the task itself: how often it happens, which tools it touches, and where delays or repeated manual work occur.'],
+      ['Configuration','The agreed connections, rules, and AI steps are configured around the approved scope and available system access.'],
+      ['Testing and review','Typical scenarios and exceptions are checked before release. Your review confirms that the setup follows the intended process.'],
+      ['Launch and handover','Documentation and a practical walkthrough explain how the workflow operates, what needs monitoring, and how to pause it. Any ongoing support is agreed separately.'],
+    ],
+    startingPoint: {
+      heading: 'Start with one workflow worth improving.',
+      body: 'A focused first project makes the scope easier to define and the outcome easier to assess. A recurring enquiry handoff, content-approval sequence, or reporting task can provide a practical starting point.',
+      intro: 'The initial discussion covers:',
+      items: ['The task and how often it repeats.','The tools and people involved.','The steps that require review.','What a successful setup would change.'],
+      closing: 'From there, the proposed scope can identify the build requirements, software costs, and support needs.',
+      button: ['Discuss your workflow','/contact/#contact-enquiry'],
+    },
     faq: [
-      ['Can you work with our existing tools?','We first check their integration options, permissions, and limitations. The proposed workflow will identify any additional tools or subscriptions needed.'],
-      ['Does every automation need AI?','No. Some tasks are better handled by standard rules and integrations. AI is included where it serves a defined purpose.'],
-      ['What stays under human control?','We agree which steps require review, approval, or manual handling. External actions and exceptions are considered during workflow planning.'],
-      ['How is information handled?','Before implementation, we identify what information is needed, where it moves, which tools process it, and who can access it. Your organisation reviews the proposed setup against its requirements.'],
-      ['Who maintains the workflow?','The proposal identifies the owner and handover arrangements. Monitoring, updates, and ongoing support are scoped separately.'],
-      ['Are software subscriptions included?','The proposal distinguishes implementation fees from any third-party subscriptions or usage charges.'],
+      ['Can you work with our existing tools?','Compatibility depends on the tools, subscription plans, available integrations, and access permissions. These are checked before the build scope is confirmed.'],
+      ['Does every automation need AI?','No. Routing information, creating tasks, and sending notifications often work well with standard rules. AI is considered where interpretation, classification, or drafting adds a useful step.'],
+      ['What stays under human control?','Approval responsibilities are defined during planning. External messages, published content, and other important actions can require review before they proceed.'],
+      ['How is information handled?','The scope identifies what information moves between systems, which tools receive it, and who can access it. Sensitive information should not be included without an explicitly agreed requirement and appropriate review.'],
+      ['What does an automation project cost?','Pricing depends on the number of steps, systems involved, access requirements, testing needs, and support scope. The proposal should distinguish implementation costs from software subscriptions and ongoing services.'],
+      ['Who maintains the workflow?','Handover documentation identifies the routine checks and responsible owner. Ongoing monitoring, maintenance, and changes are included only when agreed in the support scope.'],
+      ['What happens if a connection fails?','Testing includes agreed failure scenarios and exception handling. The handover explains how issues are flagged and who is responsible for investigating them.'],
+      ['Can a project start with one task?','Yes. A focused workflow allows the process, responsibilities, and requirements to be established before considering additional automations.'],
     ],
-    cta: ['Which task keeps repeating?','Tell Adele how the process works today and where it slows you down.'],
-    related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
+    cta: ['Which task would you like to stop repeating?','Share the process that slows you down and the tools involved. The first conversation can establish whether automation is a practical fit and what a focused project would include.'],
+    ctaButton: ['Discuss your workflow','/contact/#contact-enquiry'],
+    ctaEmail: 'contact@magneo.ca',
+    resourcesAfterCta: true,
+    related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/'],['Compliance-Aware AI Workflows','/services/compliance-aware-ai-workflows/']],
   },
   'ppc-landing-pages-for-regulated-industries': {
     title: 'PPC & Landing Pages for Regulated Industries',
@@ -597,7 +649,7 @@ function PortfolioHeroCard({ preview }) {
 
 function AutomationOrbitCard({ orbit }) {
   return <Link className="scr-orbit-card" to={orbit.url} aria-label="Explore AI marketing and automation concepts">
-    <span className="scr-orbit-eyebrow">AI TOOL ECOSYSTEM</span>
+    <span className="scr-orbit-eyebrow">{orbit.label || 'AI AUTOMATION CONCEPT'}</span>
     <div className="scr-orbit-scene" aria-hidden="true">
       <span className="scr-orbit-line scr-orbit-line-one"/>
       <span className="scr-orbit-line scr-orbit-line-two"/>
@@ -610,11 +662,11 @@ function AutomationOrbitCard({ orbit }) {
 
 function ReviewHero({ data }) {
   const hasFeatureCard = data.heroPortfolio || data.heroOrbit;
-  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
+  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div>{data.heroMicrocopy && <p className="scr-hero-microcopy">{data.heroMicrocopy}</p>}</div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
 }
 
-function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define the work, responsibilities, and next steps.' }) {
-  return <section className="section dark"><div className="container"><div className="label">{eyebrow}</div><h2>{Array.isArray(heading) ? <>{heading[0]}<br/>{heading[1]}</> : heading}</h2><div className="process">{items.map(([title,copy],index)=><div className="process-row" key={title}><b>{String(index+1).padStart(2,'0')}</b><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></div></section>;
+function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define the work, responsibilities, and next steps.', intro }) {
+  return <section className="section dark"><div className="container"><div className="label">{eyebrow}</div><h2>{Array.isArray(heading) ? <>{heading[0]}<br/>{heading[1]}</> : heading}</h2>{intro && <p className="scr-process-intro">{intro}</p>}<div className="process">{items.map(([title,copy],index)=><div className="process-row" key={title}><b>{String(index+1).padStart(2,'0')}</b><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></div></section>;
 }
 
 function DecisionSection({ decision }) {
@@ -650,9 +702,24 @@ function WorkedExampleSection({ example }) {
   return <section className="section soft scr-worked-example"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><div className="scr-worked-grid"><div className="scr-page-diagram" aria-label="Illustration showing a service page linking with a supporting article">{example.pages.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p>{index === 0 && <i aria-hidden="true">↔</i>}</article>)}</div><aside><h3>{example.explanationTitle}</h3><p>{example.explanation}</p><strong>{example.label}</strong></aside></div></div></section>;
 }
 
+function IndustryCardsSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-industry-cards"><div className="container"><div className="label">Industry services</div><h2>{content.heading}</h2><div className="grid four">{content.items.map(([title,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{title}</h3><p>{copy}</p></Link>)}</div></div></section>;
+}
+
+function AutomationWorkflowSection({ workflow }) {
+  if (!workflow) return null;
+  return <section id="workflow-example" className="section scr-automation-workflow"><div className="container"><div className="label">{workflow.label}</div><h2>{workflow.heading}</h2><div className="scr-workflow-grid"><div><div className="scr-workflow-flow" role="img" aria-label={`Workflow: ${workflow.steps.join(' to ')}`}>{workflow.steps.map((step,index)=><div className="scr-workflow-step" key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < workflow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p className="scr-workflow-copy">{workflow.copy}</p><p className="scr-workflow-note">{workflow.note}</p></div><aside><span>Optional AI step</span><h3>{workflow.panelHeading}</h3><p>{workflow.panelCopy}</p></aside></div><Link className="scr-workflow-portfolio" to="/portfolio/#ai-marketing">Explore more AI marketing concepts <span aria-hidden="true">→</span></Link></div></section>;
+}
+
+function StartingPointSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-starting-point"><div className="container"><div className="scr-starting-card"><div><div className="label">A practical first project</div><h2>{content.heading}</h2><p>{content.body}</p></div><div><strong>{content.intro}</strong><ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul><p>{content.closing}</p><Link className="btn" to={content.button[1]}>{content.button[0]}</Link></div></div></div></section>;
+}
+
 function FinalCta({ data }) {
   const button = data.ctaButton || ['Discuss your project', '/contact/#contact-enquiry'];
-  return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link></div></div></div></section>;
+  return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link>{data.ctaEmail && <a className="scr-cta-email" href={`mailto:${data.ctaEmail}`}>{data.ctaEmail}</a>}</div></div></div></section>;
 }
 
 function RelatedColumns({ serviceLinks, industryLinks, articles }) {
@@ -689,12 +756,15 @@ function StandardReview({ data, slug }) {
     {!data.hideAudience && <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>}
     <AudienceSplitSection audience={data.audienceSplit}/>
     <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
+    <IndustryCardsSection content={data.industryCards}/>
     <ProgressSection progress={data.progress}/>
     <DecisionSection decision={data.decision}/>
-    {data.workedExample ? <WorkedExampleSection example={data.workedExample}/> : <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
+    {data.workedExample ? <WorkedExampleSection example={data.workedExample}/> : <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2>{data.examplesIntro && <p className="scr-examples-intro">{data.examplesIntro}</p>}<div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
+    <AutomationWorkflowSection workflow={data.automationWorkflow}/>
     {data.visualExamples && <SocialVisualExamples/>}
     <PurposeVisualSection visual={data.purposeVisual}/>
-    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading} intro={data.processIntro}/>
+    <StartingPointSection content={data.startingPoint}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p><FaqAnswer answer={answer}/></p></details>)}</div></div></section>
     {!data.resourcesAfterCta && resources}
     <FinalCta data={data}/>
