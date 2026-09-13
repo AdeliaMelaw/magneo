@@ -126,13 +126,13 @@ function titleCase(pathname) {
 
 function titleFor(pathname) {
   const child = childServiceDataForPath(pathname);
-  if (child) return `${child.title} | Magneo`;
+  if (child) return child.seoTitle || `${child.title} | Magneo`;
   return titleOverrides[pathname] || `${titleCase(pathname)} | Magneo`;
 }
 
 function descriptionFor(pathname) {
   const child = childServiceDataForPath(pathname);
-  if (child) return child.description;
+  if (child) return child.metaDescription || child.description;
   if (descriptions[pathname]) return descriptions[pathname];
   const label = titleCase(pathname);
   if (pathname.startsWith('/services/')) return `${label} from Magneo for regulated industries, built around authority, compliance-aware messaging, qualified demand, and measurable conversion.`;

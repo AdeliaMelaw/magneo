@@ -77,7 +77,62 @@ const industryLinks = {
 };
 
 const pages = {
-  'website-design-for-tech-companies-saas-products-magneo': { family: 'websites', industry: 'tech', title: 'Website Design for Tech Companies & SaaS Products', description: 'Explain your product, show how it fits into a customer’s work, and make the next step clear. Website strategy, copy, and design built around your users and buying process.', focus: ['Product and feature explanations', 'Use-case pages', 'Demo or trial journeys', 'Product screenshots supplied or approved by the business'], examples: [['Product launch website', 'Introduce the product, its intended users, and the next step for exploring it.'], ['Demo enquiry journey', 'Connect product information with a focused demo form and clear expectations.']], faq: ['Does this include building the software product?', 'This service concerns the marketing website. Application development, logged-in product interfaces, and complex product integrations require separate scoping.'] },
+  'website-design-for-tech-companies-saas-products-magneo': {
+    family: 'websites', industry: 'tech', title: 'Website Design for Tech Companies & SaaS Products',
+    seoTitle: 'SaaS & Tech Website Design | Magneo',
+    metaDescription: 'Website design for SaaS and tech companies, including product messaging, feature pages, use cases, and clear demo or trial journeys.',
+    description: 'Your product can be sophisticated without making the website hard to understand. Magneo develops marketing websites that explain what the product does, who it is for, and how to take the next step—from exploring a use case to requesting a demo.',
+    primary: ['Discuss your product website', '/contact/#contact-enquiry'],
+    secondary: ['Explore the website scope', '#website-scope'],
+    cardEyebrow: 'PRODUCT WEBSITE PLANNING',
+    card: ['Product. Use case. Next step.', 'A clear connection between what your product does and why a prospective customer would explore it.'],
+    scopeId: 'website-scope',
+    scopeHeading: 'Pages that support product evaluation.',
+    scopeIntro: 'The scope follows your product, buying process, and available assets.',
+    included: [
+      ['Product and feature pages', 'Explanations that connect capabilities with the tasks customers need to complete.'],
+      ['Use-case pages', 'Distinct journeys for relevant roles, teams, or applications without repeating the same feature list.'],
+      ['Demo and trial routes', 'Calls to action and forms aligned with your actual sales or self-service process.'],
+      ['Product visuals', 'Layouts for approved screenshots, walkthroughs, and demonstrations that help visitors understand the experience.'],
+      ['Development and measurement', 'Responsive implementation, agreed form connections, and measurement of meaningful website actions.'],
+    ],
+    decision: {
+      heading: 'A demo-led website and a trial-led website need different journeys.',
+      panels: [
+        ['Demo-led', 'Visitors need enough information to judge relevance before speaking with sales. Product context, use cases, and a clear explanation of what the demo involves support that decision.'],
+        ['Trial-led', 'Visitors need to understand what they can try, what is required to start, and where to get help. The website should connect those answers with the existing signup experience.'],
+      ],
+      closing: 'The website plan follows your actual buying process rather than adding every possible call to action.',
+    },
+    examples: [
+      ['Product launch website', 'A focused introduction for a new product, using available product information and approved visuals.'],
+      ['Website repositioning', 'Revised messaging and page structure when the product, audience, or offer has changed.'],
+      ['Product-content expansion', 'Additional feature or use-case pages that make the growing product easier to explore.'],
+    ],
+    preserveExampleCopy: true,
+    processHeading: 'From product knowledge to a clear website.',
+    process: [
+      ['Product discovery', 'Magneo reviews your product materials, audience, and sales journey to identify what the website needs to explain.'],
+      ['Message and page development', 'Product positioning, copy, and layouts take shape using your approved feature information and visuals.'],
+      ['Build and connection', 'The agreed marketing pages and forms are developed and connected to the specified tools. Your team confirms technical accuracy.'],
+      ['Release preparation', 'Testing covers the agreed website journeys before launch, followed by access and handover guidance.'],
+    ],
+    faqItems: [
+      ['Does this include building our SaaS application?', 'This service covers the marketing website. Application development, account systems, and in-product onboarding are separate requirements.'],
+      ['Can the website support demo requests and free trials?', 'Yes, where both routes fit your business. The page plan identifies which visitors each route serves and connects them to your existing demo or signup process.'],
+      ['Can you work from existing product documentation?', 'Product documentation, interviews, and demonstrations can inform the copy. Your team confirms feature accuracy and approves product claims before publication.'],
+      ['Can you connect our CRM or scheduling tool?', 'The proposed connection is assessed against the tools, access, and functionality required. Included integrations and any third-party costs are specified before development.'],
+    ],
+    cta: ['Does your website explain the product as clearly as your best demo?', 'Share your product website and describe where visitors need more clarity: the offer, the use cases, or the next step.'],
+    ctaButton: ['Discuss your product website', '/contact/#contact-enquiry'],
+    related: [
+      ['Website design services', '/services/website-design-for-regulated-professional-industries-magneo/'],
+      ['Social Media & LinkedIn for Tech, SaaS & AI', '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/'],
+      ['AI Marketing Automation for Tech, SaaS & AI', '/services/ai-marketing-automation-for-tech-saas-ai-companies-magneo/'],
+      ['Marketing for Tech & SaaS', '/tech-company-marketing/'],
+    ],
+    resourcesAfterCta: true,
+  },
   'website-design-for-healthcare-clinics-doctors-magneo': { family: 'websites', industry: 'healthcare', title: 'Website Design for Healthcare Clinics & Doctors', description: 'Help people understand your services, find practical clinic information, and choose how to contact you. Website planning, copy, and design shaped around the patient’s browsing experience.', focus: ['Services and practitioner profiles', 'Locations, hours, and appointment information', 'Clear booking or contact routes', 'Provider review of medical claims'], examples: [['Clinic website refresh', 'Bring services, practitioner information, and location details into a clear structure.'], ['Appointment information journey', 'Explain how appointments work and connect visitors to the clinic’s approved booking route.']], faq: ['Can you connect our booking system?', 'We first check the existing provider and its integration options. Any connection is defined in the proposal; clinical records and patient portals are not assumed to be included.'] },
   'website-design-for-financial-advisors-wealth-firms-magneo': { family: 'websites', industry: 'finance', title: 'Website Design for Financial Advisors & Wealth Firms', description: 'Present your services, professional background, and approach in language prospective clients can understand. Build a clear website journey from initial research to an introductory conversation.', focus: ['Client fit and service scope', 'Advisor biographies and verified credentials', 'How the relationship starts', 'Space for approved disclosures'], examples: [['Advisor website', 'Explain who you work with, what you offer, and how an introductory conversation works.'], ['Wealth-firm service structure', 'Organise different services so visitors can identify the support relevant to them.']], faq: ['Can our firm review the content before launch?', 'Yes. We agree on review stages and incorporate approved feedback before publication. The firm supplies or approves required disclosures and service claims.'] },
   'website-design-rebrand-for-law-firms-magneo': { family: 'websites', industry: 'legal', title: 'Website Design & Rebranding for Law Firms', description: 'Bring your firm’s positioning, practice areas, and lawyer profiles into a clear, consistent website. Scope a website refresh or a broader identity update around the firm you are building.', heroPortfolio: { label: 'WEBSITE CONCEPT', title: 'Personal Injury · Modern', image: '/portfolio/websites/personal-injury-modern-hero-preview.webp', imageAlt: 'Preview of Magneo’s modern personal-injury website concept', demoUrl: '/portfolio/legal-websites/personal-injury-bold/', portfolioUrl: '/portfolio/' }, focus: ['Practice-area structure', 'Lawyer profiles', 'Enquiry routes', 'Explicit distinction between website redesign and full rebranding'], examples: [['Practice-area website refresh', 'Help visitors understand the matters the firm handles and where to enquire.'], ['Firm identity update', 'Align agreed visual and messaging assets with a new website direction.']], faq: ['Does a website redesign include a new logo?', 'Only if brand identity work is included in the proposal. Website design and a full rebrand are separate scopes that can be combined.'], portfolio: ['Legal website concept demonstrations', '/portfolio/#portfolio-websites'] },
@@ -185,25 +240,27 @@ export function getChildServiceData(slug) {
     .filter((item) => item !== slug)
     .slice(0, 2)
     .map((item) => [pages[item].title, `/services/${item}/`]);
-  const related = [family.parent, ...siblingLinks];
-  if (page.industry) related.push(industryLinks[page.industry]);
-  if (page.portfolio) related.push(page.portfolio);
-  related.push(['All services', '/services/'], ['Complete service directory', '/services/directory/']);
+  const related = page.related || [family.parent, ...siblingLinks];
+  if (!page.related) {
+    if (page.industry) related.push(industryLinks[page.industry]);
+    if (page.portfolio) related.push(page.portfolio);
+    related.push(['All services', '/services/'], ['Complete service directory', '/services/directory/']);
+  }
   return {
     ...page,
     slug,
     card: page.card || family.card,
-    included: page.family === 'ai' ? page.focus : [...family.included, ...page.focus],
-    examples: page.examples.map(([title, copy]) => [title, describeOffering(copy)]),
+    included: page.included || (page.family === 'ai' ? page.focus : [...family.included, ...page.focus]),
+    examples: page.examples.map(([title, copy]) => [title, page.preserveExampleCopy ? copy : describeOffering(copy)]),
     examplesEyebrow: 'What we can create',
     examplesHeading: page.examplesHeading || specialistExamplesHeadings[slug] || family.examplesHeading,
     process: processForPage(page, family),
     processEyebrow: 'How we work',
     processHeading: page.processHeading || family.processHeading,
-    faq: [page.faq, ...family.faq],
-    cta: family.cta,
-    primary: ['Discuss your project', '/contact/#contact-enquiry'],
-    secondary: [`View ${family.parent[0]}`, family.parent[1]],
+    faq: page.faqItems || [page.faq, ...family.faq],
+    cta: page.cta || family.cta,
+    primary: page.primary || ['Discuss your project', '/contact/#contact-enquiry'],
+    secondary: page.secondary || [`View ${family.parent[0]}`, family.parent[1]],
     related,
     showAudience: page.family === 'ai',
   };
