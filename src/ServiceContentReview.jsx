@@ -319,7 +319,7 @@ function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define t
 
 function DecisionSection({ decision }) {
   if (!decision) return null;
-  return <section className="section soft scr-decision"><div className="container"><div className="label">Website journey</div><h2>{decision.heading}</h2>{decision.text && <p className="scr-decision-copy">{decision.text}</p>}{decision.panels && <div className="scr-decision-grid">{decision.panels.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>}<p className="scr-decision-closing">{decision.closing}</p></div></section>;
+  return <section className="section soft scr-decision"><div className="container"><div className="label">Website journey</div><h2>{decision.heading}</h2>{decision.text && <p className="scr-decision-copy">{decision.text}</p>}{decision.supporting && <p className="scr-decision-supporting">{decision.supporting}</p>}{decision.panels && <div className="scr-decision-grid">{decision.panels.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>}{decision.closing && <p className="scr-decision-closing">{decision.closing}</p>}</div></section>;
 }
 
 function FinalCta({ data }) {
