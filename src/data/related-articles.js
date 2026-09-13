@@ -55,6 +55,7 @@ const bySlug = {
   'seo-for-regulated-industries': [a.legalSeo, a.medicalSeo, a.financeContent],
   'seo-for-the-legal-industry': [a.legalSeo, a.legalFundamentals, a.legalAnalytics],
   'seo-for-financial-advisors-wealth-firms': [a.financeContent, a.advisorEmail, a.financeSocial],
+  'seo-for-the-healthcare-medtech-industry': [a.medicalSeo, a.clinicLocalSeo, a.clinicReputation],
   'social-media-linkedin-marketing-for-regulated-industries': [a.lawyerVideo, a.clinicVideo, a.financeSocial],
   'ai-automation-for-regulated-industries-magneo': [a.aiPersonalization, a.advisorAi, a.legalAi],
   'ai-powered-digital-marketing': [a.aiPersonalization, a.advisorAi, a.legalAi],

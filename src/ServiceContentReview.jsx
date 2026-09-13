@@ -276,6 +276,65 @@ const pageData = {
       ['PPC & Landing Pages for Financial Advisors', '/services/ppc-landing-pages-for-financial-advisors-fintech-magneo/'],
     ],
   },
+  'seo-for-the-healthcare-medtech-industry': {
+    title: 'SEO for Healthcare & MedTech',
+    seoTitle: 'Healthcare & MedTech SEO Services | Magneo',
+    metaDescription: 'SEO for healthcare providers and MedTech companies, with patient-focused service pages, professional product content, technical reviews, and reporting.',
+    description: 'A patient looking for care and a professional evaluating medical technology need different information. Magneo plans healthcare and MedTech SEO around those distinct searches, combining technical improvements with useful content and agreed specialist review.',
+    primary: ['Discuss your SEO priorities', '/contact/#contact-enquiry'],
+    secondary: ['Explore your audience’s needs', '#healthcare-seo-audiences'],
+    cardEyebrow: 'TWO DISTINCT AUDIENCES',
+    card: ['Patients seeking care.\nProfessionals evaluating technology.', 'The content plan follows the people the website needs to reach.'],
+    seoPage: true,
+    hideAudience: true,
+    audienceSplit: {
+      id: 'healthcare-seo-audiences',
+      heading: 'One sector. Different search journeys.',
+      items: [
+        ['Clinics and healthcare providers', 'Priorities may include services, practitioners, genuine locations, referral information, and appointment routes.'],
+        ['MedTech companies', 'Priorities may include product categories, intended professional users, applications, technical documentation, and enquiry or demonstration routes.'],
+      ],
+    },
+    scopeHeading: 'A scope matched to the audience.',
+    scopeIntro: '',
+    included: [
+      ['Search and content mapping', 'Patient-service searches or professional product queries connected to the appropriate pages.'],
+      ['Service or product explanations', 'Clear content addressing the information relevant to the intended visitor.'],
+      ['Specialist review', 'Defined approval responsibilities for health statements, product capabilities, and supporting information.'],
+      ['Technical foundations', 'Agreed checks and improvements affecting website crawling, indexing, and content organisation.'],
+      ['Local search where relevant', 'Accurate clinic and location information, with eligible business-profile work where included.'],
+      ['Measurement', 'Search and website activity assessed alongside agreed appointment-enquiry or commercial-enquiry measures.'],
+    ],
+    examplesHeading: 'SEO work shaped around healthcare and MedTech needs.',
+    examples: [
+      ['Clinic service-page improvements', 'Available care, practitioner information, practical details, and the appointment route brought into a clearer page structure.'],
+      ['Multiple-location content', 'Distinct information for real clinic locations, reflecting the services and practical details available at each.'],
+      ['MedTech product-content planning', 'Product and application pages organised around professional questions and approved supporting materials.'],
+    ],
+    processHeading: 'From audience needs to reviewed content.',
+    process: [
+      ['Audience and website review', 'Magneo identifies whether the project serves patients, professional buyers, or clearly separated groups.'],
+      ['Content priorities', 'The proposed plan maps the relevant services or products to useful page improvements and content gaps.'],
+      ['Specialist approval and implementation', 'Your designated reviewers confirm health information and product statements before approved changes are published.'],
+      ['Progress review', 'Reporting separates search activity from the agreed enquiry measures and identifies the next priorities.'],
+    ],
+    faq: [
+      ['Do clinics and MedTech companies need the same SEO approach?', 'No. Clinics often need service and local information for patients, while MedTech companies may need product and application content for professional buyers.'],
+      ['Who reviews medical and product statements?', 'Your designated clinical or technical reviewers confirm accuracy and publication approval. Magneo’s content work does not replace specialist judgement.'],
+      ['Can this support a clinic with several locations?', 'Yes. Each location should have accurate, useful information rather than identical pages with different place names.'],
+      ['Is Google Business Profile work relevant to MedTech?', 'It depends on the business model and eligibility. It is not automatically part of every MedTech engagement.'],
+      ['How will enquiries be measured?', 'The scope identifies relevant actions, such as appointment enquiries or product-demo requests. Analytics should not receive medical details or the contents of enquiry forms.'],
+    ],
+    cta: ['Who does your website need to reach?', 'Share your website and whether the priority is patient enquiries, professional product interest, or both. Include the services or products that matter most.'],
+    ctaButton: ['Discuss your SEO priorities', '/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
+    relatedIndustries: [['Healthcare providers', '/healthcare-marketing/']],
+    related: [
+      ['SEO services', '/services/seo-for-regulated-industries/'],
+      ['Website Design for Healthcare Clinics', '/services/website-design-for-healthcare-clinics-doctors-magneo/'],
+      ['PPC & Landing Pages for Healthcare & MedTech', '/services/ppc-landing-pages-for-healthcare-medtech/'],
+    ],
+  },
   'social-media-linkedin-marketing-for-regulated-industries': {
     title: 'Social Media & LinkedIn Marketing for Regulated Industries',
     description: 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
@@ -532,6 +591,11 @@ function ProgressSection({ progress }) {
   return <section className="section soft scr-progress"><div className="container"><h2>{progress.heading}</h2><div className="grid scr-progress-grid">{progress.items.map(([title, copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-progress-closing">{progress.closing}</p></div></section>;
 }
 
+function AudienceSplitSection({ audience }) {
+  if (!audience) return null;
+  return <section id={audience.id} className="section soft scr-audience-split"><div className="container"><div className="label">Audience</div><h2>{audience.heading}</h2><div className="scr-audience-split-grid">{audience.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{audience.closing && <p className="scr-audience-split-closing">{audience.closing}</p>}</div></section>;
+}
+
 function WorkedExampleSection({ example }) {
   if (!example) return null;
   return <section className="section soft scr-worked-example"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><div className="scr-worked-grid"><div className="scr-page-diagram" aria-label="Illustration showing a service page linking with a supporting article">{example.pages.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p>{index === 0 && <i aria-hidden="true">↔</i>}</article>)}</div><aside><h3>{example.explanationTitle}</h3><p>{example.explanation}</p><strong>{example.label}</strong></aside></div></div></section>;
@@ -559,6 +623,7 @@ function StandardReview({ data, slug }) {
   const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries || pageAudiences} articles={relatedArticles}/>;
   return <div className={`scr-page${data.seoPage ? ' scr-page-seo' : ''}`}><ReviewHero data={data}/>
     {!data.hideAudience && <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>}
+    <AudienceSplitSection audience={data.audienceSplit}/>
     <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <ProgressSection progress={data.progress}/>
     <DecisionSection decision={data.decision}/>
