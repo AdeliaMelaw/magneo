@@ -57,6 +57,21 @@ const pageData = {
     ],
     examplesEyebrow: 'What we can create',
     examplesHeading: 'A new website, a redesign, or a focused addition.',
+    purposeVisual: {
+      eyebrow: 'DESIGN WITH A PURPOSE',
+      heading: 'Every page should help visitors make a decision.',
+      image: '/portfolio/websites/personal-injury-modern-hero-preview.webp',
+      imageAlt: 'Personal-injury website concept showing service information, a lawyer profile, and a free-assessment enquiry route',
+      conceptLabel: 'WEBSITE CONCEPT',
+      caption: 'An illustration of the design approach, not a client-results case study.',
+      linkLabel: 'Explore this website concept →',
+      url: '/portfolio/legal-websites/personal-injury-bold/',
+      points: [
+        ['Understand the offer', 'Service descriptions explain what the business provides and who it is for.', 'Service explanation'],
+        ['Assess the fit', 'Relevant experience, professional profiles, and practical information help visitors decide whether to enquire.', 'Relevant profile or practical information'],
+        ['Take the next step', 'Clear contact options connect that decision with an enquiry, booking, or demo request.', 'Contact button or enquiry route'],
+      ],
+    },
     processEyebrow: 'How we work',
     processHeading: 'A clear route from brief to launch.',
     process: [['Project definition','Magneo reviews your goals and existing materials, then proposes the website scope and direction.'],['Copy and visual direction','The agreed content and layouts are developed for your review. You confirm business information and provide feedback.'],['Development and testing','Approved designs become responsive pages, with checks on navigation, forms, and included functionality.'],['Launch and handover','Following approval, Magneo completes the agreed launch tasks and provides guidance on managing the website.']],
@@ -322,6 +337,11 @@ function DecisionSection({ decision }) {
   return <section className="section soft scr-decision"><div className="container"><div className="label">Website journey</div><h2>{decision.heading}</h2>{decision.text && <p className="scr-decision-copy">{decision.text}</p>}{decision.supporting && <p className="scr-decision-supporting">{decision.supporting}</p>}{decision.panels && <div className="scr-decision-grid">{decision.panels.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>}{decision.closing && <p className="scr-decision-closing">{decision.closing}</p>}</div></section>;
 }
 
+function PurposeVisualSection({ visual }) {
+  if (!visual) return null;
+  return <section className="section scr-purpose"><div className="container"><div className="label">{visual.eyebrow}</div><h2>{visual.heading}</h2><div className="scr-purpose-grid"><figure className="scr-purpose-figure"><Link className="scr-purpose-image-link" to={visual.url} aria-label={visual.linkLabel}><span className="scr-browser-chrome" aria-hidden="true"><i/><i/><i/></span><span className="scr-purpose-image"><img src={visual.image} alt={visual.imageAlt} width="1440" height="720" loading="lazy" decoding="async"/>{visual.points.map(([, , markerLabel], index)=><span className={`scr-purpose-marker scr-purpose-marker-${index + 1}`} aria-label={`${index + 1}. ${markerLabel}`} key={markerLabel}>{index + 1}</span>)}</span></Link><figcaption><strong>{visual.conceptLabel}</strong><span>{visual.caption}</span><Link to={visual.url}>{visual.linkLabel}</Link></figcaption></figure><ol className="scr-purpose-points">{visual.points.map(([title, description], index)=><li key={title}><span>{index + 1}</span><div><h3>{title}</h3><p>{description}</p></div></li>)}</ol></div></div></section>;
+}
+
 function FinalCta({ data }) {
   const button = data.ctaButton || ['Discuss your project', '/contact/#contact-enquiry'];
   return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link></div></div></div></section>;
@@ -346,6 +366,7 @@ function StandardReview({ data, slug }) {
     <section className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className="grid four scr-audience">{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div></div></section>
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2><p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p></div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
+    <PurposeVisualSection visual={data.purposeVisual}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     {!data.resourcesAfterCta && resources}
