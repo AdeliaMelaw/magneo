@@ -27,7 +27,7 @@ const descriptions = {
   '/services/seo-for-the-legal-industry/': 'Law firm SEO covering practice-area content, technical improvements, local search, and enquiry measurement, with firm review before publication.',
   '/services/seo-for-financial-advisors-wealth-firms/': 'SEO for financial advisors and wealth firms, including advisory-service pages, reviewed educational content, technical improvements, and reporting.',
   '/services/seo-for-the-healthcare-medtech-industry/': 'SEO for healthcare providers and MedTech companies, with patient-focused service pages, professional product content, technical reviews, and reporting.',
-  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social media and LinkedIn content for regulated industries: strategy, posts, visuals, and short-form video, with clear review and publishing arrangements.',
   '/services/ai-automation-for-regulated-industries-magneo/': 'Connect repetitive marketing tasks across your existing tools. Start with a defined workflow for content, enquiries, or follow-up, with clear responsibilities and human review where needed.',
   '/services/ppc-landing-pages-for-regulated-industries/': 'Paid advertising and landing pages built around a defined offer, audience, and budget. Connect your campaign message to a clear next step and measure the actions that matter to your business.',
   '/services/personal-branding-for-regulated-professionals/': 'Personal brand strategy, LinkedIn profile writing, and professional bios for lawyers, financial advisors, healthcare professionals, and tech founders.',
@@ -66,7 +66,7 @@ const titleOverrides = {
   '/services/seo-for-the-legal-industry/': 'SEO for Law Firms & Lawyers | Magneo',
   '/services/seo-for-financial-advisors-wealth-firms/': 'SEO for Financial Advisors & Wealth Firms | Magneo',
   '/services/seo-for-the-healthcare-medtech-industry/': 'Healthcare & MedTech SEO Services | Magneo',
-  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social Media & LinkedIn Marketing for Regulated Industries | Magneo',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social Media & LinkedIn for Regulated Industries | Magneo',
   '/services/ai-automation-for-regulated-industries-magneo/': 'AI Automation for Regulated Industries | Magneo',
   '/services/ppc-landing-pages-for-regulated-industries/': 'PPC & Landing Pages for Regulated Industries | Magneo',
   '/services/personal-branding-for-regulated-professionals/': 'Personal Branding for Regulated Professionals | Magneo',
@@ -101,6 +101,7 @@ const titleOverrides = {
 const imageOverrides = {
   '/services/': '/portfolio-og.png',
   '/services/directory/': '/portfolio-og.png',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': '/portfolio-og.png',
   '/portfolio/': '/portfolio-og.png',
   '/portfolio/legal-websites/': '/legal-websites-og.png',
   '/portfolio/legal-websites/personal-injury-classic/': '/pi-lawyer-hero-generated.png',
@@ -115,7 +116,8 @@ const imageOverrides = {
 
 const imageAltOverrides = {
   '/services/': 'Magneo service system for website design, social media, and AI-powered marketing.',
-  '/services/directory/': 'Magneo service system for website design, social media, and AI-powered marketing.'
+  '/services/directory/': 'Magneo service system for website design, social media, and AI-powered marketing.',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Magneo social media, visual content, and short-form video concepts.'
 };
 
 function escapeHtml(value) {

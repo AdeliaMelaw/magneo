@@ -337,8 +337,11 @@ const pageData = {
   },
   'social-media-linkedin-marketing-for-regulated-industries': {
     title: 'Social Media & LinkedIn Marketing for Regulated Industries',
-    description: 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
-    primary: ['Discuss your content', '/contact/#contact-enquiry'], secondary: ['Explore content examples', portfolioLinks.social],
+    seoTitle: 'Social Media & LinkedIn for Regulated Industries | Magneo',
+    metaDescription: 'Social media and LinkedIn content for regulated industries: strategy, posts, visuals, and short-form video, with clear review and publishing arrangements.',
+    description: 'A consistent social presence starts with something useful to say. Magneo develops content strategy, LinkedIn posts, social visuals, and short-form video for regulated businesses, with a clear arrangement for your input, approvals, and publishing.',
+    primary: ['Discuss your social media', '/contact/#contact-enquiry'], secondary: ['Explore content examples', portfolioLinks.social],
+    pageClass: 'scr-page-social',
     card: ['CONTENT', 'Posts, reels, and LinkedIn content shaped around your expertise.'],
     heroPortfolio: {
       variant: 'social',
@@ -350,25 +353,63 @@ const pageData = {
       primaryLabel: 'Explore video and reels ↗',
       ariaLabel: 'Explore social media video and reel concepts',
     },
-    included: ['Audience and channel planning','Content themes and editorial calendars','Post copy and visual creative','Short-form video concepts, scripts, and agreed production','Content approval and publishing arrangements','Reporting on agreed content and enquiry metrics'],
+    audienceHeading: 'Content shaped around your professional audience.',
+    audiences: [
+      ['Law firms and lawyers', '/services/linkedin-growth-law-firms/', 'Practice commentary, service explanations, and professional perspectives for the audiences your firm wants to reach.'],
+      ['Financial advisors and FinTech', '/services/linkedin-growth-financial-advisors/', 'Educational content and business updates developed around your audience and internal review requirements.'],
+      ['Healthcare providers', '/services/social-media-linkedin-leadership-for-healthcare-providers-magneo/', 'Practitioner introductions, service information, and educational content based on approved source material.'],
+      ['Tech, SaaS, and AI companies', '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/', 'Product explanations, founder perspectives, and use-case content for prospective users and buyers.'],
+    ],
+    scopeHeading: 'From content direction to publish-ready work.',
+    scopeIntro: 'The proposal confirms channels, content quantities, formats, revision rounds, and publishing responsibilities.',
+    included: [
+      ['Audience and channel direction', 'A focused plan for whom the content should reach, what it should communicate, and where it belongs.'],
+      ['Content themes and calendar', 'A practical editorial plan connecting your expertise, services, and recurring audience questions.'],
+      ['LinkedIn and social copy', 'Posts developed from your perspective, approved information, and the purpose of each channel.'],
+      ['Visual content', 'Post graphics and carousel layouts that make the message easy to follow.'],
+      ['Short-form video', 'Agreed concepts, scripts, editing, and production arrangements for reels or other short videos.'],
+      ['Approval and delivery', 'A defined review process followed by organised asset delivery or scheduling where included.'],
+    ],
+    decision: {
+      eyebrow: 'SERVICE OPTIONS',
+      heading: 'Content creation or ongoing social media support?',
+      panels: [
+        ['Content creation', 'A defined set of posts, visuals, or videos delivered for your business to publish. Suitable when someone already manages your channels but needs help producing the work.'],
+        ['Ongoing content support', 'An agreed recurring scope covering planning, production, reviews, and scheduling where included.'],
+      ],
+      closing: 'Comment replies, direct messages, community management, and paid advertising are separate responsibilities unless specifically included in the proposal.',
+    },
     examples: [
-      ['LinkedIn content series','We turn recurring audience questions and your professional perspective into a connected series of posts.'],
-      ['Interview content package','We develop short clips, post ideas, and supporting copy from a recorded conversation.'],
-      ['Service content campaign','We create a sequence of explanations, examples, and invitations that helps people understand a specific offer.'],
+      ['LinkedIn content series', 'A connected set of posts exploring audience questions, professional observations, or a service theme in your brand’s voice.'],
+      ['Interview-based content', 'Selected ideas from an approved recorded conversation developed into clips, posts, and supporting copy.'],
+      ['Service-focused content', 'A sequence explaining a particular service: who it is for, what it involves, and how an interested reader can learn more.'],
     ],
-    examplesEyebrow: 'What we can create',
-    examplesHeading: 'Content shaped around your expertise and audience.',
-    processEyebrow: 'How we work',
-    processHeading: 'We turn your expertise into content.',
-    process: [['We define the direction','We discuss your audience, goals, and point of view, then recommend content themes, formats, and channels.'],['We create the content','We develop the agreed posts, visuals, or scripts using your input and approved source material.'],['We refine with your feedback','You review the drafts for accuracy and tone and arrange any required internal approvals. We make the agreed revisions.'],['We prepare for publication','We deliver approved content ready to use, or schedule it where publishing is included. For ongoing engagements, we review performance to guide future content.']],
+    examplesEyebrow: 'CONTENT FORMATS',
+    examplesHeading: 'Several ways to share a useful idea.',
+    visualExamples: true,
+    processEyebrow: 'PROJECT PROCESS',
+    processHeading: 'Your expertise, developed into a clear content plan.',
+    process: [
+      ['Direction', 'Magneo reviews your audience, current channels, goals, and available source material to recommend the content approach.'],
+      ['Production', 'The agreed posts, visuals, and scripts are developed using your information and brand guidance.'],
+      ['Feedback and approval', 'You confirm specialist details and provide feedback. Revisions follow the agreed scope, with internal approval completed before publication.'],
+      ['Delivery and review', 'Approved assets are delivered or scheduled where included. For ongoing engagements, available performance data informs the next content priorities.'],
+    ],
     faq: [
-      ['Which platforms should we use?','We recommend channels based on your audience, objectives, and available content. You do not need to publish everywhere.'],
-      ['Do I need to appear on camera?','No. Options include written posts, graphics, narrated explainers, and other formats. Where your personal presence supports the idea, we can plan an interview or recording.'],
-      ['Who approves and publishes the content?','We agree on these responsibilities before work starts. Publishing can be included in the scope or handled by your team after approval.'],
-      ['How much content is included?','The proposal defines the number of posts or videos, formats, channels, and review stages.'],
-      ['Does this include personal branding?','Content can support your personal brand. A broader positioning, profile, or professional-voice project is scoped separately where needed.'],
+      ['Which social platforms should my business use?', 'Channel selection depends on your audience, goals, and ability to maintain useful content. The plan identifies a manageable focus rather than requiring a presence on every platform.'],
+      ['How much of my time will this require?', 'Your input is needed for source information, professional perspective, and approvals. The project plan sets out the expected meetings and review stages before work begins.'],
+      ['Do I need to appear on camera?', 'No. Text posts, graphics, carousels, and other formats can support the content plan. On-camera video is an option where it suits the message and your preferences.'],
+      ['Can you write in my professional voice?', 'Existing writing, interviews, and feedback help establish the tone. Drafts are refined against that guidance, with your review confirming that the wording reflects your point of view.'],
+      ['Who approves and publishes the content?', 'Your designated reviewer approves business-specific information and any required internal checks. Publishing is handled by your business or by Magneo where scheduling is included.'],
+      ['How many posts or videos are included?', 'The proposal specifies the channels, quantities, formats, and revision rounds. Video production and recurring content are defined explicitly rather than assumed to be included.'],
+      ['Is personal branding included?', <>This service focuses on content strategy and production. A broader review of your positioning, professional biography, and profile messaging can be scoped through the <Link to="/services/personal-branding-for-regulated-professionals/">Personal Branding service</Link>.</>],
+      ['How will progress be assessed?', 'Reporting can cover the work delivered and available measures such as engagement, website visits, and attributed enquiries. Likes and views alone do not establish client acquisition or revenue.'],
+      ['Do you use AI in content production?', 'AI may support drafting or creative production where appropriate to the project. The agreed workflow identifies its role, with content reviewed for accuracy, tone, and suitability before use.'],
     ],
-    cta: ['What would you like your content to communicate?','Tell Adele about your audience, current channels, and where you need support.'],
+    cta: ['What would you like your audience to understand?', 'Share your current channels, the people you want to reach, and whether you need a defined content project or ongoing support.'],
+    ctaButton: ['Discuss your social media', '/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
+    relatedIndustries: audiences,
     related: [['Personal Branding','/services/personal-branding-for-regulated-professionals/'],['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/']],
   },
   'ai-automation-for-regulated-industries-magneo': {
@@ -596,6 +637,14 @@ function AudienceSplitSection({ audience }) {
   return <section id={audience.id} className="section soft scr-audience-split"><div className="container"><div className="label">Audience</div><h2>{audience.heading}</h2><div className="scr-audience-split-grid">{audience.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{audience.closing && <p className="scr-audience-split-closing">{audience.closing}</p>}</div></section>;
 }
 
+function SocialVisualExamples() {
+  return <section className="section scr-social-visuals" aria-labelledby="scr-social-visuals-title"><div className="container"><div className="label">Content examples</div><h2 id="scr-social-visuals-title">See the content, not just the list of services.</h2><div className="scr-social-visual-grid">
+    <article className="scr-social-example"><div className="scr-social-concept scr-social-text-post" role="img" aria-label="Text-led social post concept reading Answer what people want to know"><small>Client questions / 01</small><strong>Answer what people<br/>want to know.</strong><span aria-hidden="true">↗</span></div><div className="scr-social-example-copy"><span>Original Magneo concept · Text-led LinkedIn post</span><h3>A useful question, answered clearly.</h3><p>Designed to turn a recurring audience question into a concise professional explanation.</p></div></article>
+    <article className="scr-social-example"><div className="scr-social-concept scr-social-carousel" role="img" aria-label="Purple carousel concept reading Explain what you think and show why it matters"><small>Your perspective</small><i aria-hidden="true"/><strong>Explain what you think.<br/>Show why it matters.</strong><span aria-hidden="true"><b/><b/><b/><b/></span></div><div className="scr-social-example-copy"><span>Original Magneo concept · Visual carousel</span><h3>A perspective structured for the format.</h3><p>Designed to break a professional observation into readable, connected visual points.</p></div></article>
+    <article className="scr-social-example scr-social-video-example"><div className="scr-social-video"><video controls playsInline preload="metadata" poster="/portfolio/social/commentary-reel-cover.jpg" aria-label="Play the commentary reel concept" onPlay={(event)=>{event.currentTarget.nextElementSibling.hidden=true;}} onEnded={(event)=>{event.currentTarget.nextElementSibling.hidden=false;}}><source src="/portfolio/social/commentary-reel.mp4" type="video/mp4"/>Your browser does not support embedded video.</video><button type="button" aria-label="Play the commentary reel concept" onClick={(event)=>{event.currentTarget.previousElementSibling.play();}}><span aria-hidden="true">▶</span></button></div><div className="scr-social-example-copy"><span>Original Magneo concept · Short-form video</span><h3>Commentary reel</h3><p>Designed to connect a timely observation with a clear service-related message.</p></div></article>
+  </div><Link className="scr-social-portfolio-link" to="/portfolio/#social-media">Explore the content portfolio <span aria-hidden="true">→</span></Link></div></section>;
+}
+
 function WorkedExampleSection({ example }) {
   if (!example) return null;
   return <section className="section soft scr-worked-example"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><div className="scr-worked-grid"><div className="scr-page-diagram" aria-label="Illustration showing a service page linking with a supporting article">{example.pages.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p>{index === 0 && <i aria-hidden="true">↔</i>}</article>)}</div><aside><h3>{example.explanationTitle}</h3><p>{example.explanation}</p><strong>{example.label}</strong></aside></div></div></section>;
@@ -621,13 +670,14 @@ function StandardReview({ data, slug }) {
   const relatedArticles = relatedArticlesFor({ slug });
   const pageAudiences = data.audiences || audiences;
   const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries || pageAudiences} articles={relatedArticles}/>;
-  return <div className={`scr-page${data.seoPage ? ' scr-page-seo' : ''}`}><ReviewHero data={data}/>
+  return <div className={`scr-page${data.seoPage ? ' scr-page-seo' : ''}${data.pageClass ? ` ${data.pageClass}` : ''}`}><ReviewHero data={data}/>
     {!data.hideAudience && <section id={data.audienceId} className="section soft"><div className="container"><div className="label">Audience</div><h2>{data.audienceHeading || 'Who this service is for.'}</h2>{data.audienceIntro && <p className="scr-section-intro">{data.audienceIntro}</p>}<div className={`grid ${pageAudiences.length === 4 ? 'four ' : ''}scr-audience`}>{pageAudiences.map(([label,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3>{copy && <p>{copy}</p>}</Link>)}</div>{data.audienceClosing && <p className="scr-audience-closing">{data.audienceClosing[0]}<Link to="/contact/#contact-enquiry">{data.audienceClosing[1]}</Link>{data.audienceClosing[2]}</p>}</div></section>}
     <AudienceSplitSection audience={data.audienceSplit}/>
     <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal will confirm the deliverables, responsibilities, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div></section>
     <ProgressSection progress={data.progress}/>
     <DecisionSection decision={data.decision}/>
     {data.workedExample ? <WorkedExampleSection example={data.workedExample}/> : <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
+    {data.visualExamples && <SocialVisualExamples/>}
     <PurposeVisualSection visual={data.purposeVisual}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
