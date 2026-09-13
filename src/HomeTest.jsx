@@ -112,7 +112,7 @@ export default function HomeTest() {
           </div>
           <div className="ht-preview-grid">
             <article className="ht-preview-card">
-              <Link className="ht-preview-media" to="/portfolio/#portfolio-websites" aria-label="Explore website designs"><img src="/portfolio/websites/litigation-editorial-preview-v2.png" alt="Preview of an original Magneo website concept" /></Link>
+              <Link className="ht-preview-media" to="/portfolio/#portfolio-websites" aria-label="Explore website designs"><img src="/portfolio/websites/personal-injury-modern-hero-preview.webp" alt="Preview of Magneo’s modern personal-injury website concept" /></Link>
               <div className="ht-preview-body"><span>Original concept</span><h3>Find your next website.</h3><p>Explore original website concepts and choose a direction to tailor to your business.</p><Link to="/portfolio/#portfolio-websites">Explore website designs <b aria-hidden="true">↗</b></Link></div>
             </article>
             <article className="ht-preview-card">

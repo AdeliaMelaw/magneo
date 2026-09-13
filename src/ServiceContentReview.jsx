@@ -52,6 +52,16 @@ const pageData = {
     description: 'Content strategy, posts, and short-form video that help you communicate your expertise consistently. Choose the channels and formats that fit your audience, with an agreed process for review and publishing.',
     primary: ['Discuss your content', '/contact/#contact-enquiry'], secondary: ['Explore content examples', portfolioLinks.social],
     card: ['CONTENT', 'Posts, reels, and LinkedIn content shaped around your expertise.'],
+    heroPortfolio: {
+      variant: 'social',
+      label: 'ORIGINAL CONCEPTS',
+      title: 'Video & Reels',
+      image: '/portfolio/social/podcast-interview-reel-cover-v2.png',
+      imageAlt: 'Preview of Magneo’s podcast interview reel concept',
+      primaryUrl: '/portfolio/#social-media',
+      primaryLabel: 'Explore video and reels ↗',
+      ariaLabel: 'Explore social media video and reel concepts',
+    },
     included: ['Audience and channel planning','Content themes and editorial calendars','Post copy and visual creative','Short-form video concepts, scripts, and agreed production','Content approval and publishing arrangements','Reporting on agreed content and enquiry metrics'],
     examples: [
       ['Build a LinkedIn content series','Turn recurring audience questions and your professional perspective into a connected series of posts.'],
@@ -74,6 +84,10 @@ const pageData = {
     description: 'Connect repetitive marketing tasks across your existing tools. Start with a defined workflow for content, enquiries, or follow-up, with clear responsibilities and human review where needed.',
     primary: ['Discuss a workflow', '/contact/#contact-enquiry'], secondary: ['Explore workflow examples', portfolioLinks.ai],
     card: ['WORKFLOWS', 'Connect repetitive tasks with clear review and approval steps.'],
+    heroOrbit: {
+      url: '/portfolio/#ai-marketing',
+      tools: ['ChatGPT', 'Claude', 'Make', 'AI agents', 'HubSpot', 'Zapier'],
+    },
     included: ['Review of the current process and tools','Workflow mapping and requirements','Agreed integrations and automation setup','AI-assisted steps where appropriate','Review points, exception handling, and testing','Documentation, handover, and separately scoped maintenance'],
     examples: [
       ['Route an enquiry','Transfer agreed form information into a CRM, notify the responsible person, and create a follow-up task.'],
@@ -91,19 +105,32 @@ const pageData = {
     ],
     cta: ['Which task keeps repeating?','Tell Adele how the process works today and where it slows you down.'],
     related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
+    relatedArticles: [
+      ['Hyper-Personalization with AI for SaaS & Tech Brands','https://blog.magneo.ca/blog/hyper-personalization-with-ai-for-saas-tech-brands/'],
+      ['Using AI to Repurpose Content and Personalize Advisor Outreach','https://blog.magneo.ca/blog/using-ai-to-repurpose-content-and-personalize-advisor-outreach/'],
+      ['AI Marketing for Law Firms: Balancing AI and Human Creativity','https://blog.magneo.ca/blog/ai-marketing-for-law-firms/'],
+    ],
   },
   'ppc-landing-pages-for-regulated-industries': {
     title: 'PPC & Landing Pages for Regulated Industries',
     description: 'Paid advertising and landing pages built around a defined offer, audience, and budget. Connect your campaign message to a clear next step and measure the actions that matter to your business.',
     primary: ['Discuss a campaign', '/contact/#contact-enquiry'], secondary: ['View all services', '/services/'],
     card: ['CAMPAIGNS', 'Ads and landing pages built around a defined offer.'],
+    cardClass: 'scr-hero-card-campaigns',
     included: ['Campaign objectives and audience planning','Keyword or targeting research for the agreed platform','Ad copy and agreed creative assets','Landing-page copy, design, and implementation','Conversion tracking and pre-launch checks','Campaign management and reporting where included'],
     examples: [
       ['Promote a specific service','Connect an advertisement to a landing page explaining one offer and how to enquire.'],
       ['Support an event or consultation offer','Build a campaign around a defined invitation, with a relevant registration or enquiry page.'],
       ['Refine an existing campaign','Review the targeting, message, landing page, and tracking to identify changes worth testing.'],
     ],
-    process: [['Plan','Agree on the offer, audience, platform, budget, and measurement.'],['Create','Develop the ads and landing page for review.'],['Check and launch','Verify the agreed tracking and complete campaign setup before launch.'],['Review and adjust','Assess campaign data and refine the elements included in the management scope.']],
+    processEyebrow: 'How we work',
+    processHeading: ['We plan, create, and launch.','You stay involved at key decisions.'],
+    process: [
+      ['We plan your campaign','We discuss your goals and audience, then propose the campaign approach, scope, budget, and measurement plan for your approval.'],
+      ['We create the ads and landing page','We develop the copy, creative, and landing page, then share them with you for feedback. You confirm business details and arrange any required internal approvals.'],
+      ['We check and launch','We test the landing page, check the agreed tracking, and complete the campaign setup. We launch once you have approved the work.'],
+      ['We review the next steps','We explain what has been delivered and how to access it. If ongoing campaign management is included, we monitor performance and make adjustments within the agreed scope.'],
+    ],
     faq: [
       ['Is advertising spend included in your fee?','The proposal separates Magneo’s fees from the budget paid to advertising platforms.'],
       ['Do you create the landing page?','Landing-page copy, design, and implementation can be included. The proposal specifies whether we build a new page or work with an existing one.'],
@@ -189,8 +216,12 @@ function useReviewMetadata(data, slug, isReview) {
 }
 
 function PortfolioHeroCard({ preview }) {
-  return <aside className="scr-portfolio-card" aria-label={`${preview.title} website concept`}>
-    <Link className="scr-portfolio-image-link" to={preview.demoUrl} aria-label={`View ${preview.title} website demo`}>
+  const primaryUrl = preview.primaryUrl || preview.demoUrl;
+  const primaryLabel = preview.primaryLabel || 'View website demo →';
+  const secondaryUrl = preview.secondaryUrl || preview.portfolioUrl;
+  const secondaryLabel = preview.secondaryLabel || 'Explore website designs →';
+  return <aside className={`scr-portfolio-card${preview.variant ? ` scr-portfolio-card-${preview.variant}` : ''}`} aria-label={preview.ariaLabel || `${preview.title} website concept`}>
+    <Link className="scr-portfolio-image-link" to={primaryUrl} aria-label={preview.ariaLabel || `View ${preview.title} website demo`}>
       <span className="scr-browser-chrome" aria-hidden="true"><i/><i/><i/></span>
       <img src={preview.image} alt={preview.imageAlt} width="1440" height="720" loading="eager" decoding="async"/>
     </Link>
@@ -198,19 +229,33 @@ function PortfolioHeroCard({ preview }) {
       <span>{preview.label}</span>
       <h2>{preview.title}</h2>
       <div className="scr-portfolio-actions">
-        <Link to={preview.demoUrl}>View website demo <span aria-hidden="true">→</span></Link>
-        <Link to={preview.portfolioUrl}>Explore website designs <span aria-hidden="true">→</span></Link>
+        <Link to={primaryUrl}>{primaryLabel}</Link>
+        {secondaryUrl && <Link to={secondaryUrl}>{secondaryLabel}</Link>}
       </div>
     </div>
   </aside>;
 }
 
-function ReviewHero({ data }) {
-  return <section className={`hero scr-hero${data.heroPortfolio ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : <div className="glass scr-hero-card"><strong>{data.card[0]}</strong><p>{data.card[1]}</p></div>}</div></section>;
+function AutomationOrbitCard({ orbit }) {
+  return <Link className="scr-orbit-card" to={orbit.url} aria-label="Explore AI marketing and automation concepts">
+    <span className="scr-orbit-eyebrow">AI TOOL ECOSYSTEM</span>
+    <div className="scr-orbit-scene" aria-hidden="true">
+      <span className="scr-orbit-line scr-orbit-line-one"/>
+      <span className="scr-orbit-line scr-orbit-line-two"/>
+      <span className="scr-orbit-core"><strong>AI</strong><small>automation</small></span>
+      {orbit.tools.map((tool, index) => <span className={`scr-orbit-tool scr-orbit-tool-${index + 1}`} key={tool}>{tool}</span>)}
+    </div>
+    <div className="scr-orbit-copy"><h2>Connected tools.<br/>Practical workflows.</h2><p>See how AI and automation can support a defined marketing task.</p><b>Explore AI marketing <span aria-hidden="true">↗</span></b></div>
+  </Link>;
 }
 
-function ProcessSection({ items }) {
-  return <section className="section dark"><div className="container"><div className="label">Process</div><h2>A clear project from first decision to handover.</h2><div className="process">{items.map(([title,copy],index)=><div className="process-row" key={title}><b>{String(index+1).padStart(2,'0')}</b><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></div></section>;
+function ReviewHero({ data }) {
+  const hasFeatureCard = data.heroPortfolio || data.heroOrbit;
+  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}><strong>{data.card[0]}</strong><p>{data.card[1]}</p></div>}</div></section>;
+}
+
+function ProcessSection({ items, eyebrow = 'Process', heading = 'A clear project from first decision to handover.' }) {
+  return <section className="section dark"><div className="container"><div className="label">{eyebrow}</div><h2>{Array.isArray(heading) ? <>{heading[0]}<br/>{heading[1]}</> : heading}</h2><div className="process">{items.map(([title,copy],index)=><div className="process-row" key={title}><b>{String(index+1).padStart(2,'0')}</b><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></div></section>;
 }
 
 function FinalCta({ data }) {
@@ -222,9 +267,9 @@ function StandardReview({ data }) {
     <section className="section soft"><div className="container"><div className="label">Audience</div><h2>Who this service is for.</h2><div className="grid four scr-audience">{audiences.map(([label,path])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{label}</h3></Link>)}</div></div></section>
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal will confirm the deliverables, responsibilities, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">Example applications</div><h2>Practical ways to apply the service.</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
-    <ProcessSection items={data.process}/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
-    <section className="related-section scr-related"><div className="container"><div><h2>Related Services</h2><i/><ul>{data.related.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div><div><h2>Related Industries</h2><i/><ul>{audiences.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>
+    <section className={`related-section scr-related${data.relatedArticles ? ' scr-related-with-articles' : ''}`}><div className="container"><div><h2>Related Services</h2><i/><ul>{data.related.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div><div><h2>Related Industries</h2><i/><ul>{audiences.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div>{data.relatedArticles && <div><h2>Related Articles</h2><i/><ul>{data.relatedArticles.map(([label,path])=><li key={path}><a href={path}>{label}</a></li>)}</ul></div>}</div></section>
     <FinalCta data={data}/>
   </div>;
 }
