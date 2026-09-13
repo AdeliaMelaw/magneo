@@ -85,7 +85,7 @@ const titleOverrides = {
   '/services/compliance-aware-ai-workflows/': 'Compliance-Aware AI Workflows | Magneo',
   '/services/personal-branding-for-financial-advisors-wealth-professionals/': 'Personal Branding for Financial Advisors | Magneo',
   '/services/social-media-linkedin-leadership-for-healthcare-providers-magneo/': 'Healthcare Social Media & LinkedIn Marketing | Magneo',
-  '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/': 'LinkedIn Marketing for Tech & SaaS Companies | Magneo',
+  '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/': 'Social Media & LinkedIn for SaaS and AI Companies | Magneo',
   '/portfolio/': 'Portfolio | Magneo — Web, Social & AI Marketing',
   '/portfolio/legal-websites/': 'Legal Website Design Portfolio | Magneo',
   '/portfolio/legal-websites/personal-injury-classic/': 'Classic Personal Injury Website Concept | Magneo',
