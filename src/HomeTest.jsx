@@ -11,10 +11,10 @@ const services = [
 ];
 
 const process = [
-  ['01', 'Understand the project', 'We clarify the audience, goals, constraints, and what needs to improve.'],
-  ['02', 'Shape the direction', 'We define the structure, message, and creative approach before production begins.'],
-  ['03', 'Create and refine', 'We design, write, build, and review the work with clear checkpoints.'],
-  ['04', 'Launch and improve', 'We prepare the final assets, support launch, and identify useful next steps.']
+  ['01', 'Your goals and priorities', 'A conversation about your business establishes the audience, goals, and practical requirements for the project.'],
+  ['02', 'A clear direction', 'You receive a proposed approach covering the message, creative direction, and agreed deliverables before production begins.'],
+  ['03', 'Creation and refinement', 'Magneo develops the work and shares it at agreed checkpoints for your feedback and approval.'],
+  ['04', 'Delivery and next steps', 'The approved work is prepared for handover or launch, with guidance on how to use it and options for further support.']
 ];
 
 const collaborationPanels = [
@@ -169,7 +169,7 @@ export default function HomeTest({ isTest = false }) {
       </section>
 
       <section className="ht-section ht-process" aria-labelledby="ht-process-title">
-        <div className="ht-shell"><div className="ht-section-copy ht-section-copy-light"><span className="ht-eyebrow">How we work</span><h2 id="ht-process-title">A focused process from first conversation to launch.</h2></div><div className="ht-process-list">{process.map(([number, title, description]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div>
+        <div className="ht-shell"><div className="ht-section-copy ht-section-copy-light"><span className="ht-eyebrow">How we work</span><h2 id="ht-process-title">A focused process from first conversation to launch.</h2><p style={{ color: '#b9bdb8' }}>Magneo handles planning and production, with your input and approval at key stages.</p></div><div className="ht-process-list">{process.map(([number, title, description]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div>
       </section>
 
       <section className="ht-section ht-final" aria-labelledby="ht-final-title"><div className="ht-shell"><div className="ht-final-panel"><span className="ht-eyebrow">Start a conversation</span><h2 id="ht-final-title">Have a project in mind?</h2><p>Tell us what you want to improve. You do not need a finished brief.</p><Link className="ht-button" to="/contact/#contact-form">Discuss your project</Link></div></div></section>
