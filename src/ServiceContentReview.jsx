@@ -36,7 +36,9 @@ const pageData = {
       ['Create a focused service website','Build a clear set of pages explaining your offer, relevant experience, and how to enquire.'],
       ['Build a campaign landing page','Create a dedicated page that connects a specific campaign message with a relevant next step.'],
     ],
-    process: [['Plan','Agree on the audience, pages, functionality, and project scope.'],['Write and design','Develop the messaging and layouts for review before the build progresses.'],['Build and check','Implement the approved direction and check navigation, forms, and mobile presentation.'],['Launch and hand over','Complete the agreed launch steps and explain how the website will be maintained.']],
+    processEyebrow: 'How we work',
+    processHeading: 'We plan, create, and build your website.',
+    process: [['We plan the website','We review your business, audience, and goals, then propose the page structure, functionality, and project scope for your approval.'],['We develop the copy and design','We create the agreed copy and visual direction. You provide business information, confirm accuracy, and share feedback.'],['We build and test','We develop the approved website and test its pages, forms, and agreed functionality across desktop and mobile.'],['We prepare for launch','Once you approve the website, we complete the agreed launch tasks and explain how to manage it. Ongoing maintenance and updates are scoped separately.']],
     faq: [
       ['Is website copy included?','Copywriting can be included in the scope. The proposal will specify which pages we write and which information or materials you provide.'],
       ['Can you redesign an existing website?','Yes. We first review the existing website, content, and platform to determine what can be retained and what needs to change.'],
@@ -68,7 +70,9 @@ const pageData = {
       ['Repurpose an interview','Develop short clips, post ideas, and supporting copy from a recorded conversation.'],
       ['Plan content around a service','Create a sequence of explanations, examples, and invitations that help people understand a specific offer.'],
     ],
-    process: [['Set the direction','Choose the audience, channels, themes, and formats.'],['Develop the content','Create the agreed copy, visuals, scripts, or videos.'],['Review and publish','Collect feedback and follow the agreed approval and publishing process.'],['Learn and refine','Review performance and use relevant findings to guide the next content cycle.']],
+    processEyebrow: 'How we work',
+    processHeading: 'We turn your expertise into content.',
+    process: [['We define the direction','We discuss your audience, goals, and point of view, then recommend content themes, formats, and channels.'],['We create the content','We develop the agreed posts, visuals, or scripts using your input and approved source material.'],['We refine with your feedback','You review the drafts for accuracy and tone and arrange any required internal approvals. We make the agreed revisions.'],['We prepare for publication','We deliver approved content ready to use, or schedule it where publishing is included. For ongoing engagements, we review performance to guide future content.']],
     faq: [
       ['Which platforms should we use?','We recommend channels based on your audience, objectives, and available content. You do not need to publish everywhere.'],
       ['Do I need to appear on camera?','No. Options include written posts, graphics, narrated explainers, and other formats. Where your personal presence supports the idea, we can plan an interview or recording.'],
@@ -94,7 +98,9 @@ const pageData = {
       ['Coordinate content approval','Move a draft through defined review stages and notify the next person when action is needed.'],
       ['Prepare a reporting summary','Bring selected marketing data into a draft summary for someone to check before sharing.'],
     ],
-    process: [['Map the task','Understand the current process, tools, information, and people involved.'],['Define the workflow','Agree on triggers, actions, review points, and what happens when something fails.'],['Build and test','Configure the agreed connections and test normal cases and exceptions.'],['Hand over','Document the workflow, responsibilities, and any maintenance arrangements.']],
+    processEyebrow: 'How we work',
+    processHeading: 'We build automation around how you work.',
+    process: [['We map the workflow','We review the task, tools, and handoffs involved, then identify what could be automated and where human review is needed.'],['We build the agreed setup','We confirm the workflow, required access, and responsibilities, then configure the connections and AI steps included in the scope.'],['We test it with you','We test typical scenarios, exceptions, and approval steps. You confirm that the workflow fits your process before it is put into use.'],['We explain and hand over','We document how the workflow operates, what needs monitoring, and how to pause it. Ongoing support and third-party tool costs are clarified in the scope.']],
     faq: [
       ['Can you work with our existing tools?','We first check their integration options, permissions, and limitations. The proposed workflow will identify any additional tools or subscriptions needed.'],
       ['Does every automation need AI?','No. Some tasks are better handled by standard rules and integrations. AI is included where it serves a defined purpose.'],
@@ -124,12 +130,12 @@ const pageData = {
       ['Refine an existing campaign','Review the targeting, message, landing page, and tracking to identify changes worth testing.'],
     ],
     processEyebrow: 'How we work',
-    processHeading: ['We plan, create, and launch.','You stay involved at key decisions.'],
+    processHeading: 'We plan, create, and launch your campaign.',
     process: [
-      ['We plan your campaign','We discuss your goals and audience, then propose the campaign approach, scope, budget, and measurement plan for your approval.'],
-      ['We create the ads and landing page','We develop the copy, creative, and landing page, then share them with you for feedback. You confirm business details and arrange any required internal approvals.'],
-      ['We check and launch','We test the landing page, check the agreed tracking, and complete the campaign setup. We launch once you have approved the work.'],
-      ['We review the next steps','We explain what has been delivered and how to access it. If ongoing campaign management is included, we monitor performance and make adjustments within the agreed scope.'],
+      ['We plan the campaign','We discuss your goals and audience, then propose the campaign approach, scope, advertising budget, and measurement plan for your approval.'],
+      ['We create the ads and landing page','We develop the agreed copy, creative, and landing page. You review business details, provide feedback, and arrange any required internal approvals.'],
+      ['We check and launch','We test the landing page, check the agreed tracking, and complete campaign setup. We submit approved ads to the platform and launch once its required review is complete.'],
+      ['We review the next steps','We explain what has been delivered and how to access it. Where ongoing campaign management is included, we monitor performance and make adjustments within the agreed scope.'],
     ],
     faq: [
       ['Is advertising spend included in your fee?','The proposal separates Magneo’s fees from the budget paid to advertising platforms.'],
@@ -153,7 +159,9 @@ const pageData = {
       ['Refresh a professional profile','Bring your headline, biography, and profile messaging into a consistent direction.'],
       ['Connect several professional roles','Develop a clear personal narrative that explains how your businesses or areas of expertise relate.'],
     ],
-    process: [['Understand the background','Explore your experience, audience, goals, and current presentation.'],['Define the positioning','Agree on the focus, core message, and professional voice.'],['Develop the assets','Write and refine the profile copy and other agreed materials.'],['Put it into practice','Create a practical direction for applying the positioning across your presence and content.']],
+    processEyebrow: 'How we work',
+    processHeading: 'We shape how your expertise is presented.',
+    process: [['We define your positioning','We discuss your experience, audience, and goals, then recommend the themes and messages that will guide your personal brand.'],['We develop your profiles and content','We create the agreed biographies, profile copy, and content direction using information and examples you provide.'],['We refine with your feedback','You confirm that the work accurately reflects your experience and point of view. We make the agreed revisions.'],['We prepare you to use it','We deliver the approved materials and guidance for applying them consistently. Ongoing content creation or profile management is scoped separately.']],
     faq: [
       ['How is personal branding different from social media management?','Personal branding defines your positioning, message, and voice. Social media management handles ongoing content and publishing. They can be combined, but are scoped separately.'],
       ['What do you need from me?','We need your background, areas of expertise, goals, and examples of how you communicate. Interviews and feedback help the work reflect your actual perspective.'],
@@ -171,7 +179,9 @@ const aiOverview = {
   description: 'Explore practical uses of AI across content, video, search, websites, and marketing workflows. Each project starts with a defined purpose, suitable tools, and an agreed review process.',
   primary: ['Discuss an AI project','/contact/#contact-enquiry'], secondary: ['Explore AI examples',portfolioLinks.ai],
   card: ['AI','Creative, content, search, websites, and connected workflows.'],
-  process: [['Define the use','Identify the task, audience, and intended output.'],['Select the approach','Choose suitable tools, source materials, and review requirements.'],['Create and test','Develop the assets or workflow and check them against the agreed brief.'],['Deliver and document','Provide the agreed outputs and explain their use, limitations, and next steps.']],
+  processEyebrow: 'How we work',
+  processHeading: 'We bring AI into your marketing with clear direction.',
+  process: [['We identify the right application','We discuss your goals and current marketing, then recommend where AI could support content, creative production, or a repeatable task.'],['We develop the agreed work','We create the concepts, content, or custom tools included in your project, using your brand guidance and approved information.'],['We review and refine','We check the work for quality and consistency. You confirm business-specific facts, provide feedback, and arrange any required specialist approvals.'],['We prepare it for use','We deliver the approved assets or configure the agreed tools, with guidance on how to use them. Further production, updates, and support are scoped separately.']],
   cta: ['Where could AI support your marketing?','Bring a specific idea or a recurring task, and we’ll explore a practical starting point.'],
 };
 
@@ -254,7 +264,7 @@ function ReviewHero({ data }) {
   return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">Marketing service</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div></div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}><strong>{data.card[0]}</strong><p>{data.card[1]}</p></div>}</div></section>;
 }
 
-function ProcessSection({ items, eyebrow = 'Process', heading = 'A clear project from first decision to handover.' }) {
+function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define the work, responsibilities, and next steps.' }) {
   return <section className="section dark"><div className="container"><div className="label">{eyebrow}</div><h2>{Array.isArray(heading) ? <>{heading[0]}<br/>{heading[1]}</> : heading}</h2><div className="process">{items.map(([title,copy],index)=><div className="process-row" key={title}><b>{String(index+1).padStart(2,'0')}</b><div><h3>{title}</h3><p>{copy}</p></div></div>)}</div></div></section>;
 }
 
@@ -279,7 +289,7 @@ function ChildReview({ data }) {
     {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
     <section className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>What your project can include.</h2><p>Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.</p></div><ul>{data.included.map(item=><li key={item}>{item}</li>)}</ul></div></section>
     <section className="section soft"><div className="container"><div className="label">Example applications</div><h2>Example applications.</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>
-    <ProcessSection items={data.process}/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <section className="related-section scr-related scr-child-related"><div className="container"><div><h2>Continue exploring</h2><i/><ul>{data.related.map(([label,path])=><li key={`${path}-${label}`}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>
     <FinalCta data={data}/>
@@ -289,7 +299,7 @@ function ChildReview({ data }) {
 function AiOverviewReview() {
   return <div className="scr-page"><ReviewHero data={aiOverview}/>
     <section className="section"><div className="container"><div className="label">AI service areas</div><h2>Use AI where it supports a defined marketing task.</h2><p className="scr-ai-intro">AI creative produces assets such as visuals and video. Brand-voice tools and custom GPTs support drafting and repeatable tasks. Automation connects steps across tools. These can be scoped separately or combined.</p><div className="grid scr-ai-grid">{aiServices.map(([title,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{title}</h3><p>{copy}</p></Link>)}</div></div></section>
-    <ProcessSection items={aiOverview.process}/>
+    <ProcessSection items={aiOverview.process} eyebrow={aiOverview.processEyebrow} heading={aiOverview.processHeading}/>
     <section className="related-section scr-related"><div className="container"><div><h2>Related Services</h2><i/><ul><li><Link to="/services/ai-automation-for-regulated-industries-magneo/">AI Automation</Link></li><li><Link to="/services/social-media-linkedin-marketing-for-regulated-industries/">Social Media & LinkedIn</Link></li></ul></div><div><h2>Related Industries</h2><i/><ul>{audiences.map(([label,path])=><li key={path}><Link to={path}>{label}</Link></li>)}</ul></div></div></section>
     <FinalCta data={aiOverview}/>
   </div>;
