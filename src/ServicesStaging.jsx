@@ -119,7 +119,6 @@ const directoryGroups = [
       ['Financial Advisors, Firms & FinTech', '/services/ai-automation-for-financial-advisors-firms-fintech-magneo/'],
       ['Tech, SaaS & AI Companies', '/services/ai-marketing-automation-for-tech-saas-ai-companies-magneo/'],
       ['Healthcare Providers & Clinics', '/services/ai-automation-for-healthcare-providers-clinics-magneo/'],
-      ['Compliance-Aware AI Workflows', '/services/compliance-aware-ai-workflows/'],
     ],
   },
   {

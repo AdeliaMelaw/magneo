@@ -67,7 +67,6 @@ const bySlug = {
   'ai-ugc-ai-video-production': [a.lawyerVideo, a.clinicVideo, a.saasCommunity],
   'ai-web-design-conversion': [a.productLed, a.aiPersonalization, a.microSaas],
   'ai-content-marketing': [a.advisorAi, a.financeContent, a.medicalSeo],
-  'compliance-aware-ai-workflows': [a.legalAi, a.advisorAi, a.aiPersonalization],
   'crypto-and-ai-social-media': [a.saasCommunity, a.aiPersonalization, a.microSaas],
 };
 

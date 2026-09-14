@@ -12,7 +12,6 @@ const EXTRA_PATHS = [
   '/services/ai-ugc-ai-video-production/',
   '/services/ai-web-design-conversion/',
   '/services/ai-content-marketing/',
-  '/services/compliance-aware-ai-workflows/',
   ...childServiceSlugs.map((slug) => `/services/${slug}/`)
 ];
 const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
@@ -43,7 +42,6 @@ const descriptions = {
   '/services/ai-ugc-ai-video-production/': 'AI video production, UGC-style creative, product demos, explainers, and ad variations. Explore scripting, editing, and finished video with Magneo.',
   '/services/ai-web-design-conversion/': 'AI-powered web design and development for business websites and landing pages. Explore copy, responsive builds, and conversion-focused improvements.',
   '/services/ai-content-marketing/': 'AI content marketing for regulated industries, including editorial calendars, topical maps, repurposing, and expert review workflows.',
-  '/services/compliance-aware-ai-workflows/': 'Compliance-aware AI workflows for regulated marketing, with human review, claim checks, disclaimers, approvals, and brand controls.',
   '/portfolio/': 'Explore Magneo work across website design, social media marketing, and AI-powered digital marketing for regulated industries.',
   '/portfolio/legal-websites/': 'Explore seven original Magneo website concepts for personal injury, brain injury, litigation, immigration, and notary services.',
   '/portfolio/legal-websites/personal-injury-classic/': 'A timeless, conversion-focused personal injury law firm website concept by Magneo.',
@@ -82,7 +80,6 @@ const titleOverrides = {
   '/services/ai-ugc-ai-video-production/': 'AI Video Production & UGC-Style Creative | Magneo',
   '/services/ai-web-design-conversion/': 'AI Web Design & Conversion-Focused Development | Magneo',
   '/services/ai-content-marketing/': 'AI Content Marketing | Magneo',
-  '/services/compliance-aware-ai-workflows/': 'Compliance-Aware AI Workflows | Magneo',
   '/services/personal-branding-for-financial-advisors-wealth-professionals/': 'Personal Branding for Financial Advisors | Magneo',
   '/services/social-media-linkedin-leadership-for-healthcare-providers-magneo/': 'Healthcare Social Media & LinkedIn Marketing | Magneo',
   '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/': 'Social Media & LinkedIn for SaaS and AI Companies | Magneo',

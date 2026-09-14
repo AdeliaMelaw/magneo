@@ -1,6 +1,13 @@
 {
   "routes": [
     {
+      "src": "/services/compliance-aware-ai-workflows/?",
+      "status": 301,
+      "headers": {
+        "Location": "/services/ai-automation-for-regulated-industries-magneo/"
+      }
+    },
+    {
       "src": "/services/ppc-landing-pages-for-law-firms-magneo/?",
       "status": 301,
       "headers": {
