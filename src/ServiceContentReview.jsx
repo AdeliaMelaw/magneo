@@ -1008,6 +1008,10 @@ function PpcCommercialScope() {
   return <section className="scr-ppc-commercial"><div className="container"><strong>Clear campaign costs and responsibilities</strong><p>The proposal separates advertising spend, campaign setup and production, landing-page development, and ongoing management. Any hosting, software, or platform costs are identified separately.</p></div></section>;
 }
 
+function PpcCompactSection({ content, soft = false }) {
+  return <section className={`section${soft ? ' soft' : ''} scr-ppc-compact`}><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p>{content.text}</p></div></section>;
+}
+
 function PpcReview({ data, slug }) {
   useEffect(()=>{const targetId=window.location.hash.slice(1);if(targetId)document.getElementById(targetId)?.scrollIntoView();},[]);
   const related = data.related || [];
@@ -1017,7 +1021,7 @@ function PpcReview({ data, slug }) {
   return <div className={`scr-page ${data.pageClass || 'scr-page-ppc-expanded'}`}><ReviewHero data={data}/>
     <ExpandedServiceCards content={data.ppcServices} eyebrow="Campaign services"/>
     {(data.ppcFlows || []).map((flow,index)=><CampaignFlowSection content={{...flow,note:flow.note || 'Illustrative workflow, not a campaign-results case study.'}} key={`${flow.heading}-${index}`}/>)}
-    {(data.ppcSections || []).map((section,index)=><DetailedListSection content={section} eyebrow={section.eyebrow} soft={index % 2 === 1} key={section.heading}/>)}
+    {(data.ppcSections || []).map((section,index)=>section.compact ? <PpcCompactSection content={section} soft={index % 2 === 1} key={section.heading}/> : <DetailedListSection content={section} eyebrow={section.eyebrow} soft={index % 2 === 1} key={section.heading}/>)}
     <PpcIndustryLinks links={data.industryLinks}/>
     <PpcCommercialScope/>
     <PpcPortfolioExample content={data.portfolioExample}/>
