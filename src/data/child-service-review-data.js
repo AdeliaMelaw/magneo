@@ -1284,7 +1284,7 @@ export function getChildServiceData(slug) {
     slug,
     card: page.card || family.card,
     included: page.included || (page.family === 'ai' ? page.focus : [...family.included, ...page.focus]),
-    examples: page.examples.map(([title, copy]) => [title, page.preserveExampleCopy ? copy : describeOffering(copy)]),
+    examples: (page.examples || []).map(([title, copy]) => [title, page.preserveExampleCopy ? copy : describeOffering(copy)]),
     examplesEyebrow: page.examplesEyebrow || 'What we can create',
     examplesHeading: page.examplesHeading || specialistExamplesHeadings[slug] || family.examplesHeading,
     process: processForPage(page, family),
