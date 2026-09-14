@@ -670,9 +670,13 @@ function CompactHeroFlow({ flow }) {
   return <aside className={`scr-hero-flow scr-hero-flow-${flow.steps.length}`} aria-label={flow.label}><span className="scr-orbit-eyebrow">{flow.label}</span><div className="scr-hero-flow-steps">{flow.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < flow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p>{flow.note}</p></aside>;
 }
 
+function VideoHeroPreview({ preview }) {
+  return <aside className="scr-video-hero"><div className="scr-video-hero-media"><video controls playsInline preload="metadata" poster={preview.poster} aria-label={`Play ${preview.title}`}><source src={preview.video} type="video/mp4"/>Your browser does not support embedded video.</video></div><div><span>{preview.format}</span><h2>{preview.title}</h2></div></aside>;
+}
+
 function ReviewHero({ data }) {
-  const hasFeatureCard = data.heroPortfolio || data.heroOrbit || data.heroFlow;
-  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">{data.heroEyebrow || 'Marketing service'}</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div>{data.heroMicrocopy && <p className="scr-hero-microcopy">{data.heroMicrocopy}</p>}</div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : data.heroFlow ? <CompactHeroFlow flow={data.heroFlow}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
+  const hasFeatureCard = data.heroPortfolio || data.heroOrbit || data.heroFlow || data.heroVideo;
+  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">{data.heroEyebrow || 'Marketing service'}</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div>{data.heroMicrocopy && <p className="scr-hero-microcopy">{data.heroMicrocopy}</p>}</div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : data.heroFlow ? <CompactHeroFlow flow={data.heroFlow}/> : data.heroVideo ? <VideoHeroPreview preview={data.heroVideo}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
 }
 
 function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define the work, responsibilities, and next steps.', intro }) {
@@ -895,6 +899,78 @@ function SpecialistBrandingReview({ data }) {
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faqItems.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <FinalCta data={data}/>{resources}
+function ExpandedServiceCards({ content, eyebrow = 'Services' }) {
+  if (!content) return null;
+  return <section className="section soft scr-expanded-services"><div className="container"><div className="label">{eyebrow}</div><h2>{content.heading}</h2><div className="scr-expanded-card-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></section>;
+}
+
+function ExpandedPlatformSection({ content }) {
+  if (!content) return null;
+  return <section className="section scr-expanded-platforms"><div className="container"><div className="label">Selected platforms</div><h2>{content.heading}</h2><p className="scr-expanded-intro">{content.intro}</p><div>{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-expanded-note">{content.note}</p></div></section>;
+}
+
+function ExpandedBrandVoice({ content }) {
+  if (!content) return null;
+  return <section className="section dark scr-expanded-brand"><div className="container"><div className="label">Your brand voice</div><h2>{content.heading}</h2><div className="scr-expanded-brand-grid"><div>{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div><ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul></div></div></section>;
+}
+
+function SocialProductionExample({ content }) {
+  if (!content) return null;
+  return <section id="content-examples" className="section soft scr-social-production-example"><div className="container"><div className="label">Illustrative production plan</div><h2>{content.heading}</h2><p className="scr-expanded-intro">{content.text}</p><div className="scr-social-production-grid"><div className="scr-social-video"><video controls playsInline preload="metadata" poster={content.poster} aria-label="Play the expert interview reel concept"><source src={content.video} type="video/mp4"/>Your browser does not support embedded video.</video></div><ol>{content.items.map((item,index)=><li key={item}><span>{String(index + 1).padStart(2,'0')}</span><p>{item}</p></li>)}</ol></div><p className="scr-expanded-note">{content.caption}</p></div></section>;
+}
+
+function PlayableVideoExamples({ content }) {
+  if (!content) return null;
+  return <section id="video-examples" className="section dark scr-playable-examples"><div className="container"><div className="label">Video portfolio</div><h2>{content.heading}</h2><div className="scr-playable-grid">{content.items.map(([title,format,use,video,poster])=><article key={title}><video controls playsInline preload="metadata" poster={poster} aria-label={`Play ${title}`}><source src={video} type="video/mp4"/>Your browser does not support embedded video.</video><div><span>{format}</span><h3>{title}</h3><p>{use}</p></div></article>)}</div><Link className="scr-expanded-dark-link" to="/portfolio/#social-media">Explore the video portfolio <span aria-hidden="true">→</span></Link></div></section>;
+}
+
+function DetailedListSection({ content, eyebrow, soft = false }) {
+  if (!content) return null;
+  return <section className={`section${soft ? ' soft' : ''} scr-detailed-list`}><div className="container"><div><div className="label">{eyebrow}</div><h2>{content.heading}</h2>{content.text && <p>{content.text}</p>}</div><div><ul>{content.items.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul>{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></div></section>;
+}
+
+function CampaignFlowSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-campaign-flow"><div className="container"><div className="label">Illustrative campaign</div><h2>{content.heading}</h2><p className="scr-expanded-intro">{content.text}</p><div className="scr-campaign-flow-steps" role="img" aria-label={content.steps.join(' to ')}>{content.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < content.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p className="scr-expanded-note">{content.note}</p></div></section>;
+}
+
+function WebsiteExamplesSection({ content }) {
+  if (!content) return null;
+  return <section id="website-examples" className="section dark scr-website-examples"><div className="container"><div className="label">Website portfolio</div><h2>{content.heading}</h2><div className="scr-website-example-grid">{content.items.map(([title,type,label,image,path])=><article key={title}><Link to={path} aria-label={`Explore ${title}`}><img src={image} alt={`${title} ${type.toLowerCase()} preview`} width="1440" height="720" loading="lazy" decoding="async"/></Link><div><span>{label} · {type}</span><h3>{title}</h3><Link to={path}>View website concept <span aria-hidden="true">→</span></Link></div></article>)}</div><Link className="scr-expanded-dark-link" to="/portfolio/#portfolio-websites">Explore all website concepts <span aria-hidden="true">→</span></Link></div></section>;
+}
+
+function AiRoleSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-ai-role"><div className="container"><div className="label">AI's role</div><h2>{content.heading}</h2><div>{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div><p className="scr-expanded-note">{content.note}</p></div></section>;
+}
+
+function ExpandedFaq({ items }) {
+  return <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{items.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>;
+}
+
+function ExpandedAiServiceReview({ data, slug }) {
+  useEffect(() => {
+    const targetId = window.location.hash.slice(1);
+    if (targetId) document.getElementById(targetId)?.scrollIntoView();
+  }, []);
+  const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries} articles={relatedArticlesFor({ slug })}/>;
+  return <div className={`scr-page scr-page-expanded-ai ${data.pageClass}`}><ReviewHero data={data}/>
+    <ExpandedServiceCards content={data.coreServices} eyebrow={slug === 'ai-ugc-ai-video-production' ? 'Video formats' : 'Services'}/>
+    <ExpandedPlatformSection content={data.platforms}/>
+    <ExpandedBrandVoice content={data.brandVoice}/>
+    <SocialProductionExample content={data.socialExample}/>
+    <PlayableVideoExamples content={data.videoExamples}/>
+    <DetailedListSection content={data.productionScope} eyebrow="Production scope"/>
+    <DetailedListSection content={data.cameraFormats} eyebrow="Camera and format" soft/>
+    <CampaignFlowSection content={data.campaignFlow}/>
+    <WebsiteExamplesSection content={data.websiteExamples}/>
+    <AiRoleSection content={data.aiRole}/>
+    <DetailedListSection content={data.conversion} eyebrow="Conversion"/>
+    <DetailedListSection content={data.deliverables} eyebrow="Website deliverables" soft/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
+    <ExpandedFaq items={data.faqItems}/>
+    <FinalCta data={data}/>
+    {resources}
   </div>;
 }
 
@@ -990,6 +1066,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   if (childData && !parentData) {
     if (serviceSlug === 'ai-seo') return <AiSeoReview data={childData}/>;
     if (['personal-branding-for-lawyers-legal-professionals','personal-branding-for-financial-advisors-wealth-professionals'].includes(serviceSlug)) return <SpecialistBrandingReview data={childData}/>;
+    if (['ai-social-media-marketing','ai-ugc-ai-video-production','ai-web-design-conversion'].includes(serviceSlug)) return <ExpandedAiServiceReview data={childData} slug={serviceSlug}/>;
     return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
   }
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;

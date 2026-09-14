@@ -86,6 +86,9 @@
   function marqueeForPath(path) {
     if (path.indexOf('/services/ai-powered-digital-marketing') === 0) return null;
     if (path.indexOf('/services/ai-seo') === 0) return null;
+    if (path.indexOf('/services/ai-social-media-marketing') === 0) return null;
+    if (path.indexOf('/services/ai-ugc-ai-video-production') === 0) return null;
+    if (path.indexOf('/services/ai-web-design-conversion') === 0) return null;
     if (path.indexOf('/services/ai-automation-for-law-firms-legal-departments-magneo') === 0) return null;
     if (path.indexOf('/services/ai-automation-for-financial-advisors-firms-fintech-magneo') === 0) return null;
     if (path.indexOf('/services/ai-marketing-automation-for-tech-saas-ai-companies-magneo') === 0) return null;
