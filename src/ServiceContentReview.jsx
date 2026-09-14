@@ -535,8 +535,9 @@ const pageData = {
     related: [['Website Design','/services/website-design-for-regulated-professional-industries-magneo/'],['SEO & Content','/services/seo-for-regulated-industries/']],
   },
   'personal-branding-for-regulated-professionals': {
+    pageClass: 'scr-page-personal-branding',
     title: 'Personal Branding for Regulated Professionals',
-    description: 'Personal branding for lawyers, financial advisors, healthcare professionals, and technology founders. Magneo develops your professional positioning, LinkedIn profile, biography, and content direction so potential clients can understand your expertise and what you offer.',
+    description: 'Personal branding for lawyers, financial advisors, healthcare professionals, and technology founders. Magneo develops your positioning, professional profiles, brand voice, and content direction so potential clients can understand your expertise. Expert-led video brings your perspective and personality into that presence.',
     seoTitle: 'Personal Branding for Regulated Professionals | Magneo',
     metaDescription: 'Personal brand strategy, LinkedIn profile writing, and professional bios for lawyers, financial advisors, healthcare professionals, and tech founders.',
     primary: ['Talk about your personal brand', '/contact/#contact-enquiry'], secondary: ['View all services', '/services/'],
@@ -551,7 +552,8 @@ const pageData = {
       ['Personal brand strategy','Your audience, professional focus, key messages, and how your experience supports your positioning.'],
       ['LinkedIn profile writing','Headline and About copy that explain your work, your expertise, and who you help.'],
       ['Professional biography','An introduction for your website, speaking opportunities, and professional profiles, adapted to the agreed formats.'],
-      ['Content strategy and voice','Themes and writing guidance for sharing your expertise through posts, articles, or video.'],
+      ['Content strategy and brand voice','Content themes, tone, and messaging guidance for profiles, articles, posts, and video scripts, with a custom GPT setup available as part of the agreed scope.'],
+      ['Expert-led video','Topic planning, scripting, and recording guidance to help you communicate your expertise on camera. Editing and recurring production are defined in the selected package.'],
       ['Visual direction','Recommendations for profile imagery and a consistent presentation across your professional channels.'],
       ['Putting your positioning into practice','Guidance on using the approved messages and materials across your profiles and content.'],
     ],
@@ -562,13 +564,23 @@ const pageData = {
     ],
     examplesEyebrow: 'What we can create',
     examplesHeading: 'Personal-brand assets grounded in your real expertise.',
+    brandVoice: {
+      eyebrow: 'Brand voice',
+      heading: 'A recognisable voice, grounded in your expertise.',
+      paragraphs: ['Your personal brand includes how you explain ideas, express opinions, and speak to the people you want to reach. Interviews, existing writing, and feedback help define a voice that reflects your personality and professional judgement.','That direction becomes practical guidance for your profile, articles, posts, and video scripts. A custom GPT can also be configured with approved examples, preferred terminology, and writing instructions to support consistent drafting.'],
+      items: [['Your tone','The level of formality, vocabulary, and style that feels natural to you.'],['Your perspective','The experience, ideas, and explanations that give your content substance.'],['Your AI writing assistant','A custom GPT configured around your brand-voice guidance, with editing and review shaping the final output.']],
+      closing: 'AI helps express your expertise consistently. It does not replace your knowledge, judgement, or presence.',
+    },
     processEyebrow: 'How we work',
     processHeading: 'From professional experience to a clear personal brand.',
     process: [['Positioning','A conversation about your experience, audience, and goals gives Magneo the foundation to recommend your professional focus and key messages.'],['Profile development','Magneo develops the agreed biographies, profile copy, and content direction using information and examples you provide.'],['Feedback and refinement','You confirm accuracy and share feedback. The agreed revisions refine the wording so it reflects your experience and point of view.'],['Delivery and guidance','You receive the approved materials and guidance for using them consistently. Ongoing content creation or profile management is scoped separately.']],
     faq: [
       ['How is personal branding different from social media management?','Personal branding defines your positioning, message, and voice. Social media management handles ongoing content and publishing. They can be combined, but are scoped separately.'],
       ['What do you need from me?','We need your background, areas of expertise, goals, and examples of how you communicate. Interviews and feedback help the work reflect your actual perspective.'],
-      ['Do I need to appear on video?','No. Your positioning can be expressed through written profiles, articles, presentations, and other formats. Video is an option.'],
+      ['Do I need to appear on video?',<>Yes—appearing on camera is a core part of the expert-led personal-branding approach recommended by Magneo. Potential clients should be able to see you, hear your perspective, and get a sense of how you explain your work.<br/><br/>You do not need to arrive with polished presentation skills. Topic planning, scripts, and recording guidance help you prepare, while editing shapes the finished video. Written content and visuals support your presence alongside video.</>],
+      ['What if I am not comfortable on camera?','Start with short, guided recordings about subjects you know well. An interview-style conversation can feel more natural than delivering a prepared speech. The format and pace can develop as your confidence grows.'],
+      ['Can you write in my professional voice?','Yes. Your writing, interviews, and feedback help establish how you communicate. Brand-voice guidance captures your tone, terminology, and perspective, and a custom GPT can support drafting from that foundation. Editing and review keep the finished content aligned with what you actually think and want to say.'],
+      ['How much of my time will this require?','For most experts, the ongoing content process is designed to require no more than two hours a week for sharing ideas, recording, and reviewing material. Initial positioning work or a larger recording session may require additional time, agreed in advance.'],
       ['Can you help me communicate more than one role or business?','Yes. The work can clarify how your roles connect while keeping the message understandable to your intended audience.'],
       ['Is ongoing content included?','Only where specified. Your proposal distinguishes positioning and profile work from recurring content production.'],
       ['Can personal branding help people find me online?',<>Clear, consistent profiles help people understand your expertise when they search for your name or visit your professional pages. Personal branding can support your wider online presence, but <Link to="/services/seo-for-regulated-industries/">website SEO</Link> and ongoing search optimisation are separate services.</>],
@@ -824,7 +836,7 @@ function BlogAutomationSection({ content }) {
 }
 
 function BrandVoiceSection({ content }) {
-  return <section className="section soft scr-brand-voice"><div className="container"><div className="label">AI brand voice</div><h2>{content.heading}</h2><div className="scr-brand-voice-copy">{content.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div><div className="scr-brand-voice-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-seo-note">{content.closing}</p></div></section>;
+  return <section className="section soft scr-brand-voice"><div className="container"><div className="label">{content.eyebrow || 'AI brand voice'}</div><h2>{content.heading}</h2><div className="scr-brand-voice-copy">{content.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div><div className="scr-brand-voice-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-seo-note">{content.closing}</p></div></section>;
 }
 
 function ContentGenerationSection({ content }) {
@@ -899,6 +911,9 @@ function SpecialistBrandingReview({ data }) {
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faqItems.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <FinalCta data={data}/>{resources}
+  </div>;
+}
+
 function ExpandedServiceCards({ content, eyebrow = 'Services' }) {
   if (!content) return null;
   return <section className="section soft scr-expanded-services"><div className="container"><div className="label">{eyebrow}</div><h2>{content.heading}</h2><div className="scr-expanded-card-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></section>;
@@ -1004,6 +1019,7 @@ function StandardReview({ data, slug }) {
     <AutomationWorkflowSection workflow={data.automationWorkflow}/>
     {data.visualExamples && <SocialVisualExamples/>}
     <PurposeVisualSection visual={data.purposeVisual}/>
+    {data.brandVoice && <BrandVoiceSection content={data.brandVoice}/>}
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading} intro={data.processIntro}/>
     <StartingPointSection content={data.startingPoint}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p><FaqAnswer answer={answer}/></p></details>)}</div></div></section>
