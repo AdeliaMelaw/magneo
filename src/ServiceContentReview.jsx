@@ -205,7 +205,6 @@ const pageData = {
       ['Can location pages be included?', 'Yes, where they accurately reflect the firm’s offices or services and provide useful local information. Repeated city pages with little meaningful difference are not the default approach.'],
       ['Who approves legal content?', 'The firm’s designated reviewer confirms legal accuracy, professional details, and approval before publication.'],
       ['How is progress measured?', 'Reporting can cover completed work, relevant search queries, landing-page activity, and agreed enquiries. Enquiries and retained clients are measured separately.'],
-      ['Do you guarantee rankings?', 'No. Deliverables and reporting are defined in the scope; rankings and client acquisition are not guaranteed.'],
     ],
     cta: ['Which matters should prospective clients find your firm for?', 'Share your website, priority practice areas, and the locations you serve. Include any concerns about visibility or irrelevant enquiries.'],
     ctaButton: ['Discuss your law firm’s SEO', '/contact/#contact-enquiry'],
