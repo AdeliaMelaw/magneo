@@ -1,17 +1,19 @@
 {
-  "redirects": [
+  "routes": [
     {
-      "source": "/services/ppc-landing-pages-for-law-firms-magneo/",
-      "destination": "/services/ppc-landing-pages-for-law-firms/",
-      "statusCode": 301
+      "src": "/services/ppc-landing-pages-for-law-firms-magneo/?",
+      "status": 301,
+      "headers": {
+        "Location": "/services/ppc-landing-pages-for-law-firms/"
+      }
     },
     {
-      "source": "/services/ppc-landing-pages-for-financial-advisors-fintech-magneo/",
-      "destination": "/services/ppc-landing-pages-for-financial-advisors-fintech/",
-      "statusCode": 301
-    }
-  ],
-  "routes": [
+      "src": "/services/ppc-landing-pages-for-financial-advisors-fintech-magneo/?",
+      "status": 301,
+      "headers": {
+        "Location": "/services/ppc-landing-pages-for-financial-advisors-fintech/"
+      }
+    },
     {
       "src": "/home/test/?",
       "status": 301,
