@@ -148,7 +148,6 @@ const pageData = {
       ['What affects the cost?', 'Website size, technical complexity, content requirements, and the amount of implementation affect the scope. Fees and any recurring commitment are confirmed before work begins.'],
       ['Can you work with our existing developer?', 'Yes. The scope can separate recommendations from implementation and identify which changes Magneo handles and which remain with your developer.'],
       ['Is content approval included in the process?', 'The project can include your internal review stages. Your designated reviewers remain responsible for confirming specialist facts and publication approval.'],
-      ['Can you guarantee first-page rankings?', 'No. Search rankings depend on factors outside any agency’s control. The engagement focuses on defined work, relevant priorities, and transparent measurement.'],
     ],
     cta: ['What should the right people find you for?', 'Share your website, priority services, and the markets you serve. Those details help establish whether the next step is a review, a focused project, or ongoing support.'],
     ctaButton: ['Discuss your SEO priorities', '/contact/#contact-enquiry'],
@@ -1046,7 +1045,7 @@ function ChildReview({ data }) {
     {data.audienceAfterPlatforms && <AudienceSplitSection audience={data.audienceSplit}/>}
     <ContentPlanSection plan={data.contentPlan}/>
     <DecisionSection decision={data.decision}/>
-    {!data.hideExamples && <section id={data.examplesId} className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
+    {!data.hideExamples && <section id={data.examplesId} className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}{data.examplesLink && <Link className="scr-examples-link" to={data.examplesLink[0]}>{data.examplesLink[1]} <span aria-hidden="true">→</span></Link>}</div></section>}
     <PracticalContentExample content={data.contentExample}/>
     <HealthcareVisualExamples content={data.healthcareVisualExamples}/>
     <ChildVisualExample example={data.visualExample}/>
