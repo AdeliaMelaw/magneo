@@ -52,7 +52,7 @@ const portfolioPreviews = [
     title: 'Video & Reels',
     label: 'Original concepts',
     description: 'See short-form video and reel concepts built to make expertise easier to follow.',
-    image: '/portfolio/social/podcast-interview-reel-cover-v2.png',
+    image: '/portfolio/social/podcast-interview-reel-cover-v3.jpg',
     alt: 'Cover for an original podcast interview reel concept',
     href: '/portfolio/#social-media',
   },

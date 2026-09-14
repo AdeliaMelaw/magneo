@@ -13,7 +13,7 @@ const websiteGallery = [
 const socialGallery = [
   ['/portfolio/social/immersive-scenario.webp','Immersive scenario reel'],
   ['/portfolio/social/commentary-reel.webp','Commentary reel'],
-  ['/portfolio/social/podcast-interview.webp','Podcast interview reel'],
+  ['/portfolio/social/podcast-interview-reel-cover-v3.jpg','Podcast interview reel'],
   ['/portfolio/social/conversational-reel.webp','Conversational reel'],
 ];
 
