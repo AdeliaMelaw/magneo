@@ -667,7 +667,7 @@ function AutomationOrbitCard({ orbit }) {
 }
 
 function CompactHeroFlow({ flow }) {
-  return <aside className="scr-hero-flow" aria-label={flow.label}><span className="scr-orbit-eyebrow">{flow.label}</span><div className="scr-hero-flow-steps">{flow.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < flow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p>{flow.note}</p></aside>;
+  return <aside className={`scr-hero-flow scr-hero-flow-${flow.steps.length}`} aria-label={flow.label}><span className="scr-orbit-eyebrow">{flow.label}</span><div className="scr-hero-flow-steps">{flow.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < flow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p>{flow.note}</p></aside>;
 }
 
 function ReviewHero({ data }) {
@@ -811,6 +811,45 @@ function RelatedColumns({ serviceLinks, industryLinks, articles }) {
   </div></section>;
 }
 
+function AiSeoScopeCards({ content }) {
+  return <section className="section soft scr-ai-seo-scope"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-ai-seo-intro">{content.intro}</p><div className="scr-ai-seo-card-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>;
+}
+
+function BlogAutomationSection({ content }) {
+  return <section id="blog-automation" className="section dark scr-blog-automation"><div className="container"><div className="label">Blog automation</div><h2>{content.heading}</h2><p className="scr-ai-seo-intro">{content.text}</p><ol>{content.steps.map(([title, copy], index)=><li key={title}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}</ol><p className="scr-ai-seo-note">{content.note}</p></div></section>;
+}
+
+function BrandVoiceSection({ content }) {
+  return <section className="section soft scr-brand-voice"><div className="container"><div className="label">AI brand voice</div><h2>{content.heading}</h2><div className="scr-brand-voice-copy">{content.paragraphs.map(paragraph=><p key={paragraph}>{paragraph}</p>)}</div><div className="scr-brand-voice-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-seo-note">{content.closing}</p></div></section>;
+}
+
+function ContentGenerationSection({ content }) {
+  return <section className="section scr-content-generation"><div className="container"><div className="label">Content generation</div><h2>{content.heading}</h2><p className="scr-ai-seo-intro">{content.intro}</p><div className="scr-content-generation-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-seo-note">{content.note}</p><Link className="scr-ai-seo-text-link" to={content.link[1]}>{content.link[0]} <span aria-hidden="true">→</span></Link></div></section>;
+}
+
+function ApprovedTopicExample({ content }) {
+  return <section className="section soft scr-topic-example"><div className="container"><div className="label">Illustrative content set</div><h2>{content.heading}</h2><div className="scr-topic-example-grid"><div className="scr-topic-prompt"><span>Approved topic</span><strong>{content.prompt}</strong></div><ol>{content.items.map((item, index)=><li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></div><p className="scr-topic-caption">{content.caption}</p></div></section>;
+}
+
+function AiSeoReview({ data }) {
+  useEffect(() => {
+    const targetId = window.location.hash.slice(1);
+    if (targetId) document.getElementById(targetId)?.scrollIntoView();
+  }, []);
+  const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries} articles={relatedArticlesFor({ slug: 'ai-seo' })}/>;
+  return <div className={`scr-page ${data.pageClass}`}><ReviewHero data={data}/>
+    <AiSeoScopeCards content={data.scopeCards}/>
+    <BlogAutomationSection content={data.blogAutomation}/>
+    <BrandVoiceSection content={data.brandVoice}/>
+    <ContentGenerationSection content={data.contentGeneration}/>
+    <ApprovedTopicExample content={data.approvedTopicExample}/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
+    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faqItems.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+    <FinalCta data={data}/>
+    {resources}
+  </div>;
+}
+
 function FaqAnswer({ answer }) {
   if (typeof answer !== 'object' || answer === null || !answer.path) return answer;
   return <>{answer.before}<Link to={answer.path}>{answer.label}</Link>{answer.after}</>;
@@ -900,6 +939,9 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
   const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo', 'ai-automation-for-healthcare-providers-clinics-magneo'];
-  if (childData && !parentData) return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
+  if (childData && !parentData) {
+    if (serviceSlug === 'ai-seo') return <AiSeoReview data={childData}/>;
+    return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
+  }
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;
 }
