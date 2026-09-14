@@ -512,7 +512,8 @@ const pageData = {
     metaDescription: 'PPC management and landing pages for regulated industries. Explore campaign strategy, ad creative, tracking, and ongoing optimisation with Magneo.',
     description: 'Connect your advertising budget to a clear offer and a straightforward enquiry process. Magneo plans paid campaigns, creates ads, and builds landing pages around the services you want to promote, with tracking and ongoing management available within the agreed scope.',
     primary: ['Discuss your campaign', '/contact/#contact-enquiry'], secondary: ['Explore campaign services', '#campaign-services'],
-    card: ['CAMPAIGN MANAGEMENT', 'Strategy, ads, landing pages, tracking, and ongoing optimisation.'],
+    cardEyebrow: 'PPC & LANDING PAGES',
+    card: ['From ad to enquiry.', 'Campaign strategy, ad creative, and landing pages with a clear next step.'],
     cardClass: 'scr-hero-card-campaigns',
     ppcServices: { id: 'campaign-services', heading: 'Campaign strategy, ads, and landing pages in one project.', items: [
       ['Campaign strategy','The offer, audience, locations, platform, and budget organised around a defined business objective.'],
