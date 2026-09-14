@@ -642,6 +642,7 @@ const pages = {
   'social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo': {
     family: 'social',
     industry: 'tech',
+    pageClass: 'scr-page-tech-social',
     title: 'Social Media & LinkedIn Marketing for Tech, SaaS & AI Companies',
     seoTitle: 'Social Media & LinkedIn for SaaS and AI Companies | Magneo',
     metaDescription: 'Social content for SaaS, tech, and AI companies: product demonstrations, founder perspectives, feature explanations, and launch communication.',

@@ -64,6 +64,7 @@
 .scr-faq h2{margin-bottom:28px}.scr-faq-list{border-top:1px solid var(--line)}
 .scr-faq details{border-bottom:1px solid var(--line)}
 .scr-faq summary{position:relative;padding:22px 52px 22px 4px;cursor:pointer;font-weight:600;list-style:none}
+.scr-page-tech-social .scr-faq summary,.scr-page-tech-social .scr-faq details[open] summary,.scr-page-tech-social .scr-faq summary:active,.scr-page-tech-social .scr-faq summary:focus-visible{color:var(--ink)}
 .scr-faq summary::-webkit-details-marker{display:none}.scr-faq summary:after{content:'+';position:absolute;right:8px;top:18px;font-size:24px;color:#579600}.scr-faq details[open] summary:after{content:'−'}
 .scr-faq details p{max-width:830px;margin:0;padding:0 48px 24px 4px;color:var(--muted);line-height:1.75}
 .scr-faq details p a{color:#3f7200;text-decoration:underline;text-underline-offset:3px}.scr-faq details p a:hover,.scr-faq details p a:focus-visible{color:#274800}
