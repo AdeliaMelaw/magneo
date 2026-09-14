@@ -84,6 +84,10 @@
   };
 
   function marqueeForPath(path) {
+    if (path.indexOf('/services/ppc-landing-pages-for-regulated-industries') === 0) return null;
+    if (path.indexOf('/services/ppc-landing-pages-for-law-firms') === 0) return null;
+    if (path.indexOf('/services/ppc-landing-pages-for-healthcare-medtech') === 0) return null;
+    if (path.indexOf('/services/ppc-landing-pages-for-financial-advisors-fintech') === 0) return null;
     if (path.indexOf('/services/ai-powered-digital-marketing') === 0) return null;
     if (path.indexOf('/services/ai-seo') === 0) return null;
     if (path.indexOf('/services/ai-social-media-marketing') === 0) return null;

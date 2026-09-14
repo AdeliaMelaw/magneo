@@ -506,36 +506,46 @@ const pageData = {
     related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
   },
   'ppc-landing-pages-for-regulated-industries': {
-    title: 'PPC & Landing Pages for Regulated Industries',
-    description: 'Paid advertising and landing pages built around a defined offer, audience, and budget. Connect your campaign message to a clear next step and measure the actions that matter to your business.',
-    primary: ['Discuss a campaign', '/contact/#contact-enquiry'], secondary: ['View all services', '/services/'],
-    card: ['CAMPAIGNS', 'Ads and landing pages built around a defined offer.'],
+    pageClass: 'scr-page-ppc-expanded',
+    title: 'PPC Management & Landing Pages for Regulated Industries',
+    seoTitle: 'PPC Management & Landing Pages for Regulated Industries | Magneo',
+    metaDescription: 'PPC management and landing pages for regulated industries. Explore campaign strategy, ad creative, tracking, and ongoing optimisation with Magneo.',
+    description: 'Connect your advertising budget to a clear offer and a straightforward enquiry process. Magneo plans paid campaigns, creates ads, and builds landing pages around the services you want to promote, with tracking and ongoing management available within the agreed scope.',
+    primary: ['Discuss your campaign', '/contact/#contact-enquiry'], secondary: ['Explore campaign services', '#campaign-services'],
+    card: ['CAMPAIGN MANAGEMENT', 'Strategy, ads, landing pages, tracking, and ongoing optimisation.'],
     cardClass: 'scr-hero-card-campaigns',
-    included: ['Campaign objectives and audience planning','Keyword or targeting research for the agreed platform','Ad copy and agreed creative assets','Landing-page copy, design, and implementation','Conversion tracking and pre-launch checks','Campaign management and reporting where included'],
-    examples: [
-      ['Service campaign','We connect an advertisement to a landing page that explains one offer and how to enquire.'],
-      ['Event or consultation campaign','We build a campaign around a defined invitation, with a relevant registration or enquiry page.'],
-      ['Existing campaign refinement','We review the targeting, message, landing page, and tracking to identify changes worth testing.'],
+    ppcServices: { id: 'campaign-services', heading: 'Campaign strategy, ads, and landing pages in one project.', items: [
+      ['Campaign strategy','The offer, audience, locations, platform, and budget organised around a defined business objective.'],
+      ['Paid search','Keyword research, campaign structure, negative keywords, and ad copy aligned with the services being promoted.'],
+      ['Paid social','Creative and campaigns developed for selected platforms, with the audience and placement assessed for the offer.'],
+      ['Landing-page development','Copy, responsive design, forms, and implementation that connect the advertisement to a relevant next step.'],
+      ['Tracking and enquiry routing','Agreed measurement for forms, calls, or bookings, with enquiries directed to the appropriate person.'],
+      ['Ongoing management','Campaign monitoring, search-term reviews, budget adjustments, and creative improvements guided by available data.'],
+    ]},
+    ppcFlows: [{ heading: 'Make the next step clear after the click.', text: 'An ad introduces the offer. The landing page explains it, answers immediate questions, and makes contact easy. The enquiry then needs to reach someone who can respond.', steps: ['Relevant ad','Focused landing page','Enquiry or booking','Team follow-up'] }],
+    ppcSections: [
+      { eyebrow: 'Starting options', heading: 'Choose the support your campaign needs.', items: [['New campaign','Strategy, setup, ads, and an agreed landing page.'],['Existing campaign improvement','Review and refinement of targeting, messaging, pages, and tracking.'],['Landing page only','A focused destination for an existing campaign.'],['Ongoing management','Monitoring, reporting, and agreed adjustments after launch.']] },
+      { eyebrow: 'Landing-page scope', heading: 'A page that helps visitors make a decision.', items: ['Clear offer and intended audience.','Headline consistent with the advertisement.','Useful service details.','Relevant, verified evidence.','Answers to common questions.','A focused contact or booking route.','Mobile and performance checks.','Agreed tracking.'] },
+      { eyebrow: 'Measurement', heading: 'Understand what happens after the click.', text: 'Reporting connects advertising spend with measurable actions and available enquiry-quality feedback. Depending on the setup, this can include conversion rate, cost per enquiry, and relevant follow-up outcomes.', note: 'Booked consultations and sales require reliable follow-up information. A tracked submission should not automatically be described as a qualified lead.' },
     ],
-    examplesEyebrow: 'What we can create',
-    examplesHeading: 'Campaigns built around a clear offer and next step.',
-    processEyebrow: 'How we work',
-    processHeading: 'We plan, create, and launch your campaign.',
+    industryLinks: [['Law-firm PPC','/services/ppc-landing-pages-for-law-firms/'],['Healthcare & MedTech PPC','/services/ppc-landing-pages-for-healthcare-medtech/'],['Financial advisor & FinTech PPC','/services/ppc-landing-pages-for-financial-advisors-fintech/']],
+    portfolioExample: { title: 'Personal Injury · Modern', label: 'Original Magneo website concept · not a campaign-results case study', image: '/portfolio/websites/personal-injury-modern-hero-preview.webp', alt: 'Preview of a focused personal-injury website concept by Magneo', link: '/portfolio/legal-websites/personal-injury-bold/' },
+    processEyebrow: 'Campaign process', processHeading: 'From campaign strategy to ongoing management.',
     process: [
-      ['We plan the campaign','We discuss your goals and audience, then propose the campaign approach, scope, advertising budget, and measurement plan for your approval.'],
-      ['We create the ads and landing page','We develop the agreed copy, creative, and landing page. You review business details, provide feedback, and arrange any required internal approvals.'],
-      ['We check and launch','We test the landing page, check the agreed tracking, and complete campaign setup. We submit approved ads to the platform and launch once its required review is complete.'],
-      ['We review the next steps','We explain what has been delivered and how to access it. Where ongoing campaign management is included, we monitor performance and make adjustments within the agreed scope.'],
+      ['Strategy','Magneo defines the offer, audience, budget, and measurement plan.'],
+      ['Production','Ads and landing pages are developed around the approved direction.'],
+      ['Launch checks','Forms, tracking, destinations, and settings are tested.'],
+      ['Management','Performance and enquiry feedback inform agreed adjustments.'],
     ],
     faq: [
-      ['Is advertising spend included in your fee?','The proposal separates Magneo’s fees from the budget paid to advertising platforms.'],
-      ['Do you create the landing page?','Landing-page copy, design, and implementation can be included. The proposal specifies whether we build a new page or work with an existing one.'],
-      ['Which advertising platforms do you use?','We recommend a platform based on your audience, offer, budget, and any applicable restrictions. Platform selection is agreed before setup.'],
-      ['Can you guarantee leads or platform approval?','No. Results depend on factors including competition, budget, demand, and the offer. Advertising platforms make their own approval decisions.'],
-      ['What will reporting cover?','We agree on the relevant measures, such as spend, clicks, tracked enquiries, and cost per enquiry. Assessing enquiry quality requires feedback or connected business data.'],
-      ['Who reviews advertising claims?','You approve the final offer and claims, with your designated reviewer involved where required.'],
+      ['Can you manage the ads and build the landing page?','Yes. The scope can combine campaign setup, creative, landing-page development, tracking, and ongoing management.'],
+      ['Can you improve an existing campaign?','Yes. Existing targeting, search terms, messaging, landing pages, and measurement can be reviewed before changes are prioritised.'],
+      ['How much advertising budget is needed?','The starting budget depends on competition, the market, the offer, and the intended action. Research informs the proposed budget and testing scope.'],
+      ['Is advertising spend included in your fee?','No. Advertising spend is separate from Magneo’s fees. Any additional software or hosting costs are identified in the proposal.'],
+      ['How quickly can a campaign launch?','Timing depends on access, content readiness, page production, tracking, and platform review. The proposal sets out the planned stages.'],
     ],
-    cta: ['What would you like to promote?','Tell Adele about your offer, audience, and any campaigns already running.'],
+    cta: ['Give your next campaign a clearer route to enquiry.','Share the offer, audience, and any campaigns already running.'], ctaButton: ['Discuss your campaign','/contact/#contact-enquiry'],
+    resourcesAfterCta: true,
     related: [['Website Design','/services/website-design-for-regulated-professional-industries-magneo/'],['SEO & Content','/services/seo-for-regulated-industries/']],
   },
   'personal-branding-for-regulated-professionals': {
@@ -981,7 +991,41 @@ function SpecialistBrandingReview({ data }) {
 
 function ExpandedServiceCards({ content, eyebrow = 'Services' }) {
   if (!content) return null;
-  return <section className="section soft scr-expanded-services"><div className="container"><div className="label">{eyebrow}</div><h2>{content.heading}</h2><div className="scr-expanded-card-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></section>;
+  return <section id={content.id} className="section soft scr-expanded-services"><div className="container"><div className="label">{eyebrow}</div><h2>{content.heading}</h2><div className="scr-expanded-card-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></section>;
+}
+
+function PpcIndustryLinks({ links }) {
+  if (!links) return null;
+  return <section className="scr-ppc-industry-links"><div className="container"><strong>Explore industry-specific PPC services</strong><div>{links.map(([label,path])=><Link to={path} key={path}>{label} <span aria-hidden="true">→</span></Link>)}</div></div></section>;
+}
+
+function PpcPortfolioExample({ content }) {
+  if (!content) return null;
+  return <section className="section dark scr-ppc-portfolio"><div className="container"><div><div className="label">Portfolio example</div><h2>A focused page concept.</h2><p>This existing design example shows how a clear offer and next step can be presented. It is not evidence of campaign performance.</p></div><figure><Link to={content.link} aria-label={`Explore ${content.title}`}><img src={content.image} alt={content.alt} width="1440" height="900" loading="lazy" decoding="async"/></Link><figcaption><strong>{content.title}</strong><span>{content.label}</span><Link to={content.link}>Explore the concept <span aria-hidden="true">→</span></Link></figcaption></figure></div></section>;
+}
+
+function PpcCommercialScope() {
+  return <section className="scr-ppc-commercial"><div className="container"><strong>Clear campaign costs and responsibilities</strong><p>The proposal separates advertising spend, campaign setup and production, landing-page development, and ongoing management. Any hosting, software, or platform costs are identified separately.</p></div></section>;
+}
+
+function PpcReview({ data, slug }) {
+  useEffect(()=>{const targetId=window.location.hash.slice(1);if(targetId)document.getElementById(targetId)?.scrollIntoView();},[]);
+  const related = data.related || [];
+  const serviceLinks = related.filter(([,path])=>path.startsWith('/services/') || path.startsWith('/portfolio/'));
+  const industryLinks = related.filter(([,path])=>!path.startsWith('/services/') && !path.startsWith('/portfolio/'));
+  const resources = <RelatedColumns serviceLinks={serviceLinks} industryLinks={industryLinks.length ? industryLinks : audiences} articles={relatedArticlesFor({ slug, family: 'ppc', industry: data.industry })}/>;
+  return <div className={`scr-page ${data.pageClass || 'scr-page-ppc-expanded'}`}><ReviewHero data={data}/>
+    <ExpandedServiceCards content={data.ppcServices} eyebrow="Campaign services"/>
+    {(data.ppcFlows || []).map((flow,index)=><CampaignFlowSection content={{...flow,note:flow.note || 'Illustrative workflow, not a campaign-results case study.'}} key={`${flow.heading}-${index}`}/>)}
+    {(data.ppcSections || []).map((section,index)=><DetailedListSection content={section} eyebrow={section.eyebrow} soft={index % 2 === 1} key={section.heading}/>)}
+    <PpcIndustryLinks links={data.industryLinks}/>
+    <PpcCommercialScope/>
+    <PpcPortfolioExample content={data.portfolioExample}/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow || 'Campaign process'} heading={data.processHeading}/>
+    <ExpandedFaq items={data.faq}/>
+    <FinalCta data={data}/>
+    {resources}
+  </div>;
 }
 
 function ExpandedPlatformSection({ content }) {
@@ -1006,7 +1050,7 @@ function PlayableVideoExamples({ content }) {
 
 function DetailedListSection({ content, eyebrow, soft = false }) {
   if (!content) return null;
-  return <section className={`section${soft ? ' soft' : ''} scr-detailed-list`}><div className="container"><div><div className="label">{eyebrow}</div><h2>{content.heading}</h2>{content.text && <p>{content.text}</p>}</div><div><ul>{content.items.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul>{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></div></section>;
+  return <section className={`section${soft ? ' soft' : ''} scr-detailed-list`}><div className="container"><div><div className="label">{eyebrow}</div><h2>{content.heading}</h2>{content.text && <p>{content.text}</p>}</div><div>{content.items && <ul>{content.items.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul>}{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></div></section>;
 }
 
 function CampaignFlowSection({ content }) {
@@ -1236,6 +1280,8 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
   const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo', 'ai-automation-for-healthcare-providers-clinics-magneo'];
+  const ppcSlugs = ['ppc-landing-pages-for-regulated-industries','ppc-landing-pages-for-law-firms','ppc-landing-pages-for-healthcare-medtech','ppc-landing-pages-for-financial-advisors-fintech'];
+  if (ppcSlugs.includes(serviceSlug)) return <PpcReview data={data} slug={serviceSlug}/>;
   if (childData && !parentData) {
     if (serviceSlug === 'ai-seo') return <AiSeoReview data={childData}/>;
     if (serviceSlug === 'ai-content-marketing') return <AiContentMarketingReview data={childData}/>;
