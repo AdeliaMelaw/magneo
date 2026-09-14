@@ -707,7 +707,8 @@ function HealthcareVisualExamples({ content }) {
 
 function EngagementSection({ content }) {
   if (!content) return null;
-  return <section className="section soft scr-engagement"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-engagement-intro">{content.intro}</p><div className={`scr-engagement-grid${content.items.length === 4 ? ' scr-engagement-grid-four' : ''}`}>{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-engagement-note">{content.note}</p><p className="scr-engagement-clarification">{content.clarification}</p></div></section>;
+  const gridClass = content.items.length === 4 ? ' scr-engagement-grid-four' : content.items.length === 5 ? ' scr-engagement-grid-five' : '';
+  return <section className="section soft scr-engagement"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-engagement-intro">{content.intro}</p><div className={`scr-engagement-grid${gridClass}`}>{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-engagement-note">{content.note}</p><p className="scr-engagement-clarification">{content.clarification}</p></div></section>;
 }
 
 function SocialVisualExamples() {
@@ -766,7 +767,7 @@ function ChildVisualExample({ example }) {
 
 function ContentPlanSection({ plan }) {
   if (!plan) return null;
-  return <section className="section scr-content-plan"><div className="container"><div className="label">{plan.eyebrow}</div><h2>{plan.heading}</h2><div className="grid scr-content-plan-grid">{plan.items.map(([title,copy],index)=><article className="card" key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-content-plan-closing">{plan.closing}</p><p className="scr-content-plan-label">{plan.label}</p></div></section>;
+  return <section id={plan.id} className="section scr-content-plan"><div className="container"><div className="label">{plan.eyebrow}</div><h2>{plan.heading}</h2><div className="grid scr-content-plan-grid">{plan.items.map(([title,copy],index)=><article className="card" key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-content-plan-closing">{plan.closing}</p><p className="scr-content-plan-label">{plan.label}</p>{plan.link && <Link className="scr-content-plan-link" to={plan.link[0]}>{plan.link[1]} <span aria-hidden="true">→</span></Link>}</div></section>;
 }
 
 function StandardReview({ data, slug }) {
@@ -796,8 +797,8 @@ function StandardReview({ data, slug }) {
 function ChildReview({ data }) {
   useEffect(() => {
     const targetId = window.location.hash.slice(1);
-    if (targetId && (targetId === data.scopeId || targetId === data.examplesId || targetId === data.visualExample?.id || targetId === data.contentExample?.id)) document.getElementById(targetId)?.scrollIntoView();
-  }, [data.scopeId, data.examplesId, data.visualExample?.id, data.contentExample?.id]);
+    if (targetId && (targetId === data.scopeId || targetId === data.examplesId || targetId === data.visualExample?.id || targetId === data.contentExample?.id || targetId === data.contentPlan?.id)) document.getElementById(targetId)?.scrollIntoView();
+  }, [data.scopeId, data.examplesId, data.visualExample?.id, data.contentExample?.id, data.contentPlan?.id]);
   const serviceLinks = data.related.filter(([,path]) => path.startsWith('/services/') || path.startsWith('/portfolio/'));
   const industryLinks = data.related.filter(([,path]) => !path.startsWith('/services/') && !path.startsWith('/portfolio/'));
   const relatedArticles = relatedArticlesFor(data);
