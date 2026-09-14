@@ -79,7 +79,7 @@ export default function ContactTest() {
         <div className="ct-intro">
           <span className="ct-kicker">Discuss your project</span>
           <h1 id="ct-title">Let’s talk about your next project.</h1>
-          <p>Need a website, clearer content, or help using AI in your marketing? Tell me what you want to improve. You don’t need a finished brief to get in touch.</p>
+          <p>Need a website, clearer content, or help using AI in your marketing? Tell us what you want to improve. You don’t need a finished brief to get in touch.</p>
 
           <figure className="ct-profile">
             <img src="/adele-salikhova.jpg" alt="Adele Salikhova, Founder of Magneo"/>
@@ -101,14 +101,14 @@ export default function ContactTest() {
         <div className="ct-form-panel" id="contact-enquiry">
           <span id="contact-form" aria-hidden="true" />
           <span className="ct-kicker">Start a conversation</span>
-          <h2>Tell me what you have in mind.</h2>
-          <p className="ct-next">Your message comes directly to Adele. I’ll review what you share and reply with any questions or a suggested next step.</p>
-          <p className="ct-response">I usually reply within one business day.</p>
+          <h2>Tell us what you have in mind.</h2>
+          <p className="ct-next">Your message comes directly to Adele. We’ll review what you share and reply with any questions or a suggested next step.</p>
+          <p className="ct-response">We usually reply within one business day.</p>
 
           {status === 'success' ? <div className="ct-result" role="status" tabIndex="-1">
             <span aria-hidden="true">✓</span>
             <h3>Thanks—your enquiry has been sent to Adele.</h3>
-            <p>I’ll review your message and reply by email.</p>
+            <p>We’ll review your message and reply by email.</p>
           </div> : <form className="ct-form" onSubmit={submit}>
             <label>Your name <span aria-hidden="true">*</span><input name="name" value={values.name} onChange={update} autoComplete="name" required/></label>
             <label>Email <span aria-hidden="true">*</span><input name="email" type="email" value={values.email} onChange={update} autoComplete="email" required/></label>
