@@ -21,41 +21,19 @@
         "Location": "/services/ppc-landing-pages-for-financial-advisors-fintech/"
       }
     },
-    {
-      "src": "/home/test/?",
-      "status": 301,
-      "headers": {
-        "Location": "https://magneo.ca/"
-      }
-    },
-    {
-      "src": "/services/test/?",
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
-    },
-    {
-      "src": "/services/directory/test/?",
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
-    },
-    {
-      "src": "/services/(.*)/test/?",
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
-    },
-    {
-      "src": "/about/test/?",
-      "status": 301,
-      "headers": {
-        "Location": "https://magneo.ca/about/"
-      }
-    },
+    { "src": "/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/test2/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/test3/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/test4/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/test5/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/test6/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/home/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/about/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/services/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/services/directory/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/services/(.*)/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/portfolio/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/portfolio/(.*)/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
     {
       "src": "/about/adele-salikhova/?",
       "status": 404,
@@ -91,50 +69,6 @@
       "headers": {
         "Location": "https://magneo.ca/portfolio/notary-services/"
       }
-    },
-    {
-      "src": "/portfolio/legal-websites/personal-injury-family-focused/test/?",
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
-    },
-    {
-      "src": "/portfolio/legal-websites/personal-injury-cinematic/test/?",
-      "status": 404
-    },
-    {
-      "src": "/portfolio/legal-websites/brain-injury-3d/test/?",
-      "status": 404
-    },
-    {
-      "src": "/portfolio/legal-websites/litigation-editorial/test/?",
-      "status": 404
-    },
-    {
-      "src": "/portfolio/legal-websites/personal-injury-bold/test/?",
-      "status": 404
-    },
-    {
-      "src": "/portfolio/legal-websites/personal-injury-classic/test/?",
-      "status": 308,
-      "headers": {
-        "Location": "https://magneo.ca/portfolio/legal-websites/personal-injury-classic/"
-      }
-    },
-    {
-      "src": "/portfolio/legal-websites/test/?",
-      "status": 308,
-      "headers": {
-        "Location": "https://magneo.ca/portfolio/legal-websites/"
-      }
-    },
-    {
-      "src": "/portfolio/test/?",
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      },
-      "continue": true
     },
     {
       "src": "/downloads/personal-branding-guide-legal-professionals\\.pdf",

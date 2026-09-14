@@ -1283,7 +1283,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const parentData = pageData[serviceSlug];
   const data = parentData || childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : undefined);
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
-  if (!data) return <Navigate to="/services/test/" replace/>;
+  if (!data) return <Navigate to="/services/" replace/>;
   const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo', 'ai-automation-for-healthcare-providers-clinics-magneo'];
   const ppcSlugs = ['ppc-landing-pages-for-regulated-industries','ppc-landing-pages-for-law-firms','ppc-landing-pages-for-healthcare-medtech','ppc-landing-pages-for-financial-advisors-fintech'];
   if (ppcSlugs.includes(serviceSlug)) return <PpcReview data={data} slug={serviceSlug}/>;
