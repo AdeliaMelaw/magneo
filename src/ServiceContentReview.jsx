@@ -448,7 +448,6 @@ const pageData = {
     examples: [
       ['CRM implementation and setup','A CRM configured around how your business manages enquiries and relationships, including contact fields, pipeline stages, task assignments, and follow-up workflows.'],
       ['Enquiry routing and follow-up','Form details move into the agreed CRM, the right person receives a notification, and a follow-up task is created. A defined handoff makes responsibility clear after an enquiry arrives.'],
-      ['Content review and approval','Drafts move through defined review stages, with notifications for the next reviewer and a clear approval status. Publishing can remain a separate, authorised step.'],
       ['Marketing reporting summaries','Selected marketing data is brought together in a draft summary for review. AI can assist with the written explanation, while a responsible person checks the figures and conclusions.'],
     ],
     examplesEyebrow: 'Automation examples',
@@ -463,6 +462,13 @@ const pageData = {
       panelHeading: 'Where AI could help',
       panelCopy: 'An optional AI step could draft a short enquiry summary for the recipient to check. The record creation, notification, and task assignment may only need standard automation rules.',
       note: 'If required information is missing or a connection fails, the workflow should flag the issue for attention.',
+    },
+    approvalWorkflow: {
+      id: 'content-review-workflows',
+      heading: 'Content review and approval workflows',
+      description: 'Keep drafts, feedback, and approvals organised. Magneo connects the steps between content creation and publication so your team can see what needs review, who is responsible, and which version is ready to use.',
+      items: ['Drafts assigned to designated reviewers.','Supporting sources stored alongside the content.','Clear statuses for changes requested and approval.','Reminders for outstanding reviews.','Approved content passed to the agreed publishing stage.'],
+      supporting: 'Magneo sets up content workflows around your organisation’s review requirements. Your designated reviewers approve specialist claims and content before publication.',
     },
     processEyebrow: 'Project process',
     processHeading: 'From a recurring task to a working workflow.',
@@ -497,7 +503,7 @@ const pageData = {
     ctaButton: ['Discuss your workflow','/contact/#contact-enquiry'],
     ctaEmail: 'contact@magneo.ca',
     resourcesAfterCta: true,
-    related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/'],['Compliance-Aware AI Workflows','/services/compliance-aware-ai-workflows/']],
+    related: [['AI Creative & Brand Voice','/services/ai-powered-digital-marketing/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
   },
   'ppc-landing-pages-for-regulated-industries': {
     title: 'PPC & Landing Pages for Regulated Industries',
@@ -647,7 +653,7 @@ const aiServices = [
   ['AI UGC & Video Production','/services/ai-ugc-ai-video-production/','Product demonstrations, service explainers, presenter-led videos, and campaign variations, from concept and script to finished edit.'],
   ['AI Web Design & Development','/services/ai-web-design-conversion/','Website copy, design, and responsive development for business websites and focused landing pages.'],
   ['AI Content Marketing','/services/ai-content-marketing/','Articles, email content, and campaign assets developed from your expertise and approved source material.'],
-  ['Content Review & Approval Workflows','/services/compliance-aware-ai-workflows/','Organised stages for checking drafts, gathering feedback, and approving content before publication.'],
+  ['Content Review & Approval Workflows','/services/ai-automation-for-regulated-industries-magneo/#content-review-workflows','Organised stages for checking drafts, gathering feedback, and approving content before publication.'],
 ];
 
 function useReviewMetadata(data, slug, isReview) {
@@ -826,6 +832,14 @@ function LegalStartingPoint({ content }) {
 function AutomationAiFitSection({ content }) {
   if (!content) return null;
   return <section className="section scr-ai-fit"><div className="container"><div className="label">{content.label || 'Appropriate automation'}</div><h2>{content.heading}</h2><p className="scr-ai-fit-intro">{content.text}</p>{content.items?.length > 0 && <div className="scr-ai-fit-grid">{content.items.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>}</div></section>;
+}
+
+function ContentApprovalWorkflowSection({ content }) {
+  useEffect(() => {
+    if (content && window.location.hash === `#${content.id}`) document.getElementById(content.id)?.scrollIntoView();
+  }, [content]);
+  if (!content) return null;
+  return <section id={content.id} className="section soft scr-content-approval"><div className="container"><div className="label">Review workflow</div><div className="scr-content-approval-head"><h2>{content.heading}</h2><p>{content.description}</p></div><ul>{content.items.map((item,index)=><li key={item}><span>{String(index + 1).padStart(2,'0')}</span><strong>{item}</strong></li>)}</ul><p className="scr-content-approval-note">{content.supporting}</p></div></section>;
 }
 
 function AutomationExpansionSection({ content }) {
@@ -1068,6 +1082,7 @@ function StandardReview({ data, slug }) {
     <DecisionSection decision={data.decision}/>
     {data.workedExample ? <WorkedExampleSection example={data.workedExample}/> : <section className={`section${data.examplesSoft === false ? '' : ' soft'}`}><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2>{data.examplesIntro && <p className="scr-examples-intro">{data.examplesIntro}</p>}<div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
     <AutomationWorkflowSection workflow={data.automationWorkflow}/>
+    <ContentApprovalWorkflowSection content={data.approvalWorkflow}/>
     {data.visualExamples && <SocialVisualExamples/>}
     <PurposeVisualSection visual={data.purposeVisual}/>
     {data.brandVoice && <BrandVoiceSection content={data.brandVoice}/>}
@@ -1123,7 +1138,7 @@ function AiContentSeries({ content }) {
 }
 
 function AiContentWorkflow({ content }) {
-  return <section id={content.id} className="section dark scr-ai-content-workflow"><div className="container"><div className="label">AUTOMATED CONTENT SYSTEMS</div><h2>{content.heading}</h2><p className="scr-ai-content-lead">{content.text}</p><div className="scr-ai-content-workflow-grid">{content.stages.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-content-note">{content.note}</p></div></section>;
+  return <section id={content.id} className="section dark scr-ai-content-workflow"><div className="container"><div className="label">AUTOMATED CONTENT SYSTEMS</div><h2>{content.heading}</h2><p className="scr-ai-content-lead">{content.text}</p><div className="scr-ai-content-workflow-grid">{content.stages.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.reviewHeading && <div className="scr-ai-content-review"><h3>{content.reviewHeading}</h3><p>{content.reviewText}</p><strong>{content.reviewSupporting}</strong></div>}<p className="scr-ai-content-note">{content.note}</p></div></section>;
 }
 
 function AiContentSupport({ content }) {
