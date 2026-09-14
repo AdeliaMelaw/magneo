@@ -564,7 +564,6 @@ const pages = {
       ['Review and publishing', 'An agreed route from drafts to specialist approval, followed by delivery or scheduling.'],
       ['Performance review', 'Available viewing, engagement, website-visit, and enquiry signals inform ongoing work where reporting is included.'],
     ],
-    scopeNote: 'The proposal confirms accounts, quantities, formats, revisions, filming arrangements, publishing responsibilities, and any community-management support. Scripts, editing of supplied footage, and filming are separate deliverables; on-site filming is included only when specified.',
     platforms: {
       eyebrow: 'PLATFORM DIRECTION',
       heading: 'Content adapted to your selected platforms.',
