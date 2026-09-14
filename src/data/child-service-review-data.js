@@ -78,7 +78,7 @@ const industryLinks = {
 
 const pages = {
   'website-design-for-tech-companies-saas-products-magneo': {
-    family: 'websites', industry: 'tech', title: 'Website Design for Tech Companies & SaaS Products',
+    family: 'websites', industry: 'tech', pageClass: 'scr-page-tech-website', title: 'Website Design for Tech Companies & SaaS Products',
     seoTitle: 'SaaS & Tech Website Design | Magneo',
     metaDescription: 'Website design for SaaS and tech companies, including product messaging, feature pages, use cases, and clear demo or trial journeys.',
     description: 'Your product can be sophisticated without making the website hard to understand. Magneo develops marketing websites that explain what the product does, who it is for, and how to take the next step—from exploring a use case to requesting a demo.',
@@ -97,12 +97,11 @@ const pages = {
       ['Development and measurement', 'Responsive implementation, agreed form connections, and measurement of meaningful website actions.'],
     ],
     decision: {
-      heading: 'A demo-led website and a trial-led website need different journeys.',
+      heading: 'Help visitors understand your product and take the next step.',
       panels: [
-        ['Demo-led', 'Visitors need enough information to judge relevance before speaking with sales. Product context, use cases, and a clear explanation of what the demo involves support that decision.'],
-        ['Trial-led', 'Visitors need to understand what they can try, what is required to start, and where to get help. The website should connect those answers with the existing signup experience.'],
+        ['Demo bookings', 'Magneo creates pages that explain what your product does, who it helps, and what visitors can expect from a demonstration, with a clear route to book.'],
+        ['Trial signups', 'For products offering a trial, the website explains what is included, how to get started, and where to find support, with a clear link to sign up.'],
       ],
-      closing: 'The website plan follows your actual buying process rather than adding every possible call to action.',
     },
     examples: [
       ['Product launch website', 'A focused introduction for a new product, using available product information and approved visuals.'],
