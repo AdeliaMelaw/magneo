@@ -591,23 +591,63 @@ const pageData = {
 };
 
 const aiOverview = {
-  title: 'AI-powered digital marketing for regulated industries.',
-  description: 'Explore practical uses of AI across content, video, search, websites, and marketing workflows. Each project starts with a defined purpose, suitable tools, and an agreed review process.',
-  primary: ['Discuss an AI project','/contact/#contact-enquiry'], secondary: ['Explore AI examples',portfolioLinks.ai],
-  card: ['AI','Creative, content, search, websites, and connected workflows.'],
-  processEyebrow: 'How we work',
-  processHeading: 'We bring AI into your marketing with clear direction.',
-  process: [['We identify the right application','We discuss your goals and current marketing, then recommend where AI could support content, creative production, or a repeatable task.'],['We develop the agreed work','We create the concepts, content, or custom tools included in your project, using your brand guidance and approved information.'],['We review and refine','We check the work for quality and consistency. You confirm business-specific facts, provide feedback, and arrange any required specialist approvals.'],['We prepare it for use','We deliver the approved assets or configure the agreed tools, with guidance on how to use them. Further production, updates, and support are scoped separately.']],
-  cta: ['Where could AI support your marketing?','Bring a specific idea or a recurring task, and we’ll explore a practical starting point.'],
+  title: 'AI-Powered Digital Marketing for Regulated Industries',
+  seoTitle: 'AI Digital Marketing for Regulated Industries | Magneo',
+  metaDescription: 'AI-powered digital marketing for regulated industries. Explore content, video, social media, brand-voice tools, and creative production with Magneo.',
+  heroEyebrow: 'AI MARKETING SERVICES',
+  description: 'Turn your expertise into articles, social content, video, and websites that explain what your business offers. Magneo brings together marketing strategy, creative production, and AI tools to develop your brand voice, create content, and organise recurring marketing work.',
+  primary: ['Discuss your marketing project','/contact/#contact-enquiry'], secondary: ['Explore AI examples',portfolioLinks.ai],
+  heroMicrocopy: 'Start with one project or combine services around a broader marketing plan.',
+  heroFlow: { label: 'CONNECTED DELIVERABLES', steps: ['Articles','Social content','Video','Websites'], note: 'A compact preview of services that can be commissioned separately or combined.' },
+  brandVoice: {
+    heading: 'Your brand voice, built into the content process.',
+    paragraphs: ['Your content should reflect how your business communicates. Existing writing, interviews, preferred terminology, and feedback help establish a consistent voice across your website, social channels, and campaigns.','A custom GPT can be configured with that guidance and approved reference material to support recurring drafting tasks. Editing and feedback refine the output so the finished content reflects your perspective.'],
+    items: [['Brand-voice development','Practical guidance for tone, vocabulary, key messages, and writing style.'],['Custom GPT setup','Instructions and approved examples organised around specific content tasks.'],['Editorial refinement','Drafts checked for clarity, accuracy, and consistency before approval.']],
+    closing: 'AI supports the production process. Your expertise gives the content its substance.',
+  },
+  contentPlan: {
+    heading: 'One expert conversation. Several useful pieces of content.',
+    intro: 'An interview, approved article, or product walkthrough can provide the starting point for a coordinated content series.',
+    items: [['Short-form video','A focused script and edited clip explaining one useful idea.'],['Social posts and carousels','Content adapted to the audience and format of each selected platform.'],['Website or email content','A fuller explanation connecting the topic to a relevant service or next step.']],
+    supporting: 'Each piece is written and edited for its intended use, with a consistent message across the series.',
+    label: 'Illustrative content plan.',
+  },
+  deliverables: {
+    heading: 'What your project can include.',
+    intro: 'The proposal turns your priorities into a defined set of deliverables.',
+    items: ['Audience and messaging direction.','Content themes and campaign planning.','Scripts, copy, visuals, and edited video.','Versions for selected platforms.','Brand-voice guidance and custom GPT configuration.','Review and revision stages.','Final files, publishing support, or tool handover.','Agreed reporting and recommendations.'],
+    note: 'Content quantities, channels, revision rounds, software costs, and ongoing support are specified before production begins.',
+  },
+  industries: {
+    heading: 'Content shaped around your field.',
+    items: [['Law firms','/law-firm-marketing/','Educational content and service explanations grounded in the firm’s practice areas and professional perspective.'],['Financial firms','/financial-firm-marketing/','Clear explanations of services and complex topics using approved messaging and the firm’s review process.'],['Healthcare providers','/healthcare-marketing/','Accessible educational content and service information developed from appropriate source material.'],['Tech, SaaS & AI companies','/tech-company-marketing/','Product demonstrations, feature explanations, and founder-led content showing how the product is used.']],
+  },
+  processEyebrow: 'FROM IDEA TO DELIVERY',
+  processHeading: 'How your project takes shape.',
+  process: [['Direction','Magneo defines the audience, message, and intended use, then recommends the formats and production approach.'],['Production','The agreed content, creative assets, or custom tools are developed using your brand guidance and approved information.'],['Review','Editorial and creative checks refine the work. Your feedback confirms the professional perspective and business facts, with specialist approval where required.'],['Delivery','Approved assets are prepared for their channels, or the agreed tools are configured and handed over with practical guidance.']],
+  faqItems: [
+    ['What can I hire Magneo to create?','Projects can include social content, articles, scripts, AI-assisted visuals and video, websites, brand-voice guidance, and custom GPT setups. The proposal identifies the deliverables that fit your goals.'],
+    ['Can I start with one project?','Yes. A content series, video project, website, or brand-voice setup can be a practical starting point. Additional services can be introduced as your needs develop.'],
+    ['Can the content sound like me?','Yes. Your writing, interviews, and feedback establish the voice. A custom GPT can support drafting with that guidance, while editing and review keep the content aligned with your perspective.'],
+    ['Do I need to appear on camera?','For expert-led personal branding, appearing on camera is a core part of Magneo’s recommended approach. Your audience should be able to see you and hear your perspective. Other projects may use product demonstrations, voiceovers, graphics, or clearly presented AI creative, depending on the format.'],
+    ['Does AI replace my role as the expert?','No. Your knowledge and judgement remain central. AI supports production tasks, while your perspective and approved information give the content its substance.'],
+    ['How many posts or videos are included?','The package specifies quantities, formats, channels, and revision rounds. Daily video can be considered where it suits the niche and content plan; the final schedule follows the selected scope.'],
+    ['Can this work alongside our existing marketing team?','Yes. Magneo can handle a defined part of production or provide finished assets for your team. Responsibilities for editing, approval, publishing, and reporting are agreed at the start.'],
+    ['How will results be measured?','Measurement follows the project’s purpose. A campaign may track enquiries or website actions, while a content workflow may track production time and output. Relevant measures and tracking requirements are agreed in the scope.'],
+    ['Can you also implement a CRM?',{ before: 'Yes. CRM implementation and connected administrative workflows are available through Magneo’s ', label: 'AI automation service', path: '/services/ai-automation-for-regulated-industries-magneo/', after: ' and can be scoped alongside a marketing project.' }],
+  ],
+  cta: ['Turn your expertise into your next marketing project.','Start with a content idea, a video, a website, or a recurring task that needs a better process. Magneo can help shape it into a clear project.'],
+  ctaButton: ['Discuss your marketing project','/contact/#contact-enquiry'],
+  ctaMicrocopy: 'You do not need a finished brief.',
 };
 
 const aiServices = [
-  ['AI SEO','/services/ai-seo/','We plan search architecture, content briefs, and optimisation workflows with defined review steps.'],
-  ['AI Social Media Marketing','/services/ai-social-media-marketing/','We support repeatable social-content planning, drafting, and review.'],
-  ['AI UGC & AI Video Production','/services/ai-ugc-ai-video-production/','We develop clearly labelled visual and video concepts without presenting generated people as real customers.'],
-  ['AI Web Design & Conversion','/services/ai-web-design-conversion/','We use AI-assisted exploration to support website messaging, layouts, and conversion ideas.'],
-  ['AI Content Marketing','/services/ai-content-marketing/','We support content research, drafting, repurposing, and editorial workflows.'],
-  ['Compliance-Aware AI Workflows','/services/compliance-aware-ai-workflows/','We define review points, claim checks, and approval responsibilities around AI-assisted work.'],
+  ['AI SEO & Blog Automation','/services/ai-seo/','Search-focused articles, existing-page improvements, and blog workflows connecting planning, drafting, review, and approved publication.'],
+  ['AI Social Media Marketing','/services/ai-social-media-marketing/','Posts, carousels, scripts, and short-form content developed in your brand voice and adapted for selected platforms.'],
+  ['AI UGC & Video Production','/services/ai-ugc-ai-video-production/','Product demonstrations, service explainers, presenter-led videos, and campaign variations, from concept and script to finished edit.'],
+  ['AI Web Design & Development','/services/ai-web-design-conversion/','Website copy, design, and responsive development for business websites and focused landing pages.'],
+  ['AI Content Marketing','/services/ai-content-marketing/','Articles, email content, and campaign assets developed from your expertise and approved source material.'],
+  ['Content Review & Approval Workflows','/services/compliance-aware-ai-workflows/','Organised stages for checking drafts, gathering feedback, and approving content before publication.'],
 ];
 
 function useReviewMetadata(data, slug, isReview) {
@@ -638,7 +678,20 @@ function useReviewMetadata(data, slug, isReview) {
     const robots = document.createElement('meta');
     robots.name = 'robots'; robots.content = isReview ? 'noindex, nofollow, noarchive' : 'index, follow'; robots.dataset.serviceContentReview = 'true';
     document.head.appendChild(robots);
-    return () => robots.remove();
+    let structuredData;
+    if (slug === 'ai-powered-digital-marketing') {
+      const faqItems = (data.faqItems || []).map(([question, answer]) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: { '@type': 'Answer', text: typeof answer === 'string' ? answer : `${answer.before || ''}${answer.label || ''}${answer.after || ''}` },
+      }));
+      structuredData = document.createElement('script');
+      structuredData.type = 'application/ld+json';
+      structuredData.dataset.aiOverviewSchema = 'true';
+      structuredData.textContent = JSON.stringify({ '@context': 'https://schema.org', '@graph': [{ '@type': 'Service', name: data.title, description, url: canonicalUrl, provider: { '@type': 'Organization', name: 'Magneo', url: 'https://magneo.ca/' } }, { '@type': 'FAQPage', mainEntity: faqItems }] });
+      document.head.appendChild(structuredData);
+    }
+    return () => { robots.remove(); structuredData?.remove(); };
   }, [data, slug, isReview]);
 }
 
@@ -1057,13 +1110,55 @@ function ChildReview({ data }) {
   </div>;
 }
 
+function AiOverviewServices() {
+  return <section className="section soft scr-ai-overview-services"><div className="container"><div className="label">AI MARKETING SERVICES</div><h2>What Magneo can create for your business.</h2><p className="scr-ai-overview-intro">Projects can focus on one deliverable or combine several services, from a blog production workflow to a coordinated video and social content series.</p><div className="scr-ai-overview-service-grid">{aiServices.map(([title,path,copy],index)=><Link to={path} key={path}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p><b>Explore service <i aria-hidden="true">→</i></b></Link>)}</div></div></section>;
+}
+
+function AiOverviewBrandVoice() {
+  const content = aiOverview.brandVoice;
+  return <section className="section dark scr-ai-overview-voice"><div className="container"><div className="label">BRAND VOICE & CUSTOM GPT</div><h2>{content.heading}</h2><div className="scr-ai-overview-voice-copy">{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div><div className="scr-ai-overview-voice-grid">{content.items.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-overview-closing">{content.closing}</p></div></section>;
+}
+
+function AiOverviewContentPlan() {
+  const content = aiOverview.contentPlan;
+  return <section className="section scr-ai-overview-plan"><div className="container"><div className="label">CONNECTED CONTENT EXAMPLE</div><h2>{content.heading}</h2><p className="scr-ai-overview-intro">{content.intro}</p><div className="scr-ai-overview-plan-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-overview-supporting">{content.supporting}</p><p className="scr-ai-overview-label">{content.label}</p></div></section>;
+}
+
+function AiOverviewPortfolio() {
+  return <section className="section dark scr-ai-overview-portfolio"><div className="container"><div className="label">EXISTING EXAMPLES</div><h2>Explore the creative possibilities.</h2><div className="scr-ai-overview-portfolio-grid">
+    <article><video controls playsInline preload="metadata" poster="/portfolio/social/podcast-interview-reel-cover.jpg" aria-label="Play the expert interview reel concept"><source src="/portfolio/social/podcast-interview-reel.mp4" type="video/mp4"/>Your browser does not support embedded video.</video><div><span>ORIGINAL MAGNEO CONCEPT · PRESENTER-LED VIDEO</span><h3>Expert interview reel</h3><p>A short-form deliverable for introducing a professional perspective or educational idea.</p></div></article>
+    <article><Link to="/portfolio/#social-media" aria-label="Explore the commentary reel concept"><img src="/portfolio/social/commentary-reel.webp" alt="Preview of Magneo’s commentary reel social-content concept" width="1080" height="1350" loading="lazy" decoding="async"/></Link><div><span>ORIGINAL MAGNEO CONCEPT · SOCIAL CAMPAIGN VISUAL</span><h3>Commentary content</h3><p>A visual format intended for concise expert commentary across selected social channels.</p></div></article>
+    <article><Link to="/portfolio/legal-websites/personal-injury-bold/" aria-label="Explore the Personal Injury Modern website concept"><img src="/portfolio/websites/personal-injury-modern-hero-preview.webp" alt="Preview of Magneo’s Personal Injury Modern website concept" width="1440" height="720" loading="lazy" decoding="async"/></Link><div><span>WEBSITE CONCEPT · RESPONSIVE SERVICE WEBSITE</span><h3>Personal Injury · Modern</h3><p>A website demonstration showing clear service information and a focused enquiry route.</p></div></article>
+  </div><Link className="scr-expanded-dark-link" to="/portfolio/#ai-marketing">Explore the portfolio <span aria-hidden="true">→</span></Link></div></section>;
+}
+
+function AiOverviewDeliverables() {
+  const content = aiOverview.deliverables;
+  return <section className="section soft scr-ai-overview-deliverables"><div className="container"><div><div className="label">PROJECT DELIVERABLES</div><h2>{content.heading}</h2><p>{content.intro}</p></div><div><ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul><p>{content.note}</p></div></div></section>;
+}
+
+function AiOverviewIndustries() {
+  const content = aiOverview.industries;
+  return <section className="section scr-ai-overview-industries"><div className="container"><div className="label">INDUSTRY CONTEXT</div><h2>{content.heading}</h2><div className="scr-ai-overview-industry-grid">{content.items.map(([title,path,copy])=><Link to={path} key={path}><h3>{title}</h3><p>{copy}</p><span>Explore industry <i aria-hidden="true">→</i></span></Link>)}</div></div></section>;
+}
+
+function AiOverviewFaq() {
+  return <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{aiOverview.faqItems.map(([question,answer])=><details key={question}><summary>{question}</summary><p><FaqAnswer answer={answer}/></p></details>)}</div></div></section>;
+}
+
 function AiOverviewReview() {
   const relatedArticles = relatedArticlesFor({ slug: 'ai-powered-digital-marketing' });
-  return <div className="scr-page"><ReviewHero data={aiOverview}/>
-    <section className="section"><div className="container"><div className="label">AI service areas</div><h2>Use AI where it supports a defined marketing task.</h2><p className="scr-ai-intro">AI creative produces assets such as visuals and video. Brand-voice tools and custom GPTs support drafting and repeatable tasks. Automation connects steps across tools. These can be scoped separately or combined.</p><div className="grid scr-ai-grid">{aiServices.map(([title,path,copy])=><Link className="card" to={path} key={path}><small>Explore</small><h3>{title}</h3><p>{copy}</p></Link>)}</div></div></section>
+  return <div className="scr-page scr-page-ai-overview"><ReviewHero data={aiOverview}/>
+    <AiOverviewServices/>
+    <AiOverviewBrandVoice/>
+    <AiOverviewContentPlan/>
+    <AiOverviewPortfolio/>
+    <AiOverviewDeliverables/>
+    <AiOverviewIndustries/>
     <ProcessSection items={aiOverview.process} eyebrow={aiOverview.processEyebrow} heading={aiOverview.processHeading}/>
-    <RelatedColumns serviceLinks={[["AI Automation", "/services/ai-automation-for-regulated-industries-magneo/"], ["Social Media & LinkedIn", "/services/social-media-linkedin-marketing-for-regulated-industries/"]]} industryLinks={audiences} articles={relatedArticles}/>
+    <AiOverviewFaq/>
     <FinalCta data={aiOverview}/>
+    <RelatedColumns serviceLinks={[["AI SEO & Blog Automation", "/services/ai-seo/"], ["AI Social Media Marketing", "/services/ai-social-media-marketing/"], ["AI Automation & CRM Implementation", "/services/ai-automation-for-regulated-industries-magneo/"]]} industryLinks={audiences} articles={relatedArticles}/>
   </div>;
 }
 
