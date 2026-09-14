@@ -751,7 +751,12 @@ function LegalStartingPoint({ content }) {
   return <section className="section soft scr-legal-starting"><div className="container"><div className="label">A practical first project</div><h2>{content.heading}</h2><p>{content.body}</p><Link className="btn" to={content.button[1]}>{content.button[0]}</Link></div></section>;
 }
 
-function LegalAutomationReview({ data }) {
+function AutomationExpansionSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-automation-expansion"><div className="container"><div><div className="label">A practical starting point</div><h2>{content.heading}</h2><p>{content.text}</p></div><div><strong>Potential later scopes</strong><ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul><p className="scr-legal-note">{content.note}</p></div></div></section>;
+}
+
+function IndustryAutomationReview({ data }) {
   useEffect(() => {
     const targetId = window.location.hash.slice(1);
     if (targetId) document.getElementById(targetId)?.scrollIntoView();
@@ -760,13 +765,14 @@ function LegalAutomationReview({ data }) {
   const industryLinks = data.related.filter(([,path]) => !path.startsWith('/services/'));
   const resources = <RelatedColumns serviceLinks={serviceLinks} industryLinks={industryLinks} articles={relatedArticlesFor(data)}/>;
   return <div className={`scr-page ${data.pageClass}`}><ReviewHero data={data}/>
-    <section className="section soft scr-legal-services"><div className="container"><div className="label">Legal automation services</div><h2>{data.examplesHeading}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-examples-note">{data.examplesNote}</p></div></section>
+    <section className="section soft scr-legal-services"><div className="container"><div className="label">{data.servicesEyebrow || 'Automation services'}</div><h2>{data.examplesHeading}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>
     <LegalCrmSection content={data.crmSection}/>
+    <AudienceSplitSection audience={data.audienceSplit}/>
     <AutomationWorkflowSection workflow={data.automationWorkflow}/>
-    <LegalDepartmentSection content={data.legalDepartment}/>
-    <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading}</h2><p>{data.scopeIntro}</p></div><ul>{data.included.map(([title,copy])=><li key={title}><strong>{title}</strong><span>{copy}</span></li>)}</ul></div></section>
+    {data.legalDepartment && <LegalDepartmentSection content={data.legalDepartment}/>}<AutomationExpansionSection content={data.expansion}/>
+    <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading}</h2>{data.scopeIntro && <p>{data.scopeIntro}</p>}</div><ul>{data.included.map(([title,copy])=><li key={title}><strong>{title}</strong><span>{copy}</span></li>)}</ul></div>{data.scopeNote && <div className="container"><p className="scr-scope-note">{data.scopeNote}</p></div>}</section>
     <ProcessSection items={data.process} eyebrow="How we work" heading={data.processHeading} intro={data.processIntro}/>
-    <LegalStartingPoint content={data.startingPoint}/>
+    {data.startingPoint && <LegalStartingPoint content={data.startingPoint}/>}
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <FinalCta data={data}/>
     {resources}
@@ -882,6 +888,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const data = parentData || childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : undefined);
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
-  if (childData && !parentData) return serviceSlug === 'ai-automation-for-law-firms-legal-departments-magneo' ? <LegalAutomationReview data={childData}/> : <ChildReview data={childData}/>;
+  const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo'];
+  if (childData && !parentData) return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;
 }
