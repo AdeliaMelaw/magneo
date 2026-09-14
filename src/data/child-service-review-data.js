@@ -914,7 +914,7 @@ const pages = {
     ],
     cta: ['Which enquiry or administrative process needs a clearer next step?', 'Share how the process works today, the people involved, and where information or follow-up becomes difficult to track.'],
     ctaButton: ['Discuss your firm’s workflow', '/contact/#contact-enquiry'],
-    ctaEmail: 'hello@magneo.ca',
+    ctaEmail: 'contact@magneo.ca',
     related: [
       ['AI Automation & CRM Implementation', '/services/ai-automation-for-regulated-industries-magneo/'],
       ['Website Design & Rebrand for Law Firms', '/services/website-design-rebrand-for-law-firms-magneo/'],
