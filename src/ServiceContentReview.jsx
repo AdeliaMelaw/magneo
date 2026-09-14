@@ -527,7 +527,7 @@ const pageData = {
     ppcSections: [
       { eyebrow: 'Starting options', heading: 'Choose the support your campaign needs.', items: [['New campaign','Strategy, setup, ads, and an agreed landing page.'],['Existing campaign improvement','Review and refinement of targeting, messaging, pages, and tracking.'],['Landing page only','A focused destination for an existing campaign.'],['Ongoing management','Monitoring, reporting, and agreed adjustments after launch.']] },
       { eyebrow: 'Landing-page scope', heading: 'A page that helps visitors make a decision.', items: ['Clear offer and intended audience.','Headline consistent with the advertisement.','Useful service details.','Relevant, verified evidence.','Answers to common questions.','A focused contact or booking route.','Mobile and performance checks.','Agreed tracking.'] },
-      { eyebrow: 'Measurement', heading: 'Understand what happens after the click.', text: 'Reporting connects advertising spend with measurable actions and available enquiry-quality feedback. Depending on the setup, this can include conversion rate, cost per enquiry, and relevant follow-up outcomes.', note: 'Booked consultations and sales require reliable follow-up information. A tracked submission should not automatically be described as a qualified lead.' },
+      { compact: true, eyebrow: 'CAMPAIGN REPORTING', heading: 'See which ads bring enquiries.', text: 'Reports show advertising spend, tracked enquiries, and cost per enquiry. Where your team records follow-up outcomes, reporting can also show which enquiries led to meetings or new business.' },
     ],
     industryLinks: [['Law-firm PPC','/services/ppc-landing-pages-for-law-firms/'],['Healthcare & MedTech PPC','/services/ppc-landing-pages-for-healthcare-medtech/'],['Financial advisor & FinTech PPC','/services/ppc-landing-pages-for-financial-advisors-fintech/']],
     portfolioExample: { title: 'Personal Injury · Modern', label: 'Original Magneo website concept · not a campaign-results case study', image: '/portfolio/websites/personal-injury-modern-hero-preview.webp', alt: 'Preview of a focused personal-injury website concept by Magneo', link: '/portfolio/legal-websites/personal-injury-bold/' },
@@ -1010,7 +1010,7 @@ function PpcCommercialScope() {
 }
 
 function PpcCompactSection({ content, soft = false }) {
-  return <section className={`section${soft ? ' soft' : ''} scr-ppc-compact`}><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p>{content.text}</p></div></section>;
+  return <section className={`section${soft ? ' soft' : ''} scr-ppc-compact${content.cards ? ' scr-ppc-consolidated' : ''}`}><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p>{content.text}</p>{content.cards && <div className="scr-ppc-consolidated-cards">{content.cards.map(([heading,text])=><article key={heading}><h3>{heading}</h3><p>{text}</p></article>)}</div>}{content.belowHeading && <div className="scr-ppc-consolidated-report"><h3>{content.belowHeading}</h3><p>{content.belowText}</p></div>}</div></section>;
 }
 
 function PpcReview({ data, slug }) {
