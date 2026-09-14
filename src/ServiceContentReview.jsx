@@ -377,7 +377,6 @@ const pageData = {
         ['Content creation', 'A defined set of posts, visuals, or videos delivered for your business to publish. Suitable when someone already manages your channels but needs help producing the work.'],
         ['Ongoing content support', 'An agreed recurring scope covering planning, production, reviews, and scheduling where included.'],
       ],
-      closing: 'Comment replies, direct messages, community management, and paid advertising are separate responsibilities unless specifically included in the proposal.',
     },
     examples: [
       ['LinkedIn content series', 'A connected set of posts exploring audience questions, professional observations, or a service theme in your brand’s voice.'],
