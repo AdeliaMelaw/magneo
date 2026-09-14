@@ -692,12 +692,17 @@ function AudienceSplitSection({ audience }) {
 
 function PlatformSection({ content }) {
   if (!content) return null;
-  return <section className="section scr-platforms"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-platforms-intro">{content.intro}</p><div className="scr-platforms-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-platforms-closing">{content.closing}</p></div></section>;
+  return <section className="section scr-platforms"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2>{content.intro && <p className="scr-platforms-intro">{content.intro}</p>}<div className="scr-platforms-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-platforms-closing">{content.closing}</p></div></section>;
+}
+
+function PracticalContentExample({ content }) {
+  if (!content) return null;
+  return <section id={content.id} className="section scr-practical-content"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><div className="scr-practical-content-grid">{content.items.map(([title, question, formats])=><article key={title}><span>{title}</span><h3>{question}</h3><ul>{formats.map(format=><li key={format}>{format}</li>)}</ul></article>)}</div><div className="scr-practical-content-footer"><p>{content.label}</p><Link to={content.link[0]}>{content.link[1]} <span aria-hidden="true">→</span></Link></div></div></section>;
 }
 
 function EngagementSection({ content }) {
   if (!content) return null;
-  return <section className="section soft scr-engagement"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-engagement-intro">{content.intro}</p><div className="scr-engagement-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-engagement-note">{content.note}</p><p className="scr-engagement-clarification">{content.clarification}</p></div></section>;
+  return <section className="section soft scr-engagement"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-engagement-intro">{content.intro}</p><div className={`scr-engagement-grid${content.items.length === 4 ? ' scr-engagement-grid-four' : ''}`}>{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-engagement-note">{content.note}</p><p className="scr-engagement-clarification">{content.clarification}</p></div></section>;
 }
 
 function SocialVisualExamples() {
@@ -786,8 +791,8 @@ function StandardReview({ data, slug }) {
 function ChildReview({ data }) {
   useEffect(() => {
     const targetId = window.location.hash.slice(1);
-    if (targetId && (targetId === data.scopeId || targetId === data.visualExample?.id)) document.getElementById(targetId)?.scrollIntoView();
-  }, [data.scopeId, data.visualExample?.id]);
+    if (targetId && (targetId === data.scopeId || targetId === data.visualExample?.id || targetId === data.contentExample?.id)) document.getElementById(targetId)?.scrollIntoView();
+  }, [data.scopeId, data.visualExample?.id, data.contentExample?.id]);
   const serviceLinks = data.related.filter(([,path]) => path.startsWith('/services/') || path.startsWith('/portfolio/'));
   const industryLinks = data.related.filter(([,path]) => !path.startsWith('/services/') && !path.startsWith('/portfolio/'));
   const relatedArticles = relatedArticlesFor(data);
@@ -799,7 +804,8 @@ function ChildReview({ data }) {
     <PlatformSection content={data.platforms}/>
     <ContentPlanSection plan={data.contentPlan}/>
     <DecisionSection decision={data.decision}/>
-    <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>
+    {!data.hideExamples && <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
+    <PracticalContentExample content={data.contentExample}/>
     <ChildVisualExample example={data.visualExample}/>
     <EngagementSection content={data.engagement}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading} intro={data.processIntro}/>
