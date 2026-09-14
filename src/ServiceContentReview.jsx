@@ -772,7 +772,7 @@ function LegalStartingPoint({ content }) {
 
 function AutomationAiFitSection({ content }) {
   if (!content) return null;
-  return <section className="section scr-ai-fit"><div className="container"><div className="label">Appropriate automation</div><h2>{content.heading}</h2><p>{content.text}</p></div></section>;
+  return <section className="section scr-ai-fit"><div className="container"><div className="label">{content.label || 'Appropriate automation'}</div><h2>{content.heading}</h2><p className="scr-ai-fit-intro">{content.text}</p>{content.items?.length > 0 && <div className="scr-ai-fit-grid">{content.items.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>}</div></section>;
 }
 
 function AutomationExpansionSection({ content }) {

@@ -1025,7 +1025,16 @@ const pages = {
       panelHeading: 'Human review remains', panelCopy: 'Staff review the enquiry and handle the response. The workflow does not automate diagnosis, treatment recommendations, or clinical decisions.',
       note: 'Illustrative workflow. The final setup depends on your tools, information requirements, and staff responsibilities. Fictional information is used in visual demonstrations.',
     },
-    aiFit: { heading: 'AI where it helps. Clear rules where they are enough.', text: 'Many useful workflows rely on straightforward rules, such as assigning a request or creating a reminder. AI can support selected tasks, such as preparing a draft from approved source material, when the tools and information are suitable. Staff review remains part of the process wherever judgement or approval is needed.' },
+    aiFit: {
+      label: 'LESS MANUAL ADMIN',
+      heading: 'Keep enquiries organised and follow-up on track.',
+      text: 'Magneo sets up CRM systems and automation that assign incoming enquiries, create follow-up tasks, and remind staff when action is needed. AI can also help prepare draft marketing content for your team to review.',
+      items: [
+        ['Enquiry assignment', 'New general enquiries reach the right team member.'],
+        ['Follow-up reminders', 'Tasks and reminders help staff see which enquiries still need a response.'],
+        ['Content drafting', 'Approved clinic information provides the starting point for draft posts, emails, and website updates.'],
+      ],
+    },
     hideDeliverables: true, included: [],
     processEyebrow: 'IMPLEMENTATION PROCESS', processHeading: 'From the current process to a working setup.',
     process: [['Workflow planning','Magneo maps the recurring task, existing tools, and information involved. Your team confirms responsibilities and the outcome the setup needs to support.'],['Configuration and connections','The agreed CRM fields, stages, permissions, and tool connections are configured around that process.'],['Testing and review','Typical enquiries, incomplete information, and failed handoffs are tested before launch. Staff review how the setup works in practice.'],['Handover and support','Your team receives guidance on everyday use, monitoring, and handling exceptions. Any ongoing maintenance or support is defined in the proposal.']],
