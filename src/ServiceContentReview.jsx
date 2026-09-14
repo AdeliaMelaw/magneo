@@ -679,7 +679,7 @@ function useReviewMetadata(data, slug, isReview) {
     robots.name = 'robots'; robots.content = isReview ? 'noindex, nofollow, noarchive' : 'index, follow'; robots.dataset.serviceContentReview = 'true';
     document.head.appendChild(robots);
     let structuredData;
-    if (slug === 'ai-powered-digital-marketing') {
+    if (['ai-powered-digital-marketing','ai-content-marketing'].includes(slug)) {
       const faqItems = (data.faqItems || []).map(([question, answer]) => ({
         '@type': 'Question',
         name: question,
@@ -1110,6 +1110,55 @@ function ChildReview({ data }) {
   </div>;
 }
 
+function AiContentBrandVoice({ content }) {
+  return <section className="section dark scr-ai-content-voice"><div className="container"><div className="label">BRAND VOICE & CUSTOM GPT</div><h2>{content.heading}</h2><div className="scr-ai-content-copy">{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div><div className="scr-ai-content-voice-grid">{content.items.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-content-note">{content.closing}</p></div></section>;
+}
+
+function AiContentReels({ content }) {
+  return <section className="section scr-ai-content-reels"><div className="container"><div><div className="label">REELS & SHORT-FORM VIDEO</div><h2>{content.heading}</h2>{content.paragraphs.map(text=><p key={text}>{text}</p>)}<ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul><p className="scr-ai-content-note">{content.note}</p><Link className="scr-examples-link" to={content.link[0]}>{content.link[1]} <span aria-hidden="true">→</span></Link></div><figure><video controls playsInline preload="metadata" poster={content.poster} aria-label="Play the expert interview Reel concept"><source src={content.video} type="video/mp4"/>Your browser does not support embedded video.</video><figcaption>Original Magneo concept · Expert-led short-form video</figcaption></figure></div></section>;
+}
+
+function AiContentSeries({ content }) {
+  return <section className="section soft scr-ai-content-series"><div className="container"><div className="label">ILLUSTRATIVE CONTENT PLAN</div><h2>{content.heading}</h2><p className="scr-ai-content-lead">{content.text}</p><div className="scr-ai-content-series-flow" role="img" aria-label={`${content.source} adapted into five content formats`}><div className="scr-ai-content-source"><span>01</span><strong>{content.source}</strong></div><i aria-hidden="true">→</i><ul>{content.items.map((item,index)=><li key={item}><span>{String(index + 2).padStart(2,'0')}</span>{item}</li>)}</ul></div><p className="scr-ai-content-caption">{content.caption}</p></div></section>;
+}
+
+function AiContentWorkflow({ content }) {
+  return <section id={content.id} className="section dark scr-ai-content-workflow"><div className="container"><div className="label">AUTOMATED CONTENT SYSTEMS</div><h2>{content.heading}</h2><p className="scr-ai-content-lead">{content.text}</p><div className="scr-ai-content-workflow-grid">{content.stages.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-content-note">{content.note}</p></div></section>;
+}
+
+function AiContentSupport({ content }) {
+  return <section className="section scr-ai-content-support"><div className="container"><div className="label">PROJECT OPTIONS</div><h2>{content.heading}</h2><div className="scr-ai-content-support-grid">{content.items.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-content-note">{content.note}</p></div></section>;
+}
+
+function AiContentExamples() {
+  return <section className="section dark scr-ai-content-examples"><div className="container"><div className="label">CONTENT EXAMPLES</div><h2>Explore the content and creative.</h2><div className="scr-ai-content-example-grid">
+    <article><video controls playsInline preload="metadata" poster="/portfolio/social/commentary-reel-cover.jpg" aria-label="Play the commentary Reel concept"><source src="/portfolio/social/commentary-reel.mp4" type="video/mp4"/>Your browser does not support embedded video.</video><div><span>ORIGINAL MAGNEO CONCEPT · PLAYABLE REEL</span><h3>Commentary Reel</h3><p>A short video format for presenting one timely professional idea.</p></div></article>
+    <article><a className="scr-ai-content-writing-preview" href="https://blog.magneo.ca/blog/using-ai-to-repurpose-content-and-personalize-advisor-outreach/" target="_blank" rel="noreferrer"><small>ARTICLE SAMPLE</small><strong>From one source idea to useful, connected content.</strong><b>READ ARTICLE ↗</b></a><div><span>PUBLISHED ARTICLE · WRITING SAMPLE</span><h3>AI content repurposing</h3><p>A long-form example intended to explain a topic and support further exploration.</p></div></article>
+    <article><Link className="scr-ai-content-carousel" to="/portfolio/#social-media" aria-label="Explore the illustrative social carousel"><small>YOUR PERSPECTIVE</small><strong>One idea.<br/>Several useful formats.</strong><i aria-hidden="true"/><b aria-hidden="true"><em/><em/><em/></b></Link><div><span>ORIGINAL MAGNEO CONCEPT · CAROUSEL</span><h3>Coordinated social series</h3><p>A visual format for adapting the key points of a larger topic.</p></div></article>
+  </div><Link className="scr-expanded-dark-link" to="/portfolio/#ai-marketing">Explore the portfolio <span aria-hidden="true">→</span></Link></div></section>;
+}
+
+function AiContentMarketingReview({ data }) {
+  useEffect(() => {
+    const targetId = window.location.hash.slice(1);
+    if (targetId) document.getElementById(targetId)?.scrollIntoView();
+  }, []);
+  const resources = <RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries} articles={relatedArticlesFor({ slug: 'ai-content-marketing' })}/>;
+  return <div className={`scr-page scr-page-expanded-ai ${data.pageClass}`}><ReviewHero data={data}/>
+    <ExpandedServiceCards content={data.services} eyebrow="Content services"/>
+    <AiContentBrandVoice content={data.brandVoice}/>
+    <AiContentReels content={data.reels}/>
+    <AiContentSeries content={data.contentSeries}/>
+    <AiContentWorkflow content={data.workflow}/>
+    <AiContentSupport content={data.support}/>
+    <AiContentExamples/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
+    <ExpandedFaq items={data.faqItems}/>
+    <FinalCta data={data}/>
+    {resources}
+  </div>;
+}
+
 function AiOverviewServices() {
   return <section className="section soft scr-ai-overview-services"><div className="container"><div className="label">AI MARKETING SERVICES</div><h2>What Magneo can create for your business.</h2><p className="scr-ai-overview-intro">Projects can focus on one deliverable or combine several services, from a blog production workflow to a coordinated video and social content series.</p><div className="scr-ai-overview-service-grid">{aiServices.map(([title,path,copy],index)=><Link to={path} key={path}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p><b>Explore service <i aria-hidden="true">→</i></b></Link>)}</div></div></section>;
 }
@@ -1174,6 +1223,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo', 'ai-automation-for-healthcare-providers-clinics-magneo'];
   if (childData && !parentData) {
     if (serviceSlug === 'ai-seo') return <AiSeoReview data={childData}/>;
+    if (serviceSlug === 'ai-content-marketing') return <AiContentMarketingReview data={childData}/>;
     if (['personal-branding-for-lawyers-legal-professionals','personal-branding-for-financial-advisors-wealth-professionals'].includes(serviceSlug)) return <SpecialistBrandingReview data={childData}/>;
     if (['ai-social-media-marketing','ai-ugc-ai-video-production','ai-web-design-conversion'].includes(serviceSlug)) return <ExpandedAiServiceReview data={childData} slug={serviceSlug}/>;
     return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
