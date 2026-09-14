@@ -213,7 +213,7 @@ const pageData = {
     related: [
       ['SEO services', '/services/seo-for-regulated-industries/'],
       ['Website Design for Law Firms', '/services/website-design-rebrand-for-law-firms-magneo/'],
-      ['PPC & Landing Pages for Law Firms', '/services/ppc-landing-pages-for-law-firms-magneo/'],
+      ['PPC & Landing Pages for Law Firms', '/services/ppc-landing-pages-for-law-firms/'],
     ],
   },
   'seo-for-financial-advisors-wealth-firms': {
@@ -272,7 +272,7 @@ const pageData = {
     related: [
       ['SEO services', '/services/seo-for-regulated-industries/'],
       ['Website Design for Financial Advisors', '/services/website-design-for-financial-advisors-wealth-firms-magneo/'],
-      ['PPC & Landing Pages for Financial Advisors', '/services/ppc-landing-pages-for-financial-advisors-fintech-magneo/'],
+      ['PPC & Landing Pages for Financial Advisors', '/services/ppc-landing-pages-for-financial-advisors-fintech/'],
     ],
   },
   'seo-for-the-healthcare-medtech-industry': {

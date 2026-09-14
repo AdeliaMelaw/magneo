@@ -154,9 +154,9 @@ const directoryGroups = [
     title: 'Paid Advertising & Landing Pages',
     links: [
       ['Overview', '/services/ppc-landing-pages-for-regulated-industries/'],
-      ['Law Firms', '/services/ppc-landing-pages-for-law-firms-magneo/'],
+      ['Law Firms', '/services/ppc-landing-pages-for-law-firms/'],
       ['Healthcare & MedTech', '/services/ppc-landing-pages-for-healthcare-medtech/'],
-      ['Financial Advisors & FinTech', '/services/ppc-landing-pages-for-financial-advisors-fintech-magneo/'],
+      ['Financial Advisors & FinTech', '/services/ppc-landing-pages-for-financial-advisors-fintech/'],
     ],
   },
 ];
