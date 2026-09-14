@@ -32,7 +32,7 @@
     var items = [
       ['SEO for Law Firms', '/services/seo-for-the-legal-industry/'],
       ['PPC & Landing Pages', '/services/ppc-landing-pages-for-regulated-industries/'],
-      ['LinkedIn Growth', '/services/linkedin-growth-law-firms/'],
+      ['Social Media Marketing', '/services/linkedin-growth-law-firms/'],
       ['AI Automation', '/services/ai-automation-for-regulated-industries-magneo/'],
       ['Website Design', '/services/website-design-for-regulated-professional-industries-magneo/'],
       ['Personal Branding', '/services/personal-branding-for-regulated-professionals/'],

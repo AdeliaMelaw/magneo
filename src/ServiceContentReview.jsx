@@ -690,6 +690,16 @@ function AudienceSplitSection({ audience }) {
   return <section id={audience.id} className="section soft scr-audience-split"><div className="container"><div className="label">Audience</div><h2>{audience.heading}</h2><div className="scr-audience-split-grid">{audience.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{audience.closing && <p className="scr-audience-split-closing">{audience.closing}</p>}</div></section>;
 }
 
+function PlatformSection({ content }) {
+  if (!content) return null;
+  return <section className="section scr-platforms"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-platforms-intro">{content.intro}</p><div className="scr-platforms-grid">{content.items.map(([title, copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-platforms-closing">{content.closing}</p></div></section>;
+}
+
+function EngagementSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-engagement"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-engagement-intro">{content.intro}</p><div className="scr-engagement-grid">{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-engagement-note">{content.note}</p><p className="scr-engagement-clarification">{content.clarification}</p></div></section>;
+}
+
 function SocialVisualExamples() {
   return <section className="section scr-social-visuals" aria-labelledby="scr-social-visuals-title"><div className="container"><div className="label">Content examples</div><h2 id="scr-social-visuals-title">See the content, not just the list of services.</h2><div className="scr-social-visual-grid">
     <article className="scr-social-example"><div className="scr-social-concept scr-social-text-post" role="img" aria-label="Text-led social post concept reading Answer what people want to know"><small>Client questions / 01</small><strong>Answer what people<br/>want to know.</strong><span aria-hidden="true">↗</span></div><div className="scr-social-example-copy"><span>Original Magneo concept · Text-led LinkedIn post</span><h3>A useful question, answered clearly.</h3><p>Designed to turn a recurring audience question into a concise professional explanation.</p></div></article>
@@ -741,7 +751,7 @@ function FaqAnswer({ answer }) {
 
 function ChildVisualExample({ example }) {
   if (!example) return null;
-  return <section className="section scr-child-visual"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><article className="scr-child-visual-card"><div className="scr-social-video"><video controls playsInline preload="metadata" poster={example.poster} aria-label={example.alt} onPlay={(event)=>{event.currentTarget.nextElementSibling.hidden=true;}} onEnded={(event)=>{event.currentTarget.nextElementSibling.hidden=false;}}><source src={example.video} type="video/mp4"/>Your browser does not support embedded video.</video><button type="button" aria-label={example.alt} onClick={(event)=>{event.currentTarget.previousElementSibling.play();}}><span aria-hidden="true">▶</span></button></div><div><span className="label">{example.label}</span><h3>{example.title}</h3><p>{example.copy}</p><Link to={example.link}>Explore social content examples <span aria-hidden="true">→</span></Link></div></article></div></section>;
+  return <section id={example.id} className="section scr-child-visual"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><article className="scr-child-visual-card"><div className="scr-social-video"><video controls playsInline preload="metadata" poster={example.poster} aria-label={example.alt} onPlay={(event)=>{event.currentTarget.nextElementSibling.hidden=true;}} onEnded={(event)=>{event.currentTarget.nextElementSibling.hidden=false;}}><source src={example.video} type="video/mp4"/>Your browser does not support embedded video.</video><button type="button" aria-label={example.alt} onClick={(event)=>{event.currentTarget.previousElementSibling.play();}}><span aria-hidden="true">▶</span></button></div><div><span className="label">{example.label}</span><h3>{example.title}</h3><p>{example.copy}</p><Link to={example.link}>Explore social content examples <span aria-hidden="true">→</span></Link></div></article></div></section>;
 }
 
 function ContentPlanSection({ plan }) {
@@ -776,8 +786,8 @@ function StandardReview({ data, slug }) {
 function ChildReview({ data }) {
   useEffect(() => {
     const targetId = window.location.hash.slice(1);
-    if (targetId && targetId === data.scopeId) document.getElementById(targetId)?.scrollIntoView();
-  }, [data.scopeId]);
+    if (targetId && (targetId === data.scopeId || targetId === data.visualExample?.id)) document.getElementById(targetId)?.scrollIntoView();
+  }, [data.scopeId, data.visualExample?.id]);
   const serviceLinks = data.related.filter(([,path]) => path.startsWith('/services/') || path.startsWith('/portfolio/'));
   const industryLinks = data.related.filter(([,path]) => !path.startsWith('/services/') && !path.startsWith('/portfolio/'));
   const relatedArticles = relatedArticlesFor(data);
@@ -786,10 +796,12 @@ function ChildReview({ data }) {
     {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
     <AudienceSplitSection audience={data.audienceSplit}/>
     <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div>{data.scopeNote && <div className="container"><p className="scr-scope-note">{data.scopeNote}</p></div>}</section>
+    <PlatformSection content={data.platforms}/>
     <ContentPlanSection plan={data.contentPlan}/>
     <DecisionSection decision={data.decision}/>
     <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>
     <ChildVisualExample example={data.visualExample}/>
+    <EngagementSection content={data.engagement}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading} intro={data.processIntro}/>
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p><FaqAnswer answer={answer}/></p></details>)}</div></div></section>
     {!data.resourcesAfterCta && resources}
