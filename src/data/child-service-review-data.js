@@ -348,7 +348,6 @@ const pages = {
       ['Review and publishing', 'Defined approval stages followed by final asset delivery or scheduling on the agreed accounts.'],
       ['Performance review', 'Available engagement, viewing, website-visit, and enquiry signals inform ongoing content decisions where reporting is included.'],
     ],
-    scopeNote: 'The proposal confirms platforms, accounts, quantities, formats, revisions, publishing responsibilities, and any community-management support.',
     platforms: {
       eyebrow: 'PLATFORM DIRECTION',
       heading: 'One professional voice. Formats suited to each channel.',

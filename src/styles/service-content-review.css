@@ -76,6 +76,7 @@
 .scr-page-tech-website .scr-decision{padding-bottom:48px}
 .scr-page-healthcare-website .scr-decision{padding-top:56px;padding-bottom:56px}.scr-page-healthcare-website .scr-decision h2{max-width:760px;margin-bottom:22px;font-size:clamp(38px,4.4vw,52px);line-height:1.04}.scr-page-healthcare-website .scr-decision-copy{max-width:820px;font-size:16px;line-height:1.72}
 .scr-page-social .scr-decision{padding-top:56px;padding-bottom:48px}
+.scr-page-law-social #legal-linkedin-scope{padding-bottom:56px}.scr-page-law-social .scr-decision{padding-bottom:44px}
 .scr-decision-example{max-width:860px;margin-top:26px;padding:24px 26px;border-left:3px solid var(--mg);background:#fff}.scr-decision-example strong,.scr-decision-label{font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.scr-decision-example strong{color:#4f8700}.scr-decision-example p{margin:9px 0 0;color:var(--muted);line-height:1.7}.scr-decision-label{max-width:860px;margin:22px 0 0;color:#68716a;line-height:1.6}
 .scr-page-seo .section{padding-top:68px;padding-bottom:68px}.scr-page-seo .scr-audience .card:has(p),.scr-page-seo .scr-examples .card{min-height:0}.scr-page-seo .scr-examples .card h3{margin-top:24px}
 .scr-page-crm-automation .scr-hero h1{font-size:clamp(46px,5.2vw,78px)}.scr-page-crm-automation .scr-examples{grid-template-columns:repeat(2,minmax(0,1fr))}.scr-page-crm-automation .scr-examples .card{min-height:0}.scr-page-crm-automation .scr-examples .card h3{margin-top:24px}
@@ -103,6 +104,7 @@
 @media(max-width:620px){.scr-page-tech-website .scr-decision{padding-bottom:36px}}
 @media(max-width:620px){.scr-page-healthcare-website .scr-decision{padding-top:36px;padding-bottom:36px}.scr-page-healthcare-website .scr-decision h2{margin-bottom:20px;font-size:36px}}
 @media(max-width:620px){.scr-page-social .scr-decision{padding-top:40px;padding-bottom:36px}}
+@media(max-width:620px){.scr-page-law-social #legal-linkedin-scope{padding-bottom:40px}.scr-page-law-social .scr-decision{padding-bottom:36px}}
 @media(max-width:620px){.scr-platforms-grid,.scr-page-law-social .scr-examples,.scr-engagement-grid-four,.scr-engagement-grid-five,.scr-practical-content-grid{grid-template-columns:1fr}.scr-platforms-grid article,.scr-engagement-grid article,.scr-practical-content-grid article{padding:22px}.scr-engagement-grid article>span{margin-bottom:20px}.scr-practical-content-footer{align-items:flex-start;flex-direction:column}}
 @media(max-width:620px){.scr-page-legal-website .scr-decision-grid{grid-template-columns:1fr}}
 @media(max-width:620px){.scr-page-crm-automation .scr-hero h1{font-size:34px}.scr-page-crm-automation .scr-examples{grid-template-columns:1fr}}
