@@ -88,6 +88,7 @@
     if (path.indexOf('/services/ai-automation-for-law-firms-legal-departments-magneo') === 0) return null;
     if (path.indexOf('/services/ai-automation-for-financial-advisors-firms-fintech-magneo') === 0) return null;
     if (path.indexOf('/services/ai-marketing-automation-for-tech-saas-ai-companies-magneo') === 0) return null;
+    if (path.indexOf('/services/ai-automation-for-healthcare-providers-clinics-magneo') === 0) return null;
     if (path.indexOf('/services/linkedin-growth-financial-advisors') === 0) return null;
     if (path.indexOf('/services/social-media-linkedin-leadership-for-healthcare-providers-magneo') === 0) return null;
     if (path.indexOf('/services/crypto-and-ai-social-media') === 0) return null;

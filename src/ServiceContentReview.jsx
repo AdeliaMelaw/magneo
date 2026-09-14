@@ -666,9 +666,13 @@ function AutomationOrbitCard({ orbit }) {
   </Link>;
 }
 
+function CompactHeroFlow({ flow }) {
+  return <aside className="scr-hero-flow" aria-label={flow.label}><span className="scr-orbit-eyebrow">{flow.label}</span><div className="scr-hero-flow-steps">{flow.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < flow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p>{flow.note}</p></aside>;
+}
+
 function ReviewHero({ data }) {
-  const hasFeatureCard = data.heroPortfolio || data.heroOrbit;
-  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">{data.heroEyebrow || 'Marketing service'}</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div>{data.heroMicrocopy && <p className="scr-hero-microcopy">{data.heroMicrocopy}</p>}</div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
+  const hasFeatureCard = data.heroPortfolio || data.heroOrbit || data.heroFlow;
+  return <section className={`hero scr-hero${hasFeatureCard ? ' scr-hero-with-portfolio' : ''}`}><div className="container hero-grid"><div><div className="crumb">Home / Services / {data.title.replace(/\.$/, '')}</div><div className="label">{data.heroEyebrow || 'Marketing service'}</div><h1>{data.title}</h1><p className="intro">{data.description}</p><div className="actions"><Link className="btn" to={data.primary[1]}>{data.primary[0]}</Link><Link className="btn outline" to={data.secondary[1]}>{data.secondary[0]}</Link></div>{data.heroMicrocopy && <p className="scr-hero-microcopy">{data.heroMicrocopy}</p>}</div>{data.heroPortfolio ? <PortfolioHeroCard preview={data.heroPortfolio}/> : data.heroOrbit ? <AutomationOrbitCard orbit={data.heroOrbit}/> : data.heroFlow ? <CompactHeroFlow flow={data.heroFlow}/> : <div className={`glass scr-hero-card ${data.cardClass || ''}`}>{data.cardEyebrow && <span className="label">{data.cardEyebrow}</span>}<strong>{data.card[0].split('\n').map((line,index)=><span key={line}>{index > 0 && <br/>}{line}</span>)}</strong><p>{data.card[1]}</p></div>}</div></section>;
 }
 
 function ProcessSection({ items, eyebrow = 'How we work', heading = 'We define the work, responsibilities, and next steps.', intro }) {
@@ -736,11 +740,12 @@ function IndustryCardsSection({ content }) {
 
 function AutomationWorkflowSection({ workflow }) {
   if (!workflow) return null;
-  return <section id="workflow-example" className="section scr-automation-workflow"><div className="container"><div className="label">{workflow.label}</div><h2>{workflow.heading}</h2><div className="scr-workflow-grid"><div><div className="scr-workflow-flow" role="img" aria-label={`Workflow: ${workflow.steps.join(' to ')}`}>{workflow.steps.map((step,index)=><div className="scr-workflow-step" key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < workflow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p className="scr-workflow-copy">{workflow.copy}</p><p className="scr-workflow-note">{workflow.note}</p></div><aside><span>{workflow.panelEyebrow || 'Optional AI step'}</span><h3>{workflow.panelHeading}</h3><p>{workflow.panelCopy}</p></aside></div><Link className="scr-workflow-portfolio" to={workflow.portfolioUrl || '/portfolio/#ai-marketing'}>{workflow.portfolioLabel || 'Explore more AI marketing concepts'} <span aria-hidden="true">→</span></Link></div></section>;
+  const stepNames = workflow.steps.map(step=>Array.isArray(step) ? step[0] : step);
+  return <section id="workflow-example" className="section scr-automation-workflow"><div className="container"><div className="label">{workflow.label}</div><h2>{workflow.heading}</h2>{workflow.intro && <p className="scr-workflow-intro">{workflow.intro}</p>}<div className="scr-workflow-grid"><div><div className={`scr-workflow-flow${workflow.steps.some(Array.isArray) ? ' scr-workflow-flow-detailed' : ''}`} role="img" aria-label={`Workflow: ${stepNames.join(' to ')}`}>{workflow.steps.map((step,index)=>{const [title,copy]=Array.isArray(step)?step:[step,null];return <div className="scr-workflow-step" key={title}><span>{String(index + 1).padStart(2,'0')}</span><strong>{title}</strong>{copy && <small>{copy}</small>}{index < workflow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>;})}</div><p className="scr-workflow-copy">{workflow.copy}</p><p className="scr-workflow-note">{workflow.note}</p></div><aside><span>{workflow.panelEyebrow || 'Optional AI step'}</span><h3>{workflow.panelHeading}</h3><p>{workflow.panelCopy}</p></aside></div><Link className="scr-workflow-portfolio" to={workflow.portfolioUrl || '/portfolio/#ai-marketing'}>{workflow.portfolioLabel || 'Explore more AI marketing concepts'} <span aria-hidden="true">→</span></Link></div></section>;
 }
 
 function LegalCrmSection({ content }) {
-  return <section className="section scr-legal-crm"><div className="container"><div className="label">CRM implementation</div><div className="scr-legal-crm-head"><h2>{content.heading}</h2><p>{content.text}</p></div><ul>{content.items.map((item,index)=><li key={item}><span>{String(index + 1).padStart(2,'0')}</span>{item}</li>)}</ul><p className="scr-legal-note">{content.note}</p></div></section>;
+  return <section className="section scr-legal-crm"><div className="container"><div className="label">CRM implementation</div><div className="scr-legal-crm-head"><h2>{content.heading}</h2><p>{content.text}</p></div><ul className={content.items.some(Array.isArray) ? 'scr-legal-crm-detailed' : ''}>{content.items.map((item,index)=>{const [title,copy]=Array.isArray(item)?item:[item,null];return <li key={title}><span>{String(index + 1).padStart(2,'0')}</span><div><strong>{title}</strong>{copy && <small>{copy}</small>}</div></li>;})}</ul><p className="scr-legal-note">{content.note}</p></div></section>;
 }
 
 function LegalDepartmentSection({ content }) {
@@ -748,7 +753,12 @@ function LegalDepartmentSection({ content }) {
 }
 
 function LegalStartingPoint({ content }) {
-  return <section className="section soft scr-legal-starting"><div className="container"><div className="label">A practical first project</div><h2>{content.heading}</h2><p>{content.body}</p><Link className="btn" to={content.button[1]}>{content.button[0]}</Link></div></section>;
+  return <section className="section soft scr-legal-starting"><div className="container"><div className="label">A practical first project</div><h2>{content.heading}</h2><p>{content.body}</p>{content.supporting && <p className="scr-starting-supporting">{content.supporting}</p>}<Link className="btn" to={content.button[1]}>{content.button[0]}</Link></div></section>;
+}
+
+function AutomationAiFitSection({ content }) {
+  if (!content) return null;
+  return <section className="section scr-ai-fit"><div className="container"><div className="label">Appropriate automation</div><h2>{content.heading}</h2><p>{content.text}</p></div></section>;
 }
 
 function AutomationExpansionSection({ content }) {
@@ -769,9 +779,10 @@ function IndustryAutomationReview({ data }) {
     <LegalCrmSection content={data.crmSection}/>
     <AudienceSplitSection audience={data.audienceSplit}/>
     <AutomationWorkflowSection workflow={data.automationWorkflow}/>
+    <AutomationAiFitSection content={data.aiFit}/>
     {data.legalDepartment && <LegalDepartmentSection content={data.legalDepartment}/>}<AutomationExpansionSection content={data.expansion}/>
-    <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading}</h2>{data.scopeIntro && <p>{data.scopeIntro}</p>}</div><ul>{data.included.map(([title,copy])=><li key={title}><strong>{title}</strong><span>{copy}</span></li>)}</ul></div>{data.scopeNote && <div className="container"><p className="scr-scope-note">{data.scopeNote}</p></div>}</section>
-    <ProcessSection items={data.process} eyebrow="How we work" heading={data.processHeading} intro={data.processIntro}/>
+    {!data.hideDeliverables && <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading}</h2>{data.scopeIntro && <p>{data.scopeIntro}</p>}</div><ul>{data.included.map(([title,copy])=><li key={title}><strong>{title}</strong><span>{copy}</span></li>)}</ul></div>{data.scopeNote && <div className="container"><p className="scr-scope-note">{data.scopeNote}</p></div>}</section>}
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow || 'How we work'} heading={data.processHeading} intro={data.processIntro}/>
     {data.startingPoint && <LegalStartingPoint content={data.startingPoint}/>}
     <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faq.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
     <FinalCta data={data}/>
@@ -888,7 +899,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const data = parentData || childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : undefined);
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
   if (!data) return <Navigate to="/services/test/" replace/>;
-  const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo'];
+  const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo', 'ai-automation-for-healthcare-providers-clinics-magneo'];
   if (childData && !parentData) return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;
 }
