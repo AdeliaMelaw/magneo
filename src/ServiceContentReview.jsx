@@ -850,6 +850,54 @@ function AiSeoReview({ data }) {
   </div>;
 }
 
+function BrandingReasonSection({ content }) {
+  return <section className="section soft scr-branding-reason"><div className="container"><div className="label">Why personal branding</div><h2>{content.heading}</h2><div>{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div></div></section>;
+}
+
+function BrandingServicesSection({ content }) {
+  return <section id={content.id} className="section scr-branding-services"><div className="container"><div className="label">Personal brand services</div><h2>{content.heading}</h2><div className="scr-branding-service-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-branding-note">{content.note}</p>}</div></section>;
+}
+
+function BrandingVideoSection({ content }) {
+  return <section className="section dark scr-branding-video"><div className="container"><div className="label">Expert-led video</div><h2>{content.heading}</h2><div className={`scr-branding-video-grid${content.video ? ' has-video' : ''}`}>{content.video && <figure><video controls playsInline preload="metadata" poster={content.poster} aria-label="Play the interview-style personal-branding video concept"><source src={content.video} type="video/mp4"/>Your browser does not support embedded video.</video><figcaption>{content.videoLabel}</figcaption></figure>}<div><div className="scr-branding-video-copy">{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div><ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul><p className="scr-branding-video-note">{content.note}</p></div></div></div></section>;
+}
+
+function BrandingVoiceSection({ content }) {
+  return <section className="section soft scr-specialist-voice"><div className="container"><div className="label">Brand voice and custom GPT</div><h2>{content.heading}</h2><div className="scr-specialist-voice-grid"><div>{content.paragraphs.map(text=><p key={text}>{text}</p>)}</div><ul>{content.items.map(item=><li key={item}>{item}</li>)}</ul></div><p className="scr-branding-note">{content.closing}</p></div></section>;
+}
+
+function BrandingExamplesSection({ content, eyebrow }) {
+  return <section className="section scr-branding-examples"><div className="container"><div className="label">{eyebrow}</div><h2>{content.heading}</h2>{content.text && <p className="scr-branding-examples-intro">{content.text}</p>}<div className="scr-branding-example-grid">{content.items.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-branding-note">{content.caption}</p></div></section>;
+}
+
+function FirmAlignmentSection({ content }) {
+  if (!content) return null;
+  return <section className="section soft scr-firm-alignment"><div className="container"><div><div className="label">Firm alignment</div><h2>{content.heading}</h2></div><div><p>{content.text}</p><strong>{content.note}</strong></div></div></section>;
+}
+
+function BrandingContentSeries({ content }) {
+  if (!content) return null;
+  return <section className="section scr-branding-series"><div className="container"><div className="label">Illustrative content series</div><h2>{content.heading}</h2><p className="scr-branding-examples-intro">{content.text}</p><p className="scr-branding-series-supporting">{content.supporting}</p><div className="scr-branding-series-flow" role="img" aria-label={content.items.join(' to ')}>{content.items.map((item,index)=><div key={item}><span>{String(index+1).padStart(2,'0')}</span><strong>{item}</strong>{index<content.items.length-1&&<i aria-hidden="true">→</i>}</div>)}</div><p className="scr-branding-note">{content.caption}</p></div></section>;
+}
+
+function SpecialistBrandingReview({ data }) {
+  useEffect(()=>{const targetId=window.location.hash.slice(1);if(targetId)document.getElementById(targetId)?.scrollIntoView();},[]);
+  const resources=<RelatedColumns serviceLinks={data.related} industryLinks={data.relatedIndustries} articles={relatedArticlesFor(data)}/>;
+  return <div className={`scr-page ${data.pageClass}`}><ReviewHero data={data}/>
+    <BrandingReasonSection content={data.buyReason}/>
+    <BrandingServicesSection content={data.brandingServices}/>
+    <BrandingVideoSection content={data.videoSection}/>
+    <BrandingVoiceSection content={data.voiceSection}/>
+    <BrandingExamplesSection content={data.practiceExamples || data.positioningExamples} eyebrow={data.practiceExamples ? 'Practice-specific content' : 'Positioning examples'}/>
+    <BrandingContentSeries content={data.contentSeries}/>
+    {data.boundaryNote && <section className="scr-branding-boundary"><div className="container"><p>{data.boundaryNote}</p></div></section>}
+    <FirmAlignmentSection content={data.firmAlignment}/>
+    <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading}/>
+    <section className="section scr-faq"><div className="container"><div className="label">FAQ</div><h2>Questions before starting.</h2><div className="scr-faq-list">{data.faqItems.map(([question,answer])=><details key={question}><summary>{question}</summary><p>{answer}</p></details>)}</div></div></section>
+    <FinalCta data={data}/>{resources}
+  </div>;
+}
+
 function FaqAnswer({ answer }) {
   if (typeof answer !== 'object' || answer === null || !answer.path) return answer;
   return <>{answer.before}<Link to={answer.path}>{answer.label}</Link>{answer.after}</>;
@@ -941,6 +989,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const industryAutomationSlugs = ['ai-automation-for-law-firms-legal-departments-magneo', 'ai-automation-for-financial-advisors-firms-fintech-magneo', 'ai-marketing-automation-for-tech-saas-ai-companies-magneo', 'ai-automation-for-healthcare-providers-clinics-magneo'];
   if (childData && !parentData) {
     if (serviceSlug === 'ai-seo') return <AiSeoReview data={childData}/>;
+    if (['personal-branding-for-lawyers-legal-professionals','personal-branding-for-financial-advisors-wealth-professionals'].includes(serviceSlug)) return <SpecialistBrandingReview data={childData}/>;
     return industryAutomationSlugs.includes(serviceSlug) ? <IndustryAutomationReview data={childData}/> : <ChildReview data={childData}/>;
   }
   return serviceSlug === 'ai-powered-digital-marketing' ? <AiOverviewReview/> : <StandardReview data={data} slug={serviceSlug}/>;

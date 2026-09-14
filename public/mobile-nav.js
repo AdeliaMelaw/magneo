@@ -93,6 +93,8 @@
     if (path.indexOf('/services/linkedin-growth-financial-advisors') === 0) return null;
     if (path.indexOf('/services/social-media-linkedin-leadership-for-healthcare-providers-magneo') === 0) return null;
     if (path.indexOf('/services/crypto-and-ai-social-media') === 0) return null;
+    if (path.indexOf('/services/personal-branding-for-lawyers-legal-professionals') === 0) return null;
+    if (path.indexOf('/services/personal-branding-for-financial-advisors-wealth-professionals') === 0) return null;
     if (path.indexOf('/services/ai-') === 0 || path.indexOf('/services/compliance-aware-ai') === 0) return marqueeSets.ai;
     if (path.indexOf('/law-firm-marketing') === 0) return marqueeSets.law;
     if (path.indexOf('/financial-firm-marketing') === 0) return marqueeSets.finance;
