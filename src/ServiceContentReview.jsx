@@ -700,6 +700,11 @@ function PracticalContentExample({ content }) {
   return <section id={content.id} className="section scr-practical-content"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><div className="scr-practical-content-grid">{content.items.map(([title, question, formats])=><article key={title}><span>{title}</span><h3>{question}</h3><ul>{formats.map(format=><li key={format}>{format}</li>)}</ul></article>)}</div><div className="scr-practical-content-footer"><p>{content.label}</p><Link to={content.link[0]}>{content.link[1]} <span aria-hidden="true">→</span></Link></div></div></section>;
 }
 
+function HealthcareVisualExamples({ content }) {
+  if (!content) return null;
+  return <section className="section scr-healthcare-visuals"><div className="container"><div className="scr-healthcare-visual-grid"><article><div className="scr-social-video"><video controls playsInline preload="metadata" poster={content.poster} aria-label={content.videoAlt} onPlay={(event)=>{event.currentTarget.nextElementSibling.hidden=true;}} onEnded={(event)=>{event.currentTarget.nextElementSibling.hidden=false;}}><source src={content.video} type="video/mp4"/>Your browser does not support embedded video.</video><button type="button" aria-label={content.videoAlt} onClick={(event)=>{event.currentTarget.previousElementSibling.play();}}><span aria-hidden="true">▶</span></button></div><div className="scr-healthcare-visual-copy"><span>{content.videoLabel}</span><h3>{content.videoTitle}</h3><p>{content.videoCopy}</p></div></article><article><div className="scr-healthcare-carousel" role="img" aria-label="Healthcare carousel format demonstration titled Before your first visit"><small>CLINIC INFORMATION · 01</small><strong>Before your<br/>first visit.</strong><div aria-hidden="true"><i/><i/><i/></div></div><div className="scr-healthcare-visual-copy"><span>{content.carouselLabel}</span><h3>{content.carouselTitle}</h3><p>{content.carouselCopy}</p></div></article></div><Link className="scr-healthcare-portfolio-link" to={content.portfolio[0]}>{content.portfolio[1]} <span aria-hidden="true">→</span></Link></div></section>;
+}
+
 function EngagementSection({ content }) {
   if (!content) return null;
   return <section className="section soft scr-engagement"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><p className="scr-engagement-intro">{content.intro}</p><div className={`scr-engagement-grid${content.items.length === 4 ? ' scr-engagement-grid-four' : ''}`}>{content.items.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-engagement-note">{content.note}</p><p className="scr-engagement-clarification">{content.clarification}</p></div></section>;
@@ -735,7 +740,7 @@ function StartingPointSection({ content }) {
 
 function FinalCta({ data }) {
   const button = data.ctaButton || ['Discuss your project', '/contact/#contact-enquiry'];
-  return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link>{data.ctaEmail && <a className="scr-cta-email" href={`mailto:${data.ctaEmail}`}>{data.ctaEmail}</a>}</div></div></div></section>;
+  return <section className="section"><div className="container"><div className="cta scr-cta"><h2>{data.cta[0]}</h2><p>{data.cta[1]}</p><div className="actions"><Link className="btn" to={button[1]}>{button[0]}</Link>{data.ctaEmail && <a className="scr-cta-email" href={`mailto:${data.ctaEmail}`}>{data.ctaEmail}</a>}</div>{data.ctaMicrocopy && <small className="scr-cta-microcopy">{data.ctaMicrocopy}</small>}</div></div></section>;
 }
 
 function RelatedColumns({ serviceLinks, industryLinks, articles }) {
@@ -791,21 +796,23 @@ function StandardReview({ data, slug }) {
 function ChildReview({ data }) {
   useEffect(() => {
     const targetId = window.location.hash.slice(1);
-    if (targetId && (targetId === data.scopeId || targetId === data.visualExample?.id || targetId === data.contentExample?.id)) document.getElementById(targetId)?.scrollIntoView();
-  }, [data.scopeId, data.visualExample?.id, data.contentExample?.id]);
+    if (targetId && (targetId === data.scopeId || targetId === data.examplesId || targetId === data.visualExample?.id || targetId === data.contentExample?.id)) document.getElementById(targetId)?.scrollIntoView();
+  }, [data.scopeId, data.examplesId, data.visualExample?.id, data.contentExample?.id]);
   const serviceLinks = data.related.filter(([,path]) => path.startsWith('/services/') || path.startsWith('/portfolio/'));
   const industryLinks = data.related.filter(([,path]) => !path.startsWith('/services/') && !path.startsWith('/portfolio/'));
   const relatedArticles = relatedArticlesFor(data);
   const resources = <RelatedColumns serviceLinks={serviceLinks} industryLinks={industryLinks} articles={relatedArticles}/>;
   return <div className={`scr-page${data.pageClass ? ` ${data.pageClass}` : ''}`}><ReviewHero data={data}/>
     {data.showAudience && <section className="section soft"><div className="container scr-child-audience"><div className="label">Audience</div><h2>AI-assisted marketing with the review your work requires.</h2><p>Suitable for expert-led and regulated businesses when the task, source material, responsibilities, and approval process are clearly defined.</p></div></section>}
-    <AudienceSplitSection audience={data.audienceSplit}/>
+    {!data.audienceAfterPlatforms && <AudienceSplitSection audience={data.audienceSplit}/>}
     <section id={data.scopeId} className="section"><div className="container scr-included"><div><div className="label">Project scope</div><h2>{data.scopeHeading || 'What your project can include.'}</h2>{data.scopeIntro !== '' && <p>{data.scopeIntro || 'Your proposal confirms the deliverables, responsibilities, tools, and any ongoing support.'}</p>}</div><ul>{data.included.map(item=>Array.isArray(item)?<li key={item[0]}><strong>{item[0]}</strong><span>{item[1]}</span></li>:<li key={item}>{item}</li>)}</ul></div>{data.scopeNote && <div className="container"><p className="scr-scope-note">{data.scopeNote}</p></div>}</section>
     <PlatformSection content={data.platforms}/>
+    {data.audienceAfterPlatforms && <AudienceSplitSection audience={data.audienceSplit}/>}
     <ContentPlanSection plan={data.contentPlan}/>
     <DecisionSection decision={data.decision}/>
-    {!data.hideExamples && <section className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
+    {!data.hideExamples && <section id={data.examplesId} className="section soft"><div className="container"><div className="label">{data.examplesEyebrow || 'What we can create'}</div><h2>{data.examplesHeading || 'Services shaped around your goals.'}</h2><div className="grid scr-examples">{data.examples.map(([title,copy])=><article className="card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>{data.examplesNote && <p className="scr-examples-note">{data.examplesNote}</p>}</div></section>}
     <PracticalContentExample content={data.contentExample}/>
+    <HealthcareVisualExamples content={data.healthcareVisualExamples}/>
     <ChildVisualExample example={data.visualExample}/>
     <EngagementSection content={data.engagement}/>
     <ProcessSection items={data.process} eyebrow={data.processEyebrow} heading={data.processHeading} intro={data.processIntro}/>
