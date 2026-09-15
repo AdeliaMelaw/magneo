@@ -56,24 +56,31 @@
   }
 
   function bindGuideAnchors() {
-    var formSection = document.getElementById('guide-form');
-    var firstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
-    if (!formSection || !firstField) return;
-    document.querySelectorAll('a[href="#guide-form"]').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-        window.setTimeout(function () { firstField.focus({ preventScroll: true }); }, reduceMotion ? 0 : 450);
-      });
+    if (document.documentElement.dataset.guideAnchorsBound === 'true') return;
+    document.documentElement.dataset.guideAnchorsBound = 'true';
+    document.addEventListener('click', function (event) {
+      var link = event.target.closest && event.target.closest('a[href="#guide-form"]');
+      if (!link || !isGuidePage()) return;
+      var formSection = document.getElementById('guide-form');
+      var firstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
+      if (!formSection || !firstField) return;
+      event.preventDefault();
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+      window.setTimeout(function () {
+        var currentFirstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
+        if (currentFirstField) currentFirstField.focus({ preventScroll: true });
+      }, reduceMotion ? 0 : 450);
     });
   }
 
   function bindGuideForm() {
-    var form = document.querySelector('.magneo-guide-form');
-    if (!form) return;
+    if (document.documentElement.dataset.guideFormBound === 'true') return;
+    document.documentElement.dataset.guideFormBound = 'true';
     var currentDownloadUrl = '';
-    form.addEventListener('submit', function (event) {
+    document.addEventListener('submit', function (event) {
+      var form = event.target;
+      if (!form.matches || !form.matches('.magneo-guide-form') || !isGuidePage()) return;
       event.preventDefault();
       var button = form.querySelector('button[type="submit"]');
       var status = form.querySelector('.guide-form-status');
