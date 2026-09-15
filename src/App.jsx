@@ -14,6 +14,7 @@ import AboutLegalTest from './AboutLegalTest.jsx';
 import ContactTest from './ContactTest.jsx';
 import HomeTest from './HomeTest.jsx';
 import SiteSearch from './SiteSearch.jsx';
+import { PrivacyPolicy, TermsOfUse } from './PolicyPages.jsx';
 import { LegalMarketingHub, LegalPracticePage, legalPracticeSlugs } from './LegalMarketingPages.jsx';
 import { FinancialMarketingHub, FinancialSpecialistPage, financialSpecialistSlugs } from './FinancialMarketingPages.jsx';
 import { HealthcareMarketingHub, HealthcareSpecialistPage, healthcareSpecialistSlugs } from './HealthcareMarketingPages.jsx';
@@ -223,7 +224,7 @@ function Footer(){
     ['AI-Powered Marketing','/services/ai-powered-digital-marketing/']
   ];
   const footerIndustries = [['Law Firms','/law-firm-marketing/'],['Financial Firms','/financial-firm-marketing/'],['Healthcare','/healthcare-marketing/'],['Technology Companies','/tech-company-marketing/']];
-  return <footer className="footer"><div className="container"><div className="footer-grid"><div className="footer-column footer-brand-column"><Link className="brand" to="/">Magneo</Link><p>Digital marketing, websites and content for professional services and technology companies.</p><div className="footer-contact"><span>Toronto, ON — serving Canada and the USA</span><a href="mailto:contact@magneo.ca">contact@magneo.ca</a><a href="tel:+14378731155">437 873 1155</a></div></div><div className="footer-column"><b>Services</b>{footerServices.map(([label,path])=><Link key={path} to={path}>{label}</Link>)}</div><div className="footer-column"><b>Industries</b>{footerIndustries.map(([label,path])=><Link key={path} to={path}>{label}</Link>)}</div><div className="footer-column"><b>Company</b><Link to="/portfolio/">Portfolio</Link><Link to="/about/">About Magneo</Link><Link to="/contact/">Contact</Link><a href={BLOG}>Insights &amp; Blog</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Magneo</span><div><Link to="/privacy-policy/">Privacy Policy</Link><Link to="/terms-of-service/">Terms of Service</Link></div></div></div></footer>;
+  return <footer className="footer"><div className="container"><div className="footer-grid"><div className="footer-column footer-brand-column"><Link className="brand" to="/">Magneo</Link><p>Digital marketing, websites and content for professional services and technology companies.</p><div className="footer-contact"><span>Toronto, ON — serving Canada and the USA</span><a href="mailto:contact@magneo.ca">contact@magneo.ca</a><a href="tel:+14378731155">437 873 1155</a></div></div><div className="footer-column"><b>Services</b>{footerServices.map(([label,path])=><Link key={path} to={path}>{label}</Link>)}</div><div className="footer-column"><b>Industries</b>{footerIndustries.map(([label,path])=><Link key={path} to={path}>{label}</Link>)}</div><div className="footer-column"><b>Company</b><Link to="/portfolio/">Portfolio</Link><Link to="/about/">About Magneo</Link><Link to="/contact/">Contact</Link><a href={BLOG}>Insights &amp; Blog</a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} Magneo</span><div><Link to="/privacy-policy/">Privacy Policy</Link><Link to="/terms-of-service/">Website Terms of Use</Link></div></div></div></footer>;
 }
 
 export default function App(){ return <Layout><ScrollTop/><Routes>
@@ -247,8 +248,8 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   {Object.entries(industries).filter(([k])=>!['law','finance','healthcare','tech'].includes(k)).map(([k,i])=><Route key={k} path={i.route.replace(/^\//,'').replace(/\/$/,'')} element={<IndustryPage kind={k}/>}/>) }
   {verticals.filter((v)=>!legalPracticeSlugs.some((slug)=>v.path===`/law-firm-marketing/${slug}/`)&&!financialSpecialistSlugs.some((slug)=>v.path===`/financial-firm-marketing/${slug}/`)&&!healthcareSpecialistSlugs.some((slug)=>v.path===`/healthcare-marketing/${slug}/`)&&!technologySpecialistSlugs.some((slug)=>v.path===`/tech-company-marketing/${slug}/`)).map((v)=><Route key={v.path} path={v.path.replace(/^\//,'').replace(/\/$/,'')} element={<Vertical item={v}/>}/>) }
   {[...new Set(extraServiceSlugs.concat(aiServices.map(([, , path])=>path.split('/').filter(Boolean).pop())) )].map((slug)=><Route key={slug} path={`services/${slug}`} element={correctedServiceSlugs.has(slug)?<ServiceContentReview serviceSlugOverride={slug}/>:<ServicePage name={slug}/>}/>) }
-  <Route path="privacy-policy" element={<Generic title="Privacy Policy" path="/privacy-policy/"/>}/>
-  <Route path="terms-of-service" element={<Generic title="Terms of Service" path="/terms-of-service/"/>}/>
+  <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
+  <Route path="terms-of-service" element={<TermsOfUse/>}/>
   <Route path="blog" element={<Generic title="Insights" path="/blog/"/>}/>
   <Route path="*" element={<Home/>}/>
 </Routes></Layout>; }
