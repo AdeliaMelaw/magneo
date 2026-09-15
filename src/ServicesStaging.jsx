@@ -21,8 +21,8 @@ const overviewServices = [
   },
   {
     number: '03',
-    title: 'AI Automation',
-    description: 'Connect content production, enquiries, and follow-up through practical workflows with agreed review steps.',
+    title: 'AI Automation & CRM',
+    description: 'Organise enquiries and follow-up through CRM setup, agreed integrations, practical workflows and team handover.',
     link: ['/services/ai-automation-for-regulated-industries-magneo/', 'Explore AI automation'],
   },
   {
@@ -63,7 +63,7 @@ const portfolioPreviews = [
     href: '/portfolio/#social-media',
   },
   {
-    title: 'AI Automation',
+    title: 'AI Automation & CRM',
     label: 'Workflow concept',
     description: 'Review a visual concept showing how connected tools can support marketing workflows.',
     image: '/portfolio/ai/hubspot-automation.webp',
@@ -112,7 +112,7 @@ const directoryGroups = [
   {
     id: 'ai-automation',
     number: '03',
-    title: 'AI Automation',
+    title: 'AI Automation & CRM',
     links: [
       ['Overview', '/services/ai-automation-for-regulated-industries-magneo/'],
       ['Law Firms & Legal Departments', '/services/ai-automation-for-law-firms-legal-departments-magneo/'],
@@ -270,7 +270,7 @@ export function ServicesOverviewReview() {
 
     <section className="sr-directory-row"><div className="container"><p>Looking for a specific service or industry?</p><Link to={isReview ? '/services/directory/test/' : '/services/directory/'}>Browse the full service directory <span aria-hidden="true">→</span></Link></div></section>
 
-    <section className="sr-section sr-contact"><div className="container"><div className="sr-contact-box"><span className="sr-eyebrow">Start a conversation</span><h2>Not sure which service you need?</h2><p>Tell Adele what you want to improve and what you already have. You don’t need to choose a package before starting a conversation.</p><Link className="btn" to="/contact/#contact-enquiry">Discuss your project</Link></div></div></section>
+    <section className="sr-section sr-contact"><div className="container"><div className="sr-contact-box"><span className="sr-eyebrow">Start a conversation</span><h2>Not sure which service you need?</h2><p>Tell us what you want to improve and what you already have. You don’t need to choose a package before starting a conversation.</p><Link className="btn" to="/contact/#contact-enquiry">Discuss your project</Link></div></div></section>
   </div>;
 }
 

@@ -49,8 +49,8 @@ const practicePages = {
     focus: [['Employee services', 'Pages that explain the employment services available to individuals and what an initial conversation involves.'], ['Employer services', 'Content presenting the firm’s work for businesses, including the advisory or dispute services it actually provides.'], ['Combined practices', 'Distinct service navigation and messaging so visitors can find the relevant information without confusion.']],
     contentHeading: 'Turn recurring questions into useful content.',
     content: 'Questions about the firm’s services, consultation process, and approach can become educational articles, short videos, and focused website pages. Topics follow the lawyer’s actual practice and approved perspective.',
-    project: ['A clearer website for a mixed employment practice.', 'Separate employee and employer service pages, consistent lawyer profiles, and a straightforward enquiry route can help visitors understand where to start.', 'Illustrative project scope.'],
-    concepts: [{ ...websiteConcepts.litigation, note: 'No employment-specific concept is currently available. This legal website concept illustrates a possible design direction.' }],
+    project: ['A clearer website for a mixed employment practice.', 'Separate employee and employer service pages, consistent lawyer profiles, and a straightforward enquiry route can help visitors understand where to start.', 'EXAMPLE PROJECT'],
+    concepts: [{ ...websiteConcepts.litigation, note: 'Explore a legal website concept that can be adapted around your employment practice.' }],
     distinctFaq: ['Can the website serve both employers and employees?', 'Yes. Separate navigation, pages, and messaging can help each audience find the relevant service.']
   },
   'immigration-lawyers': {

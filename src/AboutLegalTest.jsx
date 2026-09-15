@@ -200,7 +200,7 @@ export default function AboutLegalTest() {
     </section>
 
     <section className="abt-contact">
-      <div className="container"><div className="abt-contact-box"><span className="abt-label">Start a conversation</span><h2>Let’s talk about your next move.</h2><p>Whether you need a clearer message, distinctive content, a new website, or help with AI automation, tell Adele what you want to improve.</p><Link className="btn" to="/contact/">Talk with Adele</Link></div></div>
+      <div className="container"><div className="abt-contact-box"><span className="abt-label">Start a conversation</span><h2>Let’s talk about your next move.</h2><p>Whether you need a clearer message, distinctive content, a new website, or help with AI automation, tell us what you want to improve.</p><Link className="btn" to="/contact/">Discuss your project</Link></div></div>
     </section>
 
   </div>;

@@ -24,7 +24,7 @@ const NOINDEX_PATHS = [
 
 const descriptions = {
   '/': 'Website design, content, and AI-powered marketing for regulated and expert-led businesses.',
-  '/personal-branding-ultimate-guide-legal-professionals/': 'Download Magneo’s free personal branding guide for lawyers and legal professionals. Build authority, trust, LinkedIn visibility, and qualified demand.',
+  '/personal-branding-ultimate-guide-legal-professionals/': 'Download Magneo’s free personal-branding guide for legal professionals. Explore audience focus, content topics and a consistent online presence.',
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore marketing, creative, and AI services for regulated industries, with legal marketing as the flagship focus.',
   '/about/adele-salikhova/': 'Meet Adele Salikhova, founder of Magneo, and learn about her approach to websites, content, and AI-supported marketing.',
   '/services/': 'Explore website design, SEO, social media, paid advertising, AI creative, and automation for regulated industries and expert-led businesses.',
@@ -247,16 +247,15 @@ function injectGuideStaticHtml(html) {
     <section class="guide-hero"><div class="container guide-grid"><div>
       <div class="hero-tag"><span></span>Free guide for legal professionals</div>
       <div class="label">The must-read guide</div>
-      <h1>Turn your name into your most trusted <em>legal brand.</em></h1>
-      <p class="guide-intro">Personal Branding: The Ultimate Guide for Legal Professionals helps lawyers, consultants, and legal experts build authority, trust, and qualified demand without sounding like every other firm online.</p>
+      <h1>Build a personal brand that reflects your <em>legal expertise.</em></h1>
+      <p class="guide-intro">A practical guide to explaining your expertise, choosing useful content topics and building a consistent presence online.</p>
       <div class="guide-actions"><a class="btn guide-form-cta" href="#guide-form" onclick="return window.magneoGuideFormCta ? window.magneoGuideFormCta(event) : true">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a><a class="btn outline" href="#tools-legal-niche">What is inside</a></div>
     </div><aside class="guide-form-card" id="guide-form-section">
       <div class="label">Fill out the form</div><h2>Get your free guide</h2><p>Complete the form to download the guide securely.</p>
       <form class="magneo-guide-form"><div class="guide-form-row"><label>First name<input id="guide-form" name="firstname" autocomplete="given-name" required></label><label>Last name<input name="lastname" autocomplete="family-name" required></label></div><label>Email address<input name="email" type="email" autocomplete="email" required></label><input class="guide-honeypot" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="guide-consent"><input name="consent" type="checkbox" required><span>I agree that Magneo may store and use my information to provide the requested guide. Read the <a href="https://magneo.ca/privacy-policy/" target="_blank" rel="noopener">Magneo Privacy Policy</a>.</span></label><button class="btn" type="submit">DOWNLOAD THE GUIDE</button></form>
     </aside></div></section>
-    <section class="guide-about"><div class="container guide-two"><div><div class="label">About the guide</div><h2 id="tools-legal-niche">Tools to own your legal niche.</h2><p>This is a practical guide for becoming the lawyer your ideal clients instantly trust, remember, and refer.</p></div><ul class="guide-checklist"><li>Authority positioning for a clear legal niche</li><li>LinkedIn visibility and trust-first content</li><li>Proof signals that increase confidence</li><li>Legal marketing guardrails</li></ul></div></section>
-    <section class="guide-detail"><div class="container"><div class="label">Inside the framework</div><h2>A practical path from invisible expert to trusted authority.</h2><p>Define your authority lane, build proof signals, create repeatable content, and stay compliant.</p></div></section>
-    <section class="guide-reviews"><div class="container"><div class="label">Reader reviews</div><h2>What legal professionals say about the guide.</h2></div></section>
+    <section class="guide-about"><div class="container guide-two"><div><div class="label">About the guide</div><h2 id="tools-legal-niche">A clearer way to explain your legal practice.</h2><p>The guide covers your intended audience, professional presentation, useful content topics and the channels that fit your work. Review any marketing material against your own professional requirements before publishing.</p></div><ul class="guide-checklist"><li>What a personal brand is and why it matters</li><li>How to identify the people you want to reach</li><li>Professional presentation and profile messaging</li><li>Eight content types to consider for your practice</li><li>How to choose platforms for your audience</li><li>Relationships and referrals beyond online content</li></ul></div></section>
+    <section class="guide-detail"><div class="container"><div class="label">Inside the framework</div><h2>A practical path to a clearer professional presence.</h2><p>Clarify your areas of expertise, show accurate credentials and examples, create useful content and choose appropriate channels.</p></div></section>
     <section class="guide-final"><div class="container"><h2>Ready to make your expertise easier to trust?</h2><a class="btn guide-form-cta" href="#guide-form" onclick="return window.magneoGuideFormCta ? window.magneoGuideFormCta(event) : true">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a></div></section>
   </main>`;
   return html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);

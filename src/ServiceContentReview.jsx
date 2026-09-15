@@ -63,7 +63,7 @@ const pageData = {
       image: '/portfolio/websites/personal-injury-modern-hero-preview.webp',
       imageAlt: 'Personal-injury website concept showing service information, a lawyer profile, and a free-assessment enquiry route',
       conceptLabel: 'WEBSITE CONCEPT',
-      caption: 'An illustration of the design approach, not a client-results case study.',
+      caption: 'Original Magneo concept',
       linkLabel: 'Explore this website concept →',
       url: '/portfolio/legal-websites/personal-injury-bold/',
       points: [
@@ -181,7 +181,7 @@ const pageData = {
       ['Enquiry measurement', 'Reporting that distinguishes website activity and enquiries from retained clients.'],
     ],
     workedExample: {
-      eyebrow: 'ILLUSTRATIVE SEO APPROACH',
+      eyebrow: 'EXAMPLE CONTENT SERIES',
       heading: 'A service page and an information article have different jobs.',
       pages: [
         ['Service page', 'An employment-law service page explains the matters handled, the people the firm advises, its service area, and how to enquire.'],
@@ -189,7 +189,7 @@ const pageData = {
       ],
       explanationTitle: 'Why the distinction matters',
       explanation: 'The service page helps visitors assess the offer. The article supports their research. Both should have a clear purpose rather than repeat the same content.',
-      label: 'Illustrative content plan, not a client case study.',
+      label: null,
     },
     examples: [],
     processHeading: 'A focused plan for your practice areas.',
@@ -242,7 +242,7 @@ const pageData = {
       heading: 'Useful traffic starts with a relevant topic.',
       text: 'A widely searched financial question is not automatically the right content opportunity for an advisory firm. Topic selection should consider the service available, the intended audience, and whether the page gives visitors a relevant next step.',
       example: 'For a firm offering retirement planning, a service page can explain the scope of advice and client fit. A supporting article can address a specific planning question using approved information.',
-      label: 'Illustrative topic selection, not a performance case study.',
+      label: null,
     },
     examples: [
       ['Advisory-service content', 'Clearer pages for services that are currently buried within broad descriptions.'],
@@ -456,7 +456,7 @@ const pageData = {
     examplesNote: 'Examples illustrate possible project scopes. Tool compatibility and required access are confirmed before implementation.',
     automationWorkflow: {
       heading: 'From a new enquiry to a clear next step.',
-      label: 'Illustrative workflow — not a client case study',
+      label: 'EXAMPLE WORKFLOW',
       steps: ['Website enquiry','CRM record','Owner notification','Follow-up task','Human response'],
       copy: 'A new enquiry can trigger the routine administrative steps that follow. The responsible person receives the details and next action without manually moving the same information between tools.',
       panelHeading: 'Where AI could help',
@@ -530,7 +530,7 @@ const pageData = {
       { compact: true, eyebrow: 'CAMPAIGN REPORTING', heading: 'See which ads bring enquiries.', text: 'Reports show advertising spend, tracked enquiries, and cost per enquiry. Where your team records follow-up outcomes, reporting can also show which enquiries led to meetings or new business.' },
     ],
     industryLinks: [['Law-firm PPC','/services/ppc-landing-pages-for-law-firms/'],['Healthcare & MedTech PPC','/services/ppc-landing-pages-for-healthcare-medtech/'],['Financial advisor & FinTech PPC','/services/ppc-landing-pages-for-financial-advisors-fintech/']],
-    portfolioExample: { title: 'Personal Injury · Modern', label: 'Original Magneo website concept · not a campaign-results case study', image: '/portfolio/websites/personal-injury-modern-hero-preview.webp', alt: 'Preview of a focused personal-injury website concept by Magneo', link: '/portfolio/legal-websites/personal-injury-bold/' },
+    portfolioExample: { title: 'Personal Injury · Modern', feature: 'A focused service introduction and visible enquiry route help visitors understand what to do after reading the page.', image: '/portfolio/websites/personal-injury-modern-hero-preview.webp', alt: 'Preview of a focused personal-injury website concept by Magneo', link: '/portfolio/legal-websites/personal-injury-bold/' },
     processEyebrow: 'Campaign process', processHeading: 'From campaign strategy to ongoing management.',
     process: [
       ['Strategy','Magneo defines the offer, audience, budget, and measurement plan.'],
@@ -615,7 +615,7 @@ const aiOverview = {
   description: 'Turn your expertise into articles, social content, video, and websites that explain what your business offers. Magneo brings together marketing strategy, creative production, and AI tools to develop your brand voice, create content, and organise recurring marketing work.',
   primary: ['Discuss your marketing project','/contact/#contact-enquiry'], secondary: ['Explore AI examples',portfolioLinks.ai],
   heroMicrocopy: 'Start with one project or combine services around a broader marketing plan.',
-  heroFlow: { label: 'CONNECTED DELIVERABLES', steps: ['Articles','Social content','Video','Websites'], note: 'A compact preview of services that can be commissioned separately or combined.' },
+  heroFlow: { label: 'WHAT YOU CAN CREATE', steps: ['Articles','Social content','Video','Websites'], note: 'Combine content, video, website updates and automation around your marketing goals.' },
   brandVoice: {
     heading: 'Your brand voice, built into the content process.',
     paragraphs: ['Your content should reflect how your business communicates. Existing writing, interviews, preferred terminology, and feedback help establish a consistent voice across your website, social channels, and campaigns.','A custom GPT can be configured with that guidance and approved reference material to support recurring drafting tasks. Editing and feedback refine the output so the finished content reflects your perspective.'],
@@ -625,9 +625,9 @@ const aiOverview = {
   contentPlan: {
     heading: 'One expert conversation. Several useful pieces of content.',
     intro: 'An interview, approved article, or product walkthrough can provide the starting point for a coordinated content series.',
-    items: [['Blog article','A fuller explanation of the topic, connecting it to a relevant service or next step.'],['Short video','A focused script and edited clip explaining one useful idea.'],['Social posts','Content adapted to the audience and format of each selected platform.']],
-    supporting: 'One topic can become a blog article, a short video and social posts—each adapted to its platform and written in your brand’s voice.',
-    label: 'EXAMPLE: ONE TOPIC, MULTIPLE FORMATS',
+    items: [['Short video','A focused script and edited clip explaining one useful idea.'],['Social posts and carousels','Posts and visual sequences adapted to selected platforms.'],['Website or email content','A fuller explanation of the topic with a relevant next step.']],
+    supporting: "Turn one useful idea into a short video, social posts, carousels and website or email content. Each version keeps your brand's voice and gives your audience a clear next step.",
+    label: 'EXAMPLE CONTENT SERIES',
   },
   deliverables: {
     heading: 'What your project can include.',
@@ -790,7 +790,7 @@ function PlatformSection({ content }) {
 
 function PracticalContentExample({ content }) {
   if (!content) return null;
-  return <section id={content.id} className="section scr-practical-content"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><div className="scr-practical-content-grid">{content.items.map(([title, question, formats])=><article key={title}><span>{title}</span><h3>{question}</h3><ul>{formats.map(format=><li key={format}>{format}</li>)}</ul></article>)}</div><div className="scr-practical-content-footer"><p>{content.label}</p><Link to={content.link[0]}>{content.link[1]} <span aria-hidden="true">→</span></Link></div></div></section>;
+  return <section id={content.id} className="section scr-practical-content"><div className="container"><div className="label">{content.eyebrow}</div><h2>{content.heading}</h2><div className="scr-practical-content-grid">{content.items.map(([title, question, formats])=><article key={title}><span>{title}</span><h3>{question}</h3><ul>{formats.map(format=><li key={format}>{format}</li>)}</ul></article>)}</div><div className="scr-practical-content-footer">{content.label && <p>{content.label}</p>}<Link to={content.link[0]}>{content.link[1]} <span aria-hidden="true">→</span></Link></div></div></section>;
 }
 
 function HealthcareVisualExamples({ content }) {
@@ -814,7 +814,7 @@ function SocialVisualExamples() {
 
 function WorkedExampleSection({ example }) {
   if (!example) return null;
-  return <section className="section soft scr-worked-example"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><div className="scr-worked-grid"><div className="scr-page-diagram" aria-label="Illustration showing a service page linking with a supporting article">{example.pages.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p>{index === 0 && <i aria-hidden="true">↔</i>}</article>)}</div><aside><h3>{example.explanationTitle}</h3><p>{example.explanation}</p><strong>{example.label}</strong></aside></div></div></section>;
+  return <section className="section soft scr-worked-example"><div className="container"><div className="label">{example.eyebrow}</div><h2>{example.heading}</h2><div className="scr-worked-grid"><div className="scr-page-diagram" aria-label="Illustration showing a service page linking with a supporting article">{example.pages.map(([title, copy], index)=><article key={title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{copy}</p>{index === 0 && <i aria-hidden="true">↔</i>}</article>)}</div><aside><h3>{example.explanationTitle}</h3><p>{example.explanation}</p>{example.label && <strong>{example.label}</strong>}</aside></div></div></section>;
 }
 
 function IndustryCardsSection({ content }) {
@@ -825,7 +825,7 @@ function IndustryCardsSection({ content }) {
 function AutomationWorkflowSection({ workflow }) {
   if (!workflow) return null;
   const stepNames = workflow.steps.map(step=>Array.isArray(step) ? step[0] : step);
-  return <section id="workflow-example" className="section scr-automation-workflow"><div className="container"><div className="label">{workflow.label}</div><h2>{workflow.heading}</h2>{workflow.intro && <p className="scr-workflow-intro">{workflow.intro}</p>}<div className="scr-workflow-grid"><div><div className={`scr-workflow-flow${workflow.steps.some(Array.isArray) ? ' scr-workflow-flow-detailed' : ''}`} role="img" aria-label={`Workflow: ${stepNames.join(' to ')}`}>{workflow.steps.map((step,index)=>{const [title,copy]=Array.isArray(step)?step:[step,null];return <div className="scr-workflow-step" key={title}><span>{String(index + 1).padStart(2,'0')}</span><strong>{title}</strong>{copy && <small>{copy}</small>}{index < workflow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>;})}</div><p className="scr-workflow-copy">{workflow.copy}</p><p className="scr-workflow-note">{workflow.note}</p></div><aside><span>{workflow.panelEyebrow || 'Optional AI step'}</span><h3>{workflow.panelHeading}</h3><p>{workflow.panelCopy}</p></aside></div><Link className="scr-workflow-portfolio" to={workflow.portfolioUrl || '/portfolio/#ai-marketing'}>{workflow.portfolioLabel || 'Explore more AI marketing concepts'} <span aria-hidden="true">→</span></Link></div></section>;
+  return <section id="workflow-example" className="section scr-automation-workflow"><div className="container"><div className="label">{workflow.label}</div><h2>{workflow.heading}</h2>{workflow.intro && <p className="scr-workflow-intro">{workflow.intro}</p>}<div className="scr-workflow-grid"><div><div className={`scr-workflow-flow${workflow.steps.some(Array.isArray) ? ' scr-workflow-flow-detailed' : ''}`} role="img" aria-label={`Workflow: ${stepNames.join(' to ')}`}>{workflow.steps.map((step,index)=>{const [title,copy]=Array.isArray(step)?step:[step,null];return <div className="scr-workflow-step" key={title}><span>{String(index + 1).padStart(2,'0')}</span><strong>{title}</strong>{copy && <small>{copy}</small>}{index < workflow.steps.length - 1 && <i aria-hidden="true">→</i>}</div>;})}</div><p className="scr-workflow-copy">{workflow.copy}</p>{workflow.note && <p className="scr-workflow-note">{workflow.note}</p>}</div><aside><span>{workflow.panelEyebrow || 'Optional AI step'}</span><h3>{workflow.panelHeading}</h3><p>{workflow.panelCopy}</p></aside></div><Link className="scr-workflow-portfolio" to={workflow.portfolioUrl || '/portfolio/#ai-marketing'}>{workflow.portfolioLabel || 'Explore more AI marketing concepts'} <span aria-hidden="true">→</span></Link></div></section>;
 }
 
 function LegalCrmSection({ content }) {
@@ -920,7 +920,7 @@ function ContentGenerationSection({ content }) {
 }
 
 function ApprovedTopicExample({ content }) {
-  return <section className="section soft scr-topic-example"><div className="container"><div className="label">Illustrative content set</div><h2>{content.heading}</h2><div className="scr-topic-example-grid"><div className="scr-topic-prompt"><span>Approved topic</span><strong>{content.prompt}</strong></div><ol>{content.items.map((item, index)=><li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></div><p className="scr-topic-caption">{content.caption}</p></div></section>;
+  return <section className="section soft scr-topic-example"><div className="container"><div className="label">Example content series</div><h2>{content.heading}</h2><div className="scr-topic-example-grid"><div className="scr-topic-prompt"><span>Source topic</span><strong>{content.prompt}</strong></div><ol>{content.items.map((item, index)=><li key={item}><span>{String(index + 1).padStart(2, '0')}</span><p>{item}</p></li>)}</ol></div>{content.caption && <p className="scr-topic-caption">{content.caption}</p>}</div></section>;
 }
 
 function AiSeoReview({ data }) {
@@ -969,7 +969,7 @@ function FirmAlignmentSection({ content }) {
 
 function BrandingContentSeries({ content }) {
   if (!content) return null;
-  return <section className="section scr-branding-series"><div className="container"><div className="label">Illustrative content series</div><h2>{content.heading}</h2><p className="scr-branding-examples-intro">{content.text}</p><p className="scr-branding-series-supporting">{content.supporting}</p><div className="scr-branding-series-flow" role="img" aria-label={content.items.join(' to ')}>{content.items.map((item,index)=><div key={item}><span>{String(index+1).padStart(2,'0')}</span><strong>{item}</strong>{index<content.items.length-1&&<i aria-hidden="true">→</i>}</div>)}</div><p className="scr-branding-note">{content.caption}</p></div></section>;
+  return <section className="section scr-branding-series"><div className="container"><div className="label">Example content series</div><h2>{content.heading}</h2><p className="scr-branding-examples-intro">{content.text}</p><p className="scr-branding-series-supporting">{content.supporting}</p><div className="scr-branding-series-flow" role="img" aria-label={content.items.join(' to ')}>{content.items.map((item,index)=><div key={item}><span>{String(index+1).padStart(2,'0')}</span><strong>{item}</strong>{index<content.items.length-1&&<i aria-hidden="true">→</i>}</div>)}</div>{content.caption && <p className="scr-branding-note">{content.caption}</p>}</div></section>;
 }
 
 function SpecialistBrandingReview({ data }) {
@@ -1002,7 +1002,7 @@ function PpcIndustryLinks({ links }) {
 
 function PpcPortfolioExample({ content }) {
   if (!content) return null;
-  return <section className="section dark scr-ppc-portfolio"><div className="container"><div><div className="label">Portfolio example</div><h2>A focused page concept.</h2><p>This existing design example shows how a clear offer and next step can be presented. It is not evidence of campaign performance.</p></div><figure><Link to={content.link} aria-label={`Explore ${content.title}`}><img src={content.image} alt={content.alt} width="1440" height="900" loading="lazy" decoding="async"/></Link><figcaption><strong>{content.title}</strong><span>{content.label}</span><Link to={content.link}>Explore the concept <span aria-hidden="true">→</span></Link></figcaption></figure></div></section>;
+  return <section className="section dark scr-ppc-portfolio"><div className="container"><div><div className="label">Website design example</div><h2>How a focused page guides the next step.</h2><p>{content.feature}</p></div><figure><Link to={content.link} aria-label={`Explore ${content.title}`}><img src={content.image} alt={content.alt} width="1440" height="900" loading="lazy" decoding="async"/></Link><figcaption><strong>{content.title}</strong><span>Original Magneo concept</span><Link to={content.link}>Explore the concept <span aria-hidden="true">→</span></Link></figcaption></figure></div></section>;
 }
 
 function PpcCommercialScope() {
@@ -1021,7 +1021,7 @@ function PpcReview({ data, slug }) {
   const resources = <RelatedColumns serviceLinks={serviceLinks} industryLinks={industryLinks.length ? industryLinks : audiences} articles={relatedArticlesFor({ slug, family: 'ppc', industry: data.industry })}/>;
   return <div className={`scr-page ${data.pageClass || 'scr-page-ppc-expanded'}`}><ReviewHero data={data}/>
     <ExpandedServiceCards content={data.ppcServices} eyebrow="Campaign services"/>
-    {(data.ppcFlows || []).map((flow,index)=><CampaignFlowSection content={{...flow,note:flow.note || 'Illustrative workflow, not a campaign-results case study.'}} key={`${flow.heading}-${index}`}/>)}
+    {(data.ppcFlows || []).map((flow,index)=><CampaignFlowSection content={flow} key={`${flow.heading}-${index}`}/>)}
     {(data.ppcSections || []).map((section,index)=>section.compact ? <PpcCompactSection content={section} soft={index % 2 === 1} key={section.heading}/> : <DetailedListSection content={section} eyebrow={section.eyebrow} soft={index % 2 === 1} key={section.heading}/>)}
     <PpcIndustryLinks links={data.industryLinks}/>
     <PpcCommercialScope/>
@@ -1045,7 +1045,7 @@ function ExpandedBrandVoice({ content }) {
 
 function SocialProductionExample({ content }) {
   if (!content) return null;
-  return <section id="content-examples" className="section soft scr-social-production-example"><div className="container"><div className="label">Illustrative production plan</div><h2>{content.heading}</h2><p className="scr-expanded-intro">{content.text}</p><div className="scr-social-production-grid"><div className="scr-social-video"><video controls playsInline preload="metadata" poster={content.poster} aria-label="Play the expert interview reel concept"><source src={content.video} type="video/mp4"/>Your browser does not support embedded video.</video></div><ol>{content.items.map((item,index)=><li key={item}><span>{String(index + 1).padStart(2,'0')}</span><p>{item}</p></li>)}</ol></div><p className="scr-expanded-note">{content.caption}</p></div></section>;
+  return <section id="content-examples" className="section soft scr-social-production-example"><div className="container"><div className="label">Interview format example</div><h2>{content.heading}</h2><p className="scr-expanded-intro">{content.text}</p><div className="scr-social-production-grid"><div className="scr-social-video"><video controls playsInline preload="metadata" poster={content.poster} aria-label="Play the expert interview reel concept"><source src={content.video} type="video/mp4"/>Your browser does not support embedded video.</video></div><ol>{content.items.map((item,index)=><li key={item}><span>{String(index + 1).padStart(2,'0')}</span><p>{item}</p></li>)}</ol></div></div></section>;
 }
 
 function PlayableVideoExamples({ content }) {
@@ -1060,7 +1060,7 @@ function DetailedListSection({ content, eyebrow, soft = false }) {
 
 function CampaignFlowSection({ content }) {
   if (!content) return null;
-  return <section className="section soft scr-campaign-flow"><div className="container"><div className="label">Illustrative campaign</div><h2>{content.heading}</h2><p className="scr-expanded-intro">{content.text}</p><div className="scr-campaign-flow-steps" role="img" aria-label={content.steps.join(' to ')}>{content.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < content.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div><p className="scr-expanded-note">{content.note}</p></div></section>;
+  return <section className="section soft scr-campaign-flow"><div className="container"><div className="label">Example workflow</div><h2>{content.heading}</h2>{content.text && <p className="scr-expanded-intro">{content.text}</p>}{content.variants ? <div className="scr-campaign-flow-variants">{content.variants.map(variant=><article key={variant.heading}><h3>{variant.heading}</h3><ol>{variant.steps.map((step,index)=><li key={step}><span>{String(index + 1).padStart(2,'0')}</span>{step}</li>)}</ol><p>{variant.nextStep}</p></article>)}</div> : <div className="scr-campaign-flow-steps" role="img" aria-label={content.steps.join(' to ')}>{content.steps.map((step,index)=><div key={step}><span>{String(index + 1).padStart(2,'0')}</span><strong>{step}</strong>{index < content.steps.length - 1 && <i aria-hidden="true">→</i>}</div>)}</div>}{content.note && <p className="scr-expanded-note">{content.note}</p>}</div></section>;
 }
 
 function WebsiteExamplesSection({ content }) {
@@ -1115,7 +1115,7 @@ function ChildVisualExample({ example }) {
 
 function ContentPlanSection({ plan }) {
   if (!plan) return null;
-  return <section id={plan.id} className="section scr-content-plan"><div className="container"><div className="label">{plan.eyebrow}</div><h2>{plan.heading}</h2><div className="grid scr-content-plan-grid">{plan.items.map(([title,copy],index)=><article className="card" key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-content-plan-closing">{plan.closing}</p><p className="scr-content-plan-label">{plan.label}</p>{plan.link && <Link className="scr-content-plan-link" to={plan.link[0]}>{plan.link[1]} <span aria-hidden="true">→</span></Link>}</div></section>;
+  return <section id={plan.id} className="section scr-content-plan"><div className="container"><div className="label">{plan.eyebrow}</div><h2>{plan.heading}</h2><div className="grid scr-content-plan-grid">{plan.items.map(([title,copy],index)=><article className="card" key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-content-plan-closing">{plan.closing}</p>{plan.label && <p className="scr-content-plan-label">{plan.label}</p>}{plan.link && <Link className="scr-content-plan-link" to={plan.link[0]}>{plan.link[1]} <span aria-hidden="true">→</span></Link>}</div></section>;
 }
 
 function StandardReview({ data, slug }) {
@@ -1183,7 +1183,7 @@ function AiContentReels({ content }) {
 }
 
 function AiContentSeries({ content }) {
-  return <section className="section soft scr-ai-content-series"><div className="container"><div className="label">ILLUSTRATIVE CONTENT PLAN</div><h2>{content.heading}</h2><p className="scr-ai-content-lead">{content.text}</p><div className="scr-ai-content-series-flow" role="img" aria-label={`${content.source} adapted into five content formats`}><div className="scr-ai-content-source"><span>01</span><strong>{content.source}</strong></div><i aria-hidden="true">→</i><ul>{content.items.map((item,index)=><li key={item}><span>{String(index + 2).padStart(2,'0')}</span>{item}</li>)}</ul></div><p className="scr-ai-content-caption">{content.caption}</p></div></section>;
+  return <section className="section soft scr-ai-content-series"><div className="container"><div className="label">EXAMPLE CONTENT SERIES</div><h2>{content.heading}</h2><p className="scr-ai-content-lead">{content.text}</p><div className="scr-ai-content-series-flow" role="img" aria-label={`${content.source} adapted into five content formats`}><div className="scr-ai-content-source"><span>01</span><strong>{content.source}</strong></div><i aria-hidden="true">→</i><ul>{content.items.map((item,index)=><li key={item}><span>{String(index + 2).padStart(2,'0')}</span>{item}</li>)}</ul></div>{content.caption && <p className="scr-ai-content-caption">{content.caption}</p>}</div></section>;
 }
 
 function AiContentWorkflow({ content }) {
@@ -1234,7 +1234,7 @@ function AiOverviewBrandVoice() {
 
 function AiOverviewContentPlan() {
   const content = aiOverview.contentPlan;
-  return <section className="section scr-ai-overview-plan"><div className="container"><div className="label">CONNECTED CONTENT EXAMPLE</div><h2>{content.heading}</h2><p className="scr-ai-overview-intro">{content.intro}</p><p className="scr-ai-overview-label">{content.label}</p><div className="scr-ai-overview-plan-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-overview-supporting">{content.supporting}</p></div></section>;
+  return <section className="section scr-ai-overview-plan"><div className="container"><div className="label">{content.label}</div><h2>{content.heading}</h2><p className="scr-ai-overview-intro">{content.intro}</p><p className="scr-ai-overview-supporting">{content.supporting}</p><div className="scr-ai-overview-plan-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>;
 }
 
 function AiOverviewPortfolio() {

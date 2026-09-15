@@ -7,7 +7,7 @@ const services = [
   ['Paid Advertising & Landing Pages', 'Focused campaigns and landing pages designed around a clear offer and a clear conversion path.', '/services/ppc-landing-pages-for-regulated-industries/'],
   ['Social Media & Personal Branding', 'Content that helps experts share useful ideas, build recognition, and stay consistent.', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
   ['AI Creative & Brand Voice', 'AI-assisted visuals, video, and content systems shaped around your brand and reviewed by people.', '/services/ai-powered-digital-marketing/'],
-  ['AI Automation', 'Practical workflows that reduce repetitive marketing tasks while keeping people in control.', '/services/ai-automation-for-regulated-industries-magneo/']
+  ['AI Automation & CRM', 'CRM setup, enquiry organisation, follow-up, agreed integrations and team handover that keep recurring work on track.', '/services/ai-automation-for-regulated-industries-magneo/']
 ];
 
 const process = [

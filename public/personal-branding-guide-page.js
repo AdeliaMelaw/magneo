@@ -21,7 +21,7 @@
       description.name = 'description';
       document.head.appendChild(description);
     }
-    description.content = 'Download Magneo’s free personal branding guide for lawyers and legal professionals. Build authority, trust, LinkedIn visibility, and qualified demand.';
+    description.content = 'Download Magneo’s free personal-branding guide for legal professionals. Explore audience focus, content topics and a consistent online presence.';
     var canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
@@ -140,10 +140,6 @@
     return items.map(function (item) { return '<li>' + item + '</li>'; }).join('');
   }
 
-  function review(quote, name, role) {
-    return '<article class="guide-review"><p>"' + quote + '"</p><div><b>' + name + '</b><span>' + role + '</span></div></article>';
-  }
-
   function render() {
     if (!isGuidePage()) return;
     setMeta();
@@ -159,14 +155,14 @@
           <div>\
             <div class="hero-tag"><span></span>Free guide for legal professionals</div>\
             <div class="label">The must-read guide</div>\
-            <h1>Turn your name into your most trusted <em>legal brand.</em></h1>\
-            <p class="guide-intro">Personal Branding: The Ultimate Guide for Legal Professionals helps lawyers, consultants, and legal experts build authority, trust, and qualified demand without sounding like every other firm online.</p>\
+            <h1>Build a personal brand that reflects your <em>legal expertise.</em></h1>\
+            <p class="guide-intro">A practical guide to explaining your expertise, choosing useful content topics and building a consistent presence online.</p>\
             <div class="guide-actions"><a class="btn guide-form-cta" href="#guide-form" onclick="return window.magneoGuideFormCta ? window.magneoGuideFormCta(event) : true">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a><a class="btn outline" href="#tools-legal-niche">What is inside</a></div>\
             <div class="guide-points">\
-              <span>Authority positioning</span>\
-              <span>LinkedIn growth</span>\
-              <span>Trust-first content</span>\
-              <span>Legal marketing guardrails</span>\
+              <span>Areas of expertise</span>\
+              <span>Channel choices</span>\
+              <span>Educational content</span>\
+              <span>Content review and professional requirements</span>\
             </div>\
           </div>\
           <aside class="guide-form-card" id="guide-form-section">\
@@ -189,48 +185,37 @@
         <div class="container guide-two">\
           <div>\
             <div class="label">About the guide</div>\
-            <h2 id="tools-legal-niche">Tools to own your legal niche.</h2>\
-            <p>This is not surface-level visibility. It is a practical guide for becoming the lawyer your ideal clients instantly trust, remember, and refer.</p>\
+            <h2 id="tools-legal-niche">A clearer way to explain your legal practice.</h2>\
+            <p>The guide covers your intended audience, professional presentation, useful content topics and the channels that fit your work. Review any marketing material against your own professional requirements before publishing.</p>\
           </div>\
           <ul class="guide-checklist">' + checklist([
-            'Why many lawyers stay invisible and how to change that fast',
-            'The branding mistake legal professionals keep repeating',
-            'LinkedIn myths that quietly weaken credibility',
-            'The Authority Triangle that attracts better-fit clients',
-            'Five post types that build legal trust quickly',
-            'How to become memorable without chasing likes'
+            'What a personal brand is and why it matters',
+            'How to identify the people you want to reach',
+            'Professional presentation and profile messaging',
+            'Eight content types to consider for your practice',
+            'How to choose platforms for your audience',
+            'Relationships and referrals beyond online content'
           ]) + '</ul>\
         </div>\
       </section>\
       <section class="guide-detail">\
         <div class="container">\
           <div class="label">Inside the framework</div>\
-          <h2>A practical path from invisible expert to trusted authority.</h2>\
+          <h2>A practical path to a clearer professional presence.</h2>\
           <div class="guide-card-grid">\
-            <div class="guide-card"><small>01</small><h3>Define your authority lane</h3><p>Clarify what you want to be known for, who you serve, and why your expertise matters.</p></div>\
-            <div class="guide-card"><small>02</small><h3>Build proof signals</h3><p>Use case themes, credentials, media, reviews, and content to increase confidence.</p></div>\
+            <div class="guide-card"><small>01</small><h3>Clarify your areas of expertise</h3><p>Explain the work you do, who it helps and the perspective you bring.</p></div>\
+            <div class="guide-card"><small>02</small><h3>Show credentials and examples</h3><p>Use accurate qualifications, relevant experience and approved examples to add context.</p></div>\
             <div class="guide-card"><small>03</small><h3>Create repeatable content</h3><p>Turn legal expertise into educational posts, articles, and website assets.</p></div>\
-            <div class="guide-card"><small>04</small><h3>Stay compliant</h3><p>Grow visibility while respecting professional rules, disclaimers, and client trust.</p></div>\
+            <div class="guide-card"><small>04</small><h3>Choose useful channels</h3><p>Consider where your audience looks for professional information and how to participate.</p></div>\
           </div>\
-        </div>\
-      </section>\
-      <section class="guide-reviews">\
-        <div class="container">\
-          <div class="label">Reader reviews</div>\
-          <h2>What legal professionals say about the guide.</h2>\
-          <div class="guide-review-grid">' + [
-            review('Clear, smart, and genuinely useful for lawyers who want to be known for something specific.', 'Daniel K.', 'Corporate lawyer, Toronto'),
-            review('It helped me reposition my practice without sounding salesy or generic.', 'Aisha M.', 'Family lawyer, Ottawa'),
-            review('The LinkedIn and authority sections gave me a simple system I could actually use.', 'Hamid T.', 'Business lawyer, Montreal')
-          ].join('') + '</div>\
         </div>\
       </section>\
       <section class="guide-stats">\
         <div class="container guide-stat-grid">\
-          <div><strong>100%</strong><span>Strategy-first approach</span></div>\
-          <div><strong>5</strong><span>Trust-building content types</span></div>\
-          <div><strong>3</strong><span>Authority-building pillars</span></div>\
-          <div><strong>1</strong><span>Focused guide for legal experts</span></div>\
+          <div><strong>48</strong><span>Pages in the guide</span></div>\
+          <div><strong>8</strong><span>Content types covered</span></div>\
+          <div><strong>1</strong><span>Audience to clarify</span></div>\
+          <div><strong>1</strong><span>Professional presence to develop</span></div>\
         </div>\
       </section>\
       <section class="guide-final">\

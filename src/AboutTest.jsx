@@ -154,7 +154,7 @@ export default function AboutTest() {
     </section>
 
     <section className="abt-contact">
-      <div className="container"><div className="abt-contact-box"><span className="abt-label">Start a conversation</span><h2>Let’s talk about what your marketing needs next.</h2><p>Tell Adele what you want to improve, what you already have, and where you need support. Start by exploring whether the project is a good fit.</p><Link className="btn" to="/contact/">Talk with Adele</Link></div></div>
+      <div className="container"><div className="abt-contact-box"><span className="abt-label">Start a conversation</span><h2>Let’s talk about what your marketing needs next.</h2><p>Tell us what you want to improve, what you already have, and where you need support. Start by exploring whether the project is a good fit.</p><Link className="btn" to="/contact/">Discuss your project</Link></div></div>
     </section>
 
     <section className="related-section abt-related">
