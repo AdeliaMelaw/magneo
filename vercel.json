@@ -83,6 +83,13 @@
       }
     },
     {
+      "src": "/personal-branding-ultimate-guide-legal-professionals",
+      "status": 308,
+      "headers": {
+        "Location": "/personal-branding-ultimate-guide-legal-professionals/"
+      }
+    },
+    {
       "src": "/personal-branding-ultimate-guide-legal-professionals[;,.]+/?",
       "status": 301,
       "headers": {
