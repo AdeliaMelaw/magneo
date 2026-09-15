@@ -134,7 +134,7 @@ function useNoIndexSeo(title, description, canonical) {
   useEffect(() => {
     const robots = document.createElement('meta');
     robots.name = 'robots';
-    robots.content = 'noindex, nofollow, noarchive';
+    robots.content = 'noindex, follow';
     robots.dataset.magneoPrivateReview = 'true';
     document.head.appendChild(robots);
     return () => robots.remove();
@@ -233,6 +233,7 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="/services/ai-powered-digital-marketing" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/><Route path="/services/ai-powered-digital-marketing/" element={<ServiceContentReview serviceSlugOverride="ai-powered-digital-marketing"/>}/>
   <Route path="/industries" element={<IndustriesHub/>}/><Route path="/industries/" element={<IndustriesHub/>}/>
   <Route path="/about" element={<AboutLegalTest/>}/><Route path="/about/" element={<AboutLegalTest/>}/>
+  <Route path="/about/adele-salikhova" element={<AboutTest/>}/><Route path="/about/adele-salikhova/" element={<AboutTest/>}/>
   <Route path="/our-team" element={<About/>}/><Route path="/our-team/" element={<About/>}/>
   <Route path="/contact" element={<Contact/>}/><Route path="/contact/" element={<Contact/>}/>
   <Route path="law-firm-marketing" element={<LegalMarketingHub/>}/>

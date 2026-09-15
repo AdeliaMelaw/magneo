@@ -11,7 +11,7 @@
       "src": "/our-team/?",
       "dest": "/our-team/index.html",
       "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
+        "X-Robots-Tag": "noindex, follow"
       }
     },
     {
@@ -43,18 +43,12 @@
     { "src": "/portfolio/(.*)/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
     {
       "src": "/about/adele-salikhova/?",
-      "status": 404,
+      "dest": "/about/adele-salikhova/index.html",
       "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
+        "X-Robots-Tag": "noindex, follow"
       }
     },
-    {
-      "src": "/about-us/?",
-      "status": 404,
-      "headers": {
-        "X-Robots-Tag": "noindex, nofollow, noarchive"
-      }
-    },
+    { "src": "/about-us/?", "status": 404 },
     {
       "src": "/portfolio/legal-websites/?",
       "status": 301,

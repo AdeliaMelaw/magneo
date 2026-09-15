@@ -53,22 +53,47 @@ const relatedInsights = [
 
 function useAboutSeo() {
   useEffect(() => {
-    document.title = 'About Magneo — Founder-Led Marketing';
+    const previousTitle = document.title;
+    document.title = 'Adele Salikhova, Founder of Magneo | Magneo';
     let description = document.querySelector('meta[name="description"]');
+    const existingDescription = description;
+    const previousDescription = description?.content;
     if (!description) {
       description = document.createElement('meta');
       description.name = 'description';
       document.head.appendChild(description);
     }
-    description.content = 'Meet Adele Salikhova and learn how Magneo brings websites, content, and AI tools together for businesses where credibility matters.';
+    description.content = 'Meet Adele Salikhova, founder of Magneo, and learn about her approach to websites, content, and AI-supported marketing.';
 
     let canonical = document.querySelector('link[rel="canonical"]');
+    const existingCanonical = canonical;
+    const previousCanonical = canonical?.href;
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    canonical.href = 'https://magneo.ca/about/';
+    canonical.href = 'https://magneo.ca/about/adele-salikhova/';
+
+    let robots = document.querySelector('meta[name="robots"]');
+    const existingRobots = robots;
+    const previousRobots = robots?.content;
+    if (!robots) {
+      robots = document.createElement('meta');
+      robots.name = 'robots';
+      document.head.appendChild(robots);
+    }
+    robots.content = 'noindex, follow';
+
+    return () => {
+      document.title = previousTitle;
+      if (!existingDescription) description.remove();
+      else description.content = previousDescription || '';
+      if (!existingCanonical) canonical.remove();
+      else canonical.href = previousCanonical || '';
+      if (!existingRobots) robots.remove();
+      else robots.content = previousRobots || '';
+    };
   }, []);
 }
 

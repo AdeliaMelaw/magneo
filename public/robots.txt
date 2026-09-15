@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /about-us
-Disallow: /about/adele-salikhova/
 
 Sitemap: https://magneo.ca/sitemap.xml
 Sitemap: https://magneo.ca/ai-sitemap.xml
