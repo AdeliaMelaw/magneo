@@ -79,7 +79,14 @@
     },
     {
       "src": "/downloads/personal-branding-guide-legal-professionals\\.pdf",
-      "dest": "https://blog.magneo.ca/wp-content/uploads/2026/05/magneo-personal-branding-guide-legal-professionals.pdf"
+      "dest": "/api/legal-guide-download"
+    },
+    {
+      "src": "/branding-guide-for-lawyers/?",
+      "status": 301,
+      "headers": {
+        "Location": "/personal-branding-ultimate-guide-legal-professionals/"
+      }
     },
     {
       "src": "/blog/?",

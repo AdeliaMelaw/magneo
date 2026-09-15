@@ -7,6 +7,7 @@ const DIST_DIR = 'dist';
 const INDEX_PATH = join(DIST_DIR, 'index.html');
 const SITEMAP_PATH = join(DIST_DIR, 'sitemap.xml');
 const EXTRA_PATHS = [
+  '/personal-branding-ultimate-guide-legal-professionals/',
   '/services/ai-seo/',
   '/services/ai-social-media-marketing/',
   '/services/ai-ugc-ai-video-production/',
@@ -18,6 +19,7 @@ const NOINDEX_PATHS = ['/portfolio/legal-websites/', '/our-team/'];
 
 const descriptions = {
   '/': 'Website design, content, and AI-powered marketing for regulated and expert-led businesses.',
+  '/personal-branding-ultimate-guide-legal-professionals/': 'Download Magneo’s free personal branding guide for lawyers and legal professionals. Build authority, trust, LinkedIn visibility, and qualified demand.',
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore marketing, creative, and AI services for regulated industries, with legal marketing as the flagship focus.',
   '/services/': 'Explore website design, SEO, social media, paid advertising, AI creative, and automation for regulated industries and expert-led businesses.',
   '/services/directory/': 'Browse Magneo’s marketing services by industry, including websites, SEO, social media, AI creative, automation, and paid advertising.',
@@ -76,6 +78,7 @@ const descriptions = {
 
 const titleOverrides = {
   '/': 'Magneo | Marketing That Makes Your Expertise Clear',
+  '/personal-branding-ultimate-guide-legal-professionals/': 'Personal Branding Guide for Legal Professionals | Magneo',
   '/about/': 'About Magneo | Marketing for Regulated Industries',
   '/services/': 'Marketing Services for Regulated Industries | Magneo',
   '/services/directory/': 'Marketing Service Directory by Industry | Magneo',
