@@ -7,8 +7,8 @@ body.search-open{overflow:hidden}
 .site-search-trigger-desktop{display:inline-flex;width:44px;height:44px;margin-left:auto;border:1px solid rgba(255,255,255,.16);border-radius:50%}
 .site-search-trigger-desktop span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .site-search-trigger-mobile{display:none;gap:9px;min-height:40px;padding:8px 0;text-align:left}
-.site-search-backdrop{position:fixed;z-index:1000;inset:0;padding:82px 24px 24px;background:rgba(0,0,0,.76);backdrop-filter:blur(10px);overflow:auto}
-.site-search-dialog{width:min(900px,100%);margin:0 auto;background:#fff;color:#101210;border-radius:20px;box-shadow:0 28px 90px rgba(0,0,0,.48);overflow:hidden}
+.site-search-backdrop{position:fixed;z-index:20000;inset:0;display:flex;justify-content:center;align-items:flex-start;box-sizing:border-box;padding:82px 24px 24px;background:rgba(0,0,0,.76);backdrop-filter:blur(10px);overflow:hidden}
+.site-search-dialog{display:flex;flex-direction:column;width:min(900px,100%);max-height:calc(100vh - 106px);max-height:calc(100dvh - 106px);margin:0 auto;background:#fff;color:#101210;border-radius:20px;box-shadow:0 28px 90px rgba(0,0,0,.48);overflow:hidden}
 .site-search-dialog>header{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;padding:28px 32px 22px;background:#080a09;color:#fff}
 .site-search-dialog header small{color:#8fef00;font-size:11px;letter-spacing:.16em;text-transform:uppercase}
 .site-search-dialog h2{margin:7px 0 0;font-family:Georgia,'Times New Roman',serif;font-size:34px;font-weight:400}
@@ -19,7 +19,7 @@ body.search-open{overflow:hidden}
 .site-search-dialog form>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
 .site-search-dialog input{min-width:0;border:1px solid #bfc5be;border-radius:9px;padding:14px 16px;font:16px/1.3 Arial,sans-serif}
 .site-search-dialog form button{border:0;border-radius:9px;padding:0 22px;background:#8fef00;color:#233c00;font-weight:800;cursor:pointer}
-.site-search-results{max-height:min(58vh,570px);overflow:auto;padding:10px 32px 28px}
+.site-search-results{flex:1 1 auto;min-height:0;overflow:auto;padding:10px 32px 28px}
 .site-search-results ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0;padding:0;list-style:none}
 .site-search-results li a{display:flex;height:100%;flex-direction:column;gap:6px;padding:16px;border:1px solid #e1e5df;border-radius:12px;background:#fafbf9;color:#141714}
 .site-search-results li a:hover,.site-search-results li a:focus-visible{border-color:#76c900;background:#f4ffe7}
@@ -33,4 +33,4 @@ body.search-open{overflow:hidden}
 .site-search-empty a{display:inline-flex;padding:11px 16px;border-radius:999px;background:#0a0c0b;color:#fff;font-size:13px;font-weight:700}
 .site-search-empty a:first-child{background:#8fef00;color:#233c00}
 @media(max-width:1050px){.site-search-trigger-desktop{display:none}.site-search-trigger-mobile{display:flex}.nav-links .site-search-trigger-mobile{color:rgba(255,255,255,.72)}}
-@media(max-width:620px){.nav .nav-inner>.btn{display:inline-flex!important;position:static!important;min-height:40px!important;padding:0 13px!important;font-size:11px!important}.site-search-backdrop{padding:20px 12px}.site-search-dialog>header{padding:22px 20px 18px}.site-search-dialog h2{font-size:27px}.site-search-dialog form{padding:20px}.site-search-dialog form>div{grid-template-columns:1fr}.site-search-dialog form button{min-height:44px}.site-search-results{max-height:62vh;padding:8px 20px 22px}.site-search-results ul{grid-template-columns:1fr}}
+@media(max-width:620px){.nav .nav-inner>.btn{display:inline-flex!important;position:static!important;min-height:40px!important;padding:0 13px!important;font-size:11px!important}.site-search-backdrop{padding:20px 12px}.site-search-dialog{max-height:calc(100vh - 40px);max-height:calc(100dvh - 40px)}.site-search-dialog>header{padding:22px 20px 18px}.site-search-dialog h2{font-size:27px}.site-search-dialog form{padding:20px}.site-search-dialog form>div{grid-template-columns:1fr}.site-search-dialog form button{min-height:44px}.site-search-results{padding:8px 20px 22px}.site-search-results ul{grid-template-columns:1fr}}
