@@ -77,6 +77,17 @@ const practicePages = {
     concepts: [websiteConcepts.classic, websiteConcepts.bold],
     distinctFaq: ['Can you show our case experience?', 'Approved, accurate experience information can be incorporated. Any client details or results require appropriate permission and firm review.']
   },
+  'family-lawyers': {
+    h1: 'Marketing for family-law firms', seoTitle: 'Marketing for Family-Law Firms | Magneo',
+    meta: 'Websites, useful articles and videos, local search, and focused campaigns for family-law firms, with clear service and consultation information.',
+    description: 'Help prospective clients understand your services and feel prepared to make contact. Clear websites, useful articles and videos, local search and focused campaigns can explain how your firm helps with separation, parenting arrangements and other family-law matters.',
+    primary: 'Discuss your family-law marketing', secondary: 'Explore legal website concepts', secondaryHref: '/portfolio/#portfolio-websites',
+    focusHeading: 'Make the first conversation easier to prepare for.',
+    focus: [['Service pages based on your practice', 'Organise pages around the family-law matters your firm actually handles, with clear descriptions of each service.'], ['Lawyers and consultations', 'Introduce your lawyers accurately and explain how an initial consultation works and what prospective clients should prepare.'], ['Enquiries matched to capacity', 'Set up contact routes and follow-up tasks around the firm’s intake process, availability and capacity.']],
+    contentHeading: 'Answer practical questions without promising outcomes.',
+    content: 'Useful articles and lawyer-led videos can explain your services and first steps in plain language. Your team reviews legal details before publication, and the content does not promise a result.',
+    distinctFaq: ['Can the website explain different family-law services?', 'Yes. Separate pages can explain the services your firm offers, who they help and what an initial consultation involves. Your team confirms legal details before publication.']
+  },
   'litigation-lawyers': {
     h1: 'Marketing for Litigation Lawyers', seoTitle: 'Marketing for Litigation Lawyers | Magneo',
     meta: 'Websites, search content, lawyer-led video, and campaigns that present a litigation firm’s disputes, experience, and contact route clearly.',
@@ -106,7 +117,7 @@ function useLegalSeo(title, description, path) {
 }
 
 function LegalHero({ page, hub = false }) {
-  return <section className={`lm-hero ${hub ? 'lm-hero-hub' : ''}`}><div className="container lm-hero-grid"><div className="lm-hero-copy"><nav className="lm-breadcrumb" aria-label="Breadcrumb"><Link to="/">Home</Link><span>→</span>{hub ? <span>Law Firm Marketing</span> : <><Link to="/law-firm-marketing/">Law Firm Marketing</Link><span>→</span><span>{page.h1.replace('Marketing for ', '')}</span></>}</nav><h1>{page.h1}</h1><p>{page.description}</p><div className="lm-actions"><Link className="btn" to="/contact/#contact-enquiry">{page.primary}</Link><a className="lm-button-secondary" href="#website-examples">{page.secondary}</a></div></div>{hub && <Link className="lm-hero-preview" to={websiteConcepts.immigration.path}><img src={websiteConcepts.immigration.image} alt={websiteConcepts.immigration.alt}/><span>Website concept</span><strong>{websiteConcepts.immigration.title}</strong><small>View demo →</small></Link>}</div></section>;
+  return <section className={`lm-hero ${hub ? 'lm-hero-hub' : ''}`}><div className="container lm-hero-grid"><div className="lm-hero-copy"><nav className="lm-breadcrumb" aria-label="Breadcrumb"><Link to="/">Home</Link><span>→</span>{hub ? <span>Law Firm Marketing</span> : <><Link to="/law-firm-marketing/">Law Firm Marketing</Link><span>→</span><span>{page.h1.replace('Marketing for ', '')}</span></>}</nav><h1>{page.h1}</h1><p>{page.description}</p><div className="lm-actions"><Link className="btn" to="/contact/#contact-enquiry">{page.primary}</Link><a className="lm-button-secondary" href={page.secondaryHref || '#website-examples'}>{page.secondary}</a></div></div>{hub && <Link className="lm-hero-preview" to={websiteConcepts.immigration.path}><img src={websiteConcepts.immigration.image} alt={websiteConcepts.immigration.alt}/><span>Website concept</span><strong>{websiteConcepts.immigration.title}</strong><small>View demo →</small></Link>}</div></section>;
 }
 
 function WebsiteExamples({ concepts }) {
@@ -123,7 +134,7 @@ function RelatedArticles() { return <section className="lm-section lm-related" a
 
 function FinalCta() { return <section className="lm-section lm-final" aria-labelledby="lm-final-title"><div className="container"><div><h2 id="lm-final-title">Discuss your firm’s next marketing priority.</h2><p>Start with your website, content, campaigns, or enquiry process. Magneo can help define a focused scope.</p><Link className="btn" to="/contact/#contact-enquiry">Discuss your project</Link></div></div></section>; }
 
-function PracticeLinks({ current }) { const links=[...Object.entries(practicePages).map(([slug,page])=>[page.h1.replace('Marketing for ',''),`/law-firm-marketing/${slug}/`]),['Family Lawyers','/law-firm-marketing/family-lawyers/']].filter(([,path])=>path!==`/law-firm-marketing/${current}/`); return <section className="lm-practice-links" aria-label="Explore other practice areas"><div className="container"><strong>Explore other practice areas</strong><div>{links.map(([label,path])=><Link key={path} to={path}>{label}</Link>)}</div></div></section>; }
+function PracticeLinks({ current }) { const links=Object.entries(practicePages).map(([slug,page])=>[page.h1.replace('Marketing for ',''),`/law-firm-marketing/${slug}/`]).filter(([,path])=>path!==`/law-firm-marketing/${current}/`); return <section className="lm-practice-links" aria-label="Explore other practice areas"><div className="container"><strong>Explore other practice areas</strong><div>{links.map(([label,path])=><Link key={path} to={path}>{label}</Link>)}</div></div></section>; }
 
 export function LegalMarketingHub() {
   const page={ h1:'Marketing for Law Firms', description:'Websites, search marketing, video, and campaigns that make your legal services easier to understand. Magneo helps law firms present their practice clearly, develop a consistent professional presence, and organise the next step from enquiry to follow-up.', primary:'Discuss your firm’s marketing', secondary:'Explore legal website examples' };
@@ -136,5 +147,5 @@ export function LegalMarketingHub() {
 export function LegalPracticePage({ slug }) {
   const page=practicePages[slug];
   useLegalSeo(page.seoTitle,page.meta,`/law-firm-marketing/${slug}/`);
-  return <div className="lm-page"><LegalHero page={page}/><section className="lm-section lm-focus" aria-labelledby="lm-focus-title"><div className="container"><h2 id="lm-focus-title">{page.focusHeading}</h2><div>{page.focus.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section><WebsiteExamples concepts={page.concepts}/><section className="lm-section lm-content" aria-labelledby="lm-content-title"><div className="container"><h2 id="lm-content-title">{page.contentHeading}</h2><p>{page.content}</p>{page.project&&<aside><span>{page.project[2]}</span><h3>{page.project[0]}</h3><p>{page.project[1]}</p></aside>}</div></section><ServicesSection compact/><ProcessSection/><FaqSection distinctFaq={page.distinctFaq}/><PracticeLinks current={slug}/><RelatedArticles/><FinalCta/></div>;
+  return <div className="lm-page"><LegalHero page={page}/><section className="lm-section lm-focus" aria-labelledby="lm-focus-title"><div className="container"><h2 id="lm-focus-title">{page.focusHeading}</h2><div>{page.focus.map(([title,copy])=><article key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div></div></section>{page.concepts?.length > 0 && <WebsiteExamples concepts={page.concepts}/>}<section className="lm-section lm-content" aria-labelledby="lm-content-title"><div className="container"><h2 id="lm-content-title">{page.contentHeading}</h2><p>{page.content}</p>{page.project&&<aside><span>{page.project[2]}</span><h3>{page.project[0]}</h3><p>{page.project[1]}</p></aside>}</div></section><ServicesSection compact/><ProcessSection/><FaqSection distinctFaq={page.distinctFaq}/><PracticeLinks current={slug}/><RelatedArticles/><FinalCta/></div>;
 }
