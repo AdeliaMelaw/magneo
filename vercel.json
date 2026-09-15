@@ -8,6 +8,13 @@
       }
     },
     {
+      "src": "/our-team/?",
+      "dest": "/our-team/index.html",
+      "headers": {
+        "X-Robots-Tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
       "src": "/services/ppc-landing-pages-for-law-firms-magneo/?",
       "status": 301,
       "headers": {

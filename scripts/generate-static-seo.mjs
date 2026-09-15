@@ -14,7 +14,7 @@ const EXTRA_PATHS = [
   '/services/ai-content-marketing/',
   ...childServiceSlugs.map((slug) => `/services/${slug}/`)
 ];
-const NOINDEX_PATHS = ['/portfolio/legal-websites/'];
+const NOINDEX_PATHS = ['/portfolio/legal-websites/', '/our-team/'];
 
 const descriptions = {
   '/': 'Website design, content, and AI-powered marketing for regulated and expert-led businesses.',
