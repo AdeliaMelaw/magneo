@@ -1,0 +1,17 @@
+.magneo-cookie-panel{position:fixed;z-index:2147483000;left:20px;bottom:20px;box-sizing:border-box;width:min(420px,calc(100vw - 40px));max-height:calc(100dvh - 40px);overflow:auto;padding:22px;background:#171717;color:#f5f5f5;border:1px solid #575757;border-radius:16px;box-shadow:0 14px 36px rgba(0,0,0,.35);font-family:'DM Sans',Arial,sans-serif;font-size:14px;line-height:1.55}
+.magneo-cookie-panel h2{color:#fff;font-family:'DM Sans',Arial,sans-serif;font-size:20px;line-height:1.25;margin:0 0 12px;font-weight:700;letter-spacing:0;text-transform:none}
+.magneo-cookie-panel p{color:#d2d2d2;margin:0 0 16px;font-size:14px;line-height:1.55}
+.magneo-cookie-panel a{color:#b8ff66;text-decoration:underline;text-underline-offset:3px}
+.magneo-cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:16px 0 12px}
+.magneo-cookie-panel button{font-family:inherit;font-size:14px;cursor:pointer}
+.magneo-cookie-choice{min-height:44px;padding:9px 11px;background:#232323;color:#e9ffcf;border:1px solid #8cff00;border-radius:8px;font-weight:700}
+.magneo-cookie-choice:hover,.magneo-cookie-choice:focus-visible{background:#315000}
+.magneo-cookie-manage{display:block;width:100%;min-height:44px;padding:8px 0;margin:0 0 10px;border:0;background:transparent;color:#d6d6d6;text-decoration:underline;text-underline-offset:3px;text-align:left}
+.magneo-cookie-panel :is(button,a):focus-visible{outline:3px solid #8cff00;outline-offset:3px}
+.magneo-cookie-category{border-top:1px solid #555;padding:14px 0 0}
+.magneo-cookie-category strong{display:block;color:#fff;font-size:15px;margin-bottom:7px}
+.magneo-cookie-category p{margin:6px 0 14px}
+.magneo-cookie-switch{min-height:42px;padding:8px 13px;background:#222;color:#f6f6f6;border:1px solid #b1b1b1;border-radius:8px;font-weight:700}
+.magneo-cookie-switch[aria-checked=true]{border-color:#8cff00;color:#b8ff66}
+.magneo-cookie-settings-link{cursor:pointer}
+@media(max-width:600px){.magneo-cookie-panel{left:16px;bottom:16px;width:calc(100vw - 32px);max-height:calc(100dvh - 32px);padding:18px}.magneo-cookie-actions{grid-template-columns:1fr}}

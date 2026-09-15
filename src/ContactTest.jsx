@@ -99,7 +99,6 @@ export default function ContactTest() {
         </div>
 
         <div className="ct-form-panel" id="contact-enquiry">
-          <span id="contact-form" aria-hidden="true" />
           <span className="ct-kicker">Start a conversation</span>
           <h2>Tell us what you have in mind.</h2>
           <p className="ct-next">Your message comes directly to Adele. We’ll review what you share and reply with any questions or a suggested next step.</p>
@@ -109,7 +108,7 @@ export default function ContactTest() {
             <span aria-hidden="true">✓</span>
             <h3>Thanks—your enquiry has been sent to Adele.</h3>
             <p>We’ll review your message and reply by email.</p>
-          </div> : <form className="ct-form" onSubmit={submit}>
+          </div> : <form className="ct-form" id="contact-form" onSubmit={submit}>
             <label>Your name <span aria-hidden="true">*</span><input name="name" value={values.name} onChange={update} autoComplete="name" required/></label>
             <label>Email <span aria-hidden="true">*</span><input name="email" type="email" value={values.email} onChange={update} autoComplete="email" required/></label>
             <label>Website or company name <small>Optional</small><input name="company" value={values.company} onChange={update} autoComplete="organization"/></label>

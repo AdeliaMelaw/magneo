@@ -47,9 +47,7 @@
     if (window.location.pathname !== '/contact/' && window.location.pathname !== '/contact') return;
     var form = document.querySelector('.hbspt-form, .hs-form-frame, form.form, form');
     if (!form) return;
-    var section = form.closest('section') || form.parentElement;
-    if (!section) return;
-    section.id = 'contact-form';
+    if (!form.id) form.id = 'contact-form';
   }
 
   function scrollToContactFormHash() {

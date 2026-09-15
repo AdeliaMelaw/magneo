@@ -21,7 +21,7 @@ import { HealthcareMarketingHub, HealthcareSpecialistPage, healthcareSpecialistS
 import { TechnologyMarketingHub, TechnologySpecialistPage, technologySpecialistSlugs } from './TechnologyMarketingPages.jsx';
 import { ServicesDirectoryReview, ServicesOverviewReview, useServicesPageSeo } from './ServicesStaging.jsx';
 import ServiceContentReview from './ServiceContentReview.jsx';
-import { childServiceSlugs } from './data/child-service-review-data.js';
+import { childServiceSlugs, getChildServiceData } from './data/child-service-review-data.js';
 import { relatedArticlesFor } from './data/related-articles.js';
 import './styles/test-lawyer.css';
 import './styles/personal-injury-classic.css';
@@ -88,7 +88,11 @@ const extraServiceSlugs = serviceMenus.flatMap(([, path, items]) => [path, ...it
 const searchItems = [
   ...serviceMenus.flatMap(([group, groupPath, children]) => [
     { title: group, url: groupPath, type: 'Service', description: `Explore Magneo’s ${group.toLowerCase()} services.`, keywords: `${group} service agency support` },
-    ...children.map(([title, url]) => ({ title, url, type: 'Service', description: `${group} support shaped for this business or professional audience.`, keywords: `${group} ${title}` }))
+    ...children.map(([title, url]) => {
+      const slug = url.split('/').filter(Boolean).pop();
+      const page = getChildServiceData(slug);
+      return { title, url, type: 'Service', description: page?.metaDescription || page?.description || `Explore ${title} services, project options and next steps.`, keywords: `${group} ${title}` };
+    })
   ]),
   ...Object.values(industries).flatMap((industry) => [
     { title: industry.short, url: industry.route, type: 'Industry', description: industry.intro, keywords: `${industry.label} ${industry.short}` },
@@ -213,6 +217,18 @@ function Vertical({ item }){ const kind=kindFromText(item.label); useSeo(`${item
 function About(){ useNoIndexSeo('Our Team | Magneo','This legacy Magneo team page is no longer intended for search indexing.',`${BASE}/our-team/`); return <><Hero label="About Magneo" title="Where regulated industries<br/>come to grow <em>safely.</em>" intro="Magneo is a precision-built growth partner for teams that need more than marketing fluff. They need results they can trust." stat="CA+US"/><Process/><RelatedLinks/><CTA/></>; }
 function Contact(){ return <ContactTest/>; }
 function Generic({ title='Page', path='/' }){ useSeo(`${title} | Magneo`,'Magneo React rebuild page preserving the existing SEO route.',`${BASE}${path}`); return <><Hero label="Magneo" title={`${title}<br/><em>route preserved.</em>`} intro="This page is preserved in the React migration and ready for final copy expansion."/><RelatedLinks/><CTA/></>; }
+function GuideInitial(){
+  useSeo('Personal Branding Guide for Legal Professionals | Magneo','Download Magneo’s free personal-branding guide for legal professionals. Explore audience focus, content topics and a consistent online presence.',`${BASE}/personal-branding-ultimate-guide-legal-professionals/`);
+  return <section className="guide-hero"><div className="container guide-grid"><div>
+    <div className="hero-tag"><span/>Free guide for legal professionals</div><div className="label">The must-read guide</div>
+    <h1>Build a personal brand that reflects your <em>legal expertise.</em></h1>
+    <p className="guide-intro">A practical guide to explaining your expertise, choosing useful content topics and building a consistent presence online.</p>
+    <div className="guide-actions"><a className="btn guide-form-cta" href="#guide-form">Download Guide <span className="guide-form-arrow" aria-hidden="true">→</span></a><a className="btn outline" href="#tools-legal-niche">What is inside</a></div>
+    <div className="guide-points"><span>Areas of expertise</span><span>Channel choices</span><span>Educational content</span><span>Content review and professional requirements</span></div>
+  </div><aside className="guide-form-card" id="guide-form-section"><div className="label">Fill out the form</div><h2>Get your free guide</h2><p>Complete the form to download the guide securely.</p>
+    <form className="magneo-guide-form"><div className="guide-form-row"><label>First name<input id="guide-form" name="firstname" autoComplete="given-name" required/></label><label>Last name<input name="lastname" autoComplete="family-name" required/></label></div><label>Email address<input name="email" type="email" autoComplete="email" required/></label><label className="guide-consent"><input name="consent" type="checkbox" required/><span>I agree that Magneo may store and use my information to provide the requested guide. Read the <a href="/privacy-policy/">Magneo Privacy Policy</a>.</span></label><button className="btn" type="submit">DOWNLOAD THE GUIDE</button></form>
+  </aside></div></section>;
+}
 function Footer(){
   const footerServices = [
     ['Website Design','/services/website-design-for-regulated-professional-industries-magneo/'],
@@ -251,5 +267,6 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="privacy-policy" element={<PrivacyPolicy/>}/>
   <Route path="terms-of-service" element={<TermsOfUse/>}/>
   <Route path="blog" element={<Generic title="Insights" path="/blog/"/>}/>
+  <Route path="personal-branding-ultimate-guide-legal-professionals" element={<GuideInitial/>}/>
   <Route path="*" element={<Home/>}/>
 </Routes></Layout>; }
