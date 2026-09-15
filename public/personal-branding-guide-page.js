@@ -55,22 +55,31 @@
     });
   }
 
+  function activateGuideForm(event) {
+    var formSection = document.getElementById('guide-form');
+    var firstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
+    if (!formSection || !firstField) return true;
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    window.setTimeout(function () {
+      var currentFirstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
+      if (currentFirstField) currentFirstField.focus({ preventScroll: true });
+    }, reduceMotion ? 0 : 450);
+    return false;
+  }
+
   function bindGuideAnchors() {
+    window.magneoGuideFormCta = activateGuideForm;
     if (document.documentElement.dataset.guideAnchorsBound === 'true') return;
     document.documentElement.dataset.guideAnchorsBound = 'true';
     document.addEventListener('click', function (event) {
       var link = event.target.closest && event.target.closest('a[href="#guide-form"]');
       if (!link || !isGuidePage()) return;
-      var formSection = document.getElementById('guide-form');
-      var firstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
-      if (!formSection || !firstField) return;
-      event.preventDefault();
-      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-      window.setTimeout(function () {
-        var currentFirstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
-        if (currentFirstField) currentFirstField.focus({ preventScroll: true });
-      }, reduceMotion ? 0 : 450);
+      activateGuideForm(event);
     });
   }
 
@@ -152,7 +161,7 @@
             <div class="label">The must-read guide</div>\
             <h1>Turn your name into your most trusted <em>legal brand.</em></h1>\
             <p class="guide-intro">Personal Branding: The Ultimate Guide for Legal Professionals helps lawyers, consultants, and legal experts build authority, trust, and qualified demand without sounding like every other firm online.</p>\
-            <div class="guide-actions"><a class="btn guide-form-cta" href="#guide-form">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a><a class="btn outline" href="#tools-legal-niche">What is inside</a></div>\
+            <div class="guide-actions"><a class="btn guide-form-cta" href="#guide-form" onclick="return window.magneoGuideFormCta ? window.magneoGuideFormCta(event) : true">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a><a class="btn outline" href="#tools-legal-niche">What is inside</a></div>\
             <div class="guide-points">\
               <span>Authority positioning</span>\
               <span>LinkedIn growth</span>\
@@ -227,7 +236,7 @@
       <section class="guide-final">\
         <div class="container">\
           <h2>Ready to make your expertise easier to trust?</h2>\
-          <a class="btn guide-form-cta" href="#guide-form">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a>\
+          <a class="btn guide-form-cta" href="#guide-form" onclick="return window.magneoGuideFormCta ? window.magneoGuideFormCta(event) : true">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a>\
         </div>\
       </section>';
 
