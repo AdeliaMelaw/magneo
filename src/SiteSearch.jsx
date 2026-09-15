@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { createPortal } from 'react-dom'; import { Link } from 'react-router-dom';
 import './styles/site-search.css';
 
 const synonymGroups = [
@@ -136,7 +136,7 @@ export default function SiteSearch({ items, mobile = false }) {
     <button ref={triggerRef} type="button" className={`site-search-trigger ${mobile ? 'site-search-trigger-mobile' : 'site-search-trigger-desktop'}`} aria-label="Search Magneo" aria-haspopup="dialog" onClick={() => setOpen(true)}>
       <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></svg><span>Search</span>
     </button>
-    {open && <div className="site-search-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
+    {open && createPortal(<div className="site-search-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close(); }}>
       <section ref={dialogRef} className="site-search-dialog" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
         <header><div><small>Site search</small><h2 id="site-search-title">What are you looking for?</h2></div><button type="button" className="site-search-close" onClick={close} aria-label="Close search">Close <span aria-hidden="true">×</span></button></header>
         <form role="search" onSubmit={submit}>
@@ -149,6 +149,6 @@ export default function SiteSearch({ items, mobile = false }) {
           {query.trim().length >= 2 && results.length === 0 && <div className="site-search-empty"><p>No matches found. Try a broader term or explore our services.</p><div><Link to="/services/" onClick={close}>Explore Services</Link><Link to="/contact/" onClick={close}>Contact Magneo</Link></div></div>}
         </div>
       </section>
-    </div>}
+    </div>, document.body)}
   </>;
 }
