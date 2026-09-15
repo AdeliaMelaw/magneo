@@ -625,9 +625,9 @@ const aiOverview = {
   contentPlan: {
     heading: 'One expert conversation. Several useful pieces of content.',
     intro: 'An interview, approved article, or product walkthrough can provide the starting point for a coordinated content series.',
-    items: [['Short-form video','A focused script and edited clip explaining one useful idea.'],['Social posts and carousels','Content adapted to the audience and format of each selected platform.'],['Website or email content','A fuller explanation connecting the topic to a relevant service or next step.']],
-    supporting: 'Each piece is written and edited for its intended use, with a consistent message across the series.',
-    label: 'Illustrative content plan.',
+    items: [['Blog article','A fuller explanation of the topic, connecting it to a relevant service or next step.'],['Short video','A focused script and edited clip explaining one useful idea.'],['Social posts','Content adapted to the audience and format of each selected platform.']],
+    supporting: 'One topic can become a blog article, a short video and social posts—each adapted to its platform and written in your brand’s voice.',
+    label: 'EXAMPLE: ONE TOPIC, MULTIPLE FORMATS',
   },
   deliverables: {
     heading: 'What your project can include.',
@@ -1234,7 +1234,7 @@ function AiOverviewBrandVoice() {
 
 function AiOverviewContentPlan() {
   const content = aiOverview.contentPlan;
-  return <section className="section scr-ai-overview-plan"><div className="container"><div className="label">CONNECTED CONTENT EXAMPLE</div><h2>{content.heading}</h2><p className="scr-ai-overview-intro">{content.intro}</p><div className="scr-ai-overview-plan-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-overview-supporting">{content.supporting}</p><p className="scr-ai-overview-label">{content.label}</p></div></section>;
+  return <section className="section scr-ai-overview-plan"><div className="container"><div className="label">CONNECTED CONTENT EXAMPLE</div><h2>{content.heading}</h2><p className="scr-ai-overview-intro">{content.intro}</p><p className="scr-ai-overview-label">{content.label}</p><div className="scr-ai-overview-plan-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index + 1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div><p className="scr-ai-overview-supporting">{content.supporting}</p></div></section>;
 }
 
 function AiOverviewPortfolio() {
