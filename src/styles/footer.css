@@ -1,0 +1,40 @@
+/* Shared compact Magneo footer */
+.footer{padding:50px 0 0;background:#050706;color:#fff;border-top:1px solid #252725}
+.footer-grid{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:44px}
+.footer-column{min-width:0}
+.footer-column b{display:block;margin:0 0 16px;color:#fff;font-size:11px;line-height:1.3;letter-spacing:.15em;text-transform:uppercase}
+.footer .footer-brand-column p{max-width:390px;margin:12px 0 0;color:#d0d4cf;font-size:14px;line-height:1.65}
+.footer .footer-brand-column p:before{content:'';display:block;width:44px;height:2px;margin:17px 0 14px;background:var(--mg)}
+.footer-contact{margin-top:16px;color:#c0c5bf}
+.footer a{margin:0 0 10px;color:#c0c5bf;line-height:1.45}
+.footer .footer-contact a{margin:0;color:#d0d4cf}
+.footer a:hover{color:var(--mg)}
+.footer a:focus-visible{color:#fff;outline:2px solid var(--mg);outline-offset:4px;border-radius:2px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:38px;padding:20px 0;border-top:1px solid #252725;color:#9da29d;font-size:12px}
+.footer-bottom>div{display:flex;gap:22px;flex-wrap:wrap}
+.footer-bottom a{margin:0;font-size:12px}
+
+/* Homepage footer aligned with the shared Magneo footer */
+.ht-footer{padding:50px 0 0;background:#050706;color:#fff}
+.ht-footer-grid{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr));gap:44px}
+.ht-footer-column{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:0}
+.ht-footer-column strong{margin:0 0 16px;color:#fff}
+.ht-footer-column>a{margin:0 0 10px;line-height:1.45}
+.ht-footer-brand p{max-width:390px;margin:15px 0 0;color:#d0d4cf;font-size:14px;line-height:1.65}
+.ht-footer-brand p:before{content:'';display:block;width:44px;height:2px;margin:17px 0 14px;background:var(--lime)}
+.ht-footer-contact{display:grid;gap:4px;margin-top:16px;color:#c0c5bf;font-size:13px;line-height:1.5}
+.ht-footer-contact a{width:max-content;max-width:100%;color:#d0d4cf}
+.ht-footer a:focus-visible{color:#fff;outline:2px solid var(--lime);outline-offset:4px;border-radius:2px}
+.ht-footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:38px;padding:20px 0;border-top:1px solid #252725;color:#9da29d;font-size:12px}
+.ht-footer-bottom>div{display:flex;gap:22px;flex-wrap:wrap}
+.ht-footer-bottom a{color:#bfc3be;font-size:12px}
+
+@media(max-width:1000px){
+  .footer-grid,.ht-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 44px}
+}
+@media(max-width:700px){
+  .footer,.ht-footer{padding-top:42px}
+  .footer-grid,.ht-footer-grid{grid-template-columns:1fr;gap:32px}
+  .footer-bottom,.ht-footer-bottom{align-items:flex-start;flex-direction:column;margin-top:32px}
+  .footer .brand{width:170px;height:41px}
+}
