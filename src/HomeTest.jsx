@@ -18,9 +18,9 @@ const process = [
 ];
 
 const collaborationPanels = [
-  { label: 'Strategy', eyebrow: 'Strategy first', heading: 'We start with your business.', text: 'We review your audience, offer, and priorities, then recommend what to create. You know what the project includes and how it supports your goals before work begins.' },
-  { label: 'Creative', eyebrow: 'Creative with purpose', heading: 'We make your expertise easier to understand.', text: 'We turn complex services into clear messages, distinctive design, and useful content. Each piece is shaped around your brand and what your audience needs to know.' },
-  { label: 'Collaboration', eyebrow: 'Built for collaboration', heading: 'We keep you involved at the right moments.', text: 'We create the work and share it at agreed review stages. You provide feedback and confirm business details. Where needed, we include your internal approval process before publication.' }
+  { label: 'Strategy', eyebrow: 'STRATEGY FIRST', heading: 'Your business goals set the direction.', text: 'A clear plan starts with your audience, offer and priorities. Get recommendations for the website, content and campaigns that support your goals, with a defined scope before production begins.' },
+  { label: 'Creative', eyebrow: 'CREATIVE WITH PURPOSE', heading: 'Make your expertise easy to understand.', text: 'Clear copy, distinctive design and engaging video help people understand what you offer and why it matters. Every piece reflects your brand and gives potential clients a clear next step.' },
+  { label: 'Collaboration', eyebrow: 'BUILT FOR COLLABORATION', heading: 'Stay involved without managing every detail.', text: 'Your ideas and feedback guide the work, while Magneo handles planning and production. Agreed review stages give you time to confirm details and request changes, with internal approvals included where needed.' }
 ];
 
 function HomeSeo({ isTest = false }) {
