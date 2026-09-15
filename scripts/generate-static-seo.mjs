@@ -19,8 +19,7 @@ const EXTRA_PATHS = [
 const NOINDEX_PATHS = [
   '/portfolio/legal-websites/',
   '/our-team/',
-  '/about/adele-salikhova/',
-  '/personal-branding-ultimate-guide-legal-professionals/'
+  '/about/adele-salikhova/'
 ];
 
 const descriptions = {
@@ -213,7 +212,7 @@ function childServiceDataForPath(pathname) {
   return match ? getChildServiceData(match[1]) : null;
 }
 
-function injectSeo(html, { title, description, canonical, image, imageAlt, noindex = false, schema }) {
+function injectSeo(html, { title, description, canonical, image, imageAlt, robots, schema }) {
   const clean = html
     .replace(/\s*<title>[\s\S]*?<\/title>/i, '')
     .replace(/\s*<meta\s+name=["']description["'][^>]*>/i, '')
@@ -232,11 +231,31 @@ function injectSeo(html, { title, description, canonical, image, imageAlt, noind
     '<meta name="twitter:card" content="summary_large_image" />',
     `<meta name="twitter:title" content="${escapeHtml(title)}" />`,
     `<meta name="twitter:description" content="${escapeHtml(description)}" />`,
-    ...(noindex ? ['<meta name="robots" content="noindex, follow" />'] : []),
+    ...(robots ? [`<meta name="robots" content="${escapeHtml(robots)}" />`] : []),
     ...(image ? [`<meta property="og:image" content="${escapeHtml(image)}" />`, `<meta property="og:image:alt" content="${escapeHtml(imageAlt || '')}" />`, `<meta name="twitter:image" content="${escapeHtml(image)}" />`, `<meta name="twitter:image:alt" content="${escapeHtml(imageAlt || '')}" />`] : []),
     ...(schema ? [`<script type="application/ld+json" data-magneo-page-schema>${JSON.stringify(schema)}</script>`] : [])
   ].map((tag) => `    ${tag}`).join('\n');
   return clean.replace(/(\s*<meta\s+name=["']viewport["'][^>]*>)/i, `$1\n${tags}`);
+}
+
+function injectGuideStaticHtml(html) {
+  const markup = `<main data-guide-static="true">
+    <section class="guide-hero"><div class="container guide-grid"><div>
+      <div class="hero-tag"><span></span>Free guide for legal professionals</div>
+      <div class="label">The must-read guide</div>
+      <h1>Turn your name into your most trusted <em>legal brand.</em></h1>
+      <p class="guide-intro">Personal Branding: The Ultimate Guide for Legal Professionals helps lawyers, consultants, and legal experts build authority, trust, and qualified demand without sounding like every other firm online.</p>
+      <div class="guide-actions"><a class="btn guide-form-cta" href="#guide-form">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a><a class="btn outline" href="#tools-legal-niche">What is inside</a></div>
+    </div><aside class="guide-form-card" id="guide-form">
+      <div class="label">Fill out the form</div><h2>Get your free guide</h2><p>Complete the form to download the guide securely.</p>
+      <form class="magneo-guide-form"><div class="guide-form-row"><label>First name<input name="firstname" autocomplete="given-name" required></label><label>Last name<input name="lastname" autocomplete="family-name" required></label></div><label>Email address<input name="email" type="email" autocomplete="email" required></label><input class="guide-honeypot" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="guide-consent"><input name="consent" type="checkbox" required><span>I agree that Magneo may store and use my information to provide the requested guide. Read the <a href="https://magneo.ca/privacy-policy/" target="_blank" rel="noopener">Magneo Privacy Policy</a>.</span></label><button class="btn" type="submit">DOWNLOAD THE GUIDE</button></form>
+    </aside></div></section>
+    <section class="guide-about"><div class="container guide-two"><div><div class="label">About the guide</div><h2 id="tools-legal-niche">Tools to own your legal niche.</h2><p>This is a practical guide for becoming the lawyer your ideal clients instantly trust, remember, and refer.</p></div><ul class="guide-checklist"><li>Authority positioning for a clear legal niche</li><li>LinkedIn visibility and trust-first content</li><li>Proof signals that increase confidence</li><li>Legal marketing guardrails</li></ul></div></section>
+    <section class="guide-detail"><div class="container"><div class="label">Inside the framework</div><h2>A practical path from invisible expert to trusted authority.</h2><p>Define your authority lane, build proof signals, create repeatable content, and stay compliant.</p></div></section>
+    <section class="guide-reviews"><div class="container"><div class="label">Reader reviews</div><h2>What legal professionals say about the guide.</h2></div></section>
+    <section class="guide-final"><div class="container"><h2>Ready to make your expertise easier to trust?</h2><a class="btn guide-form-cta" href="#guide-form">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a></div></section>
+  </main>`;
+  return html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
 }
 
 const indexHtml = await readFile(INDEX_PATH, 'utf8');
@@ -261,7 +280,9 @@ for (const pathname of paths) {
       founder: { '@type': 'Person', name: 'Adele Salikhova' }
     }
   } : undefined;
-  const html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, noindex: NOINDEX_PATHS.includes(pathname), schema });
+  const robots = NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
+  let html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, robots, schema });
+  if (pathname === '/personal-branding-ultimate-guide-legal-professionals/') html = injectGuideStaticHtml(html);
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
   await mkdir(dirname(outputPath), { recursive: true });
   await writeFile(outputPath, html);

@@ -2,7 +2,7 @@
   var FROM = 'Request a free audit';
   var TO = 'Let\u2019s Talk';
   var CONTACT_FORM_HREF = '/contact/#contact-form';
-  var GUIDE_HREF = '/personal-branding-ultimate-guide-legal-professionals';
+  var GUIDE_HREF = '/personal-branding-ultimate-guide-legal-professionals/';
   var GUIDE_LABEL = 'Law Firm Growth Guide';
   var guideScheduled = false;
 

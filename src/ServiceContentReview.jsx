@@ -947,7 +947,7 @@ function BrandingReasonSection({ content }) {
 }
 
 function BrandingServicesSection({ content }) {
-  return <section id={content.id} className="section scr-branding-services"><div className="container"><div className="label">Personal brand services</div><h2>{content.heading}</h2><div className="scr-branding-service-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-branding-note">{content.note}</p>}</div></section>;
+  return <section id={content.id} className="section scr-branding-services"><div className="container"><div className="label">Personal brand services</div><h2>{content.heading}</h2><div className="scr-branding-service-grid">{content.items.map(([title,copy],index)=><article key={title}><span>{String(index+1).padStart(2,'0')}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>{content.note && <p className="scr-branding-note">{content.note}</p>}{content.guideLink && <Link className="scr-examples-link" to={content.guideLink[0]}>{content.guideLink[1]} <span aria-hidden="true">→</span></Link>}</div></section>;
 }
 
 function BrandingVideoSection({ content }) {
