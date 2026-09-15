@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './styles/legal-concept-notice.css';
 
 const cases = [
   ['01', 'Motor vehicle collisions', 'Injuries involving cars, motorcycles, pedestrians, cyclists, and rideshare vehicles.'],
@@ -50,6 +51,7 @@ export default function PersonalInjuryBoldTest(){
   }, []);
 
   return <div className="av2 av2-bold-test">
+    <div className="concept-notice"><strong>Original Magneo website concept — fictional firm</strong></div>
     <header className="av2-nav">
       <a href="/portfolio/" className="av2-logo" aria-label="Back to portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
       <nav aria-label="Primary navigation"><a href="#av2-cases">Cases</a><a href="#av2-process">Process</a><a href="#av2-lawyer">Lawyer</a><a href="#av2-faq">FAQ</a></nav>

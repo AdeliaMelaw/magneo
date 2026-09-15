@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './styles/legal-concept-notice.css';
 
 const practiceAreas = [
   ['01', 'Motor vehicle collisions', 'Injuries involving cars, motorcycles, pedestrians, cyclists, and rideshare vehicles.'],
@@ -50,6 +51,7 @@ export default function PersonalInjuryClassic(){
   }, []);
 
   return <div className="avalon-law avalon-law-classic">
+    <div className="concept-notice"><strong>Original Magneo website concept — fictional firm</strong></div>
     <header className="al-nav">
       <a className="al-brand" href="/portfolio/" aria-label="Back to portfolio"><i aria-hidden="true">←</i><span>Back to portfolio</span></a>
       <nav aria-label="Primary navigation">

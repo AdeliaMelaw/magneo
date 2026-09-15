@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import './styles/legal-concept-notice.css';
 
 const needs = [
   { key: 'answers', label: 'Clear answers', title: 'Understand what comes next.', text: 'We explain the process in plain language, answer the questions keeping you up at night, and give your family a practical plan for the days ahead.' },
@@ -28,11 +29,11 @@ export default function TestLawyer6(){
   }, []);
 
   return <div className="hl6">
+    <div className="concept-notice"><strong>Original Magneo website concept — fictional firm</strong><a href="/contact/">Discuss this website with Magneo <Arrow/></a></div>
     <header className="hl6-nav" id="hl6-top">
       <a className="hl6-brand" href="/portfolio/" aria-label="Back to portfolio"><i aria-hidden="true">←</i><span>Back to portfolio</span></a>
       <nav aria-label="Primary navigation"><a href="#hl6-support">How we help</a><a href="#hl6-process">What happens next</a><a href="#hl6-contact">Contact</a></nav>
-      <a className="hl6-phone" href="tel:+14378731155">437 873 1155</a>
-      <a className="hl6-top-cta" href="#hl6-contact">Talk with us <Arrow/></a>
+      <a className="hl6-top-cta" href="#hl6-contact">View demo form <Arrow/></a>
     </header>
 
     <main>
@@ -41,8 +42,8 @@ export default function TestLawyer6(){
           <span className="hl6-eyebrow"><i/> Personal injury counsel for families</span>
           <h1>When life changes,<br/>your family should<br/><em>not face it alone.</em></h1>
           <p>Compassionate legal guidance for the decisions, care, and uncertainty that follow a serious injury.</p>
-          <div className="hl6-actions"><a href="#hl6-contact">Start a private conversation <Arrow/></a><a href="tel:+14378731155">Call 437 873 1155</a></div>
-          <small>Free consultation · No upfront legal fee*</small>
+          <div className="hl6-actions"><a href="#hl6-contact">View demonstration form <Arrow/></a></div>
+          <small>Fictional firm · No legal enquiries are sent</small>
         </div>
         <div className="hl6-hero-photo">
           <img src="/test6-family-hero.png" alt="A fictional family sharing a quiet moment together at home"/>
@@ -51,7 +52,7 @@ export default function TestLawyer6(){
         </div>
       </section>
 
-      <section className="hl6-reassurance" aria-label="Consultation highlights"><span>Free first conversation</span><span>Direct lawyer access</span><span>Plain-language guidance</span><span>Available 24/7</span></section>
+      <section className="hl6-reassurance" aria-label="Illustrative consultation highlights"><span>Free first conversation</span><span>Direct lawyer access</span><span>Plain-language guidance</span><span>Demonstration only</span></section>
 
       <section className="hl6-intro">
         <span>For the people around the injury, too.</span>
@@ -80,12 +81,12 @@ export default function TestLawyer6(){
       <section className="hl6-promise"><span aria-hidden="true">“</span><blockquote>Your family is not an interruption to the case.<br/><em>Your family is the reason for it.</em></blockquote><p>Harbour &amp; Lane’s fictional approach is built on a simple promise: listen closely, explain clearly, and prepare every matter with care.</p></section>
 
       <section className="hl6-contact" id="hl6-contact">
-        <div className="hl6-contact-copy"><span>Free, private consultation</span><h2>Tell us what<br/>life looks like now.</h2><p>You do not need records, perfect dates, or the right legal words. A few details are enough to begin.</p><a href="tel:+14378731155">437 873 1155</a><small>Fictional concept · Toronto, Ontario</small></div>
-        <div className="hl6-form-card">{sent ? <div className="hl6-success" role="status"><span>Thank you</span><h3>Your next step can feel lighter.</h3><p>This is a design demonstration, so no information was sent or stored.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <form onSubmit={(event)=>{event.preventDefault();setSent(true)}}><div><span>01 / Your name</span><input aria-label="Your name" required autoComplete="name" placeholder="How should we address you?"/></div><div><span>02 / Best way to reach you</span><input aria-label="Phone or email" required placeholder="Phone or email"/></div><div><span>03 / What happened?</span><textarea aria-label="What happened" required rows="4" placeholder="Share only what feels comfortable."/></div><label><input type="checkbox" required/><span>I understand this message does not create a lawyer-client relationship.</span></label><button type="submit">Request a private call <Arrow/></button><small>Demo only · Information is not sent or stored.</small></form>}</div>
+        <div className="hl6-contact-copy"><span>Demonstration consultation section</span><h2>Tell us what<br/>life looks like now.</h2><p>This fictional form shows how a law firm might introduce its enquiry process. It does not contact a lawyer or send a message.</p><small>Fictional concept · Toronto, Ontario</small></div>
+        <div className="hl6-form-card">{sent ? <div className="hl6-success" role="status"><span>Demo only</span><h3>Form preview complete.</h3><p>No information was sent or stored. To discuss the website concept, contact Magneo separately.</p><button type="button" onClick={()=>setSent(false)}>Return to form</button></div> : <form onSubmit={(event)=>{event.preventDefault();setSent(true)}}><p className="hl6-demo-note">Demonstration form — no information is sent or stored. Do not enter personal or case details.</p><div><span>01 / Your name</span><input aria-label="Your name" required autoComplete="name" placeholder="Example name"/></div><div><span>02 / Best way to reach you</span><input aria-label="Phone or email" required placeholder="Example contact"/></div><div><span>03 / What happened?</span><textarea aria-label="What happened" required rows="4" placeholder="Use example details only."/></div><label><input type="checkbox" required/><span>I understand this is a fictional demo and does not create a lawyer-client relationship.</span></label><button type="submit">Preview demo request <Arrow/></button><small>Demo only · Information is not sent or stored.</small></form>}</div>
       </section>
     </main>
 
-    <footer className="hl6-footer"><div className="hl6-brand"><i>H</i><span>Harbour <em>&amp;</em> Lane<small>Injury law · Toronto</small></span></div><p>Harbour &amp; Lane is a fictional law-firm concept created for Magneo. Names, services, statements, imagery, and contact details are illustrative.</p><a href="#hl6-top">Back to top ↑</a></footer>
-    <a className="hl6-mobile-cta" href="#hl6-contact">Free consultation <Arrow/></a>
+    <footer className="hl6-footer"><div className="hl6-brand"><i>H</i><span>Harbour <em>&amp;</em> Lane<small>Injury law · Toronto</small></span></div><p>Harbour &amp; Lane is a fictional law-firm concept created for Magneo. Names, services, statements, and imagery are illustrative. The demonstration form does not send or store information.</p><a href="#hl6-top">Back to top ↑</a></footer>
+    <a className="hl6-mobile-cta" href="#hl6-contact">View demo form <Arrow/></a>
   </div>;
 }
