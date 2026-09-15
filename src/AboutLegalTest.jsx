@@ -7,7 +7,7 @@ import './styles/about-legal-test.css';
 const workingSteps = [
   ['01', 'Understand your business', 'We discuss your services, audience, existing marketing, and the priorities behind the project.'],
   ['02', 'Agree on the work', 'You receive a proposed scope, deliverables, timeline, and fee before the project begins.'],
-  ['03', 'Create and review', 'Adele develops the agreed work and brings it to you at defined review points for feedback and approval.'],
+  ['03', 'Create and review', 'Magneo develops the copy, designs and other project materials, then shares them for your feedback before launch or publication.'],
   ['04', 'Complete and plan ahead', 'We review the deliverables and identify the next steps. Ongoing support is scoped separately where needed.'],
 ];
 
@@ -43,10 +43,10 @@ const portfolioPreviews = [
   {
     title: 'Websites',
     label: 'Original concepts',
-    description: 'Explore distinctive website directions that can be tailored to a business.',
-    image: '/portfolio/websites/litigation-editorial-preview-v2.png',
-    alt: 'Preview of an original Magneo website concept',
-    href: '/portfolio/#portfolio-websites',
+    description: 'Explore a brain injury law firm website concept with bold typography, 3D visuals and clear enquiry options.',
+    image: '/portfolio/websites/brain-injury-3d-preview.png',
+    alt: 'Preview of the Brain Injury · 3D fictional website concept',
+    href: '/portfolio/legal-websites/brain-injury-3d/',
   },
   {
     title: 'Video & Reels',
@@ -182,7 +182,7 @@ export default function AboutLegalTest() {
 
     <section className="abt-process">
       <div className="container">
-        <div className="abt-section-head"><div><span className="abt-label">Working with Magneo</span><h2>A clear scope.<br/><em>Direct communication.</em></h2></div><p>We start with your business, the people you want to reach, and what you need your marketing to do. Together, we agree on the work, the review stages, and who approves content before publication.</p></div>
+        <div className="abt-section-head"><div><span className="abt-label">Working with Magneo</span><h2>A clear scope.<br/><em>Direct communication.</em></h2></div><p>Your project can include website design, SEO, video, social content or CRM automation. The plan identifies the deliverables, timeline and feedback needed from your team, so you know what is being created and when.</p></div>
         <div className="abt-process-grid">{workingSteps.map(([number, title, text]) => <article key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
       </div>
     </section>
