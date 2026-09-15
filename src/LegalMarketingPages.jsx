@@ -103,6 +103,7 @@ const practicePages = {
 };
 
 export const legalPracticeSlugs = Object.keys(practicePages);
+export const legalPracticeSearchDescription = (slug) => practicePages[slug]?.meta || practicePages[slug]?.description;
 
 function useLegalSeo(title, description, path) {
   useEffect(() => {

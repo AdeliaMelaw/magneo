@@ -15,10 +15,10 @@ import ContactTest from './ContactTest.jsx';
 import HomeTest from './HomeTest.jsx';
 import SiteSearch from './SiteSearch.jsx';
 import { PrivacyPolicy, TermsOfUse } from './PolicyPages.jsx';
-import { LegalMarketingHub, LegalPracticePage, legalPracticeSlugs } from './LegalMarketingPages.jsx';
-import { FinancialMarketingHub, FinancialSpecialistPage, financialSpecialistSlugs } from './FinancialMarketingPages.jsx';
-import { HealthcareMarketingHub, HealthcareSpecialistPage, healthcareSpecialistSlugs } from './HealthcareMarketingPages.jsx';
-import { TechnologyMarketingHub, TechnologySpecialistPage, technologySpecialistSlugs } from './TechnologyMarketingPages.jsx';
+import { LegalMarketingHub, LegalPracticePage, legalPracticeSlugs, legalPracticeSearchDescription } from './LegalMarketingPages.jsx';
+import { FinancialMarketingHub, FinancialSpecialistPage, financialSpecialistSlugs, financialSpecialistSearchDescription } from './FinancialMarketingPages.jsx';
+import { HealthcareMarketingHub, HealthcareSpecialistPage, healthcareSpecialistSlugs, healthcareSpecialistSearchDescription } from './HealthcareMarketingPages.jsx';
+import { TechnologyMarketingHub, TechnologySpecialistPage, technologySpecialistSlugs, technologySpecialistSearchDescription } from './TechnologyMarketingPages.jsx';
 import { ServicesDirectoryReview, ServicesOverviewReview, useServicesPageSeo } from './ServicesStaging.jsx';
 import ServiceContentReview from './ServiceContentReview.jsx';
 import { childServiceSlugs, getChildServiceData } from './data/child-service-review-data.js';
@@ -85,6 +85,7 @@ const aiServices = [
 
 const verticals = Object.values(industries).flatMap((i) => i.subs.map(([label, path]) => ({ label, path, intro: `Compliance-aware SEO, website, PPC, LinkedIn, AI automation, and authority systems for ${label.toLowerCase()}.` })));
 const extraServiceSlugs = serviceMenus.flatMap(([, path, items]) => [path, ...items.map(([, itemPath]) => itemPath)]).map((path) => path.split('/').filter(Boolean).pop()).concat(['healthcare-medtech']);
+const specialistSearchDescription = { law: legalPracticeSearchDescription, finance: financialSpecialistSearchDescription, healthcare: healthcareSpecialistSearchDescription, tech: technologySpecialistSearchDescription };
 const searchItems = [
   ...serviceMenus.flatMap(([group, groupPath, children]) => [
     { title: group, url: groupPath, type: 'Service', description: `Explore Magneo’s ${group.toLowerCase()} services.`, keywords: `${group} service agency support` },
@@ -94,9 +95,9 @@ const searchItems = [
       return { title, url, type: 'Service', description: page?.metaDescription || page?.description || `Explore ${title} services, project options and next steps.`, keywords: `${group} ${title}` };
     })
   ]),
-  ...Object.values(industries).flatMap((industry) => [
+  ...Object.entries(industries).flatMap(([key, industry]) => [
     { title: industry.short, url: industry.route, type: 'Industry', description: industry.intro, keywords: `${industry.label} ${industry.short}` },
-    ...industry.subs.map(([title, url]) => ({ title, url, type: 'Industry', description: `Marketing, website and content support for ${title.toLowerCase()}.`, keywords: `${industry.short} ${title}` }))
+    ...industry.subs.map(([title, url]) => ({ title, url, type: 'Industry', description: specialistSearchDescription[key](url.split('/').filter(Boolean).pop()) || `Explore ${title} services, website content and contact routes.`, keywords: `${industry.short} ${title}` }))
   ]),
   { title: 'Magneo Portfolio', url: '/portfolio/', type: 'Portfolio', description: 'Explore Magneo website concepts, social creative and AI marketing demonstrations.', keywords: 'work examples projects designs reels video' },
   { title: 'Personal injury · Classic', url: '/portfolio/legal-websites/personal-injury-classic/', type: 'Portfolio', description: 'A classic personal-injury law website concept.', keywords: 'lawyer law firm website design legal' },

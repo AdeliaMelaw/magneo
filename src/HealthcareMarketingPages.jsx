@@ -50,6 +50,7 @@ const pages={
 };
 
 export const healthcareSpecialistSlugs=Object.keys(pages);
+export const healthcareSpecialistSearchDescription=(slug)=>pages[slug]?.meta||pages[slug]?.description;
 const related=[articles.clinicLocalSeo,articles.medicalSeo,articles.clinicVideo,articles.clinicReputation];
 
 function useSeo(title,description,path){useEffect(()=>{document.title=title;let meta=document.querySelector('meta[name="description"]');if(!meta){meta=document.createElement('meta');meta.name='description';document.head.appendChild(meta)}meta.content=description;let canonical=document.querySelector('link[rel="canonical"]');if(!canonical){canonical=document.createElement('link');canonical.rel='canonical';document.head.appendChild(canonical)}canonical.href=`${BASE}${path}`},[title,description,path])}
