@@ -104,7 +104,7 @@ export default function Portfolio(){
           <article className="pf-post pf-post-one"><small>Client questions / 01</small><b>Answer what people<br/>want to know.</b><i>↗</i></article>
           <article className="pf-post pf-post-two"><small>Your perspective</small><b>Explain what you think.<br/>Show why it matters.</b><div><i/><i/><i/><i/></div></article>
           <article className="pf-post pf-post-three"><span>03</span><b>One idea.<br/>Multiple formats.</b><small>Article → carousel → video</small></article>
-          <div className="pf-board-label">Illustrative content series</div>
+          <div className="pf-board-label">EXAMPLE CONTENT SERIES</div>
         </div>
       </div>
     </section>

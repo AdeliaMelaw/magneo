@@ -336,10 +336,10 @@ const pageData = {
     ],
   },
   'social-media-linkedin-marketing-for-regulated-industries': {
-    title: 'Social Media & LinkedIn Marketing for Regulated Industries',
-    seoTitle: 'Social Media & LinkedIn for Regulated Industries | Magneo',
+    title: 'Social Media Marketing for Regulated Industries',
+    seoTitle: 'Social Media Marketing for Regulated Industries | Magneo',
     metaDescription: 'Social media and LinkedIn content for regulated industries: strategy, posts, visuals, and short-form video, with clear review and publishing arrangements.',
-    description: 'A consistent social presence starts with something useful to say. Magneo develops content strategy, LinkedIn posts, social visuals, and short-form video for regulated businesses, with a clear arrangement for your input, approvals, and publishing.',
+    description: 'Turn your expertise into useful posts, Reels, carousels and video for the platforms your audience uses. Content strategy, production and publishing support keep your message consistent across your selected channels.',
     primary: ['Discuss your social media', '/contact/#contact-enquiry'], secondary: ['Explore content examples', portfolioLinks.social],
     pageClass: 'scr-page-social',
     card: ['CONTENT', 'Posts, reels, and LinkedIn content shaped around your expertise.'],
@@ -365,7 +365,7 @@ const pageData = {
     included: [
       ['Audience and channel direction', 'A focused plan for whom the content should reach, what it should communicate, and where it belongs.'],
       ['Content themes and calendar', 'A practical editorial plan connecting your expertise, services, and recurring audience questions.'],
-      ['LinkedIn and social copy', 'Posts developed from your perspective, approved information, and the purpose of each channel.'],
+      ['Social media copy', 'Posts developed from your perspective, approved information, and the purpose of each channel.'],
       ['Visual content', 'Post graphics and carousel layouts that make the message easy to follow.'],
       ['Short-form video', 'Agreed concepts, scripts, editing, and production arrangements for reels or other short videos.'],
       ['Approval and delivery', 'A defined review process followed by organised asset delivery or scheduling where included.'],
@@ -379,7 +379,7 @@ const pageData = {
       ],
     },
     examples: [
-      ['LinkedIn content series', 'A connected set of posts exploring audience questions, professional observations, or a service theme in your brand’s voice.'],
+      ['Social content series', 'A connected set of posts exploring audience questions, professional observations, or a service theme in your brand’s voice.'],
       ['Interview-based content', 'Selected ideas from an approved recorded conversation developed into clips, posts, and supporting copy.'],
       ['Service-focused content', 'A sequence explaining a particular service: who it is for, what it involves, and how an interested reader can learn more.'],
     ],

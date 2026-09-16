@@ -96,7 +96,7 @@ const titleOverrides = {
   '/services/seo-for-the-legal-industry/': 'SEO for Law Firms & Lawyers | Magneo',
   '/services/seo-for-financial-advisors-wealth-firms/': 'SEO for Financial Advisors & Wealth Firms | Magneo',
   '/services/seo-for-the-healthcare-medtech-industry/': 'Healthcare & MedTech SEO Services | Magneo',
-  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social Media & LinkedIn for Regulated Industries | Magneo',
+  '/services/social-media-linkedin-marketing-for-regulated-industries/': 'Social Media Marketing for Regulated Industries | Magneo',
   '/services/ai-automation-for-regulated-industries-magneo/': 'AI Automation for Regulated Industries | Magneo',
   '/services/ppc-landing-pages-for-regulated-industries/': 'PPC Management & Landing Pages for Regulated Industries | Magneo',
   '/services/personal-branding-for-regulated-professionals/': 'Personal Branding for Regulated Professionals | Magneo',
