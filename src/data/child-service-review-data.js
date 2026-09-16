@@ -20,7 +20,7 @@ const familyInfo = {
     cta: ['Where does your search presence need work?', 'Share your website and the services or topics you want people to find.'],
   },
   social: {
-    parent: ['Social Media & LinkedIn', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
+parent: ['Social Media Marketing', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
     card: ['CONTENT', 'A clear voice, relevant formats, and consistent communication.'],
     included: ['Audience and channel planning', 'Content themes and calendar', 'Post copy and visual direction', 'Agreed video or reel production', 'Review and publishing responsibilities', 'Reporting on agreed measures'],
     processHeading: 'We turn your expertise into content.',
@@ -430,7 +430,7 @@ const pages = {
     cta: ['What should people understand about your practice?', 'Share your current accounts, practice focus, and the content you want to create. A short outline is enough to discuss the right channels and starting point.'],
     ctaButton: ['Discuss your social media', '/contact/#contact-enquiry'],
     related: [
-      ['Social Media & LinkedIn service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
+      ['Social Media Marketing service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
       ['Personal Branding for Lawyers & Legal Professionals', '/services/personal-branding-for-lawyers-legal-professionals/'],
       ['SEO for Law Firms & Legal Professionals', '/services/seo-for-the-legal-industry/'],
       ['Marketing for Law Firms', '/law-firm-marketing/'],
@@ -529,7 +529,7 @@ const pages = {
     cta: ['What should your audience understand more clearly?', 'Share your current accounts, intended audience, and the expertise or product you want to explain. A short outline is enough to discuss the right starting point.'],
     ctaButton: ['Discuss your social media', '/contact/#contact-enquiry'],
     related: [
-      ['Social Media & LinkedIn service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
+      ['Social Media Marketing service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
       ['Personal Branding for Financial Advisors & Wealth Professionals', '/services/personal-branding-for-financial-advisors-wealth-professionals/'],
       ['SEO for Financial Advisors & Wealth Firms', '/services/seo-for-financial-advisors-wealth-firms/'],
       ['Marketing for Financial Firms', '/financial-firm-marketing/'],
@@ -637,7 +637,7 @@ const pages = {
     ctaButton: ['Discuss your healthcare social media', '/contact/#contact-enquiry'],
     ctaMicrocopy: 'Please do not include patient information.',
     related: [
-      ['Social Media & LinkedIn service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
+      ['Social Media Marketing service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
       ['Website Design for Healthcare Clinics & Doctors', '/services/website-design-for-healthcare-clinics-doctors-magneo/'],
       ['SEO for Healthcare & MedTech', '/services/seo-for-the-healthcare-medtech-industry/'],
       ['Marketing for Healthcare', '/healthcare-marketing/'],
@@ -703,7 +703,7 @@ const pages = {
     cta: ['What does your product need people to understand?', 'Share your product, target audience, and the demonstration or launch you want to communicate.'],
     ctaButton: ['Discuss your product content', '/contact/#contact-enquiry'],
     related: [
-      ['Social Media & LinkedIn service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
+      ['Social Media Marketing service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
       ['Social Media Marketing for Crypto & AI Companies', '/services/crypto-and-ai-social-media/'],
       ['Website Design for Tech Companies & SaaS Products', '/services/website-design-for-tech-companies-saas-products-magneo/'],
       ['Marketing for Tech & SaaS', '/tech-company-marketing/'],
@@ -816,8 +816,8 @@ const pages = {
     cta: ['What should your audience understand about your product?', 'Share your product, current channels, and the ideas or updates you want to communicate. A short outline is enough to discuss suitable formats and platforms.'],
     ctaButton: ['Discuss your social media', '/contact/#contact-enquiry'],
     related: [
-      ['Social Media & LinkedIn service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
-      ['Social Media & LinkedIn for Tech, SaaS & AI', '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/'],
+      ['Social Media Marketing service', '/services/social-media-linkedin-marketing-for-regulated-industries/'],
+      ['Social Media Marketing for Tech, SaaS & AI', '/services/social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo/'],
       ['AI-Powered Digital Marketing', '/services/ai-powered-digital-marketing/'],
       ['Marketing for Tech & SaaS', '/tech-company-marketing/'],
     ],
@@ -1120,7 +1120,7 @@ const pages = {
     included: [], examples: [], processEyebrow: 'Project process', processHeading: 'A repeatable process for consistent publishing.', process: [['Direction','Magneo establishes the audience, content themes, brand voice, and selected channels.'],['Production','Source material becomes posts, visuals, and video, with formats adapted for their intended platforms.'],['Review','Editorial checks and your feedback refine the message, factual details, and professional perspective.'],['Publication and learning','Approved assets are delivered or scheduled where included. Available performance data guide the next content cycle.']],
     faqItems: [['How much of my time will this require?','For most experts, the ongoing process is designed to require no more than two hours a week for sharing ideas, recording, and reviewing content. Initial setup or larger shoots may need additional time, agreed in advance.'],['Do I need to appear on camera?','It depends on the format. For expert-led content, appearing on camera is strongly recommended so people can get to know the person behind the expertise. Voiceovers, graphics, product demonstrations, and other formats can also be part of the plan.'],['Can you write in my professional voice?','Yes. Your writing, interviews, and feedback establish the direction. A custom GPT can support drafting with your brand-voice guidance, while editing keeps the final content aligned with your perspective.'],['How often should content be published?','Daily video is a useful starting ambition where the niche and format support it. The final schedule should reflect the quality of the source material, the selected channels, and the production package.'],['Can you handle publishing?','Scheduling and publishing can be included for supported channels. The proposal defines account access, approvals, and responsibilities.'],['Are comments, messages, and paid advertising included?','These are separate responsibilities and are included only when specified. Content production does not automatically include community management, direct-message outreach, or paid campaign management.']],
     cta: ['Give your expertise a consistent presence.','Build a content plan around the ideas, questions, and services your audience needs to understand.'], ctaButton: ['Plan your social content','/contact/#contact-enquiry'],
-    related: [['AI Video Production','/services/ai-ugc-ai-video-production/'],['AI Content Marketing','/services/ai-content-marketing/'],['Social Media & LinkedIn Marketing','/services/social-media-linkedin-marketing-for-regulated-industries/']], relatedIndustries: [['Law firms','/law-firm-marketing/'],['Financial firms','/financial-firm-marketing/'],['Healthcare providers','/healthcare-marketing/'],['Tech and SaaS companies','/tech-company-marketing/']], resourcesAfterCta: true,
+    related: [['AI Video Production','/services/ai-ugc-ai-video-production/'],['AI Content Marketing','/services/ai-content-marketing/'],['Social Media Marketing Marketing','/services/social-media-linkedin-marketing-for-regulated-industries/']], relatedIndustries: [['Law firms','/law-firm-marketing/'],['Financial firms','/financial-firm-marketing/'],['Healthcare providers','/healthcare-marketing/'],['Tech and SaaS companies','/tech-company-marketing/']], resourcesAfterCta: true,
   },
   'ai-ugc-ai-video-production': {
     family: 'ai', pageClass: 'scr-page-ai-video-expanded', title: 'AI Video Production & UGC-Style Creative', seoTitle: 'AI Video Production & UGC-Style Creative | Magneo', metaDescription: 'AI video production, UGC-style creative, product demos, explainers, and ad variations. Explore scripting, editing, and finished video with Magneo.', heroEyebrow: 'AI VIDEO & CREATIVE PRODUCTION',
@@ -1133,7 +1133,7 @@ const pages = {
     campaignFlow: { heading: 'One core video, several campaign versions.', text: 'An approved message can support a main explainer, shorter cuts, alternative opening hooks, and platform-specific versions. This makes it possible to explore different creative approaches without starting every asset from scratch.', steps: ['Core message','Main video','Short cuts','Hook variations','Platform versions'], note: 'Example content series' },
     included: [], examples: [], processEyebrow: 'Project process', processHeading: 'A clear route from concept to delivery.', process: [['Creative direction','Magneo establishes the audience, message, intended placement, and video format.'],['Script and production','The approved direction becomes a script, visual sequence, and first edit.'],['Refinement','Feedback shapes the final wording, pacing, visuals, and presentation.'],['Final delivery','Approved versions are exported for the agreed channels, with any relevant usage guidance.']],
     faqItems: [['Can you create a video if I only have an idea?','Yes. Concept development and scripting can be included. A brief description of the audience, offer, and intended use provides a starting point.'],['Can you edit footage I already have?','Yes. Existing recordings can be shaped into finished videos or shorter clips, depending on their quality and the intended format.'],['Can you create an AI presenter?','Yes. An AI presenter can form part of a scripted production. The visual direction and presentation are agreed before production, with permission required for any use of a real person’s likeness or voice.'],['Are UGC-style videos real customer reviews?','No. UGC-style describes the conversational production format. Scripted or synthetic presenters are not represented as actual customers sharing genuine experiences.'],['Can the videos be used in advertising?','Videos can be produced for paid placements. Intended use, asset rights, and platform requirements need to be considered during the brief. Media buying is a separate service unless included.'],['How many versions are included?','The proposal specifies durations, aspect ratios, hook variations, captions, and revision rounds. Additional versions can be scoped separately.'],['Can you guarantee a viral video?','Viral content is part of the research: Magneo regularly reviews successful Reels, studying their topics, opening hooks, and editing styles to inform your videos. Not every video will go viral, but the aim is to create content that gets noticed and shared within your industry. Consistent publishing and testing help identify what resonates with your audience.']],
-    cta: ['Make your next message worth watching.','Start with a product, a service, or an idea. Magneo can shape it into a video format that fits the audience and the channel.'], ctaButton: ['Discuss your video project','/contact/#contact-enquiry'], related: [['AI Social Media Marketing','/services/ai-social-media-marketing/'],['AI Content Marketing','/services/ai-content-marketing/'],['Social Media & LinkedIn Marketing','/services/social-media-linkedin-marketing-for-regulated-industries/']], relatedIndustries: [['Law firms','/law-firm-marketing/'],['Financial firms','/financial-firm-marketing/'],['Healthcare providers','/healthcare-marketing/'],['Tech and SaaS companies','/tech-company-marketing/']], resourcesAfterCta: true,
+    cta: ['Make your next message worth watching.','Start with a product, a service, or an idea. Magneo can shape it into a video format that fits the audience and the channel.'], ctaButton: ['Discuss your video project','/contact/#contact-enquiry'], related: [['AI Social Media Marketing','/services/ai-social-media-marketing/'],['AI Content Marketing','/services/ai-content-marketing/'],['Social Media Marketing Marketing','/services/social-media-linkedin-marketing-for-regulated-industries/']], relatedIndustries: [['Law firms','/law-firm-marketing/'],['Financial firms','/financial-firm-marketing/'],['Healthcare providers','/healthcare-marketing/'],['Tech and SaaS companies','/tech-company-marketing/']], resourcesAfterCta: true,
   },
   'ai-web-design-conversion': {
     family: 'ai', pageClass: 'scr-page-ai-web-expanded', title: 'AI-Powered Web Design & Conversion-Focused Development', seoTitle: 'AI Web Design & Conversion-Focused Development | Magneo', metaDescription: 'AI-powered web design and development for business websites and landing pages. Explore copy, responsive builds, and conversion-focused improvements.', heroEyebrow: 'AI WEB DESIGN & DEVELOPMENT',

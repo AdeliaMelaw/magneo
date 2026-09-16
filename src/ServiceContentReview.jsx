@@ -603,7 +603,7 @@ const pageData = {
     ],
     cta: ['What do you want to be known for?','Tell us about your work, the people you want to reach, and what your current profile does not yet communicate.'],
     ctaButton: ['Talk about your personal brand', '/contact/#contact-enquiry'],
-    related: [['Social Media & LinkedIn','/services/social-media-linkedin-marketing-for-regulated-industries/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
+related: [['Social Media Marketing','/services/social-media-linkedin-marketing-for-regulated-industries/'],['Website Design','/services/website-design-for-regulated-professional-industries-magneo/']],
   },
 };
 
