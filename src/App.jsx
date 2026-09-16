@@ -226,8 +226,8 @@ function GuideInitial(){
     <p className="guide-intro">A practical guide to explaining your expertise, choosing useful content topics and building a consistent presence online.</p>
     <div className="guide-actions"><a className="btn guide-form-cta" href="#guide-form">Download Guide <span className="guide-form-arrow" aria-hidden="true">→</span></a><a className="btn outline" href="#tools-legal-niche">What is inside</a></div>
     <div className="guide-points"><span>Areas of expertise</span><span>Channel choices</span><span>Educational content</span><span>Content review and professional requirements</span></div>
-  </div><aside className="guide-form-card" id="guide-form-section"><div className="label">Fill out the form</div><h2>Get your free guide</h2><p>Complete the form to download the guide securely.</p>
-    <form className="magneo-guide-form"><div className="guide-form-row"><label>First name<input id="guide-form" name="firstname" autoComplete="given-name" required/></label><label>Last name<input name="lastname" autoComplete="family-name" required/></label></div><label>Email address<input name="email" type="email" autoComplete="email" required/></label><label className="guide-consent"><input name="consent" type="checkbox" required/><span>I agree that Magneo may store and use my information to provide the requested guide. Read the <a href="/privacy-policy/">Magneo Privacy Policy</a>.</span></label><button className="btn" type="submit">DOWNLOAD THE GUIDE</button></form>
+  </div><aside className="guide-form-card" id="guide-form-section"><div className="label">Fill out the form</div><h2>Get your free guide</h2><p>Complete the form to receive your guide.</p>
+    <div className="guide-hubspot-form" id="guide-form" tabIndex={-1} aria-label="Request the free guide"/><p className="guide-form-privacy">Read the <a href="/privacy-policy/">Magneo Privacy Policy</a>.</p><p className="guide-form-fallback">If the form does not appear, <a href="https://share-na3.hsforms.com/1dsi69O67QPaUBxdLhoq8AQ5o2p69">open the guide form</a>.</p><div className="guide-download-ready" hidden><strong>Your guide is ready.</strong><a className="btn guide-download-button" href="/downloads/personal-branding-guide-legal-professionals.pdf">Download Guide <span aria-hidden="true">→</span></a></div>
   </aside></div></section>;
 }
 function Footer(){
@@ -271,3 +271,4 @@ export default function App(){ return <Layout><ScrollTop/><Routes>
   <Route path="personal-branding-ultimate-guide-legal-professionals" element={<GuideInitial/>}/>
   <Route path="*" element={<Home/>}/>
 </Routes></Layout>; }
+

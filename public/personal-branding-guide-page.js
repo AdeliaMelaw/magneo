@@ -4,6 +4,10 @@
     '/branding-guide-for-lawyers'
   ];
   var CANONICAL_PATH = '/personal-branding-ultimate-guide-legal-professionals';
+  var HUBSPOT_SRC = 'https://js-na3.hsforms.net/forms/embed/v2.js';
+  var HUBSPOT_PORTAL_ID = '342767601';
+  var HUBSPOT_FORM_ID = '76c8baf4-eebb-40f6-9407-174b868abc01';
+  var GUIDE_DOWNLOAD_URL = '/downloads/personal-branding-guide-legal-professionals.pdf';
 
   function currentPath() {
     return window.location.pathname.replace(/\/$/, '');
@@ -57,8 +61,7 @@
 
   function activateGuideForm(event) {
     var formSection = document.getElementById('guide-form');
-    var firstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
-    if (!formSection || !firstField) return true;
+    if (!formSection) return true;
     if (event) {
       event.preventDefault();
       event.stopPropagation();
@@ -66,8 +69,8 @@
     var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
     window.setTimeout(function () {
-      var currentFirstField = document.querySelector('.magneo-guide-form input[name="firstname"]');
-      if (currentFirstField) currentFirstField.focus({ preventScroll: true });
+      var firstField = formSection.querySelector('input:not([type="hidden"]), iframe');
+      (firstField || formSection).focus({ preventScroll: true });
     }, reduceMotion ? 0 : 450);
     return false;
   }
@@ -83,56 +86,48 @@
     });
   }
 
-  function bindGuideForm() {
-    if (document.documentElement.dataset.guideFormBound === 'true') return;
-    document.documentElement.dataset.guideFormBound = 'true';
-    var currentDownloadUrl = '';
-    document.addEventListener('submit', function (event) {
-      var form = event.target;
-      if (!form.matches || !form.matches('.magneo-guide-form') || !isGuidePage()) return;
-      event.preventDefault();
-      var button = form.querySelector('button[type="submit"]');
-      var status = form.querySelector('.guide-form-status');
-      button.disabled = true;
-      status.textContent = 'Preparing your Magneo guide…';
-      var payload = {
-        firstname: form.elements.firstname.value.trim(),
-        lastname: form.elements.lastname.value.trim(),
-        email: form.elements.email.value.trim(),
-        consent: form.elements.consent.checked,
-        website: form.elements.website.value
-      };
-      var ready = document.querySelector('.guide-download-ready');
-      var download = document.querySelector('.guide-download-button');
-      ready.hidden = true;
-      download.removeAttribute('href');
-      fetch('/api/legal-guide-download', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      }).then(function (response) {
-        if (!response.ok) throw new Error('request failed');
-        return response.blob();
-      }).then(function (blob) {
-        if (currentDownloadUrl) URL.revokeObjectURL(currentDownloadUrl);
-        var url = URL.createObjectURL(blob);
-        currentDownloadUrl = url;
-        download.href = url;
-        ready.hidden = false;
-        status.textContent = 'Your guide is ready. Use the download button below.';
-        form.reset();
-        window.setTimeout(function () {
-          if (currentDownloadUrl !== url) return;
-          URL.revokeObjectURL(url);
-          currentDownloadUrl = '';
-          download.removeAttribute('href');
-          ready.hidden = true;
-        }, 300000);
-      }).catch(function () {
-        status.textContent = 'The guide could not be prepared. Please email contact@magneo.ca and we will help.';
-      }).finally(function () {
-        button.disabled = false;
-      });
+  function showGuideDownload() {
+    if (!isGuidePage()) return;
+    var ready = document.querySelector('.guide-download-ready');
+    if (ready) ready.hidden = false;
+  }
+
+  function bindHubSpotSuccess() {
+    if (document.documentElement.dataset.guideHubspotSuccessBound === 'true') return;
+    document.documentElement.dataset.guideHubspotSuccessBound = 'true';
+    window.addEventListener('message', function (event) {
+      var data = event.data || {};
+      if (data.type !== 'hsFormCallback' || data.eventName !== 'onFormSubmitted' || data.id !== HUBSPOT_FORM_ID) return;
+      showGuideDownload();
+    });
+  }
+
+  function mountHubSpotForm() {
+    if (!isGuidePage()) return;
+    var target = document.getElementById('guide-form');
+    if (!target || target.dataset.hubspotMounted === 'true') return;
+    if (!window.hbspt || !window.hbspt.forms) {
+      if (!document.querySelector('script[data-magneo-guide-hubspot]')) {
+        var script = document.createElement('script');
+        script.src = HUBSPOT_SRC;
+        script.charset = 'utf-8';
+        script.dataset.magneoGuideHubspot = 'true';
+        script.onload = mountHubSpotForm;
+        document.head.appendChild(script);
+      }
+      return;
+    }
+    target.dataset.hubspotMounted = 'true';
+    window.hbspt.forms.create({
+      portalId: HUBSPOT_PORTAL_ID,
+      formId: HUBSPOT_FORM_ID,
+      region: 'na3',
+      target: '#guide-form',
+      onFormReady: function () {
+        var fallback = document.querySelector('.guide-form-fallback');
+        if (fallback) fallback.hidden = true;
+      },
+      onFormSubmitted: showGuideDownload
     });
   }
 
@@ -168,16 +163,11 @@
           <aside class="guide-form-card" id="guide-form-section">\
             <div class="label">Fill out the form</div>\
             <h2>Get your free guide</h2>\
-            <p>Complete the form to download the guide securely.</p>\
-            <form class="magneo-guide-form">\
-              <div class="guide-form-row"><label>First name<input id="guide-form" name="firstname" autocomplete="given-name" required></label><label>Last name<input name="lastname" autocomplete="family-name" required></label></div>\
-              <label>Email address<input name="email" type="email" autocomplete="email" required></label>\
-              <input class="guide-honeypot" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">\
-              <label class="guide-consent"><input name="consent" type="checkbox" required><span>I agree that Magneo may store and use my information to provide the requested guide. Read the <a href="https://magneo.ca/privacy-policy/" target="_blank" rel="noopener">Magneo Privacy Policy</a>.</span></label>\
-              <button class="btn" type="submit">DOWNLOAD THE GUIDE</button>\
-              <p class="guide-form-status" role="status" aria-live="polite"></p>\
-            </form>\
-            <div class="guide-download-ready" hidden><strong>Your guide is ready.</strong><a class="btn guide-download-button" download="magneo-personal-branding-guide-legal-professionals.pdf">Download Guide <span aria-hidden="true">→</span></a></div>\
+            <p>Complete the form to receive your guide.</p>\
+            <div class="guide-hubspot-form" id="guide-form" tabindex="-1" aria-label="Request the free guide"></div>\
+            <p class="guide-form-privacy">Read the <a href="/privacy-policy/">Magneo Privacy Policy</a>.</p>\
+            <p class="guide-form-fallback">If the form does not appear, <a href="https://share-na3.hsforms.com/1dsi69O67QPaUBxdLhoq8AQ5o2p69">open the guide form</a>.</p>\
+            <div class="guide-download-ready" hidden><strong>Your guide is ready.</strong><a class="btn guide-download-button" href="' + GUIDE_DOWNLOAD_URL + '">Download Guide <span aria-hidden="true">→</span></a></div>\
           </aside>\
         </div>\
       </section>\
@@ -231,7 +221,8 @@
         </div>\
       </section>';
 
-    bindGuideForm();
+    mountHubSpotForm();
+    bindHubSpotSuccess();
     bindGuideAnchors();
   }
 
@@ -244,6 +235,7 @@
     style.textContent += '.guide-form-cta{white-space:nowrap}.guide-form-cta:focus-visible{outline:3px solid #8cff00;outline-offset:4px}.guide-download-ready[hidden]{display:none}.magneo-guide-form{display:grid;gap:16px;margin-top:20px}.guide-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.magneo-guide-form label{display:grid;gap:7px;color:#1d2a32;font-weight:650;font-size:14px}.magneo-guide-form input{box-sizing:border-box;width:100%;background:#f7fafc;color:#111;border:1px solid #aebcc6;border-radius:8px;padding:12px;font:inherit}.magneo-guide-form input:focus-visible,.magneo-guide-form a:focus-visible,.magneo-guide-form button:focus-visible{outline:3px solid #111;outline-offset:3px}.magneo-guide-form .guide-consent{display:flex;align-items:flex-start;gap:10px;font-weight:400;line-height:1.5}.guide-consent input{width:20px;min-width:20px;height:20px;margin-top:2px}.guide-consent a{color:#2f6200;text-decoration:underline}.magneo-guide-form button{justify-self:start}.magneo-guide-form button:disabled{opacity:.55;cursor:wait}.guide-form-status{min-height:1.5em;margin:0!important;font-size:14px}.guide-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important}@media(max-width:620px){.guide-form-row{grid-template-columns:1fr}}';
     style.textContent += '.guide-hero{padding-top:56px}@media(max-width:980px){.guide-hero{padding-top:40px}}@media(max-width:620px){.guide-hero{padding-top:28px}}';
     style.textContent += '.guide-detail{padding:64px 0}.guide-detail h2{font-size:clamp(34px,4vw,52px);margin:0 0 18px}.guide-detail .guide-tip-intro{max-width:780px;margin:0 0 20px;color:#59636b;font-size:18px;line-height:1.6}.guide-tip-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:36px;list-style:decimal-leading-zero;margin:0;padding-left:30px}.guide-tip-list li{min-width:0;padding:12px 0;border-bottom:1px solid #e8e8e8;color:#34424c;font-size:16px;line-height:1.5}.guide-tip-list li::marker{color:#5aaa00;font-size:14px;font-weight:700}.guide-tip-list strong{color:#111}@media(max-width:620px){.guide-detail{padding:40px 0}.guide-detail .guide-tip-intro{font-size:16px}.guide-tip-list{grid-template-columns:1fr;padding-left:26px}.guide-tip-list li{padding:11px 0}}';
+    style.textContent += '.guide-hubspot-form{min-width:0;margin-top:18px;--hsf-global__font-family:"DM Sans",Arial,sans-serif;--hsf-global__color:#111;--hsf-background__background-color:#fff;--hsf-background__padding:0;--hsf-field-label__color:#1d2a32;--hsf-button__background-color:#8cff00;--hsf-button__color:#111;--hsf-button__border-radius:999px}.guide-hubspot-form :is(form,iframe){display:block;width:100%!important;max-width:100%!important}.guide-form-card .guide-form-privacy,.guide-form-card .guide-form-fallback{font-size:13px;line-height:1.5;margin:14px 0 0}.guide-form-card .guide-form-privacy a,.guide-form-card .guide-form-fallback a{color:#2f6200;text-decoration:underline;text-underline-offset:2px}.guide-form-fallback[hidden]{display:none}.guide-download-ready .btn{color:#111}';
     document.head.appendChild(style);
   }
 
@@ -254,12 +246,15 @@
     var timer = window.setInterval(function () {
       attempts += 1;
       var staticMain = document.querySelector('main[data-guide-static="true"]');
-      if (staticMain) return;
-      render();
-      if (document.querySelector('main[data-guide-rendered="true"]') || attempts > 30) window.clearInterval(timer);
+      if (!staticMain) render();
+      mountHubSpotForm();
+      bindHubSpotSuccess();
+      bindGuideAnchors();
+      if (attempts > 100) window.clearInterval(timer);
     }, 100);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();
 })();
+
