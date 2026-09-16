@@ -15,7 +15,7 @@ export const articles = {
   legalAnalytics: ['Measuring Marketing Incrementality and ROI in Legal Practices', `${BLOG}/law-firm-marketing-analytics-2025/`],
   advisorEmail: ['Email Marketing for Advisors: Timing, Personalization & Conversions', `${BLOG}/email-marketing-for-advisors-in-2025-timing-personalization-conversions/`],
   saasCommunity: ['Community Building & User-Generated Content for SaaS & AI Companies', `${BLOG}/community-building-user-generated-content-for-saas-ai-companies/`],
-  healthcareAds: ['Google Ads & PerformanceMax Strategies for Healthcare Providers', `${BLOG}/google-ads-performance%e2%80%91max-strategies-for-healthcare-providers/`],
+  healthcareAds: ['Google Ads & PerformanceMax Strategies for Healthcare Providers', `${BLOG}/google-ads-performance-max-strategies-for-healthcare-providers/`],
   financeSocial: ['Authentic Social Media Marketing for Financial Professionals', `${BLOG}/authentic-social-media-marketing-for-financial-professionals/`],
   advisorAi: ['Using AI to Repurpose Content and Personalize Advisor Outreach', `${BLOG}/using-ai-to-repurpose-content-and-personalize-advisor-outreach/`],
   legalAi: ['AI Marketing for Law Firms: Balancing AI and Human Creativity', `${BLOG}/ai-marketing-for-law-firms/`],

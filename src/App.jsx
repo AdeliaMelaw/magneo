@@ -204,7 +204,7 @@ const industriesHubServices = [
 ];
 const industriesHubInsights = [
   ['Reimagining Digital Marketing Fundamentals for Law Firms', `${BLOG}/blog/reimagining-digital-marketing-fundamentals-for-law-firms-2025/`],
-  ['Quality Over Quantity: Creating Engaging Financial Content That Converts', `${BLOG}/quality-over-quantity-creating-engaging-financial-content-that-converts/`],
+  ['Quality Over Quantity: Creating Engaging Financial Content That Converts', 'https://blog.magneo.ca/blog/quality-over-quantity-creating-engaging-financial-content-that-converts/'],
   ['Reputation Management for Clinics', `${BLOG}/blog/reputation-management-for-clinics-growing-your-google-profile-in-2025/`],
   ['Hyper-Personalization with AI for SaaS & Tech Brands', `${BLOG}/blog/hyper-personalization-with-ai-for-saas-tech-brands/`]
 ];
