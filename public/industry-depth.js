@@ -79,7 +79,7 @@
       '<div class="sd-block sd-faq"><div><div class="label">FAQ</div><h2>Common questions before starting.</h2></div><div class="sd-faq-list">',
       '<details><summary>Is this different from a regular marketing plan?</summary><p>Yes. The work is built around your industry, buyer expectations, trust signals, and the rules that shape what you can say.</p></details>',
       '<details open><summary>Do you create both strategy and pages?</summary><p>Yes. We can map the strategy, build the page structure, write the messaging, and connect the services, industry pages, and insights together.</p></details>',
-      '<details><summary>Can this support SEO migration?</summary><p>Yes. The sections, links, and page structure are designed to preserve important URLs and strengthen internal linking after the WordPress-to-React move.</p></details>',
+      '<details><summary>Can existing page URLs be kept during a redesign?</summary><p>Existing URLs can be retained where appropriate. Any necessary URL changes and redirects are reviewed during planning, along with links between related pages.</p></details>',
       '<details><summary>Can you adapt this for sub-industries?</summary><p>Yes. The same structure can be expanded for wealth advisors, clinics, SaaS companies, legal practices, and other focused markets.</p></details>',
       '</div></div>',
       '</div>'
