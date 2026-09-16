@@ -8,6 +8,15 @@
   var HUBSPOT_PORTAL_ID = '342767601';
   var HUBSPOT_FORM_ID = '76c8baf4-eebb-40f6-9407-174b868abc01';
   var GUIDE_DOWNLOAD_URL = '/downloads/personal-branding-guide-legal-professionals.pdf';
+  var HUBSPOT_FORM_CSS = [
+    '.hs-form{font-family:"DM Sans",Arial,sans-serif;color:#1d2a32;background:#fff}',
+    '.hs-form .hs-form-field{margin-bottom:16px}',
+    '.hs-form .hs-form-field>label{display:block;margin-bottom:7px;color:#1d2a32;font-size:14px;font-weight:650}',
+    '.hs-form input:not([type="submit"]):not([type="checkbox"]),.hs-form select,.hs-form textarea{box-sizing:border-box;width:100%;padding:12px;border:1px solid #cfd8df;border-radius:8px;background:#f7fafc;color:#111;font:inherit}',
+    '.hs-form .hs-button,.hs-form input[type="submit"]{background:#8cff00!important;color:#111!important;border:0!important;border-radius:999px!important;padding:14px 22px!important;font:700 14px "DM Sans",Arial,sans-serif!important;cursor:pointer}',
+    '.hs-form :is(input,select,textarea,button):focus-visible{outline:3px solid #5aaa00;outline-offset:2px}',
+    '.hs-form .hs-error-msg{color:#a00000}'
+  ].join('');
 
   function currentPath() {
     return window.location.pathname.replace(/\/$/, '');
@@ -123,6 +132,8 @@
       formId: HUBSPOT_FORM_ID,
       region: 'na3',
       target: '#guide-form',
+      css: HUBSPOT_FORM_CSS,
+      submitText: 'GET MY GUIDE',
       onFormReady: function () {
         var fallback = document.querySelector('.guide-form-fallback');
         if (fallback) fallback.hidden = true;
