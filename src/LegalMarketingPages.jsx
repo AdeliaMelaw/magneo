@@ -81,7 +81,7 @@ const practicePages = {
     h1: 'Marketing for family-law firms', seoTitle: 'Marketing for Family-Law Firms | Magneo',
     meta: 'Websites, useful articles and videos, local search, and focused campaigns for family-law firms, with clear service and consultation information.',
     description: 'Help prospective clients understand your services and feel prepared to make contact. Clear websites, useful articles and videos, local search and focused campaigns can explain how your firm helps with separation, parenting arrangements and other family-law matters.',
-    primary: 'Discuss your family-law marketing', secondary: 'Explore legal website concepts', secondaryHref: '/portfolio/#portfolio-previews',
+    primary: 'Discuss your family-law marketing', secondary: 'Explore legal website concepts', secondaryHref: '/portfolio/#portfolio-websites',
     focusHeading: 'Make the first conversation easier to prepare for.',
     focus: [['Service pages based on your practice', 'Organise pages around the family-law matters your firm actually handles, with clear descriptions of each service.'], ['Lawyers and consultations', 'Introduce your lawyers accurately and explain how an initial consultation works and what prospective clients should prepare.'], ['Enquiries matched to capacity', 'Set up contact routes and follow-up tasks around the firm’s intake process, availability and capacity.']],
     contentHeading: 'Answer practical questions without promising outcomes.',

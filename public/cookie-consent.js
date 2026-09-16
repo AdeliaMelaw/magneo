@@ -138,7 +138,7 @@
   }
 
   function addFooterSettings() {
-    var rows = document.querySelectorAll('.footer-bottom > div, .magneo-blog-footer .magneo-footer-bottom');
+    var rows = document.querySelectorAll('.footer-bottom > div, .magneo-blog-footer .magneo-footer-bottom, footer.nd-footer, footer.al-footer, footer.av2-footer, footer.hl6-footer, footer.fn5-footer, footer.lt3-footer, footer.nl4-footer, footer.mh7-footer');
     rows.forEach(function (row) {
       if (row.querySelector('.magneo-cookie-settings-link')) return;
       var link = make('a', { href: '#cookie-settings', class: 'magneo-cookie-settings-link' }, 'Cookie settings');
