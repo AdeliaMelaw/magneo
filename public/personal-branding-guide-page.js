@@ -134,7 +134,19 @@
       target: '#guide-form',
       css: HUBSPOT_FORM_CSS,
       submitText: 'GET MY GUIDE',
-      onFormReady: function () {
+      onFormReady: function ($form) {
+        try {
+          var formNode = $form && ($form[0] || $form);
+          var formDocument = formNode && formNode.ownerDocument;
+          if (formDocument && formDocument.head && !formDocument.getElementById('magneo-guide-form-style')) {
+            var formStyle = formDocument.createElement('style');
+            formStyle.id = 'magneo-guide-form-style';
+            formStyle.textContent = HUBSPOT_FORM_CSS;
+            formDocument.head.appendChild(formStyle);
+          }
+        } catch (error) {
+          // Keep HubSpot's form usable if its iframe does not expose its document.
+        }
         var fallback = document.querySelector('.guide-form-fallback');
         if (fallback) fallback.hidden = true;
       },
