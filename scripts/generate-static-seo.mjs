@@ -255,7 +255,22 @@ function injectGuideStaticHtml(html) {
       <form class="magneo-guide-form"><div class="guide-form-row"><label>First name<input id="guide-form" name="firstname" autocomplete="given-name" required></label><label>Last name<input name="lastname" autocomplete="family-name" required></label></div><label>Email address<input name="email" type="email" autocomplete="email" required></label><input class="guide-honeypot" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><label class="guide-consent"><input name="consent" type="checkbox" required><span>I agree that Magneo may store and use my information to provide the requested guide. Read the <a href="https://magneo.ca/privacy-policy/" target="_blank" rel="noopener">Magneo Privacy Policy</a>.</span></label><button class="btn" type="submit">DOWNLOAD THE GUIDE</button></form>
     </aside></div></section>
     <section class="guide-about"><div class="container guide-two"><div><div class="label">About the guide</div><h2 id="tools-legal-niche">A clearer way to explain your legal practice.</h2><p>The guide covers your intended audience, professional presentation, useful content topics and the channels that fit your work. Review any marketing material against your own professional requirements before publishing.</p></div><ul class="guide-checklist"><li>What a personal brand is and why it matters</li><li>How to identify the people you want to reach</li><li>Professional presentation and profile messaging</li><li>Eight content types to consider for your practice</li><li>How to choose platforms for your audience</li><li>Relationships and referrals beyond online content</li></ul></div></section>
-    <section class="guide-detail"><div class="container"><div class="label">Inside the framework</div><h2>A practical path to a clearer professional presence.</h2><p>Clarify your areas of expertise, show accurate credentials and examples, create useful content and choose appropriate channels.</p></div></section>
+    <section class="guide-detail"><div class="container">
+      <h2>10 practical tips to grow your personal brand</h2>
+      <p class="guide-tip-intro">Discover practical advice from the guide to make your expertise more visible, strengthen your professional image and build valuable connections.</p>
+      <ol class="guide-tip-list">
+        <li><strong>Define your expertise.</strong> Get clear about what you want to be known for.</li>
+        <li><strong>Know your ideal clients.</strong> Understand their needs and explain how your expertise helps.</li>
+        <li><strong>Strengthen your first impression.</strong> Present a professional image online and in person.</li>
+        <li><strong>Improve your bio.</strong> Explain who you help and what makes your approach different.</li>
+        <li><strong>Create useful content.</strong> Turn client questions and professional insights into engaging posts.</li>
+        <li><strong>Repurpose your ideas.</strong> Turn articles, interviews and videos into multiple pieces of content.</li>
+        <li><strong>Choose the right platforms.</strong> Focus on the channels your audience actually uses.</li>
+        <li><strong>Expand your visibility.</strong> Explore podcasts, guest articles, webinars and speaking opportunities.</li>
+        <li><strong>Build referral relationships.</strong> Make meaningful connections and follow up consistently.</li>
+        <li><strong>Support your business growth.</strong> Connect your reputation, specialisation and services with your goals.</li>
+      </ol>
+    </div></section>
     <section class="guide-final"><div class="container"><h2>Ready to make your expertise easier to trust?</h2><a class="btn guide-form-cta" href="#guide-form" onclick="return window.magneoGuideFormCta ? window.magneoGuideFormCta(event) : true">Download Guide <span class="guide-form-arrow" aria-hidden="true">→</span></a></div></section>
   </main>`;
   return html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
