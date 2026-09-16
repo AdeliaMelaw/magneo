@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './styles/legal-concept-notice.css';
+import LegalConceptNotice from './LegalConceptNotice.jsx';
 
 const cases = [
   ['01', 'Motor vehicle collisions', 'Injuries involving cars, motorcycles, pedestrians, cyclists, and rideshare vehicles.'],
@@ -51,7 +52,7 @@ export default function PersonalInjuryBoldTest(){
   }, []);
 
   return <div className="av2 av2-bold-test">
-    <div className="concept-notice"><strong>Original Magneo website concept — fictional firm</strong></div>
+    <LegalConceptNotice/>
     <header className="av2-nav">
       <a href="/portfolio/" className="av2-logo" aria-label="Back to portfolio"><b aria-hidden="true">←</b><span>BACK TO PORTFOLIO</span></a>
       <nav aria-label="Primary navigation"><a href="#av2-cases">Cases</a><a href="#av2-process">Process</a><a href="#av2-lawyer">Lawyer</a><a href="#av2-faq">FAQ</a></nav>
@@ -114,6 +115,7 @@ export default function PersonalInjuryBoldTest(){
         <div className="av2-consult-title"><span className="av2-label">05 / Free confidential consultation</span><h2>Tell us what happened.<br/>Start with what you know.</h2><p>A few details are enough to begin. Share your question and how you would like to be contacted.</p><div className="av2-assessment"><strong>Your initial assessment</strong><ul><li>Discuss what happened and the questions you have.</li><li>Explore whether the firm may be able to help.</li><li>Understand proposed next steps and fees before deciding whether to hire the firm.</li></ul><p>The initial assessment is free. There is no obligation to hire the firm.</p></div>{Object.entries({'Service area':firmDetails.serviceArea,'Meeting formats':firmDetails.meetingFormats,Languages:firmDetails.languages,'Intake hours':firmDetails.intakeHours,'Response expectations':firmDetails.responseExpectations}).some(([,value])=>value) && <dl className="av2-firm-details av2-contact-details">{Object.entries({'Service area':firmDetails.serviceArea,'Meeting formats':firmDetails.meetingFormats,Languages:firmDetails.languages,'Intake hours':firmDetails.intakeHours,'Response expectations':firmDetails.responseExpectations}).filter(([,value])=>value).map(([label,value])=><div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>}</div>
         <form onSubmit={(e)=>{e.preventDefault(); const contact=e.currentTarget.elements.contact; const value=contact.value.trim(); contact.setCustomValidity(contactMethod==='phone' && !/^[+\d][\d\s().-]{6,}$/.test(value)?'Please provide a phone number.':contactMethod==='email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)?'Please provide an email address.':''); if(!e.currentTarget.reportValidity()) return; setSent(true)}}>
           {sent ? <div className="av2-success" role="status"><b>✓</b><h3>This is a demonstration form.</h3><p>No enquiry has been sent.</p><button type="button" onClick={()=>setSent(false)}>Back to form</button></div> : <>
+            <p className="concept-demo-note">Demonstration form — nothing is sent or stored. Use example details only; this does not contact a lawyer.</p>
             <label><span>01 · Full name</span><input required placeholder="Your name" autoComplete="name"/></label>
             <label><span>02 · Phone or email</span><input name="contact" required placeholder="How should we reach you?" onInput={(e)=>e.currentTarget.setCustomValidity('')}/></label>
             <label><span>03 · Preferred contact method (optional)</span><select value={contactMethod} onChange={(e)=>{setContactMethod(e.target.value); e.currentTarget.form.elements.contact.setCustomValidity('')}}><option value="none">No preference</option><option value="phone">Phone</option><option value="email">Email</option></select><small className="av2-field-note">Provide the phone number or email address you would like us to use.</small></label>

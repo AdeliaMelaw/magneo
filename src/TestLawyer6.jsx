@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './styles/legal-concept-notice.css';
+import LegalConceptNotice from './LegalConceptNotice.jsx';
 
 const needs = [
   { key: 'answers', label: 'Clear answers', title: 'Understand what comes next.', text: 'We explain the process in plain language, answer the questions keeping you up at night, and give your family a practical plan for the days ahead.' },
@@ -29,7 +30,7 @@ export default function TestLawyer6(){
   }, []);
 
   return <div className="hl6">
-    <div className="concept-notice"><strong>Original Magneo website concept — fictional firm</strong><a href="/contact/">Discuss this website with Magneo <Arrow/></a></div>
+    <LegalConceptNotice/>
     <header className="hl6-nav" id="hl6-top">
       <a className="hl6-brand" href="/portfolio/" aria-label="Back to portfolio"><i aria-hidden="true">←</i><span>Back to portfolio</span></a>
       <nav aria-label="Primary navigation"><a href="#hl6-support">How we help</a><a href="#hl6-process">What happens next</a><a href="#hl6-contact">Contact</a></nav>

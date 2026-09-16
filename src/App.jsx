@@ -86,9 +86,24 @@ const aiServices = [
 const verticals = Object.values(industries).flatMap((i) => i.subs.map(([label, path]) => ({ label, path, intro: `Compliance-aware SEO, website, PPC, LinkedIn, AI automation, and authority systems for ${label.toLowerCase()}.` })));
 const extraServiceSlugs = serviceMenus.flatMap(([, path, items]) => [path, ...items.map(([, itemPath]) => itemPath)]).map((path) => path.split('/').filter(Boolean).pop()).concat(['healthcare-medtech']);
 const specialistSearchDescription = { law: legalPracticeSearchDescription, finance: financialSpecialistSearchDescription, healthcare: healthcareSpecialistSearchDescription, tech: technologySpecialistSearchDescription };
+const serviceSearchDescriptions = {
+  'Website Design': 'Clear service pages, distinctive design and straightforward enquiry routes for your website.',
+  'SEO for Regulated Industries': 'Search-focused service pages, useful articles and local listings that explain your expertise.',
+  'Social Media & LinkedIn Marketing': 'Plan and produce posts and videos that explain your services in your brand’s voice.',
+  'AI Automation & CRM': 'Organise enquiries, assign follow-up and connect your team’s CRM and marketing tools.',
+  'AI-Powered Digital Marketing': 'Use AI-assisted research, content, video and website production with human review.',
+  'PPC & Landing Pages': 'Campaign strategy, ad creative and focused landing pages with measurable enquiry reporting.',
+  'Personal Branding': 'Clarify your expertise, improve your professional profile and plan useful content.'
+};
+const industrySearchDescriptions = {
+  law: 'Websites, local search, practical content and enquiry follow-up for law firms.',
+  finance: 'Explain financial services through clear websites, educational content and organised enquiries.',
+  healthcare: 'Clinic websites, accurate listings and useful information about services and booking options.',
+  tech: 'Explain your technology product through websites, demonstrations, content and focused campaigns.'
+};
 const searchItems = [
   ...serviceMenus.flatMap(([group, groupPath, children]) => [
-    { title: group, url: groupPath, type: 'Service', description: `Explore Magneo’s ${group.toLowerCase()} services.`, keywords: `${group} service agency support` },
+    { title: group, url: groupPath, type: 'Service', description: serviceSearchDescriptions[group], keywords: `${group} service agency support` },
     ...children.map(([title, url]) => {
       const slug = url.split('/').filter(Boolean).pop();
       const page = getChildServiceData(slug);
@@ -96,7 +111,7 @@ const searchItems = [
     })
   ]),
   ...Object.entries(industries).flatMap(([key, industry]) => [
-    { title: industry.short, url: industry.route, type: 'Industry', description: industry.intro, keywords: `${industry.label} ${industry.short}` },
+    { title: industry.short, url: industry.route, type: 'Industry', description: industrySearchDescriptions[key], keywords: `${industry.label} ${industry.short}` },
     ...industry.subs.map(([title, url]) => ({ title, url, type: 'Industry', description: specialistSearchDescription[key](url.split('/').filter(Boolean).pop()) || `Explore ${title} services, website content and contact routes.`, keywords: `${industry.short} ${title}` }))
   ]),
   { title: 'Magneo Portfolio', url: '/portfolio/', type: 'Portfolio', description: 'Explore Magneo website concepts, social creative and AI marketing demonstrations.', keywords: 'work examples projects designs reels video' },
