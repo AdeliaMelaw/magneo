@@ -73,7 +73,7 @@
     },
     {
       "src": "/downloads/personal-branding-guide-legal-professionals\\.pdf",
-      "dest": "/api/legal-guide-download"
+      "dest": "/api/public-guide-download"
     },
     {
       "src": "/branding-guide-for-lawyers/?",
