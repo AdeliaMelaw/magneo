@@ -153,8 +153,8 @@ export default function AboutLegalTest() {
       <div className="container abt-two-col">
         <div><span className="abt-label">The experience behind Magneo</span><h2><strong>10+</strong> years of marketing experience.<small>A broad background. An industry-specific approach.</small></h2></div>
         <div className="abt-copy">
-          <p>Adele Salikhova brings more than a decade of marketing experience across industries and markets. Her work connects brand strategy, creative thinking, digital marketing, and AI.</p>
-          <p>Through Magneo, she applies that experience to businesses whose services need clear explanation and careful communication. Each project starts with the business’s audience, offer, and review requirements, with legal marketing as Magneo’s flagship focus.</p>
+          <p>Magneo brings together brand strategy, creative thinking, digital marketing and AI to help businesses communicate their expertise and connect with the right audience. Founded by Adele Salikhova, the agency draws on her more than a decade of marketing experience across industries and markets.</p>
+          <p>Adele’s strategic direction shapes Magneo’s work, from websites and content to campaigns and automation. With legal marketing as its flagship focus, the agency also serves financial firms, healthcare providers and technology companies. Each project starts with your audience, your offer and what you want your marketing to achieve.</p>
           <div className="abt-text-links"><a href="https://www.linkedin.com/in/adele-salikhova/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></div>
         </div>
       </div>
