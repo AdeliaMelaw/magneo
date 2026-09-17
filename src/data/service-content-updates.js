@@ -36,6 +36,41 @@ const social = {
     ['Publishing and improving', 'Once approved, Magneo schedules and publishes your videos across the agreed platforms. Watch time, engagement and audience feedback help shape the next round of topics, hooks and formats.'],
   ]],
 };
+const techSocial = {
+  'social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo': {
+    scopeEyebrow: 'CONTENT PLANNING', scopeHeading: 'Your content plan, ready before recording.',
+    included: [
+      ['Understand your audience', 'Magneo researches your potential customers’ problems, questions and reasons for choosing a product like yours. Your product benefits and team’s expertise shape the direction.'],
+      ['Research formats and select hooks', 'Successful videos and emerging formats in your niche inform the creative approach. Magneo develops opening hooks and content ideas suited to your audience, product and brand voice.'],
+      ['Agree on the plan together', 'You receive a proposed content calendar with topics, formats and recommended platforms. Together, the plan is refined around your priorities, product launches and available recording time.'],
+      ['Prepare scripts and recording notes', 'Approved ideas become scripts, talking points and shot lists. Your team knows what to explain on camera and which product features or workflows to demonstrate.'],
+    ],
+    processEyebrow: 'VIDEO PRODUCTION', processHeading: 'From recording to published videos.',
+    process: [
+      ['Guided recording and product demos', 'Magneo guides your founders or team members through recording, with direction on delivery, framing and sound. Screen recordings show the actual product features and workflows featured in the scripts.'],
+      ['Editing and platform versions', 'Your footage becomes polished videos with captions, supporting visuals, product close-ups and clear pacing. Each version is adapted to the format and viewing habits of its intended platform.'],
+      ['Your review and final revisions', 'You receive the edited videos to review messaging, product accuracy and brand voice. Magneo completes revisions and prepares the approved versions for publication.'],
+      ['Publishing and performance review', 'Magneo schedules and publishes the approved videos across your selected platforms. Watch time, engagement and audience feedback inform the next round of content.'],
+    ],
+  },
+  'crypto-and-ai-social-media': {
+    scopeEyebrow: 'SOCIAL MEDIA STRATEGY', scopeHeading: 'Your social content, planned and managed.',
+    included: [
+      ['Audience research and platform selection', 'Magneo researches your audience’s questions, interests and challenges, alongside the conversations happening in your niche. Your platform plan reflects where those audiences are active, including X, YouTube and other relevant channels.'],
+      ['Topics, hooks and your brand voice', 'Successful posts and videos in your niche inform a content plan built around your product and perspective. You receive proposed topics, opening hooks and formats—from product updates and educational threads to founder videos—ready to discuss before production.'],
+      ['Content creation and approval', 'Magneo creates your posts, graphics and supporting copy in a consistent brand voice. Your team reviews the content for product accuracy and provides feedback before final revisions and scheduling.'],
+      ['Publishing and ongoing improvement', 'Approved content is published across your selected platforms. Engagement, audience questions and content performance help shape the next calendar, with room for timely updates and launches.'],
+    ],
+    processEyebrow: 'VIDEO PRODUCTION', processHeading: 'From your expertise to videos worth watching.',
+    process: [
+      ['Scripts and recording preparation', 'Your agreed topics become scripts, talking points and shot lists. Magneo prepares strong openings, clear explanations and a plan for the on-camera footage, screen recordings or product demonstrations each video needs.'],
+      ['Guided filming and screen recording', 'Your founders or team members receive guidance on framing, lighting, sound and delivery. Product recordings demonstrate real workflows, helping viewers understand how your technology works and why it is useful.'],
+      ['Editing and your review', 'Magneo combines your footage with captions, graphics and supporting visuals, creating versions suited to each platform. You receive the edited videos for feedback and product checks, with revisions completed before publication.'],
+      ['Publishing and performance review', 'Approved videos are prepared with platform-specific titles, descriptions and covers, then scheduled and published. Watch time, audience retention and engagement inform the next round of scripts, hooks and edits.'],
+    ],
+  },
+};
+
 export function applyServiceContentUpdates(slug, original) {
   if (!original) return original;
   let data = original;
@@ -75,5 +110,9 @@ export function applyServiceContentUpdates(slug, original) {
     'Your website can connect patients to your existing booking platform, provide a clear phone contact or explain your clinic’s referral process. Service pages can also include practitioner information, locations, opening hours and practical details about preparing for a first visit.',
     'Magneo organises this content around how your clinic operates, with clear navigation and booking links that are easy to use on mobile. Even when your practice is full, an informative website helps existing patients find updates and answers to common administrative questions.',
   ] } };
+  if (techSocial[slug]) {
+    data = { ...data, ...techSocial[slug], numberedScope: true, scopeIntro: '', processIntro: undefined };
+    if (slug === 'social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo') data = { ...data, scopeNote: undefined, decision: { ...data.decision, closing: undefined } };
+  }
   return data;
 }
