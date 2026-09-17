@@ -112,7 +112,7 @@ export function applyServiceContentUpdates(slug, original) {
   ] } };
   if (techSocial[slug]) {
     data = { ...data, ...techSocial[slug], numberedScope: true, scopeIntro: '', processIntro: undefined };
-    if (slug === 'social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo') data = { ...data, scopeNote: undefined, decision: { ...data.decision, closing: undefined } };
+    if (slug === 'social-media-linkedin-leadership-for-tech-saas-ai-companies-magneo') data = { ...data, scopeNote: undefined, contentPlan: { ...data.contentPlan, closing: undefined } };
   }
   return data;
 }
