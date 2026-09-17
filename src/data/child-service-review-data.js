@@ -1057,7 +1057,6 @@ const pages = {
     heroEyebrow: 'AI SEO & CONTENT AUTOMATION',
     description: 'Turn your expertise into useful search-focused content with a repeatable production process. Magneo combines SEO planning, AI content generation, and your brand voice to develop articles, refresh existing pages, and connect approved content to your publishing workflow.',
     primary: ['Discuss your content workflow','/contact/#contact-enquiry'], secondary: ['See how blog automation works','#blog-automation'],
-    heroMicrocopy: 'Available as a workflow setup, an ongoing content service, or a combination of both.',
     heroFlow: { label: 'AI SEO CONTENT WORKFLOW', steps: ['Search topic','Branded draft','Review','Publication'], note: 'Approval remains part of the publishing process.' },
     scopeCards: {
       eyebrow: 'WHAT YOUR PROJECT CAN INCLUDE', heading: 'From content planning to publication.',
