@@ -233,8 +233,8 @@
         <div class="container guide-stat-grid">\
           <div><strong>48</strong><span>Pages in the guide</span></div>\
           <div><strong>8</strong><span>Content types covered</span></div>\
-          <div><strong>1</strong><span>Audience to clarify</span></div>\
-          <div><strong>1</strong><span>Professional presence to develop</span></div>\
+          <div><strong>6</strong><span>Social platforms explained</span></div>\
+          <div><strong>10</strong><span>Chapters on building your personal brand</span></div>\
         </div>\
       </section>\
       <section class="guide-final">\
