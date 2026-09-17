@@ -101,7 +101,7 @@ export default function ContactTest() {
         <div className="ct-form-panel" id="contact-enquiry">
           <span className="ct-kicker">Start a conversation</span>
           <h2>Tell us what you have in mind.</h2>
-          <p className="ct-next">Your message comes directly to Adele. We’ll review what you share and reply with any questions or a suggested next step.</p>
+          <p className="ct-next">Your message comes directly to Magneo. We’ll review what you share and reply with any questions or a suggested next step.</p>
           <p className="ct-response">We usually reply within one business day.</p>
 
           {status === 'success' ? <div className="ct-result" role="status" tabIndex="-1">
