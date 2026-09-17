@@ -1304,7 +1304,7 @@ export default function ServiceContentReview({ serviceSlugOverride }) {
   const params = useParams();
   const isReview = useLocation().pathname.split('/').includes('test');
   const serviceSlug = serviceSlugOverride || params.serviceSlug;
-  const childData = getChildServiceData(serviceSlug);
+  const childData = applyServiceContentUpdates(serviceSlug, getChildServiceData(serviceSlug));
   const parentData = pageData[serviceSlug];
   const data = applyServiceContentUpdates(serviceSlug, parentData || childData || (serviceSlug === 'ai-powered-digital-marketing' ? aiOverview : undefined));
   useReviewMetadata(data || aiOverview, serviceSlug || 'ai-powered-digital-marketing', isReview);
