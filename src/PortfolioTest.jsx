@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 const websites = [
@@ -18,10 +18,29 @@ const socialExamples = [
   { poster:'/portfolio/social/conversational-reel-cover.jpg', video:'/portfolio/social/conversational-reel.mp4', title:'One clear answer', format:'Conversational reel' },
 ];
 
+function PerspectiveSlides(){
+  const slides = [
+    ['Your perspective', 'Explain what you think.\nShow why it matters.'],
+    ['Your expertise', 'Answer real questions.\nMake complex ideas clear.'],
+    ['Your brand voice', 'Sound like yourself.\nBuild a recognisable voice.'],
+    ['Your visibility', 'Share your knowledge.\nGive people a reason to follow.'],
+  ];
+  const [active, setActive] = useState(0);
+  const touch = useRef(null);
+  const select = index => setActive((index + slides.length) % slides.length);
+  return <article className="pf-post pf-post-two pf-perspective-slides" role="region" aria-roledescription="carousel" aria-label="Professional perspective examples" tabIndex={0}
+    onKeyDown={event => { if (['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) { event.preventDefault(); select(event.key === 'Home' ? 0 : event.key === 'End' ? 3 : active + (event.key === 'ArrowRight' ? 1 : -1)); } }}
+    onTouchStart={event => { touch.current = {x:event.touches[0].clientX,y:event.touches[0].clientY}; }}
+    onTouchEnd={event => { const start=touch.current; touch.current=null; if(!start)return; const dx=event.changedTouches[0].clientX-start.x,dy=event.changedTouches[0].clientY-start.y; if(Math.abs(dx)>40 && Math.abs(dx)>Math.abs(dy))select(active+(dx<0?1:-1)); }}>
+    <small>{slides[active][0]}</small><b aria-live="polite" aria-atomic="true">{slides[active][1]}</b>
+    <div className="pf-slide-indicators" aria-label="Choose slide">{slides.map((slide,index)=><button type="button" key={slide[0]} aria-label={`Slide ${index+1}: ${slide[1].replace('\n',' ')}`} aria-pressed={index===active} onClick={()=>select(index)}><i aria-hidden="true"/></button>)}</div>
+  </article>;
+}
+
 function SocialBoard(){
   return <div className="pf-social-board" aria-label="Illustrative social content series">
     <article className="pf-post pf-post-one"><small>Client questions / 01</small><b>Answer what people<br/>want to know.</b><i>↗</i></article>
-    <article className="pf-post pf-post-two"><small>Your perspective</small><b>Explain what you think.<br/>Show why it matters.</b><div><i/><i/><i/><i/></div></article>
+    <PerspectiveSlides/>
     <article className="pf-post pf-post-three"><span>03</span><b>One idea.<br/>Multiple formats.</b><small>Article → carousel → video</small></article>
     <div className="pf-board-label">EXAMPLE CONTENT SERIES</div>
   </div>;
