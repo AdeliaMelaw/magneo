@@ -70,4 +70,4 @@
 }
 @media(prefers-reduced-motion:reduce){.pft-website-card,.pft-website-card img{transition:none}}
 .pf-perspective-slides{touch-action:pan-y;min-width:0}.pf-perspective-slides>b{white-space:pre-line;overflow-wrap:break-word;min-height:4.4em}.pf-perspective-slides .pf-slide-indicators{display:flex;gap:4px}.pf-slide-indicators button{display:grid;place-items:center;min-width:44px;height:44px;padding:0;border:0;background:transparent;color:#fff;cursor:pointer}.pf-perspective-slides .pf-slide-indicators button i{display:block;width:28px;height:4px;background:rgba(255,255,255,.4)}.pf-perspective-slides .pf-slide-indicators button[aria-pressed=true] i{height:6px;background:#fff}.pf-perspective-slides:focus-visible,.pf-slide-indicators button:focus-visible{outline:2px solid #fff;outline-offset:3px}
-@media(max-width:620px){.pf-perspective-slides>b{min-height:6.24em}}
+@media(max-width:620px){.pf-main .pf-perspective-slides>b{min-height:6.24em}}
