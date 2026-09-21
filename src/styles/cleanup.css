@@ -15,5 +15,5 @@
 @media(max-width:620px){
   .scr-page>.scr-hero{padding-top:43px}
   .ht-page .ht-hero-inner{padding-top:40px}
-  .nav .nav-inner>.btn{font-weight:800!important}
+  .nav .nav-inner>.btn{font-weight:800!important;text-transform:uppercase!important}
 }
