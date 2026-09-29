@@ -273,13 +273,12 @@
 .tlc-opportunity-grid p { max-width: 600px; margin: 0; color: var(--tlc-muted); font-size: 15px; line-height: 1.7; }
 .tlc-topics-action { margin-top: 34px; }
 
-.tlc-invitation { display: grid; grid-template-columns: .55fr 1.45fr; min-height: 650px; background: var(--tlc-charcoal); color: #fff; }
-.tlc-invitation-index { display: flex; align-items: flex-end; padding: 40px clamp(24px, 5vw, 80px); overflow: hidden; border-right: 1px solid #454545; color: var(--tlc-green); font: 900 clamp(140px, 25vw, 430px)/.7 "Arial Narrow", Arial, sans-serif; letter-spacing: -.1em; }
-.tlc-invitation > div:last-child { display: flex; padding: clamp(66px, 9vw, 140px); flex-direction: column; justify-content: center; }
+.tlc-invitation { padding: clamp(72px, 8vw, 118px) clamp(24px, 7vw, 112px); background: var(--tlc-charcoal); color: #fff; }
+.tlc-invitation-content { display: flex; max-width: 1080px; margin: 0 auto; flex-direction: column; }
 .tlc-invitation .tlc-eyebrow { color: var(--tlc-green); }
-.tlc-invitation h2 { max-width: 900px; margin: 24px 0; font-size: clamp(52px, 6.2vw, 98px); line-height: .9; text-transform: uppercase; }
-.tlc-invitation p { max-width: 720px; color: #c8c8c1; }
-.tlc-invitation .tlc-button { width: max-content; margin-top: 32px; background: var(--tlc-green); color: #111 !important; }
+.tlc-invitation h2 { max-width: 980px; margin: 22px 0 26px; font-size: clamp(48px, 5.5vw, 82px); line-height: .95; text-transform: none; }
+.tlc-invitation p { max-width: 760px; color: #c8c8c1; }
+.tlc-invitation .tlc-button { width: max-content; margin-top: 26px; background: var(--tlc-green); color: #111 !important; }
 .tlc-button-disabled { cursor: not-allowed; opacity: .64; }
 .tlc-invitation small { margin-top: 12px; color: #aaa; font-size: 11px; }
 
@@ -336,10 +335,8 @@
   .tlc-benefit-grid h3 { margin-top: 30px; }
   .tlc-why-action { align-items: stretch; flex-direction: column; }
   .tlc-why-action .tlc-button { width: 100%; }
-  .tlc-invitation { grid-template-columns: 1fr; min-height: 0; }
-  .tlc-invitation-index { min-height: 160px; align-items: flex-end; border-right: 0; border-bottom: 1px solid #454545; font-size: 190px; }
-  .tlc-invitation > div:last-child { padding: 70px 20px; }
-  .tlc-invitation h2 { font-size: 46px; }
+  .tlc-invitation { padding: 70px 20px; }
+  .tlc-invitation h2 { font-size: clamp(40px, 11.5vw, 48px); }
   .tlc-invitation .tlc-button { width: 100%; }
   .tlc-footer { grid-template-columns: 1fr; padding: 28px 20px; }
   .tlc-footer nav { grid-column: auto; align-items: flex-start; flex-direction: column; gap: 14px; }

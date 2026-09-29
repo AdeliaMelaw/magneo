@@ -182,12 +182,11 @@ export default function LegalCircleTest() {
         </section>
 
         <section className="tlc-invitation" id="join" aria-labelledby="tlc-join-title">
-          <div className="tlc-invitation-index" aria-hidden="true">04</div>
-          <div>
+          <div className="tlc-invitation-content">
             <p className="tlc-eyebrow">Join the conversation</p>
-            <h2 id="tlc-join-title">Bring a question. Share a perspective. Join the circle.</h2>
-            <p>Meet fellow lawyers, contribute to discussions or suggest a topic for a future interview, event or webinar. Start by joining The Legal Circle on LinkedIn.</p>
-            <span className="tlc-button tlc-button-disabled" role="link" aria-disabled="true">Join on LinkedIn</span>
+            <h2 id="tlc-join-title">Your next opportunity starts with a connection.</h2>
+            <p>Join lawyers and legal professionals exchanging ideas about growing a practice, building visibility and making useful connections. Share your expertise, put yourself forward for interviews and help shape future conversations and events.</p>
+            <span className="tlc-button tlc-button-disabled" role="link" aria-disabled="true">Join The Legal Circle on LinkedIn</span>
             <small id="tlc-link-status">The LinkedIn community link is required before launch.</small>
           </div>
         </section>
