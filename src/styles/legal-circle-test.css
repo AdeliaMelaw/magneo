@@ -283,8 +283,8 @@
 .tlc-invitation small { margin-top: 12px; color: #aaa; font-size: 11px; }
 
 .tlc-footer { display: grid; grid-template-columns: 150px 1fr auto; gap: 34px; align-items: center; padding: 34px clamp(24px, 5vw, 80px); background: #060606; color: #d5d5cf; }
-.tlc-logo-footer { width: 100px; height: 72px; padding: 4px; background: #f8f7f2; }
-.tlc-logo-footer img { width: 84px; height: 84px; }
+.tlc-logo-footer { width: 120px; height: 120px; padding: 4px; overflow: hidden; background: #f8f7f2; }
+.tlc-logo-footer img { width: 112px; height: 112px; object-fit: contain; }
 .tlc-footer p { margin: 0; font-size: 13px; }
 .tlc-footer nav { display: flex; gap: 24px; align-items: center; }
 .tlc-footer nav a { font-size: 10px; }
