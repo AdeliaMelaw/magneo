@@ -5,12 +5,12 @@ const BASE = 'https://magneo.ca';
 const PAGE_PATH = '/the-legal-circle-test/';
 
 const topics = [
-  ['01', 'Conversations & connections', 'Comment on discussions, ask questions and exchange perspectives with lawyers across practice areas. Build relationships through shared interests and professional experience.'],
-  ['02', 'Legal marketing & PR', 'Explore ways to communicate your expertise, strengthen your professional reputation and develop your practice—from personal branding and LinkedIn to media opportunities and public speaking.'],
-  ['03', 'Interviews & podcasts', 'Share your professional story, discuss an issue that matters to you or express interest in joining an interview or podcast conversation.'],
-  ['04', 'Articles & member perspectives', 'Contribute ideas for articles, interviews and collaborative features. Published contributions include clear author credit, a short biography and a professional profile link.'],
-  ['05', 'Online & in-person meetings', 'Get to know fellow members through planned online discussions and in-person gatherings, with opportunities to exchange ideas and continue conversations beyond the feed.'],
-  ['06', 'Professional webinars & workshops', 'Explore focused learning opportunities around professional visibility, marketing and practice development. Paid sessions will clearly explain the topic, presenter, learning outcomes and price.']
+  ['01', 'Peer connections & referrals', 'Connect with professionals in other practice areas, discuss shared challenges and build relationships that could lead to collaboration and referrals.'],
+  ['02', 'Legal marketing & business growth', 'Exchange practical ideas about attracting clients, building your reputation and developing your firm—from LinkedIn and content to PR and client experience.'],
+  ['03', 'Podcasts & interviews', 'Put yourself forward for conversations about your expertise, career and perspective on the profession. Suggest a guest or a question you would like explored.'],
+  ['04', 'Articles with your byline', 'Propose an article or contribute an expert perspective, with author credit, a short biography and a link to your professional profile.'],
+  ['05', 'Webinars & workshops', 'Suggest topics, express interest in speaking and explore planned professional learning sessions. Paid sessions will clearly show their presenter, focus and price.'],
+  ['06', 'Online conversations & local meetups', 'Take part in LinkedIn discussions and help shape future online and in-person gatherings around shared interests.']
 ];
 
 const benefits = [
@@ -162,19 +162,22 @@ export default function LegalCircleTest() {
         </section>
 
         <section className="tlc-section tlc-topics" id="topics" aria-labelledby="tlc-topics-title">
-          <div className="tlc-section-intro">
-            <p className="tlc-eyebrow"><span>03</span> Inside the circle</p>
-            <h2 id="tlc-topics-title">A community you can take part in.</h2>
+          <div className="tlc-topics-intro">
+            <p className="tlc-eyebrow">Inside the Circle</p>
+            <h2 id="tlc-topics-title">Your experience belongs in the conversation.</h2>
+            <p className="tlc-topics-lede">Meet legal professionals across practice areas, share what you know and explore new ways to develop your reputation and practice.</p>
           </div>
-          <div className="tlc-topic-list">
+          <div className="tlc-opportunity-grid">
             {topics.map(([number, title, text]) => (
-              <article className="tlc-topic" key={number}>
+              <article key={number}>
                 <span>{number}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
             ))}
-            <p className="tlc-topics-note">The community is taking shape. Events, interviews and learning opportunities will develop around members’ interests and participation.</p>
+          </div>
+          <div className="tlc-topics-action">
+            <PendingLinkedInLink className="tlc-button">Join the conversation on LinkedIn</PendingLinkedInLink>
           </div>
         </section>
 
