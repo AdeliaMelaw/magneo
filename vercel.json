@@ -41,6 +41,7 @@
     { "src": "/services/(.*)/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
     { "src": "/portfolio/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
     { "src": "/portfolio/(.*)/test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
+    { "src": "/the-legal-circle-test/?", "status": 410, "headers": { "X-Robots-Tag": "noindex, nofollow, noarchive" } },
     {
       "src": "/about/adele-salikhova/?",
       "dest": "/about/adele-salikhova/index.html",
