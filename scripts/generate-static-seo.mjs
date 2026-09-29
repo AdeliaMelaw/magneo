@@ -25,7 +25,7 @@ const NOINDEX_PATHS = [
 
 const descriptions = {
   '/': 'Website design, content, and AI-powered marketing for regulated and expert-led businesses.',
-  '/the-legal-circle-test/': 'The Legal Circle brings lawyers together to exchange ideas, build professional relationships and explore the business of law.',
+  '/the-legal-circle-test/': 'The Legal Circle brings lawyers, paralegals, notaries and other legal professionals together to exchange ideas, build relationships and explore the business of law.',
   '/personal-branding-ultimate-guide-legal-professionals/': 'Download Magneo’s free personal-branding guide for legal professionals. Explore audience focus, content topics and a consistent online presence.',
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore marketing, creative, and AI services for regulated industries, with legal marketing as the flagship focus.',
   '/about/adele-salikhova/': 'Meet Adele Salikhova, founder of Magneo, and learn about her approach to websites, content, and AI-supported marketing.',
