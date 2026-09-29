@@ -100,12 +100,17 @@ export default function LegalCircleTest() {
                 <a className="tlc-text-link" href="#about">Explore the community <span aria-hidden="true">→</span></a>
               </div>
             </div>
-            <div className="tlc-hero-art" role="img" aria-label="Three interlinked rings representing connection, conversation and community">
-              <div className="tlc-ring-shadow" aria-hidden="true" />
-              <div className="tlc-ring-cluster" aria-hidden="true">
-                <span className="tlc-ring tlc-ring-charcoal" />
-                <span className="tlc-ring tlc-ring-silver" />
-                <span className="tlc-ring tlc-ring-green" />
+            <div className="tlc-hero-art" role="img" aria-label="Animated circular paths moving around a bright green centre">
+              <div className="tlc-orbit-field" aria-hidden="true">
+                <span className="tlc-orbit tlc-orbit-1" />
+                <span className="tlc-orbit tlc-orbit-2" />
+                <span className="tlc-orbit tlc-orbit-3" />
+                <span className="tlc-orbit tlc-orbit-4" />
+                <span className="tlc-orbit tlc-orbit-5" />
+                <span className="tlc-orbit tlc-orbit-6" />
+                <span className="tlc-orbit tlc-orbit-7" />
+                <span className="tlc-orbit tlc-orbit-8" />
+                <span className="tlc-orbit-core" />
               </div>
               <span className="tlc-art-caption">Ideas <b>•</b> Peers <b>•</b> Opportunities</span>
             </div>
