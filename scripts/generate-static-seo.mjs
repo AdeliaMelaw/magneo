@@ -19,11 +19,13 @@ const EXTRA_PATHS = [
 const NOINDEX_PATHS = [
   '/portfolio/legal-websites/',
   '/our-team/',
-  '/about/adele-salikhova/'
+  '/about/adele-salikhova/',
+  '/the-legal-circle-test/'
 ];
 
 const descriptions = {
   '/': 'Website design, content, and AI-powered marketing for regulated and expert-led businesses.',
+  '/the-legal-circle-test/': 'The Legal Circle is a community for lawyers to exchange ideas, build professional relationships and explore the business of legal practice.',
   '/personal-branding-ultimate-guide-legal-professionals/': 'Download Magneo’s free personal-branding guide for legal professionals. Explore audience focus, content topics and a consistent online presence.',
   '/about/': 'Meet Adele Salikhova, founder of Magneo. Explore marketing, creative, and AI services for regulated industries, with legal marketing as the flagship focus.',
   '/about/adele-salikhova/': 'Meet Adele Salikhova, founder of Magneo, and learn about her approach to websites, content, and AI-supported marketing.',
@@ -86,6 +88,7 @@ const descriptions = {
 
 const titleOverrides = {
   '/': 'Magneo | Marketing That Makes Your Expertise Clear',
+  '/the-legal-circle-test/': 'The Legal Circle | A Community for Lawyers',
   '/personal-branding-ultimate-guide-legal-professionals/': 'Personal Branding Guide for Legal Professionals | Magneo',
   '/about/': 'About Magneo | Marketing for Regulated Industries',
   '/about/adele-salikhova/': 'Adele Salikhova, Founder of Magneo | Magneo',
@@ -298,7 +301,7 @@ for (const pathname of paths) {
       founder: { '@type': 'Person', name: 'Adele Salikhova' }
     }
   } : undefined;
-  const robots = NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
+  const robots = pathname === '/the-legal-circle-test/' ? 'noindex, nofollow' : NOINDEX_PATHS.includes(pathname) ? 'noindex, follow' : pathname === '/personal-branding-ultimate-guide-legal-professionals/' ? 'index, follow' : undefined;
   let html = injectSeo(indexHtml, { title: titleFor(pathname), description: descriptionFor(pathname), canonical, image, imageAlt, robots, schema });
   if (pathname === '/personal-branding-ultimate-guide-legal-professionals/') html = injectGuideStaticHtml(html);
   const outputPath = pathname === '/' ? INDEX_PATH : join(DIST_DIR, pathname.replace(/^\//, ''), 'index.html');
