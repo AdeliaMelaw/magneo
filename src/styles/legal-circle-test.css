@@ -201,7 +201,16 @@
 }
 .tlc-art-caption b { color: #4f9700; }
 .tlc-audience-labels { position: absolute; z-index: 4; inset: 0; pointer-events: none; }
-.tlc-audience-labels span {
+.tlc-label-group {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: tlc-label-cycle 24s linear infinite;
+}
+.tlc-label-group-2 { animation-delay: -6s; }
+.tlc-label-group-3 { animation-delay: -12s; }
+.tlc-label-group-4 { animation-delay: -18s; }
+.tlc-label-group span {
   position: absolute;
   display: inline-flex;
   align-items: center;
@@ -216,12 +225,21 @@
   line-height: 1;
   white-space: nowrap;
 }
-.tlc-audience-labels span::before { width: 18px; height: 3px; background: var(--tlc-green); content: ""; }
-.tlc-audience-lawyers { top: 22%; right: 10%; }
-.tlc-audience-paralegals { top: 42%; left: 7%; }
-.tlc-audience-notaries { right: 8%; bottom: 24%; }
-.tlc-audience-professionals { bottom: 11%; left: 17%; }
+.tlc-label-group span::before { width: 18px; height: 3px; flex: 0 0 auto; background: var(--tlc-green); content: ""; }
+.tlc-label-position-1 { top: 14%; right: 10%; }
+.tlc-label-position-2 { top: 28%; left: 5%; }
+.tlc-label-position-3 { top: 39%; right: 5%; }
+.tlc-label-position-4 { top: 53%; left: 8%; }
+.tlc-label-position-5 { right: 7%; bottom: 24%; }
+.tlc-label-position-6 { bottom: 13%; left: 14%; }
+.tlc-label-position-7 { top: 9%; left: 21%; }
+.tlc-label-position-8 { right: 22%; bottom: 7%; }
 @keyframes tlc-orbit-spin { to { transform: rotate(360deg); } }
+@keyframes tlc-label-cycle {
+  0%, 22% { opacity: 1; }
+  25%, 97% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 .tlc-section { padding: clamp(76px, 9vw, 150px) clamp(24px, 6vw, 108px); border-bottom: 1px solid var(--tlc-line); }
 .tlc-topics h2 { max-width: 1080px; margin: 0; font-size: clamp(44px, 6vw, 92px); line-height: .93; text-transform: uppercase; }
@@ -298,13 +316,14 @@
   .tlc-actions { min-width: 0; align-items: stretch; flex-direction: column; }
   .tlc-actions .tlc-button { width: 100%; }
   .tlc-text-link { width: max-content; }
-  .tlc-hero-art { min-height: 330px; }
-  .tlc-orbit-field { width: min(88vw, 340px); }
-  .tlc-art-caption { right: 18px; bottom: 14px; font-size: 9px; }
+  .tlc-hero-art { min-height: 500px; padding-top: 18px; align-items: flex-start; }
+  .tlc-orbit-field { width: min(78vw, 300px); }
+  .tlc-art-caption { right: 16px; bottom: 14px; left: 16px; text-align: center; font-size: 9px; }
   .tlc-section { padding: 72px 20px; }
-  .tlc-audience-labels { inset: auto 16px 42px; display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
-  .tlc-audience-labels span { position: static; min-height: 30px; padding: 6px 8px; box-shadow: none; font-size: 11px; }
-  .tlc-audience-labels span::before { width: 12px; }
+  .tlc-audience-labels { inset: auto 16px 42px; height: 142px; }
+  .tlc-label-group { display: grid; grid-template-columns: 1fr 1fr; align-content: end; gap: 7px; }
+  .tlc-label-group span { position: static; min-height: 30px; padding: 6px 8px; box-shadow: none; font-size: 11px; white-space: normal; }
+  .tlc-label-group span::before { width: 12px; }
   .tlc-section-intro { min-width: 0; }
   .tlc-topics h2 { max-width: 100%; font-size: clamp(36px, 9.5vw, 42px); }
   .tlc-why h2 { max-width: 100%; font-size: clamp(36px, 10.2vw, 44px); }
@@ -328,4 +347,6 @@
 @media (prefers-reduced-motion: reduce) {
   .tlc-page * { scroll-behavior: auto !important; }
   .tlc-orbit::after { animation: none; }
+  .tlc-label-group { opacity: 0; animation: none; }
+  .tlc-label-group-1 { opacity: 1; }
 }

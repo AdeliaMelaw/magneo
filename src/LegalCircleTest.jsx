@@ -20,6 +20,13 @@ const benefits = [
   ['Have a voice in the conversation', 'Comment on posts, ask questions and share what has worked for you. Suggest the topics, guests and challenges you want the community to explore.']
 ];
 
+const audienceLabelGroups = [
+  ['Lawyers', 'Corporate & Commercial', 'Legal Marketing', 'Podcasts & Interviews', 'Litigation', 'Networking', 'Paralegals'],
+  ['Notaries', 'Family Law', 'PR & Visibility', 'Articles & Insights', 'Criminal Law', 'Business Development', 'In-house counsel'],
+  ['Legal professionals', 'Immigration', 'Referrals & Collaboration', 'Webinars', 'Employment', 'Real Estate', 'Online & In-person Events'],
+  ['Personal Injury', 'Estates & Trusts', 'Intellectual Property', 'Tax', 'Other Practice Areas', 'Networking', 'Lawyers', 'Articles & Insights']
+];
+
 function setMeta(selector, attributes) {
   let element = document.head.querySelector(selector);
   const created = !element;
@@ -53,7 +60,7 @@ export default function LegalCircleTest() {
     document.title = 'The Legal Circle | A Community for Lawyers';
 
     const tags = [
-      setMeta('meta[name="description"]', { name: 'description', content: 'The Legal Circle brings lawyers, paralegals, notaries and other legal professionals together to exchange ideas, build relationships and explore the business of law.' }),
+      setMeta('meta[name="description"]', { name: 'description', content: 'The Legal Circle connects legal professionals across practice areas with opportunities to build relationships, share expertise and explore marketing, PR and business growth.' }),
       setMeta('meta[name="robots"]', { name: 'robots', content: 'noindex, nofollow' }),
       setMeta('meta[property="og:title"]', { property: 'og:title', content: 'The Legal Circle | A Community for Lawyers' }),
       setMeta('meta[property="og:description"]', { property: 'og:description', content: 'A participatory community for lawyers to exchange ideas, build relationships and contribute to conversations, interviews and events.' }),
@@ -101,7 +108,7 @@ export default function LegalCircleTest() {
             <div className="tlc-hero-copy">
               <p className="tlc-eyebrow">The Legal Circle</p>
               <h1 id="tlc-hero-title">Connect with peers.<br /><em>Share your perspective.</em></h1>
-              <p className="tlc-lede">A community for lawyers, paralegals, notaries and other legal professionals to exchange ideas, build relationships and explore the business of law.</p>
+              <p className="tlc-lede">A community connecting lawyers, paralegals, notaries and other legal professionals across practice areas—with opportunities to build relationships, share expertise and explore legal marketing, PR and business growth.</p>
               <div className="tlc-actions">
                 <PendingLinkedInLink className="tlc-button">Join on LinkedIn</PendingLinkedInLink>
                 <a className="tlc-text-link" href="#about">Explore the community <span aria-hidden="true">→</span></a>
@@ -120,12 +127,15 @@ export default function LegalCircleTest() {
                 <span className="tlc-orbit-core" />
               </div>
               <div className="tlc-audience-labels" aria-hidden="true">
-                <span className="tlc-audience-lawyers">Lawyers</span>
-                <span className="tlc-audience-paralegals">Paralegals</span>
-                <span className="tlc-audience-notaries">Notaries</span>
-                <span className="tlc-audience-professionals">Legal professionals</span>
+                {audienceLabelGroups.map((group, groupIndex) => (
+                  <div className={`tlc-label-group tlc-label-group-${groupIndex + 1}`} key={group.join('-')}>
+                    {group.map((label, labelIndex) => (
+                      <span className={`tlc-label-position-${labelIndex + 1}`} key={label}>{label}</span>
+                    ))}
+                  </div>
+                ))}
               </div>
-              <span className="tlc-art-caption">Ideas <b>•</b> Peers <b>•</b> Opportunities</span>
+              <span className="tlc-art-caption">Across practice areas. <b>Around shared ambitions.</b></span>
             </div>
           </div>
         </section>
